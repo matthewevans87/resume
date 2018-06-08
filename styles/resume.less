@@ -13,7 +13,11 @@
     }
 
     a {
-        text-decoration-style: solid;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+            text-decoration-style: solid;
+        }
     }
 }
 body {
@@ -22,9 +26,6 @@ body {
 
     a {
         color: unset;
-        &:hover {
-            text-decoration-style: double;
-        }
     }
 
     .content-header {
@@ -67,30 +68,35 @@ body {
         }
 
         .credentials {
+            margin-top: 1em;
             .credential {
                 > .title {
-                    font-size: 1.8rem;
-                    margin: 1rem;
+                    font-size: 1.8em;
                     text-align: center;
                     text-transform: capitalize;
                     font-variant: small-caps;
                     letter-spacing: .1em
-                    
                 }
 
                 .organization {
+                    
+                    &:not(.first){
+                        page-break-before: always;
+                    }
+                    
+                    margin-top: 1.6em;
                     > .name {
                         font-size: 1.4rem;
                         padding-bottom: 0.2em;
                         font-variant: small-caps;
                         text-transform: capitalize;
                         text-align: center;
+                        
                     }
-
-                    
 
                     >.position {
                         >.details {
+                            
                             padding-bottom: 0.2em;
                             text-align: center;
                             font-style: italic;
@@ -107,9 +113,11 @@ body {
                         >.position-section {
                             padding-left: 1em;
                             padding-top: .5em;
+                            
                             >.title {
                                 font-size: 1.1rem;
-                                font-variant: small-caps
+                                font-variant: small-caps;
+                                
                             }
 
                             &.responsibilities {
@@ -132,7 +140,6 @@ body {
                                     page-break-inside: avoid;
                                     margin-top: .5em;
                                     margin-left: .5em;
-                                    page-break-inside: avoid;
                                     .overview {
                                         padding-bottom: .5em;
                                         .title {

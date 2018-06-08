@@ -12,6 +12,10 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
     text-decoration-style: solid;
   }
 }
@@ -21,9 +25,6 @@ body {
 }
 body a {
   color: unset;
-}
-body a:hover {
-  text-decoration-style: double;
 }
 body .content-header {
   padding-bottom: 1rem;
@@ -57,13 +58,21 @@ body .content-body .lead .statement {
   text-align: center;
   padding: 0rem;
 }
+body .content-body .credentials {
+  margin-top: 1em;
+}
 body .content-body .credentials .credential > .title {
-  font-size: 1.8rem;
-  margin: 1rem;
+  font-size: 1.8em;
   text-align: center;
   text-transform: capitalize;
   font-variant: small-caps;
   letter-spacing: 0.1em;
+}
+body .content-body .credentials .credential .organization {
+  margin-top: 1.6em;
+}
+body .content-body .credentials .credential .organization:not(.first) {
+  page-break-before: always;
 }
 body .content-body .credentials .credential .organization > .name {
   font-size: 1.4rem;
@@ -104,9 +113,9 @@ body .content-body .credentials .credential .organization > .position > .positio
   padding-bottom: .25em;
 }
 body .content-body .credentials .credential .organization > .position > .position-section.projects .project {
+  page-break-inside: avoid;
   margin-top: .5em;
   margin-left: .5em;
-  page-break-inside: avoid;
 }
 body .content-body .credentials .credential .organization > .position > .position-section.projects .project .overview {
   padding-bottom: .5em;
