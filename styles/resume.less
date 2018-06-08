@@ -1,0 +1,239 @@
+@media print {
+    @page {
+        margin: 1in;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+@media screen {
+    body {
+        // border: 1px solid black;
+        padding: 1in;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    a {
+        text-decoration-style: dashed;
+    }
+}
+body {
+    width: 8.5in;
+    margin: auto;
+
+    a {
+        color: unset;
+        &:hover {
+            text-decoration-style: solid;
+        }
+    }
+
+    .content-header {
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: solid 1px black;
+
+        .name {
+            font-size: 4rem;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .contact {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+
+            .contact-entry {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .content-body {
+        .lead {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+
+            .statement {
+                text-align: center;
+                padding: 0rem;
+            }
+
+        }
+
+        .credentials {
+            .credential {
+                > .title {
+                    font-size: 1.8rem;
+                    margin: 1rem;
+                    text-align: center;
+                    text-transform: capitalize;
+                    font-variant: small-caps;
+                    letter-spacing: .1em
+                    
+                }
+
+                .organization {
+                    > .name {
+                        font-size: 1.4rem;
+                        padding-bottom: 0.2em;
+                        font-variant: small-caps;
+                        text-transform: capitalize;
+                        text-align: center;
+                    }
+
+                    
+
+                    >.position {
+                        >.details {
+                            padding-bottom: 0.2em;
+                            text-align: center;
+                            font-style: italic;
+                            >.title {
+                                &::after {
+                                    content: ', '
+                                }
+                            }
+                            >.title, >.timeframe  {
+                                font-size: 1.1rem;
+                            }
+                        }
+
+                        >.position-section {
+                            padding-left: 1em;
+                            padding-top: .5em;
+                            >.title {
+                                font-size: 1.1rem;
+                                font-variant: small-caps
+                            }
+
+                            &.responsibilities {
+                                ul {
+                                    margin: 0;
+                                    padding: 0;
+                                    margin-left: .5em;
+                                    margin-top: .5em;
+                                    list-style: none;
+                                    
+                                    li {
+                                        text-align: justify;
+                                        padding-bottom: .25em;
+                                    }
+                                }
+                            }
+
+                            &.projects {
+                                .project {
+                                    page-break-inside: avoid;
+                                    margin-top: .5em;
+                                    margin-left: .5em;
+                                    page-break-inside: avoid;
+                                    .overview {
+                                        padding-bottom: .5em;
+                                        .title {
+                                            font-style: italic;
+                                            font-size: 1em;
+                                            // &::before, &::after {
+                                            //     content: '"';
+                                            // }
+                                            border-right: 1px solid black;
+                                            padding-right: .5em;
+                                        }
+                                        .description {
+                                            font-size: .8em;
+                                            padding-left: .5em;
+                                        }
+                                    }
+                                    .details {
+                                        
+                                        display: flex;
+                                        flex-direction: row;
+                                        padding-left: 1em;
+                                        .technologies {
+                                            -webkit-flex-basis: 30%; /* Safari 6.1+ */
+                                            flex-basis: 30%;
+                                            border-right: 1px solid black;
+                                            padding-right: 1em;
+                                            ul {
+                                                padding: 0;
+                                                margin: 0;
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                                justify-content: space-around;
+                                                li {
+                                                    
+                                                    padding-left: .25em;
+                                                    padding-right: .25em;
+                                                    margin: .05em;
+                                                    // border: 1px solid black;
+                                                    // border-radius: 10px;
+                                                    // border-right: 1px solid black;
+                                                    list-style: none;
+                                                }
+                                            }
+                                        }
+                                        .highlights {
+                                            -webkit-flex-basis: 70%; /* Safari 6.1+ */
+                                            flex-basis: 70%;
+                                            ul {
+                                                margin: 0;
+                                                padding: 0;
+                                                padding-left: 1em;
+                                                list-style: none;
+
+                                                li {
+                                                    padding-left: .5em;
+                                                    &.callout {
+                                                        padding-left: .25em;
+                                                        border-left: .25em solid black;
+                                                        font-weight: 600;
+                                                    }
+                                                    padding-bottom: .25em;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+
+                            }
+
+
+                        }
+
+                        .references {
+                            
+                            .reference {
+                                &:first-of-type {
+                                    margin-top: .5em;
+                                }
+                                padding-bottom: 1em;
+                                .quote {
+                                    padding-left: 1em;
+                                    padding-bottom: .5em;
+                                    display: block;
+                                }
+                                .quoted {
+                                    display: block;
+                                    text-align: right;
+                                }
+                                
+                            }
+                        }
+
+                        
+                    }
+                    
+                }
+            }
+        }
+    }
+
+}
+
