@@ -53,6 +53,7 @@ body .content-body .lead {
   justify-content: center;
   margin-bottom: 2rem;
   font-size: 1.1rem;
+  page-break-after: avoid;
 }
 body .content-body .lead .statement {
   text-align: center;
@@ -66,13 +67,17 @@ body .content-body .credentials .credential > .title {
   text-align: center;
   text-transform: capitalize;
   font-variant: small-caps;
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
+  page-break-after: avoid;
 }
 body .content-body .credentials .credential .organization {
   margin-top: 1.6em;
 }
+body .content-body .credentials .credential .organization.first {
+  page-break-before: avoid;
+}
 body .content-body .credentials .credential .organization:not(.first) {
-  page-break-before: always;
+  page-break-inside: avoid;
 }
 body .content-body .credentials .credential .organization > .name {
   font-size: 1.4rem;
@@ -189,4 +194,9 @@ body .content-body .credentials .credential .organization > .position .reference
 body .content-body .credentials .credential .organization > .position .references .reference .quoted {
   display: block;
   text-align: right;
+}
+body .content-body .credentials .credential .organization > .position .references .reference.simple {
+  margin-left: .5em;
+  margin-top: .5em;
+  padding-bottom: .25em;
 }
