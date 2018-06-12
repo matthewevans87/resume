@@ -95,14 +95,8 @@ body .content-body .credentials .credential .organization .certificates .certifi
   margin-top: .5em;
   padding-bottom: 0.2em;
 }
-body .content-body .credentials .credential .organization .certificates .certificate > .details {
+body .content-body .credentials .credential .organization .certificates .certificate > .details > .title {
   font-style: italic;
-}
-body .content-body .credentials .credential .organization .certificates .certificate > .details > .title::after {
-  content: ', ';
-}
-body .content-body .credentials .credential .organization .certificates .certificate > .details > .institution::after {
-  content: ', ';
 }
 body .content-body .credentials .credential .organization > .name {
   font-size: 1.4rem;
