@@ -133,7 +133,6 @@ body .content-body .credentials .credential .organization > .position > .positio
   list-style: none;
 }
 body .content-body .credentials .credential .organization > .position > .position-section.responsibilities ul li {
-  text-align: justify;
   padding-bottom: .25em;
 }
 body .content-body .credentials .credential .organization > .position > .position-section.projects .project {
