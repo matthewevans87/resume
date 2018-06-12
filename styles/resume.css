@@ -62,6 +62,9 @@ body .content-body .lead .statement {
 body .content-body .credentials {
   margin-top: 1em;
 }
+body .content-body .credentials .credential {
+  margin-bottom: 3rem;
+}
 body .content-body .credentials .credential > .title {
   font-size: 1.8em;
   text-align: center;
@@ -78,6 +81,28 @@ body .content-body .credentials .credential .organization.first {
 }
 body .content-body .credentials .credential .organization:not(.first) {
   page-break-inside: avoid;
+}
+body .content-body .credentials .credential .organization .certificates {
+  padding-left: 1em;
+  padding-top: .5em;
+}
+body .content-body .credentials .credential .organization .certificates > .title {
+  font-size: 1.1rem;
+  font-variant: small-caps;
+}
+body .content-body .credentials .credential .organization .certificates .certificate {
+  margin-left: .5em;
+  margin-top: .5em;
+  padding-bottom: 0.2em;
+}
+body .content-body .credentials .credential .organization .certificates .certificate > .details {
+  font-style: italic;
+}
+body .content-body .credentials .credential .organization .certificates .certificate > .details > .title::after {
+  content: ', ';
+}
+body .content-body .credentials .credential .organization .certificates .certificate > .details > .institution::after {
+  content: ', ';
 }
 body .content-body .credentials .credential .organization > .name {
   font-size: 1.4rem;

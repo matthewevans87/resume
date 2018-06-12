@@ -71,6 +71,7 @@ body {
         .credentials {
             margin-top: 1em;
             .credential {
+                margin-bottom: 3rem;
                 > .title {
                     font-size: 1.8em;
                     text-align: center;
@@ -81,15 +82,43 @@ body {
                 }
 
                 .organization {
-                    
-                    
-
                     &.first{
                         page-break-before: avoid;
                     }
 
                     &:not(.first){
                         page-break-inside: avoid;
+                    }
+
+                    .certificates {
+                        >.title {
+                            font-size: 1.1rem;
+                            font-variant: small-caps;
+                        }
+                        
+                        padding-left: 1em;
+                        padding-top: .5em;
+
+                        .certificate {
+
+                            margin-left: .5em;
+                            margin-top: .5em;
+                            padding-bottom: 0.2em;
+
+                            >.details {
+                                font-style: italic;
+                                >.title {
+                                    &::after {
+                                        content: ', '
+                                    }
+                                }
+                                >.institution {
+                                    &::after {
+                                        content: ', '
+                                    }  
+                                }
+                            }
+                        }
                     }
                    
 
