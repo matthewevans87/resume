@@ -73,6 +73,9 @@ body .content-body .credentials .credential > .title {
   letter-spacing: .1em;
   page-break-after: avoid;
 }
+body .content-body .credentials .credential.education {
+  page-break-inside: avoid;
+}
 body .content-body .credentials .credential .organization {
   margin-top: 1.6em;
 }
@@ -138,6 +141,8 @@ body .content-body .credentials .credential .organization > .position > .positio
 body .content-body .credentials .credential .organization > .position > .position-section.projects .project {
   page-break-inside: avoid;
   margin-top: .5em;
+  margin-bottom: .5em;
+  padding-bottom: .5em;
   margin-left: .5em;
 }
 body .content-body .credentials .credential .organization > .position > .position-section.projects .project .overview {
@@ -146,12 +151,27 @@ body .content-body .credentials .credential .organization > .position > .positio
 body .content-body .credentials .credential .organization > .position > .position-section.projects .project .overview .title {
   font-style: italic;
   font-size: 1em;
-  border-right: 1px solid black;
-  padding-right: .5em;
 }
 body .content-body .credentials .credential .organization > .position > .position-section.projects .project .overview .description {
+  margin-left: .5em;
+  border-left: 1px solid black;
   font-size: .8em;
   padding-left: .5em;
+}
+body .content-body .credentials .credential .organization > .position > .position-section.projects .project .overview .project-position {
+  font-style: italic;
+  margin-top: .5em;
+  display: block;
+  font-size: .8em;
+  padding-left: .25em;
+  border-left: .25em solid black;
+}
+body .content-body .credentials .credential .organization > .position > .position-section.projects .project .overview .date {
+  font-style: italic;
+  margin-top: .5em;
+  display: block;
+  font-size: .8em;
+  padding-left: .25em;
 }
 body .content-body .credentials .credential .organization > .position > .position-section.projects .project .details {
   display: flex;

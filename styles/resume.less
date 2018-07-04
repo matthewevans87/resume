@@ -81,6 +81,9 @@ body {
                     page-break-after: avoid;
                 }
 
+                &.education {
+                    page-break-inside: avoid;
+                }
                 .organization {
                     &.first{
                         page-break-before: avoid;
@@ -168,21 +171,36 @@ body {
                                 .project {
                                     page-break-inside: avoid;
                                     margin-top: .5em;
+                                    margin-bottom: .5em;
+                                    padding-bottom: .5em;
                                     margin-left: .5em;
                                     .overview {
                                         padding-bottom: .5em;
                                         .title {
                                             font-style: italic;
                                             font-size: 1em;
-                                            // &::before, &::after {
-                                            //     content: '"';
-                                            // }
-                                            border-right: 1px solid black;
-                                            padding-right: .5em;
                                         }
                                         .description {
+                                            padding-left: .5em;
+                                            margin-left: .5em;
+                                            border-left: 1px solid black;
                                             font-size: .8em;
                                             padding-left: .5em;
+                                        }
+                                        .project-position {
+                                            font-style: italic;
+                                            margin-top: .5em;
+                                            display: block;
+                                            font-size: .8em;
+                                            padding-left: .25em;
+                                            border-left: .25em solid black;
+                                        }
+                                        .date {
+                                            font-style: italic;
+                                            margin-top: .5em;
+                                            display: block;
+                                            font-size: .8em;
+                                            padding-left: .25em;
                                         }
                                     }
                                     .details {
