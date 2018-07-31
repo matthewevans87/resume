@@ -17,6 +17,26 @@
                 padding-top: .5em;
             }
         }
+
+        .credentials {
+            .credential {
+                page-break-inside: avoid;
+
+                &.education {
+                    page-break-inside: avoid;
+                    page-break-before: avoid;
+                }
+
+                .title
+                {
+                    page-break-inside: avoid;
+                    page-break-after: avoid;
+                }
+
+                .organization {
+                }
+            }
+        }
     }
     .content-header {
         .name {
