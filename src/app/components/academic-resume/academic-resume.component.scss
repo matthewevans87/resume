@@ -1,0 +1,28 @@
+    .content-body {
+        .objective, .personal-profile {
+            padding-left: 1em;
+            padding-top: .5em;
+            margin-bottom: 3rem;
+            .title {
+                font-size: 1.1rem;
+                font-variant: small-caps;
+            }
+
+            .personal-statement {
+                text-align: center;
+            }
+
+            .statement {
+                padding-left: 1em;
+                padding-top: .5em;
+            }
+        }
+    }
+    .content-header {
+        .name {
+            letter-spacing: .05em;
+        }
+        .contact {
+            padding: 0 5em 0 5em;
+        }
+    }
