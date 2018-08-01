@@ -33,7 +33,16 @@
                     page-break-after: avoid;
                 }
 
-                .organization {
+                .references {
+                    .contacts {
+                        .contact {
+                            display: block;
+                            .type {
+                                font-weight: bold;
+                                padding-right: 1em;
+                            }
+                        }
+                    }
                 }
             }
         }
