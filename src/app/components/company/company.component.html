@@ -1,0 +1,11 @@
+<div class="organization">
+  <div class="name">
+    <span><a [href]="company.url"
+         target="_blank">{{company.name}}</a></span>
+    <span *ngIf="company.city">, {{company.city}}</span>
+    <span *ngIf="company.state">, {{company.state}}</span>
+  </div>
+  <app-position *ngFor="let position of company.positions"
+                [position]="position"></app-position>
+
+</div>

@@ -1,0 +1,26 @@
+.reference {
+  &:first-of-type {
+    margin-top: .5em;
+  }
+
+  padding-bottom: 1em;
+
+  .quote {
+    padding-left: 1em;
+    padding-bottom: .5em;
+    display: block;
+  }
+
+  .quoted {
+    display: block;
+    text-align: right;
+  }
+
+
+  &.simple {
+    margin-left: .5em;
+    margin-top: .5em;
+    padding-bottom: .25em;
+  }
+
+}

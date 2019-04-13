@@ -1,0 +1,34 @@
+<div class="position">
+  <div class="details">
+    <span class="title">{{position.name}}
+      <span *ngIf="position.team"> | {{position.team}}</span>
+    </span>
+    <span class="timeframe">
+      <span *ngIf="position.startYear">
+        {{position.startYear}}
+        <span *ngIf="position.endYear"> - {{position.endYear}}</span>
+      </span>
+    </span>
+  </div>
+  <div class="responsibilities position-section"
+       *ngIf="position.responsibilities">
+    <span class="title">Responsibilities</span>
+    <ul>
+      <li *ngFor="let responsibility of position.responsibilities">
+        <app-responsibility [responsibility]="responsibility"></app-responsibility>
+      </li>
+    </ul>
+  </div>
+  <div class="projects position-section"
+       *ngIf="position.projects">
+    <span class="title">Projects</span>
+    <app-project *ngFor="let project of position.projects"
+                 [project]="project"></app-project>
+  </div>
+  <div class="references position-section"
+       *ngIf="position.testimonials">
+    <span class="title">Testimonials</span>
+    <app-testimonial *ngFor="let testimonial of position.testimonials"
+                     [testimonial]="testimonial"></app-testimonial>
+  </div>
+</div>

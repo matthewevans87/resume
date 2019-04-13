@@ -1,0 +1,706 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "candidate",
+    "leadStatements",
+    "companies",
+    "institutions",
+    "additionalExperience"
+  ],
+  "properties": {
+    "candidate": {
+      "$id": "#/properties/candidate",
+      "type": "object",
+      "title": "The Candidate Schema",
+      "required": [
+        "name",
+        "location",
+        "locationUrl",
+        "phoneNumber",
+        "emailAddress"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/candidate/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [
+            "Matthew Evans"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "location": {
+          "$id": "#/properties/candidate/properties/location",
+          "type": "string",
+          "title": "The Location Schema",
+          "default": "",
+          "examples": [
+            "Richardson / Plano / Remote"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "locationUrl": {
+          "$id": "#/properties/candidate/properties/locationUrl",
+          "type": "string",
+          "title": "The Locationurl Schema",
+          "default": "",
+          "examples": [
+            "https://drive.google.com/open?id=1ZhWrL9GIoy0y5TSgQhOacgPGIsHM1oJS&usp=sharing"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "phoneNumber": {
+          "$id": "#/properties/candidate/properties/phoneNumber",
+          "type": "string",
+          "title": "The Phonenumber Schema",
+          "default": "",
+          "examples": [
+            "(214) 674 - 0842"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "emailAddress": {
+          "$id": "#/properties/candidate/properties/emailAddress",
+          "type": "string",
+          "title": "The Emailaddress Schema",
+          "default": "",
+          "examples": [
+            "matthewevans87@gmail.com"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "leadStatements": {
+      "$id": "#/properties/leadStatements",
+      "type": "array",
+      "title": "The Leadstatements Schema",
+      "items": {
+        "$id": "#/properties/leadStatements/items",
+        "type": "string",
+        "title": "The Items Schema",
+        "default": "",
+        "examples": [
+          "Full-stack Software Engineer with a passion for learning",
+          "10 years’ experience developing enterprise web applications with Microsoft technology stack",
+          "Seeking opportunity to solve complex problems in interesting domains using computer science techniques"
+        ],
+        "pattern": "^(.*)$"
+      }
+    },
+    "companies": {
+      "$id": "#/properties/companies",
+      "type": "array",
+      "title": "The Companies Schema",
+      "items": {
+        "$id": "#/properties/companies/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "name",
+          "city",
+          "state",
+          "url",
+          "positions"
+        ],
+        "properties": {
+          "name": {
+            "$id": "#/properties/companies/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "Clean Harbors, Inc."
+            ],
+            "pattern": "^(.*)$"
+          },
+          "city": {
+            "$id": "#/properties/companies/items/properties/city",
+            "type": "string",
+            "title": "The City Schema",
+            "default": "",
+            "examples": [
+              "Richardson"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "state": {
+            "$id": "#/properties/companies/items/properties/state",
+            "type": "string",
+            "title": "The State Schema",
+            "default": "",
+            "examples": [
+              "Texas"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "url": {
+            "$id": "#/properties/companies/items/properties/url",
+            "type": "string",
+            "title": "The Url Schema",
+            "default": "",
+            "examples": [
+              "https://www.cleanharbors.com/"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "positions": {
+            "$id": "#/properties/companies/items/properties/positions",
+            "type": "array",
+            "title": "The Positions Schema",
+            "items": {
+              "$id": "#/properties/companies/items/properties/positions/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "name",
+                "team",
+                "startYear",
+                "endYear",
+                "responsibilities",
+                "testimonials",
+                "projects"
+              ],
+              "properties": {
+                "name": {
+                  "$id": "#/properties/companies/items/properties/positions/items/properties/name",
+                  "type": "string",
+                  "title": "The Name Schema",
+                  "default": "",
+                  "examples": [
+                    "Sr. Software Engineer"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "team": {
+                  "$id": "#/properties/companies/items/properties/positions/items/properties/team",
+                  "type": "string",
+                  "title": "The Team Schema",
+                  "default": "",
+                  "examples": [
+                    "Business Analytics and Insights"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "startYear": {
+                  "$id": "#/properties/companies/items/properties/positions/items/properties/startYear",
+                  "type": "integer",
+                  "title": "The Startyear Schema",
+                  "default": 0,
+                  "examples": [
+                    2013
+                  ]
+                },
+                "endYear": {
+                  "$id": "#/properties/companies/items/properties/positions/items/properties/endYear",
+                  "type": "integer",
+                  "title": "The Endyear Schema",
+                  "default": 0,
+                  "examples": [
+                    2018
+                  ]
+                },
+                "responsibilities": {
+                  "$id": "#/properties/companies/items/properties/positions/items/properties/responsibilities",
+                  "type": "array",
+                  "title": "The Responsibilities Schema",
+                  "items": {
+                    "$id": "#/properties/companies/items/properties/positions/items/properties/responsibilities/items",
+                    "type": "object",
+                    "title": "The Items Schema",
+                    "required": [
+                      "description"
+                    ],
+                    "properties": {
+                      "description": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/responsibilities/items/properties/description",
+                        "type": "string",
+                        "title": "The Description Schema",
+                        "default": "",
+                        "examples": [
+                          "Full stack design, development, deployment and maintenance of enterprise web applications, web services (APIs) and databases relied on by thousands of users in a $3B+ company"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  }
+                },
+                "testimonials": {
+                  "$id": "#/properties/companies/items/properties/positions/items/properties/testimonials",
+                  "type": "array",
+                  "title": "The Testimonials Schema",
+                  "items": {
+                    "$id": "#/properties/companies/items/properties/positions/items/properties/testimonials/items",
+                    "type": "object",
+                    "title": "The Items Schema",
+                    "required": [
+                      "body",
+                      "author",
+                      "authorUrl",
+                      "position",
+                      "team",
+                      "company"
+                    ],
+                    "properties": {
+                      "body": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/testimonials/items/properties/body",
+                        "type": "string",
+                        "title": "The Body Schema",
+                        "default": "",
+                        "examples": [
+                          "Matt has worked with our organization on several projects and has always provided clear and precise communication. His depth of knowledge on various subjects and his ability to research new solutions has been a great asset. Matt has a diverse skill set which can always be relied upon to provide multiple solutions to the range of technical and analytical problems we’ve faced. He has been a highly valued asset and we would gladly work with him again."
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "author": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/testimonials/items/properties/author",
+                        "type": "string",
+                        "title": "The Author Schema",
+                        "default": "",
+                        "examples": [
+                          "George Curtis"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "authorUrl": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/testimonials/items/properties/authorUrl",
+                        "type": "string",
+                        "title": "The Authorurl Schema",
+                        "default": "",
+                        "examples": [
+                          "https://www.reuters.com/finance/stocks/officer-profile/CLH/190188"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "position": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/testimonials/items/properties/position",
+                        "type": "string",
+                        "title": "The Position Schema",
+                        "default": "",
+                        "examples": [
+                          "Executive Vice President"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "team": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/testimonials/items/properties/team",
+                        "type": "string",
+                        "title": "The Team Schema",
+                        "default": "",
+                        "examples": [
+                          "Product Pricing and Proposals"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "company": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/testimonials/items/properties/company",
+                        "type": "string",
+                        "title": "The Company Schema",
+                        "default": "",
+                        "examples": [
+                          "Clean Harbors, Inc."
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  }
+                },
+                "projects": {
+                  "$id": "#/properties/companies/items/properties/positions/items/properties/projects",
+                  "type": "array",
+                  "title": "The Projects Schema",
+                  "items": {
+                    "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items",
+                    "type": "object",
+                    "title": "The Items Schema",
+                    "required": [
+                      "title",
+                      "subTitle",
+                      "description",
+                      "distinguishedAttributes",
+                      "technologyNames",
+                      "accomplishments"
+                    ],
+                    "properties": {
+                      "title": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/title",
+                        "type": "string",
+                        "title": "The Title Schema",
+                        "default": "",
+                        "examples": [
+                          "Performance-Plus Deal Calculator"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "subTitle": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/subTitle",
+                        "type": "string",
+                        "title": "The Subtitle Schema",
+                        "default": "",
+                        "examples": [
+                          ""
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "description": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/description",
+                        "type": "string",
+                        "title": "The Description Schema",
+                        "default": "",
+                        "examples": [
+                          "Service Level Agreement Profitability Calculator Responsive Web Application"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "distinguishedAttributes": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/distinguishedAttributes",
+                        "type": "array",
+                        "title": "The Distinguishedattributes Schema",
+                        "items": {
+                          "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/distinguishedAttributes/items",
+                          "type": "string",
+                          "title": "The Items Schema",
+                          "default": "",
+                          "examples": [
+                            "Lead Developer",
+                            "Remote"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      },
+                      "technologyNames": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/technologyNames",
+                        "type": "array",
+                        "title": "The Technologynames Schema",
+                        "items": {
+                          "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/technologyNames/items",
+                          "type": "string",
+                          "title": "The Items Schema",
+                          "default": "",
+                          "examples": [
+                            "TypeScript",
+                            "ASP.NET Core Web API",
+                            "C#",
+                            "Angular 4",
+                            "RxJS",
+                            "LESS",
+                            "Webpack",
+                            "Bootstrap",
+                            "T-SQL",
+                            "SQL Server 2012"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      },
+                      "accomplishments": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/accomplishments",
+                        "type": "array",
+                        "title": "The Accomplishments Schema",
+                        "items": {
+                          "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/accomplishments/items",
+                          "type": "object",
+                          "title": "The Items Schema",
+                          "required": [
+                            "description"
+                          ],
+                          "properties": {
+                            "description": {
+                              "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/accomplishments/items/properties/description",
+                              "type": "string",
+                              "title": "The Description Schema",
+                              "default": "",
+                              "examples": [
+                                "Designed and implemented responsive SPA enabling sales team to quickly evaluate the profitability of existing and hypothetical customer agreements, either in office or on-site with customer"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "institutions": {
+      "$id": "#/properties/institutions",
+      "type": "array",
+      "title": "The Institutions Schema",
+      "items": {
+        "$id": "#/properties/institutions/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "name",
+          "city",
+          "state",
+          "url",
+          "certificates"
+        ],
+        "properties": {
+          "name": {
+            "$id": "#/properties/institutions/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "University Of Texas At Dallas"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "city": {
+            "$id": "#/properties/institutions/items/properties/city",
+            "type": "string",
+            "title": "The City Schema",
+            "default": "",
+            "examples": [
+              "Richardson"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "state": {
+            "$id": "#/properties/institutions/items/properties/state",
+            "type": "string",
+            "title": "The State Schema",
+            "default": "",
+            "examples": [
+              "Texas"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "url": {
+            "$id": "#/properties/institutions/items/properties/url",
+            "type": "string",
+            "title": "The Url Schema",
+            "default": "",
+            "examples": [
+              "https://www.utdallas.edu/"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "certificates": {
+            "$id": "#/properties/institutions/items/properties/certificates",
+            "type": "array",
+            "title": "The Certificates Schema",
+            "items": {
+              "$id": "#/properties/institutions/items/properties/certificates/items",
+              "type": "object",
+              "title": "The Items Schema",
+              "required": [
+                "type",
+                "certName",
+                "certUrl",
+                "school",
+                "schoolUrl",
+                "date"
+              ],
+              "properties": {
+                "type": {
+                  "$id": "#/properties/institutions/items/properties/certificates/items/properties/type",
+                  "type": "string",
+                  "title": "The Type Schema",
+                  "default": "",
+                  "examples": [
+                    "Degrees"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "certName": {
+                  "$id": "#/properties/institutions/items/properties/certificates/items/properties/certName",
+                  "type": "string",
+                  "title": "The Certname Schema",
+                  "default": "",
+                  "examples": [
+                    "Bachelor of Science in Computer Science"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "certUrl": {
+                  "$id": "#/properties/institutions/items/properties/certificates/items/properties/certUrl",
+                  "type": "string",
+                  "title": "The Certurl Schema",
+                  "default": "",
+                  "examples": [
+                    "https://cs.utdallas.edu/education/undergraduate/"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "school": {
+                  "$id": "#/properties/institutions/items/properties/certificates/items/properties/school",
+                  "type": "string",
+                  "title": "The School Schema",
+                  "default": "",
+                  "examples": [
+                    "The Erik Johnson School of Engineering and Computer Science"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "schoolUrl": {
+                  "$id": "#/properties/institutions/items/properties/certificates/items/properties/schoolUrl",
+                  "type": "string",
+                  "title": "The Schoolurl Schema",
+                  "default": "",
+                  "examples": [
+                    "https://engineering.utdallas.edu/"
+                  ],
+                  "pattern": "^(.*)$"
+                },
+                "date": {
+                  "$id": "#/properties/institutions/items/properties/certificates/items/properties/date",
+                  "type": "string",
+                  "title": "The Date Schema",
+                  "default": "",
+                  "examples": [
+                    "May 2012"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "additionalExperience": {
+      "$id": "#/properties/additionalExperience",
+      "type": "object",
+      "title": "The Additionalexperience Schema",
+      "required": [
+        "personalProjects"
+      ],
+      "properties": {
+        "personalProjects": {
+          "$id": "#/properties/additionalExperience/properties/personalProjects",
+          "type": "array",
+          "title": "The Personalprojects Schema",
+          "items": {
+            "$id": "#/properties/additionalExperience/properties/personalProjects/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": [
+              "title",
+              "subTitle",
+              "description",
+              "distinguishedAttributes",
+              "accomplishments",
+              "technologyNames"
+            ],
+            "properties": {
+              "title": {
+                "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/title",
+                "type": "string",
+                "title": "The Title Schema",
+                "default": "",
+                "examples": [
+                  ""
+                ],
+                "pattern": "^(.*)$"
+              },
+              "subTitle": {
+                "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/subTitle",
+                "type": "string",
+                "title": "The Subtitle Schema",
+                "default": "",
+                "examples": [
+                  ""
+                ],
+                "pattern": "^(.*)$"
+              },
+              "description": {
+                "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/description",
+                "type": "string",
+                "title": "The Description Schema",
+                "default": "",
+                "examples": [
+                  ""
+                ],
+                "pattern": "^(.*)$"
+              },
+              "distinguishedAttributes": {
+                "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/distinguishedAttributes",
+                "type": "array",
+                "title": "The Distinguishedattributes Schema"
+              },
+              "accomplishments": {
+                "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/accomplishments",
+                "type": "array",
+                "title": "The Accomplishments Schema",
+                "items": {
+                  "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/accomplishments/items",
+                  "type": "object",
+                  "title": "The Items Schema",
+                  "required": [
+                    "description",
+                    "children"
+                  ],
+                  "properties": {
+                    "description": {
+                      "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/accomplishments/items/properties/description",
+                      "type": "string",
+                      "title": "The Description Schema",
+                      "default": "",
+                      "examples": [
+                        ""
+                      ],
+                      "pattern": "^(.*)$"
+                    },
+                    "children": {
+                      "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/accomplishments/items/properties/children",
+                      "type": "array",
+                      "title": "The Children Schema",
+                      "items": {
+                        "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/accomplishments/items/properties/children/items",
+                        "type": "object",
+                        "title": "The Items Schema",
+                        "required": [
+                          "description"
+                        ],
+                        "properties": {
+                          "description": {
+                            "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/accomplishments/items/properties/children/items/properties/description",
+                            "type": "string",
+                            "title": "The Description Schema",
+                            "default": "",
+                            "examples": [
+                              ""
+                            ],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "technologyNames": {
+                "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/technologyNames",
+                "type": "array",
+                "title": "The Technologynames Schema",
+                "items": {
+                  "$id": "#/properties/additionalExperience/properties/personalProjects/items/properties/technologyNames/items",
+                  "type": "string",
+                  "title": "The Items Schema",
+                  "default": "",
+                  "examples": [
+                    "tech 1",
+                    "tech 2"
+                  ],
+                  "pattern": "^(.*)$"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

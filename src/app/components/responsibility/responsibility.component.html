@@ -1,0 +1,4 @@
+  {{responsibility.description}}
+  <ul *ngFor="let childResponsibility of responsibility.children">
+    <app-responsibility [responsibility]="childResponsibility"></app-responsibility>
+  </ul>

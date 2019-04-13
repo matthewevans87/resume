@@ -1,0 +1,7 @@
+<li>
+  {{accomplishment.description}}
+  <ul *ngIf="accomplishment.children">
+    <app-accomplishment *ngFor="let childAccomplishment of accomplishment.children"
+                        [accomplishment]="childAccomplishment"></app-accomplishment>
+  </ul>
+</li>

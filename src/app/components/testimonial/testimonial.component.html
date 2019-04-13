@@ -1,0 +1,13 @@
+<div class="reference">
+  <div class="quote">
+    "{{testimonial.body}}"
+  </div>
+  <div class="quoted">
+    —
+    <a [href]="testimonial.authorUrl"
+       target="_blank">{{testimonial.author}}</a>
+    <span *ngIf="testimonial.position"> | {{testimonial.position}}</span>
+    <span *ngIf="testimonial.team">, {{testimonial.team}}</span>
+    <span *ngIf="testimonial.company">, {{testimonial.company}}</span>
+  </div>
+</div>

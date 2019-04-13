@@ -1,0 +1,33 @@
+<div class="organization">
+  <div class="name">
+    <span><a [href]="institution.url"
+         target="_blank">{{institution.name}}</a><span *ngIf="institution.city">, {{institution.city}}</span><span
+            *ngIf="institution.state">, {{institution.state}}</span></span>
+  </div>
+
+
+  <div class="certificates"
+       *ngFor="let certsByType of certificatesByType">
+    <div class="title">
+      {{certsByType.type}}
+    </div>
+    <div class="certificate"
+         *ngFor="let certificate of certsByType.certificates">
+      <div class="details">
+        <span class="title"
+              *ngIf="certificate.certName">
+          <a [href]="certificate.certUrl"
+             target="_blank">{{certificate.certName}}</a>
+        </span>
+        <span *ngIf="certificate.school">,
+          <span class="institution">
+            <a [href]="certificate.schoolUrl"
+               target="_blank">{{certificate.school}}</a>
+          </span>
+        </span>
+        <span *ngIf="certificate.date">, <span class="timeframe">{{certificate.date}}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="project">
+  <div class="overview">
+    <span class="title">{{project.title}}<span *ngIf="project.subTitle"> <small>{{project.subTitle}}</small></span>
+    </span>
+    <span class="description">{{project.description}}</span>
+    <span class="project-position"
+          *ngIf="project.distinguishedAttributes">
+      {{project.distinguishedAttributes.join(', ')}}
+    </span>
+  </div>
+  <div class="details">
+    <div class="technologies"
+         *ngIf="technologies$ | async as technologies">
+      <ul class="">
+        <li *ngFor="let technology of technologies">
+          <a [href]="technology.url"
+             target="_blank">{{technology.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="highlights"
+         *ngIf="project.accomplishments">
+      <ul>
+        <app-accomplishment *ngFor="let accomplishment of project.accomplishments"
+                            [accomplishment]="accomplishment"></app-accomplishment>
+      </ul>
+    </div>
+  </div>
+</div>
