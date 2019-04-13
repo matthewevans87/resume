@@ -15,6 +15,7 @@ import { ResponsibilityComponent } from './components/responsibility/responsibil
 import { TechnologyComponent } from './components/technology/technology.component';
 import { TermComponent } from './components/term/term.component';
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
+import { AdditionalExperienceComponent } from './components/additional-experience/additional-experience.component';
 
 
 const appRoutes: Routes = [
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
         CompanyComponent,
         InstitutionComponent,
         CertificateComponent,
-        ResponsibilityComponent
+        ResponsibilityComponent,
+        AdditionalExperienceComponent
     ],
     imports: [
         RouterModule.forRoot(

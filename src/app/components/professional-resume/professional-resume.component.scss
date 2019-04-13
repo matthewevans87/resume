@@ -1,7 +1,65 @@
-.content-body {
-    .lead {
-        .statement {
-            margin-bottom: 0.8em;
-        }
+.content-header {
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: solid 1px black;
+
+  .name {
+    font-size: 4rem;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+    .contact-entry {
+      font-size: 1rem;
     }
+  }
+}
+
+.content-body {
+  .lead {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    page-break-after: avoid;
+
+    .statement {
+      margin-bottom: 0.8em;
+      text-align: center;
+      padding: 0rem;
+    }
+
+  }
+
+  .credentials {
+    margin-top: 1em;
+
+    .credential {
+      margin-bottom: 3rem;
+
+      >.title {
+        font-size: 1.8em;
+        text-align: center;
+        text-transform: capitalize;
+        font-variant: small-caps;
+        letter-spacing: .1em;
+        page-break-after: avoid;
+      }
+
+
+      &.education {
+        page-break-inside: avoid;
+      }
+
+    }
+  }
 }

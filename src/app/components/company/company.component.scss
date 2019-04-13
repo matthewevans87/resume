@@ -9,4 +9,12 @@
     text-align: center;
 
   }
+
+  &.first {
+    page-break-before: avoid;
+  }
+
+  &:not(.first) {
+    page-break-inside: avoid;
+  }
 }

@@ -37,8 +37,9 @@
           Professional Experience
         </div>
 
-        <app-company *ngFor="let company of resume.companies"
-                     [company]="company"></app-company>
+        <app-company *ngFor="let company of resume.companies; index as i"
+                     [company]="company"
+                     [isFirst]="i==0"></app-company>
       </div>
 
       <div class="credential education"
@@ -50,22 +51,9 @@
                          [institution]="institution"></app-institution>
       </div>
 
-      <div class="credential additional-experience"
-           *ngIf="resume.additionalExperience">
-        <div class="title">
-          Additional Experience
-        </div>
-        <div class="organization first">
-          <div class="position">
-            <div class="projects position-section"
-                 *ngIf="resume.additionalExperience.personalProjects">
-              <span class="title">Personal Projects</span>
-              <app-project *ngFor="let project of resume.additionalExperience.personalProjects"
-                           [project]="project"></app-project>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-additional-experience *ngIf="resume.additionalExperience"
+                                 [additionalExperience]="resume.additionalExperience"></app-additional-experience>
+
     </div>
   </div>
 </div>

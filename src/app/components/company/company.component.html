@@ -1,4 +1,5 @@
-<div class="organization">
+<div class="organization"
+     [ngClass]="{'first': isFirst}">
   <div class="name">
     <span><a [href]="company.url"
          target="_blank">{{company.name}}</a></span>

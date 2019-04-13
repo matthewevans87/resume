@@ -1,0 +1,13 @@
+<div class="credential additional-experience">
+  <div class="title">Additional Experience</div>
+  <div class="organization first">
+    <div class="position">
+      <div class="projects position-section"
+           *ngIf="additionalExperience.personalProjects">
+        <span class="title">Personal Projects</span>
+        <app-project *ngFor="let project of additionalExperience.personalProjects"
+                     [project]="project"></app-project>
+      </div>
+    </div>
+  </div>
+</div>
