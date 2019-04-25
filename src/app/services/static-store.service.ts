@@ -35,7 +35,7 @@ export class StaticStoreService {
                     map(terms => {
                         const termsDictionary: { [termName: string]: Term } = {};
                         terms.forEach(term => {
-                            termsDictionary[term.name] = term;
+                            termsDictionary[term.name.toLowerCase()] = term;
                         });
                         return termsDictionary;
                     })
@@ -44,4 +44,6 @@ export class StaticStoreService {
         }
         return this.termsDictionary$;
     }
+
+
 }

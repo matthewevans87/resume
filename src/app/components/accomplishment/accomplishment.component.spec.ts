@@ -3,23 +3,26 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AccomplishmentComponent } from './accomplishment.component';
 
 describe('AccomplishmentComponent', () => {
-  let component: AccomplishmentComponent;
-  let fixture: ComponentFixture<AccomplishmentComponent>;
+    let component: AccomplishmentComponent;
+    let fixture: ComponentFixture<AccomplishmentComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AccomplishmentComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [AccomplishmentComponent]
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AccomplishmentComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AccomplishmentComponent);
+        component = fixture.componentInstance;
+        component.accomplishment = {
+            description: 'way to go!'
+        };
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

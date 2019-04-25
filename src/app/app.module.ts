@@ -20,7 +20,6 @@ import { AdditionalExperienceComponent } from './components/additional-experienc
 
 const appRoutes: Routes = [
     { path: 'professional', component: ProfessionalResumeComponent },
-    { path: 'academic', component: AcademicResumeComponent },
     {
         path: '',
         redirectTo: '/professional',
