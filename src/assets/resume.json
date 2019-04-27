@@ -13,6 +13,27 @@
     "Seeking opportunity to solve complex problems in interesting domains using computer science techniques"
   ],
   "companies": [{
+      "name": "HKS, Inc.",
+      "city": "Dallas",
+      "state": "Texas",
+      "url": "https://www.hksinc.com/",
+      "positions": [{
+        "name": "Sr. Software Engineer",
+        "startYear": 2018,
+        "team": "Business Systems",
+        "responsibilities": [{
+            "description": "Full stack design, development, deployment and maintenance of enterprise web applications, web services (APIs) and databases relied on by a firm with over 1,300 architects"
+          },
+          {
+            "description": "Researching, evaluating, designing and implementing systems and ad hoc solutions for various departments"
+          },
+          {
+            "description": "Managing and mentoring and junior software developers"
+          }
+        ]
+      }]
+    },
+    {
       "name": "Clean Harbors, Inc.",
       "city": "Richardson",
       "state": "Texas",
@@ -412,6 +433,7 @@
         "name": "Software Engineer Intern",
         "team": "Projects Team",
         "startYear": 2008,
+        "endYear": 2008,
         "projects": [{
           "title": "Print-to-Media",
           "description": "Virtual Printer Driver",

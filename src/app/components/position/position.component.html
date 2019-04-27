@@ -6,7 +6,8 @@
     <span class="timeframe">
       <span *ngIf="position.startYear">
         {{position.startYear}}
-        <span *ngIf="position.endYear"> - {{position.endYear}}</span>
+        <span *ngIf="position.endYear && position.endYear != position.startYear"> - {{position.endYear}}</span>
+        <span *ngIf="position.endYear == null"> - Present</span>
       </span>
     </span>
   </div>
