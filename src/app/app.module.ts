@@ -16,6 +16,7 @@ import { TechnologyComponent } from './components/technology/technology.componen
 import { TermComponent } from './components/term/term.component';
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
 import { AdditionalExperienceComponent } from './components/additional-experience/additional-experience.component';
+import { StackExchangeAccomplishmentComponent } from './components/stack-exchange-accomplishment/stack-exchange-accomplishment.component';
 
 
 const appRoutes: Routes = [
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
         InstitutionComponent,
         CertificateComponent,
         ResponsibilityComponent,
-        AdditionalExperienceComponent
+        AdditionalExperienceComponent,
+        StackExchangeAccomplishmentComponent
     ],
     imports: [
         RouterModule.forRoot(

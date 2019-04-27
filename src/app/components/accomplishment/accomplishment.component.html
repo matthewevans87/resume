@@ -1,5 +1,5 @@
 <li>
-  {{accomplishment.description}}
+  <span [innerHtml]="accomplishmentDescription$ | async"></span>
   <ul *ngIf="accomplishment.children">
     <app-accomplishment *ngFor="let childAccomplishment of accomplishment.children"
                         [accomplishment]="childAccomplishment"></app-accomplishment>

@@ -69,28 +69,68 @@ describe('TermLinkGenerationService', () => {
 
         const termsDictionary: { [termName: string]: Term } = {};
         termsDictionary['c#'] = {
-            name: 'C#'
+            name: 'C#',
+            url: 'csharpurl'
         };
         termsDictionary['typescript'] = {
-            name: 'TypeScript'
+            name: 'TypeScript',
+            url: 'typescripturl'
         };
 
         const staticStoreService: StaticStoreService = TestBed.get(StaticStoreService);
-        const service: TermLinkGenerationService = TestBed.get(TermLinkGenerationService);
-
         spyOn(staticStoreService, 'getTermsDictionary').and.returnValue(of(termsDictionary));
 
-        const text = 'Bob said C# and ASP.NET Core Web API are both good.';
+        const service: TermLinkGenerationService = TestBed.get(TermLinkGenerationService);
+
+
+        const text = 'Bob said C# and TypeScript are both good.';
         const linkedText = service.InjectLinksForTerms(text);
 
         linkedText.toPromise().then(
             (resolve) => {
-                expect(resolve).toEqual('Bob said <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"> C# </a> and <a href="https://github.com/aspnet/Mvc"> ASP.NET Core Web API </a> are both good.');
+                expect(resolve).toEqual('Bob said <a href="csharpurl" target="_blank">C#</a> and <a href="typescripturl" target="_blank">TypeScript</a> are both good.');
                 done();
             },
             (reject) => { }
         );
 
     });
+
+
+    it('should termify text', (done) => {
+
+        const inputString = 'Implemented patent US7050803B2; application visualized cell network sectors and automatically calculated sector neighbors in a given geographic region';
+
+        const termsDictionary: { [termName: string]: Term } = {};
+        termsDictionary['c#'] = {
+            name: 'US7050803B2',
+            url: 'US7050803B2url'
+        };
+
+        let expected = inputString;
+        Object.getOwnPropertyNames(termsDictionary)
+            .forEach(term => {
+                expected = expected.replace(
+                    termsDictionary[term].name,
+                    `<a href="${termsDictionary[term].url}" target="_blank">${termsDictionary[term].name}</a>`
+                );
+            });
+
+        const staticStoreService: StaticStoreService = TestBed.get(StaticStoreService);
+        spyOn(staticStoreService, 'getTermsDictionary').and.returnValue(of(termsDictionary));
+        const termLinkGenerationService: TermLinkGenerationService = TestBed.get(TermLinkGenerationService);
+        const linkedText = termLinkGenerationService.InjectLinksForTerms(inputString);
+
+        linkedText.toPromise().then(
+            (resolve) => {
+                expect(resolve).toEqual(expected);
+                done();
+            },
+            (reject) => { }
+        );
+
+    });
+
+
 
 });

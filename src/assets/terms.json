@@ -519,11 +519,19 @@
     "url": "https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance"
   },
   {
+    "name": "Jaro-Winkler",
+    "url": "https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance"
+  },
+  {
     "name": "ETL process",
     "url": "https://en.wikipedia.org/wiki/Extract,_transform,_load"
   },
   {
     "name": "Environmental Protection Agency",
+    "url": "https://www.epa.gov/"
+  },
+  {
+    "name": "EPA",
     "url": "https://www.epa.gov/"
   },
   {

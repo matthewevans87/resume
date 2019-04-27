@@ -25,7 +25,7 @@ export class TermLinkGenerationService {
 
     }
 
-    public InjectLinksForTerms(text: string): Observable<string> {
+    public InjectLinksForTerms(text: string, anchorTarget?: string): Observable<string> {
         return this.sortedTerms
             .pipe(
                 map(sortedTerms => {
@@ -65,10 +65,12 @@ export class TermLinkGenerationService {
                         }
                     }
 
-                    matchingTerms.sort((a, b) => b.startIdx - a.startIdx).forEach(matchingTerm => {
-                        const extracted = words.splice(matchingTerm.startIdx, matchingTerm.endIdx - matchingTerm.startIdx);
-                        words.splice(matchingTerm.startIdx, 0, ...[`<a href="${matchingTerm.term.url}">`, ...extracted, '</a>']);
-                    });
+                    matchingTerms
+                        .sort((a, b) => b.startIdx - a.startIdx)
+                        .forEach(matchingTerm => {
+                            const extracted = words.splice(matchingTerm.startIdx, matchingTerm.endIdx - matchingTerm.startIdx);
+                            words.splice(matchingTerm.startIdx, 0, ...[`<a href="${matchingTerm.term.url}" target="${anchorTarget || '_blank'}">${extracted.join(' ')}</a>`]);
+                        });
 
                     const result = words.join(' ');
 

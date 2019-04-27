@@ -375,18 +375,6 @@
             "accomplishments": [{
               "description": "Developed web-based staffing and resource management tool enabling managers to identify department resources, subject matter experts, and underutilized personnel"
             }]
-          },
-          {
-            "title": "Network Presentation Tool",
-            "description": "Web Dashboard Application",
-            "distinguishedAttributes": ["Lead Developer"],
-            "technologyNames": ["C#",
-              "T-SQL",
-              "ASP.NET"
-            ],
-            "accomplishments": [{
-              "description": "Developed interactive web map visualizing cellular network sites with diagnostic data"
-            }]
           }
         ]
       }]

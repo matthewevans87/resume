@@ -1,0 +1,39 @@
+<div class="organization"
+     *ngIf="stackExchangeUser$ | async as stackExchangeUser">
+  <div class="name">
+
+  </div>
+
+  <div class="certificates"
+       *ngFor="let item of stackExchangeUser.items">
+    <div class="title">
+      <span><a href="{{item.link}}"
+           target="_blank">StackOverflow</a></span>
+    </div>
+    <div class="certificate">
+      <div class="details">
+        <span class="username"><a href="{{item.link}}"
+             target="_blank">{{item.display_name}}</a></span>
+        <span class="section reputation">
+          <span class="title">Reputation</span> <span class="count">{{item.reputation}}</span>
+        </span>
+        <span class="section badges">
+          <span class="title">Badges</span>
+          <span class="badge gold"
+                *ngIf="item.badge_counts.gold > 0"><span class="medal">●</span><span class="medal-name">Gold: </span>
+            <span class="count">{{item.badge_counts.gold}}</span></span>
+          <span class="badge silver"
+                *ngIf="item.badge_counts.silver > 0"><span class="medal">●</span><span class="medal-name">Silver:
+            </span>
+            <span class="count">{{item.badge_counts.silver}}</span></span>
+
+          <span class="badge bronze"
+                *ngIf="item.badge_counts.bronze > 0"><span class="medal">●</span><span class="medal-name">Bronze:
+            </span>
+            <span class="count">{{item.badge_counts.bronze}}</span></span>
+        </span>
+
+      </div>
+    </div>
+  </div>
+</div>
