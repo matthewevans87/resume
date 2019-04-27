@@ -1079,7 +1079,7 @@ var AccomplishmentsService = /** @class */ (function () {
         this.httpClient = httpClient;
     }
     AccomplishmentsService.prototype.GetStackExchangeUser = function (name, site) {
-        var url = "http://api.stackexchange.com/2.2/users?order=desc&sort=reputation&inname=" + name + "&site=" + site;
+        var url = "https://api.stackexchange.com/2.2/users?order=desc&sort=reputation&inname=" + name + "&site=" + site;
         return this.httpClient.get(url)
             .pipe();
     };
