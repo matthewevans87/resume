@@ -24,7 +24,13 @@ export class ProjectComponent implements OnInit {
             .pipe(
                 map(termsDictionary => {
                     return this.project.technologyNames.map(term => {
-                        return termsDictionary[term.toLowerCase()] as Technology;
+                        let tech = termsDictionary[term.toLowerCase()] as Technology;
+                        if (!tech) {
+                            tech = {
+                                name: term
+                            };
+                        }
+                        return tech;
                     });
                 })
             );

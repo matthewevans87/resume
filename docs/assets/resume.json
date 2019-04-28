@@ -12,11 +12,15 @@
     "10 years’ experience developing enterprise web applications with Microsoft technology stack",
     "Seeking opportunity to solve complex problems in interesting domains using computer science techniques"
   ],
-  "companies": [{
+  "companies": [
+
+    {
       "name": "HKS, Inc.",
       "city": "Dallas",
       "state": "Texas",
       "url": "https://www.hksinc.com/",
+
+
       "positions": [{
         "name": "Sr. Software Engineer",
         "startYear": 2018,
@@ -25,14 +29,72 @@
             "description": "Full stack design, development, deployment and maintenance of enterprise web applications, web services (APIs) and databases relied on by a firm with over 1,300 architects"
           },
           {
-            "description": "Researching, evaluating, designing and implementing systems and ad hoc solutions for various departments"
+            "description": "DevOps management using Microsoft Azure including Builds, Release Pipelines, and the requisition of services"
           },
           {
             "description": "Managing and mentoring and junior software developers"
           }
-        ]
+        ],
+        "projects": [{
+          "title": "Project Explorer",
+          "subTitle": "",
+          "description": "Project Information and Asset Reference Library Web Application",
+          "distinguishedAttributes": [
+            "Lead Developer"
+          ],
+          "technologyNames": [
+            "TypeScript",
+            "Angular 7",
+            "ASP.NET Web API",
+            "C#",
+            "AngularJS",
+            "Angular CLI",
+            "RxJS",
+            "SASS",
+            "Bootstrap",
+            "T-SQL",
+            "SQL Server 2012",
+            "Dapper"
+          ],
+          "accomplishments": [{
+              "description": "Successfully implemented piecemeal migration from AngularJS to Angular 7 with both frameworks running simultaneously on page"
+            },
+            {
+              "description": "Complete rewrite of Statistics Management feature including redesign of UI, Web API and database schema with data migration"
+            }
+          ]
+        }, {
+          "title": "Nominator",
+          "isDisabled": true,
+          "subTitle": "",
+          "description": "Employee Recommendation and Promotion Web Application",
+          "distinguishedAttributes": [
+            "Lead Developer"
+          ],
+          "accomplishments": [{
+            "description": "Overhaul and cleanup of codebase with wide variety of mismatched technologies while under tight deadline"
+          }],
+          "technologyNames": [
+            "TypeScript",
+            "JavaScript",
+            "ASP.NET Core Web API",
+            "C#",
+            "React",
+            "Webpack",
+            "SASS",
+            "Bootstrap",
+            "KendoUI",
+            "KnockoutJS",
+            "T-SQL",
+            "SQL Server 2012",
+            "Dapper",
+            "Azure Web Service"
+          ]
+        }]
       }]
-    },
+    }
+
+    ,
     {
       "name": "Clean Harbors, Inc.",
       "city": "Richardson",

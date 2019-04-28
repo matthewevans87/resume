@@ -357,6 +357,11 @@
                         ],
                         "pattern": "^(.*)$"
                       },
+                      "isDisabled": {
+                        "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/isDisabled",
+                        "type": "boolean",
+                        "default": false
+                      },
                       "distinguishedAttributes": {
                         "$id": "#/properties/companies/items/properties/positions/items/properties/projects/items/properties/distinguishedAttributes",
                         "type": "array",

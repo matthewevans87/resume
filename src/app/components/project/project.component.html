@@ -1,4 +1,5 @@
-<div class="project">
+<div class="project"
+     *ngIf="!project.isDisabled">
   <div class="overview">
     <span class="title">{{project.title}}<span *ngIf="project.subTitle"> <small>{{project.subTitle}}</small></span>
     </span>
@@ -13,8 +14,11 @@
          *ngIf="technologies$ | async as technologies">
       <ul class="">
         <li *ngFor="let technology of technologies">
-          <a [href]="technology.url"
+          <a *ngIf="technology.url else noUrl"
+             [href]="technology.url"
              target="_blank">{{technology.name}}</a>
+          <ng-template #noUrl>{{technology.name}}</ng-template>
+
         </li>
       </ul>
     </div>

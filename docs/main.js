@@ -679,7 +679,7 @@ var ProfessionalResumeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"project\">\n  <div class=\"overview\">\n    <span class=\"title\">{{project.title}}<span *ngIf=\"project.subTitle\"> <small>{{project.subTitle}}</small></span>\n    </span>\n    <span class=\"description\">{{project.description}}</span>\n    <span class=\"project-position\"\n          *ngIf=\"project.distinguishedAttributes\">\n      {{project.distinguishedAttributes.join(', ')}}\n    </span>\n  </div>\n  <div class=\"details\">\n    <div class=\"technologies\"\n         *ngIf=\"technologies$ | async as technologies\">\n      <ul class=\"\">\n        <li *ngFor=\"let technology of technologies\">\n          <a [href]=\"technology.url\"\n             target=\"_blank\">{{technology.name}}</a>\n        </li>\n      </ul>\n    </div>\n    <div class=\"highlights\"\n         *ngIf=\"project.accomplishments\">\n      <ul>\n        <app-accomplishment *ngFor=\"let accomplishment of project.accomplishments\"\n                            [accomplishment]=\"accomplishment\"></app-accomplishment>\n      </ul>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"project\"\n     *ngIf=\"!project.isDisabled\">\n  <div class=\"overview\">\n    <span class=\"title\">{{project.title}}<span *ngIf=\"project.subTitle\"> <small>{{project.subTitle}}</small></span>\n    </span>\n    <span class=\"description\">{{project.description}}</span>\n    <span class=\"project-position\"\n          *ngIf=\"project.distinguishedAttributes\">\n      {{project.distinguishedAttributes.join(', ')}}\n    </span>\n  </div>\n  <div class=\"details\">\n    <div class=\"technologies\"\n         *ngIf=\"technologies$ | async as technologies\">\n      <ul class=\"\">\n        <li *ngFor=\"let technology of technologies\">\n          <a *ngIf=\"technology.url else noUrl\"\n             [href]=\"technology.url\"\n             target=\"_blank\">{{technology.name}}</a>\n          <ng-template #noUrl>{{technology.name}}</ng-template>\n\n        </li>\n      </ul>\n    </div>\n    <div class=\"highlights\"\n         *ngIf=\"project.accomplishments\">\n      <ul>\n        <app-accomplishment *ngFor=\"let accomplishment of project.accomplishments\"\n                            [accomplishment]=\"accomplishment\"></app-accomplishment>\n      </ul>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -721,7 +721,13 @@ var ProjectComponent = /** @class */ (function () {
         this.technologies$ = this.staticStoreService.getTermsDictionary()
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (termsDictionary) {
             return _this.project.technologyNames.map(function (term) {
-                return termsDictionary[term.toLowerCase()];
+                var tech = termsDictionary[term.toLowerCase()];
+                if (!tech) {
+                    tech = {
+                        name: term
+                    };
+                }
+                return tech;
             });
         }));
     };
