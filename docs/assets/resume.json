@@ -13,535 +13,553 @@
     "Seeking opportunity to solve complex problems in interesting domains using computer science techniques"
   ],
   "companies": [
-
     {
       "name": "HKS, Inc.",
       "city": "Dallas",
       "state": "Texas",
       "url": "https://www.hksinc.com/",
 
-
-      "positions": [{
-        "name": "Sr. Software Engineer",
-        "startYear": 2018,
-        "team": "Business Systems",
-        "responsibilities": [{
-            "description": "Full stack design, development, deployment and maintenance of enterprise web applications, web services (APIs) and databases relied on by a firm with over 1,300 architects"
-          },
-          {
-            "description": "DevOps management using Microsoft Azure including Builds, Release Pipelines, and the requisition of services"
-          },
-          {
-            "description": "Managing and mentoring and junior software developers"
-          }
-        ],
-        "projects": [{
-          "title": "Project Explorer",
-          "subTitle": "",
-          "description": "Project Information and Asset Reference Library Web Application",
-          "distinguishedAttributes": [
-            "Lead Developer"
-          ],
-          "technologyNames": [
-            "TypeScript",
-            "Angular 7",
-            "ASP.NET Web API",
-            "C#",
-            "AngularJS",
-            "Angular CLI",
-            "RxJS",
-            "SASS",
-            "Bootstrap",
-            "T-SQL",
-            "SQL Server 2012",
-            "Dapper"
-          ],
-          "accomplishments": [{
-              "description": "Successfully implemented piecemeal migration from AngularJS to Angular 7 with both frameworks running simultaneously on page"
+      "positions": [
+        {
+          "name": "Sr. Software Engineer",
+          "startYear": 2018,
+          "team": "Business Systems",
+          "responsibilities": [
+            {
+              "description": "Full stack design, development, deployment and maintenance of enterprise web applications, web services (APIs) and databases relied on by a firm with over 1,300 architects"
             },
             {
-              "description": "Complete rewrite of Statistics Management feature including redesign of UI, Web API and database schema with data migration"
+              "description": "DevOps management using Microsoft Azure including Builds, Release Pipelines, and the requisition of services"
+            },
+            {
+              "description": "Managing and mentoring and junior software developers"
+            }
+          ],
+          "projects": [
+            {
+              "title": "Project Explorer",
+              "subTitle": "",
+              "description": "Project Information and Asset Reference Library Web Application",
+              "distinguishedAttributes": ["Lead Developer"],
+              "technologyNames": [
+                "TypeScript",
+                "Angular 7",
+                "ASP.NET Web API",
+                "C#",
+                "AngularJS",
+                "Angular CLI",
+                "RxJS",
+                "SASS",
+                "Bootstrap",
+                "T-SQL",
+                "SQL Server 2012",
+                "Dapper"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Successfully implemented piecemeal migration from AngularJS to Angular 7 with both frameworks running simultaneously on page"
+                },
+                {
+                  "description": "Complete rewrite of Statistics Management feature including redesign of UI, Web API and database schema with data migration"
+                }
+              ]
+            },
+            {
+              "title": "Nominator",
+              "isDisabled": true,
+              "subTitle": "",
+              "description": "Employee Recommendation and Promotion Web Application",
+              "distinguishedAttributes": ["Lead Developer"],
+              "accomplishments": [
+                {
+                  "description": "Overhaul and cleanup of codebase with wide variety of mismatched technologies while under tight deadline"
+                }
+              ],
+              "technologyNames": [
+                "TypeScript",
+                "JavaScript",
+                "ASP.NET Core Web API",
+                "C#",
+                "React",
+                "Webpack",
+                "SASS",
+                "Bootstrap",
+                "KendoUI",
+                "KnockoutJS",
+                "T-SQL",
+                "SQL Server 2012",
+                "Dapper",
+                "Azure Web Service"
+              ]
             }
           ]
-        }, {
-          "title": "Nominator",
-          "isDisabled": true,
-          "subTitle": "",
-          "description": "Employee Recommendation and Promotion Web Application",
-          "distinguishedAttributes": [
-            "Lead Developer"
-          ],
-          "accomplishments": [{
-            "description": "Overhaul and cleanup of codebase with wide variety of mismatched technologies while under tight deadline"
-          }],
-          "technologyNames": [
-            "TypeScript",
-            "JavaScript",
-            "ASP.NET Core Web API",
-            "C#",
-            "React",
-            "Webpack",
-            "SASS",
-            "Bootstrap",
-            "KendoUI",
-            "KnockoutJS",
-            "T-SQL",
-            "SQL Server 2012",
-            "Dapper",
-            "Azure Web Service"
-          ]
-        }]
-      }]
-    }
+        }
+      ]
+    },
 
-    ,
     {
       "name": "Clean Harbors, Inc.",
       "city": "Richardson",
       "state": "Texas",
       "url": "https://www.cleanharbors.com/",
-      "positions": [{
-        "name": "Sr. Software Engineer",
-        "team": "Business Analytics and Insights",
-        "startYear": 2013,
-        "endYear": 2018,
-        "responsibilities": [{
-            "description": "Full stack design, development, deployment and maintenance of enterprise web applications, web services (APIs) and databases relied on by thousands of users in a $3B+ company"
-          },
-          {
-            "description": "Daily in-person (verbal) and written communication with executive management, domain experts and other stakeholders to translate business needs into actionable requirements"
-          },
-          {
-            "description": "Researching, evaluating, designing and implementing systems and ad hoc solutions for various departments"
-          },
-          {
-            "description": "Balancing and prioritizing the needs of multiple simultaneous projects and stakeholders"
-          }
-        ],
-        "testimonials": [{
-            "body": "Matt has worked with our organization on several projects and has always provided clear and precise communication. His depth of knowledge on various subjects and his ability to research new solutions has been a great asset. Matt has a diverse skill set which can always be relied upon to provide multiple solutions to the range of technical and analytical problems we’ve faced. He has been a highly valued asset and we would gladly work with him again.",
-            "author": "George Curtis",
-            "authorUrl": "https://www.reuters.com/finance/stocks/officer-profile/CLH/190188",
-            "position": "Executive Vice President",
-            "team": "Product Pricing and Proposals",
-            "company": "Clean Harbors, Inc."
-          },
-          {
-            "body": "Matt is always timely and accurate with his projects and always puts in extra effort to ensure customer needs are met. His depth of knowledge on various subjects and his ability to research new software or techniques has been very beneficial to our small team. Matt has a very diverse tool set and can always be relied on to provide multiple solutions to problems that we face. I wish I had a team of people like Matt working in my group.",
-            "author": "Jeremy Rabbe",
-            "authorUrl": "https://www.linkedin.com/in/jeremy-rabbe-9b710a11/",
-            "position": "Manager",
-            "team": "Business Analytics and Insights",
-            "company": "Clean Harbors, Inc."
-          }
-        ],
-        "projects": [{
-            "title": "Performance-Plus Deal Calculator",
-            "subTitle": "",
-            "description": "Service Level Agreement Profitability Calculator Responsive Web Application",
-            "distinguishedAttributes": [
-              "Lead Developer",
-              "Remote"
-            ],
-            "technologyNames": [
-              "TypeScript",
-              "ASP.NET Core Web API",
-              "C#",
-              "Angular 4",
-              "RxJS",
-              "LESS",
-              "Webpack",
-              "Bootstrap",
-              "T-SQL",
-              "SQL Server 2012"
-            ],
-            "accomplishments": [{
-              "description": "Designed and implemented responsive SPA enabling sales team to quickly evaluate the profitability of existing and hypothetical customer agreements, either in office or on-site with customer"
-            }]
-          },
-          {
-            "title": "Epicenter",
-            "subTitle": "",
-            "description": "Data Aggregation Process with Web Dashboard Application",
-            "distinguishedAttributes": [
-              "Lead Developer",
-              "Remote"
-            ],
-            "technologyNames": [
-              "TypeScript",
-              "ASP.NET Core Web API",
-              "C#",
-              "Angular 4",
-              "RxJS",
-              "LESS",
-              "Webpack",
-              "Bootstrap",
-              "D3JS",
-              "ChartJS",
-              "T-SQL",
-              "SQL Server 2012"
-            ],
-            "accomplishments": [{
-                "description": "Designed and implemented responsive SPA for viewing and analyzing sales performance by product and organizational hierarchy level; used daily by executive management team"
-              },
-              {
-                "description": "Made extensive use of SQL Server table indexes, indexed views and other strategies to maximize query read performance"
-              },
-              {
-                "description": "Application serves as the primary sales performance reporting tool for an organization with $50M+ in monthly revenue"
-              }
-            ]
-          },
-          {
-            "title": "Margin Reporting Tool",
-            "subTitle": "",
-            "description": "Profitability Analysis Data Process with Web Dashboard Application",
-            "distinguishedAttributes": [
-              "Lead Developer"
-            ],
-            "technologyNames": [
-              "TypeScript",
-              "ASP.NET Core Web API",
-              "C#",
-              "Angular 2",
-              "LESS",
-              "Bootstrap",
-              "ChartJS",
-              "Gulp",
-              "T-SQL",
-              "SQL Server 2012"
-            ],
-            "accomplishments": [{
-                "description": "Designed and implemented profitability reporting SPA to replace existing Silverlight based solution"
-              },
-              {
-                "description": "Redesigned existing data processing procedure resulting 5x reduction in size of codebase with 60x improvement in processing time"
-              }
-            ]
-          },
-          {
-            "title": "Exploratory Market Segment Research",
-            "subTitle": "",
-            "description": "Analysis and Presentation of Geospatial Market Data",
-            "distinguishedAttributes": [
-              "Lead Developer"
-            ],
-            "technologyNames": [
-              "T-SQL",
-              "SQL Server 2008",
-              "PostgreSQL",
-              "qGIS",
-              "PostGIS"
-            ],
-            "accomplishments": [{
-                "description": "Analyzed market landscape using geospatial data to determine feasibility of using Clean Harbors' existing branch network to support new medical waste market segment"
-              },
-              {
-                "description": "Utilized various geospatial database systems and features (e.g. SQL Server spatial indexes, etc.; coordinate systems and map projections, e.g. WGS 84, etc.)"
-              }
-            ]
-          },
-          {
-            "title": "Sales Forecasting Tool",
-            "subTitle": "",
-            "description": "Statistical Model Calculation Process with Web Dashboard Application",
-            "distinguishedAttributes": [
-              "Lead Developer"
-            ],
-            "technologyNames": [
-              "R",
-              "R.NET",
-              "C#",
-              ".NET",
-              "T-SQL",
-              "SQL Server 2008",
-              "VirtualBox",
-              "Ubuntu Server",
-              "ASP.NET",
-              "jQuery"
-            ],
-            "accomplishments": [{
-              "description": "Reduced forecast model processing time from 48+ hours to 30 minutes through database optimization, code optimization, parallelism and distributed computing"
-            }]
-          },
-          {
-            "title": "Customer Record Matching and De-duplication",
-            "subTitle": "",
-            "description": "Data Processing Service Application",
-            "distinguishedAttributes": [
-              "Lead Developer"
-            ],
-            "technologyNames": [
-              "C#",
-              ".NET 3.5",
-              "T-SQL",
-              "SQL Server 2008"
-            ],
-            "accomplishments": [{
-              "description": "Automated the identification of thousands of duplicate customer records using word adjacency graph algorithm and fuzzy matching algorithms (e.g. Jaro–Winkler)"
-            }]
-          },
-          {
-            "title": "BizPoint",
-            "subTitle": "",
-            "description": "Market Research and Sales Lead Generation Web Application",
-            "distinguishedAttributes": [],
-            "technologyNames": [
-              "C#",
-              "ASP.NET",
-              "Silverlight",
-              "T-SQL",
-              "SQL Server 2008"
-            ],
-            "accomplishments": [{
-              "description": "Developed ETL process to ingest and reconcile Environmental Protection Agency hazardous waste datasets and Dun and Bradstreet datasets with Clean Harbors master customer list"
-            }]
-          },
-          {
-            "title": "Epicenter",
-            "subTitle": "(Legacy Product)",
-            "description": "Sales KPI Data Aggregation Process with Enterprise Web Dashboard Application",
-            "distinguishedAttributes": [],
-            "technologyNames": [
-              "C#",
-              "ASP.NET",
-              "Silverlight",
-              "T-SQL",
-              "SQL Server 2008"
-            ],
-            "accomplishments": [{
-                "description": "Maintenance, support and new feature development of undocumented, inherited codebase"
-              },
-              {
-                "description": "Championed and eventually implemented replacement product (see above)"
-              }
-            ]
-          }
-
-        ]
-      }]
+      "positions": [
+        {
+          "name": "Sr. Software Engineer",
+          "team": "Business Analytics and Insights",
+          "startYear": 2013,
+          "endYear": 2018,
+          "responsibilities": [
+            {
+              "description": "Full stack design, development, deployment and maintenance of enterprise web applications, web services (APIs) and databases relied on by thousands of users in a $3B+ company"
+            },
+            {
+              "description": "Daily in-person (verbal) and written communication with executive management, domain experts and other stakeholders to translate business needs into actionable requirements"
+            },
+            {
+              "description": "Researching, evaluating, designing and implementing systems and ad hoc solutions for various departments"
+            },
+            {
+              "description": "Balancing and prioritizing the needs of multiple simultaneous projects and stakeholders"
+            }
+          ],
+          "testimonials": [
+            {
+              "body": "Matt has worked with our organization on several projects and has always provided clear and precise communication. His depth of knowledge on various subjects and his ability to research new solutions has been a great asset. Matt has a diverse skill set which can always be relied upon to provide multiple solutions to the range of technical and analytical problems we’ve faced. He has been a highly valued asset and we would gladly work with him again.",
+              "author": "George Curtis",
+              "authorUrl": "https://www.reuters.com/finance/stocks/officer-profile/CLH/190188",
+              "position": "Executive Vice President",
+              "team": "Product Pricing and Proposals",
+              "company": "Clean Harbors, Inc."
+            },
+            {
+              "body": "Matt is always timely and accurate with his projects and always puts in extra effort to ensure customer needs are met. His depth of knowledge on various subjects and his ability to research new software or techniques has been very beneficial to our small team. Matt has a very diverse tool set and can always be relied on to provide multiple solutions to problems that we face. I wish I had a team of people like Matt working in my group.",
+              "author": "Jeremy Rabbe",
+              "authorUrl": "https://www.linkedin.com/in/jeremy-rabbe-9b710a11/",
+              "position": "Manager",
+              "team": "Business Analytics and Insights",
+              "company": "Clean Harbors, Inc."
+            }
+          ],
+          "projects": [
+            {
+              "title": "Performance-Plus Deal Calculator",
+              "subTitle": "",
+              "description": "Service Level Agreement Profitability Calculator Responsive Web Application",
+              "distinguishedAttributes": ["Lead Developer", "Remote"],
+              "technologyNames": [
+                "TypeScript",
+                "ASP.NET Core Web API",
+                "C#",
+                "Angular 4",
+                "RxJS",
+                "LESS",
+                "Webpack",
+                "Bootstrap",
+                "T-SQL",
+                "SQL Server 2012"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Designed and implemented responsive SPA enabling sales team to quickly evaluate the profitability of existing and hypothetical customer agreements, either in office or on-site with customer"
+                }
+              ]
+            },
+            {
+              "title": "Epicenter",
+              "subTitle": "",
+              "description": "Data Aggregation Process with Web Dashboard Application",
+              "distinguishedAttributes": ["Lead Developer", "Remote"],
+              "technologyNames": [
+                "TypeScript",
+                "ASP.NET Core Web API",
+                "C#",
+                "Angular 4",
+                "RxJS",
+                "LESS",
+                "Webpack",
+                "Bootstrap",
+                "D3JS",
+                "ChartJS",
+                "T-SQL",
+                "SQL Server 2012"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Designed and implemented responsive SPA for viewing and analyzing sales performance by product and organizational hierarchy level; used daily by executive management team"
+                },
+                {
+                  "description": "Made extensive use of SQL Server table indexes, indexed views and other strategies to maximize query read performance"
+                },
+                {
+                  "description": "Application serves as the primary sales performance reporting tool for an organization with $50M+ in monthly revenue"
+                }
+              ]
+            },
+            {
+              "title": "Margin Reporting Tool",
+              "subTitle": "",
+              "description": "Profitability Analysis Data Process with Web Dashboard Application",
+              "distinguishedAttributes": ["Lead Developer"],
+              "technologyNames": [
+                "TypeScript",
+                "ASP.NET Core Web API",
+                "C#",
+                "Angular 2",
+                "LESS",
+                "Bootstrap",
+                "ChartJS",
+                "Gulp",
+                "T-SQL",
+                "SQL Server 2012"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Designed and implemented profitability reporting SPA to replace existing Silverlight based solution"
+                },
+                {
+                  "description": "Redesigned existing data processing procedure resulting 5x reduction in size of codebase with 60x improvement in processing time"
+                }
+              ]
+            },
+            {
+              "title": "Exploratory Market Segment Research",
+              "subTitle": "",
+              "description": "Analysis and Presentation of Geospatial Market Data",
+              "distinguishedAttributes": ["Lead Developer"],
+              "technologyNames": [
+                "T-SQL",
+                "SQL Server 2008",
+                "PostgreSQL",
+                "qGIS",
+                "PostGIS"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Analyzed market landscape using geospatial data to determine feasibility of using Clean Harbors' existing branch network to support new medical waste market segment"
+                },
+                {
+                  "description": "Utilized various geospatial database systems and features (e.g. SQL Server spatial indexes, etc.; coordinate systems and map projections, e.g. WGS 84, etc.)"
+                }
+              ]
+            },
+            {
+              "title": "Sales Forecasting Tool",
+              "subTitle": "",
+              "description": "Statistical Model Calculation Process with Web Dashboard Application",
+              "distinguishedAttributes": ["Lead Developer"],
+              "technologyNames": [
+                "R",
+                "R.NET",
+                "C#",
+                ".NET",
+                "T-SQL",
+                "SQL Server 2008",
+                "VirtualBox",
+                "Ubuntu Server",
+                "ASP.NET",
+                "jQuery"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Reduced forecast model processing time from 48+ hours to 30 minutes through database optimization, code optimization, parallelism and distributed computing"
+                }
+              ]
+            },
+            {
+              "title": "Customer Record Matching and De-duplication",
+              "subTitle": "",
+              "description": "Data Processing Service Application",
+              "distinguishedAttributes": ["Lead Developer"],
+              "technologyNames": ["C#", ".NET 3.5", "T-SQL", "SQL Server 2008"],
+              "accomplishments": [
+                {
+                  "description": "Automated the identification of thousands of duplicate customer records using word adjacency graph algorithm and fuzzy matching algorithms (e.g. Jaro–Winkler)"
+                }
+              ]
+            },
+            {
+              "title": "BizPoint",
+              "subTitle": "",
+              "description": "Market Research and Sales Lead Generation Web Application",
+              "distinguishedAttributes": [],
+              "technologyNames": [
+                "C#",
+                "ASP.NET",
+                "Silverlight",
+                "T-SQL",
+                "SQL Server 2008"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Developed ETL process to ingest and reconcile Environmental Protection Agency hazardous waste datasets and Dun and Bradstreet datasets with Clean Harbors master customer list"
+                }
+              ]
+            },
+            {
+              "title": "Epicenter",
+              "subTitle": "(Legacy Product)",
+              "description": "Sales KPI Data Aggregation Process with Enterprise Web Dashboard Application",
+              "distinguishedAttributes": [],
+              "technologyNames": [
+                "C#",
+                "ASP.NET",
+                "Silverlight",
+                "T-SQL",
+                "SQL Server 2008"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Maintenance, support and new feature development of undocumented, inherited codebase"
+                },
+                {
+                  "description": "Championed and eventually implemented replacement product (see above)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Cisco Systems, Inc.",
       "city": "Richardson",
       "state": "Texas",
       "url": "https://www.cisco.com/",
-      "positions": [{
-        "name": "Software Developer",
-        "team": "Data Center Management",
-        "startYear": 2012,
-        "endYear": 2013,
-        "projects": [{
-          "title": "Hardware Cabinet Buildout Tool",
-          "description": "Drag and Drop Hardware Cabinet Configurator Web Application",
-          "distinguishedAttributes": ["Lead Developer"],
-          "technologyNames": [
-            "C#",
-            "ASP.NET",
-            "jQuery",
-            "NHibernate",
-            "SQL Server"
-          ],
-          "accomplishments": [{
-            "description": "Implemented automatic hardware compatibility and power requirement checking system"
-          }]
-        }, {
-          "title": "Visual Data Center Management Tool",
-          "description": "Interactive Site Management Web Application",
-          "distinguishedAttributes": ["Lead Developer"],
-          "technologyNames": [
-            "C#",
-            "ASP.NET",
-            "Silverlight",
-            "NHibernate",
-            "SQL Server"
-          ],
-          "accomplishments": [{
-            "description": "Rich visual tool with navigable floorplan map of Cisco data centers enabling users to inspect, query and monitor deployed network equipment"
-          }]
-        }, {
-          "title": "Hardware Polling Service",
-          "description": "Data Collection and Aggregation Service Application",
-          "technologyNames": [
-            "C#",
-            "T-SQL",
-            "NHibernate",
-            "SQL Server"
-          ],
-          "accomplishments": [{
-            "description": "Implemented multi-threaded polling service for collecting the status and metrics of networked data center hardware (servers, routers, etc.) and equipment (power supplies, thermal sensors, etc.)"
-          }]
-        }]
-      }]
+      "positions": [
+        {
+          "name": "Software Developer",
+          "team": "Data Center Management",
+          "startYear": 2012,
+          "endYear": 2013,
+          "projects": [
+            {
+              "title": "Hardware Cabinet Buildout Tool",
+              "description": "Drag and Drop Hardware Cabinet Configurator Web Application",
+              "distinguishedAttributes": ["Lead Developer"],
+              "technologyNames": [
+                "C#",
+                "ASP.NET",
+                "jQuery",
+                "NHibernate",
+                "SQL Server"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Implemented automatic hardware compatibility and power requirement checking system"
+                }
+              ]
+            },
+            {
+              "title": "Visual Data Center Management Tool",
+              "description": "Interactive Site Management Web Application",
+              "distinguishedAttributes": ["Lead Developer"],
+              "technologyNames": [
+                "C#",
+                "ASP.NET",
+                "Silverlight",
+                "NHibernate",
+                "SQL Server"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Rich visual tool with navigable floorplan map of Cisco data centers enabling users to inspect, query and monitor deployed network equipment"
+                }
+              ]
+            },
+            {
+              "title": "Hardware Polling Service",
+              "description": "Data Collection and Aggregation Service Application",
+              "technologyNames": ["C#", "T-SQL", "NHibernate", "SQL Server"],
+              "accomplishments": [
+                {
+                  "description": "Implemented multi-threaded polling service for collecting the status and metrics of networked data center hardware (servers, routers, etc.) and equipment (power supplies, thermal sensors, etc.)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Clickmotive, Inc.",
       "city": "Plano",
       "state": "Texas",
       "url": "http://clickmotive.com/",
-      "positions": [{
-        "name": "Jr. Software Engineer",
-        "team": "Projects Team",
-        "startYear": 2011,
-        "endYear": 2012,
-        "projects": [{
-            "title": "Inventory Processing System",
-            "description": "Automobile Dealership Inventory Data Aggregation Service",
-            "technologyNames": [
-              "C#",
-              "T-SQL",
-              "Redis"
-            ],
-            "accomplishments": [{
-                "description": "Worked with team on multi-month project to develop new inventory processing application"
-              },
-              {
-                "description": "Reduced processing time from 4 hours to 15 minutes"
-              }
-            ]
-          },
-          {
-            "title": "Fusion",
-            "description": "Turn-key Solution for Deploying Automobile Dealership Websites",
-            "technologyNames": [
-              "C#",
-              "ASP.NET",
-              "T-SQL",
-              "SQL Server",
-              "jQuery",
-              "XSLT",
-              "HTML",
-              "CSS"
-            ],
-            "accomplishments": [{
-              "description": "Developed many customer-facing web UI components for Clickmotive’s core product"
-            }]
-          }
-        ]
-      }]
+      "positions": [
+        {
+          "name": "Jr. Software Engineer",
+          "team": "Projects Team",
+          "startYear": 2011,
+          "endYear": 2012,
+          "projects": [
+            {
+              "title": "Inventory Processing System",
+              "description": "Automobile Dealership Inventory Data Aggregation Service",
+              "technologyNames": ["C#", "T-SQL", "Redis"],
+              "accomplishments": [
+                {
+                  "description": "Worked with team on multi-month project to develop new inventory processing application"
+                },
+                {
+                  "description": "Reduced processing time from 4 hours to 15 minutes"
+                }
+              ]
+            },
+            {
+              "title": "Fusion",
+              "description": "Turn-key Solution for Deploying Automobile Dealership Websites",
+              "technologyNames": [
+                "C#",
+                "ASP.NET",
+                "T-SQL",
+                "SQL Server",
+                "jQuery",
+                "XSLT",
+                "HTML",
+                "CSS"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Developed many customer-facing web UI components for Clickmotive’s core product"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Ericsson, Inc.",
       "city": "Plano",
       "state": "Texas",
       "url": "https://www.ericsson.com/en",
-      "positions": [{
-        "name": "Software Engineer Intern",
-        "team": "North America Wireless Radio Access Network division",
-        "startYear": 2010,
-        "endYear": 2011,
-        "projects": [{
-            "title": "Automated Neighbor Selection Tool",
-            "description": "Windows Forms Application",
-            "distinguishedAttributes": ["Lead Developer"],
-            "technologyNames": ["C#",
-              "T-SQL",
-              "GDI+"
-            ],
-            "accomplishments": [{
-                "description": "Implemented patent US7050803B2; application visualized cell network sectors and automatically calculated sector neighbors in a given geographic region"
-              },
-              {
-                "description": "Awarded Ericsson “Intern of the Month” for excellence during this project"
-              }
-            ]
-          },
-          {
-            "title": "Resource Management Tool",
-            "description": "Web Application",
-            "distinguishedAttributes": ["Lead Developer"],
-            "technologyNames": ["C#",
-              "T-SQL",
-              "ASP.NET",
-              "SOLR Search"
-            ],
-            "accomplishments": [{
-              "description": "Developed web-based staffing and resource management tool enabling managers to identify department resources, subject matter experts, and underutilized personnel"
-            }]
-          }
-        ]
-      }]
+      "positions": [
+        {
+          "name": "Software Engineer Intern",
+          "team": "North America Wireless Radio Access Network division",
+          "startYear": 2010,
+          "endYear": 2011,
+          "projects": [
+            {
+              "title": "Automated Neighbor Selection Tool",
+              "description": "Windows Forms Application",
+              "distinguishedAttributes": ["Lead Developer"],
+              "technologyNames": ["C#", "T-SQL", "GDI+"],
+              "accomplishments": [
+                {
+                  "description": "Implemented patent US7050803B2; application visualized cell network sectors and automatically calculated sector neighbors in a given geographic region"
+                },
+                {
+                  "description": "Awarded Ericsson “Intern of the Month” for excellence during this project"
+                }
+              ]
+            },
+            {
+              "title": "Resource Management Tool",
+              "description": "Web Application",
+              "distinguishedAttributes": ["Lead Developer"],
+              "technologyNames": ["C#", "T-SQL", "ASP.NET", "SOLR Search"],
+              "accomplishments": [
+                {
+                  "description": "Developed web-based staffing and resource management tool enabling managers to identify department resources, subject matter experts, and underutilized personnel"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "D Magazine Partners, Inc.",
       "city": "Dallas",
       "state": "Texas",
       "url": "https://www.dmagazine.com/",
-      "positions": [{
-        "name": "Jr. Online Developer",
-        "team": "Website and Digital Marketing Team",
-        "startYear": 2009,
-        "endYear": 2010,
-        "projects": [{
-          "title": "Online Surveys System",
-          "description": "Web Application",
-          "technologyNames": [
-            "C#",
-            "T-SQL",
-            "ASP.NET"
-          ],
-          "accomplishments": [{
-            "description": "Developed and launched customer facing online survey system to support \"D\u00A0Best\" and \"Top\u00A0Ten\""
-          }]
-        }]
-      }]
+      "positions": [
+        {
+          "name": "Jr. Online Developer",
+          "team": "Website and Digital Marketing Team",
+          "startYear": 2009,
+          "endYear": 2010,
+          "projects": [
+            {
+              "title": "Online Surveys System",
+              "description": "Web Application",
+              "technologyNames": ["C#", "T-SQL", "ASP.NET"],
+              "accomplishments": [
+                {
+                  "description": "Developed and launched customer facing online survey system to support \"D\u00A0Best\" and \"Top\u00A0Ten\""
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Telligent Systems, Inc.",
       "city": "Plano",
       "state": "Texas",
       "url": "https://www.telligent.com/",
-      "positions": [{
-        "name": "Software Engineer Intern",
-        "team": "Projects Team",
-        "startYear": 2008,
-        "endYear": 2008,
-        "projects": [{
-          "title": "Print-to-Media",
-          "description": "Virtual Printer Driver",
-          "technologyNames": [
-            "C#",
-            "ASP.NET"
-          ],
-          "accomplishments": [{
-            "description": "Developed virtual printer driver for printing content to Telligent Community CMS platform"
-          }]
-        }]
-      }]
+      "positions": [
+        {
+          "name": "Software Engineer Intern",
+          "team": "Projects Team",
+          "startYear": 2008,
+          "endYear": 2008,
+          "projects": [
+            {
+              "title": "Print-to-Media",
+              "description": "Virtual Printer Driver",
+              "technologyNames": ["C#", "ASP.NET"],
+              "accomplishments": [
+                {
+                  "description": "Developed virtual printer driver for printing content to Telligent Community CMS platform"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
-  "institutions": [{
+  "institutions": [
+    {
       "name": "University Of Texas At Dallas",
       "city": "Richardson",
       "state": "Texas",
       "url": "https://www.utdallas.edu/",
-      "certificates": [{
-        "type": "Degrees",
-        "certName": "Bachelor of Science in Computer Science",
-        "certUrl": "https://cs.utdallas.edu/education/undergraduate/",
-        "school": "The Erik Johnson School of Engineering and Computer Science",
-        "schoolUrl": "https://engineering.utdallas.edu/",
-        "date": "May 2012"
-      }]
+      "certificates": [
+        {
+          "type": "Degrees",
+          "certName": "Bachelor of Science in Computer Science",
+          "certUrl": "https://cs.utdallas.edu/education/undergraduate/",
+          "school": "The Erik Johnson School of Engineering and Computer Science",
+          "schoolUrl": "https://engineering.utdallas.edu/",
+          "date": "May 2012"
+        }
+      ]
     },
     {
       "name": "Coursera",
       "url": "https://www.coursera.org/",
-      "certificates": [{
-        "type": "Certificates",
-        "certName": "Machine Learning",
-        "certUrl": "https://www.coursera.org/account/accomplishments/certificate/PEPQTSHX8UYP",
-        "school": "Stanford University Online",
-        "schoolUrl": "https://online.stanford.edu/",
-        "date": "February 2018"
-      }]
+      "certificates": [
+        {
+          "type": "Certificates",
+          "certName": "Machine Learning",
+          "certUrl": "https://www.coursera.org/account/accomplishments/certificate/PEPQTSHX8UYP",
+          "school": "Stanford University Online",
+          "schoolUrl": "https://online.stanford.edu/",
+          "date": "February 2018"
+        }
+      ]
     },
     {
       "name": "Collin College",
       "city": "Plano",
       "state": "Texas",
       "url": "http://www.collin.edu/",
-      "certificates": [{
+      "certificates": [
+        {
           "type": "Additional Coursework for Personal Enrichment",
           "certName": "Differential Equations",
           "certUrl": "https://en.wikipedia.org/wiki/Differential_equation",
@@ -554,72 +572,87 @@
           "date": "Spring 2013"
         }
       ]
+    },
+    {
+      "name": "Microsoft",
+      "url": "https://www.microsoft.com/en-us/learning/certification-overview.aspx",
+      "certificates": [
+        {
+          "type": "Certificates",
+          "certName": "AZ-900: Microsoft Azure Fundamentals",
+          "certUrl": "https://www.youracclaim.com/badges/2e76f13a-6072-4b74-8e58-6b026015399d/public_url",
+          "date": "November 2019"
+        }
+      ]
     }
-
   ],
   "additionalExperience": {
-    "personalProjects": [{
-      "title": "Crypto Currency Trading Bot",
-      "subTitle": "(March 2018)",
-      "description": "System for Automated Trading on Crypto Currency Exchange",
-      "distinguishedAttributes": [],
-      "accomplishments": [{
-          "description": "A personal exploration of crypto currencies, automated real-time market trading, machine learning, data analysis and the various technology options available for these purposes"
-        },
-        {
-          "description": "Project included the creation of many evolving prototypes, including",
-          "children": [{
-              "description": "Services for collecting market data in real-time and computing market signals, indicators and predictive features using online algorithms"
-            },
-            {
-              "description": "Web applications for telemetry visualization and manual bot control"
-            },
-            {
-              "description": "Machine learning systems for predicting profitable trade prices"
-            },
-            {
-              "description": "Autonomous trading bots operating in a live market"
-            },
-            {
-              "description": "Data warehousing and ETL processes"
-            },
-            {
-              "description": "WebSocket client and server apps for receiving and broadcasting live market data"
-            },
-            {
-              "description": "Implementing and testing various programmatic trading strategies"
-            },
-            {
-              "description": "Various methods of IPC (e.g.: REST, WebSocket, Redis Blocking Queue)"
-            }
-          ]
-        }
-      ],
-      "technologyNames": [
-        "Node.js",
-        "Express",
-        "TypeScript",
-        "Angular",
-        "Angular CLI",
-        "RxJS",
-        "LESS",
-        "Bootstrap",
-        "T-SQL",
-        "MongoDB",
-        "MEAN Stack",
-        "Docker",
-        "Redis",
-        "SQL Server 2017",
-        "WS",
-        "WebSocket",
-        "Python",
-        "TensorFlow",
-        "Plotly",
-        "mathjs",
-        "NumPy",
-        "Julia",
-        "Coinbase Pro"
-      ]
-    }]
+    "personalProjects": [
+      {
+        "title": "Crypto Currency Trading Bot",
+        "subTitle": "(March 2018)",
+        "description": "System for Automated Trading on Crypto Currency Exchange",
+        "distinguishedAttributes": [],
+        "accomplishments": [
+          {
+            "description": "A personal exploration of crypto currencies, automated real-time market trading, machine learning, data analysis and the various technology options available for these purposes"
+          },
+          {
+            "description": "Project included the creation of many evolving prototypes, including",
+            "children": [
+              {
+                "description": "Services for collecting market data in real-time and computing market signals, indicators and predictive features using online algorithms"
+              },
+              {
+                "description": "Web applications for telemetry visualization and manual bot control"
+              },
+              {
+                "description": "Machine learning systems for predicting profitable trade prices"
+              },
+              {
+                "description": "Autonomous trading bots operating in a live market"
+              },
+              {
+                "description": "Data warehousing and ETL processes"
+              },
+              {
+                "description": "WebSocket client and server apps for receiving and broadcasting live market data"
+              },
+              {
+                "description": "Implementing and testing various programmatic trading strategies"
+              },
+              {
+                "description": "Various methods of IPC (e.g.: REST, WebSocket, Redis Blocking Queue)"
+              }
+            ]
+          }
+        ],
+        "technologyNames": [
+          "Node.js",
+          "Express",
+          "TypeScript",
+          "Angular",
+          "Angular CLI",
+          "RxJS",
+          "LESS",
+          "Bootstrap",
+          "T-SQL",
+          "MongoDB",
+          "MEAN Stack",
+          "Docker",
+          "Redis",
+          "SQL Server 2017",
+          "WS",
+          "WebSocket",
+          "Python",
+          "TensorFlow",
+          "Plotly",
+          "mathjs",
+          "NumPy",
+          "Julia",
+          "Coinbase Pro"
+        ]
+      }
+    ]
   }
 }
