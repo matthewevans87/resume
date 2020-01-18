@@ -1,6 +1,7 @@
 @media print {
   @page {
-    margin: 1in;
+    margin: 0.5in;
+    padding: 0;
   }
 
   a {
@@ -37,7 +38,6 @@ body {
     font-size: 3rem;
     text-transform: capitalize;
     font-variant: small-caps;
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
   }
-
 }
