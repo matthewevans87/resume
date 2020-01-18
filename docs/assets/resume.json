@@ -110,7 +110,7 @@
           "endYear": 2018,
           "responsibilities": [
             {
-              "description": "Full stack design, development, deployment and maintenance of enterprise web applications, web services (APIs) and databases relied on by thousands of users in a $3B+ company"
+              "description": "Full stack design, development, deployment and maintenance of enterprise web applications, web services (APIs) and databases relied on by thousands of users in a [$3B+ company](https://www.google.com/search?tbm=fin&q=CLH)"
             },
             {
               "description": "Daily in-person (verbal) and written communication with executive management, domain experts and other stakeholders to translate business needs into actionable requirements"
@@ -447,7 +447,7 @@
               "technologyNames": ["C#", "T-SQL", "GDI+"],
               "accomplishments": [
                 {
-                  "description": "Implemented patent US7050803B2; application visualized cell network sectors and automatically calculated sector neighbors in a given geographic region"
+                  "description": "Implemented patent [US7050803B2](https://patents.google.com/patent/US7050803B2/); application visualized cell network sectors and automatically calculated sector neighbors in a given geographic region"
                 },
                 {
                   "description": "Awarded Ericsson “Intern of the Month” for excellence during this project"
@@ -487,7 +487,7 @@
               "technologyNames": ["C#", "T-SQL", "ASP.NET"],
               "accomplishments": [
                 {
-                  "description": "Developed and launched customer facing online survey system to support \"D\u00A0Best\" and \"Top\u00A0Ten\""
+                  "description": "Developed and launched customer facing online survey system to support [\"D\u00A0Best\"](https://www.dmagazine.com/publications/d-magazine/2018/august/dallas-best-of-big-d-2018/?ref=nav) and [\"Top\u00A0Ten\"](https://www.dmagazine.com/publications/d-magazine/2009/december/the-10-most-beautiful-women-in-dallas-2009/)"
                 }
               ]
             }
