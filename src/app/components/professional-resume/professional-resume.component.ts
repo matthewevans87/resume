@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Resume } from 'src/app/models/resume';
-import { StaticStoreService } from 'src/app/services/static-store.service';
 import { Observable } from 'rxjs';
+import { StaticStoreService } from 'src/app/services/static-store.service';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-professional-resume',
@@ -10,9 +12,13 @@ import { Observable } from 'rxjs';
 })
 export class ProfessionalResumeComponent implements OnInit {
     public resume$: Observable<Resume>;
-    constructor(private staticStoreService: StaticStoreService) { }
+    constructor(private staticStoreService: StaticStoreService, private route: ActivatedRoute, private titleService: Title) {
+    }
 
     ngOnInit() {
-        this.resume$ = this.staticStoreService.getResume();
+        this.route.params.subscribe(params => {
+            this.staticStoreService.name = params.name || "resume";
+            this.resume$ = this.staticStoreService.getResume();
+        });
     }
 }

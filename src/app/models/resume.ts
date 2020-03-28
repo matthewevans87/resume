@@ -79,6 +79,7 @@ export interface Candidate {
   locationUrl?: string;
   phoneNumber?: string;
   emailAddress?: string;
+  stackOverflowUsername?: string;
 }
 
 export interface Resume {

@@ -1,6 +1,5 @@
 import { Accomplishment } from './resume';
 export namespace StackExchange {
-    export const USERNAME = 'mattevansdev';
     export const SITE = 'stackoverflow';
 
     export interface User {
