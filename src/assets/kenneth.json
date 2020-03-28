@@ -1,0 +1,157 @@
+{
+  "$schema": "./resume.schema.json",
+  "candidate": {
+    "name": "Kenneth Cassel",
+    "location": "7255 Tamarack Rd. Benbrook, TX 76116",
+    "locationUrl": "",
+    "phoneNumber": "(682) 365-2460",
+    "emailAddress": "kenneth.cassel@zealitconsultants..com"
+  },
+  "leadStatements": [
+    "Machine Learning focused Software Engineer.",
+    "Solving hard problems using Machine Learning. Very interested in NLP and Deep Learning in Computer Vision (Semantic Segmentation, Object Detection, Multi-label classification, etc)."
+  ],
+  "companies": [
+    {
+      "name": "Zeal IT Consultants",
+      "city": "Dallas",
+      "state": "Texas",
+      "url": "https://www.zealitconsultants.com/",
+
+      "positions": [
+        {
+          "name": "Software Engineer",
+          "startYear": 2018,
+          "team": "Delivery",
+          "responsibilities": [
+            {
+              "description": "Product and software delivery with a focus on Machine Learning."
+            }
+          ],
+          "projects": [
+            {
+              "title": "Robo-Finn Machine Learning",
+              "subTitle": "Machine Learning intiative for a multi-national financial tech client",
+              "description": "Team lead for building a full-stack financial chatbot",
+              "distinguishedAttributes": ["Lead Software Engineer", "Product Development"],
+              "technologyNames": [
+                "Tensorflow",
+                "Python",
+                "Node.js",
+                "Keras",
+                "AWS",
+                "MongoDB",
+                "React.js"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Created ML model that correctly identifies and categorizes sentences into Statements, Questions, and Commands. Model correctly identified questions with >97% accuracy on test data."
+                },
+                {
+                  "description": "Built system to automatically scrape and categorize financial data from web. Used ML model to identify and find answers to questions."
+                },
+                {
+                  "description": "Built data pipeline to auto-generate questions/answers for financial chatbot, reducing manual Q&A generation time."
+                },
+                {
+                  "description": "Lead design meetings and determined appropriate tech-stack to build application in."
+                },
+                {
+                  "description": "Lead demo presentations for client company board members and other stakeholders. Communicated complicated technical information to non-technical audience in order to get company buy-in."
+                }
+              ]
+            },
+            {
+              "title": "Exchange Data Network Monitoring/Alerting",
+              "subTitle": "Monitoring and alerting for a large scale data network of the Japenese Equities trading market",
+              "description": "Applied DevOps engineering practices to build out monitoring and alerting for a Windows based system",
+              "distinguishedAttributes": ["DevOps Engineer"],
+              "accomplishments": [
+                {
+                  "description": "Setup monitoring and alerting system for a large scale data network service for the Japanese Equities trading market. System was setup to alert business users when anomalies occurred in the ingested data."
+                },
+                {
+                  "description": "Deployed AWS resources to auto-scale and maintain a high level of reliability in monitoring with little downtime."
+                },
+                {
+                  "description": "Researched multiple offerings and found a solution that saved roughly 10x the cost of other data/monitoring services used by clients."
+                },
+                {
+                  "description": "Solution delivered to the client allowed business to respond at an unprecedented rate to failures in the data network service for the Japanese trading market."
+                }
+              ],
+              "technologyNames": [
+                "carbon-relay",
+                "Elasticsearch, Logstash, Kibana (ELK) Stack",
+                "AWS Cloud Formation",
+                "AWS EC2",
+                "AWS Network Load Balancer",
+                "Node.js"
+              ]
+            },
+            {
+              "title": "Healthcare Navigation Improvement",
+              "subTitle": "Internfal facing tools for productivity improvement",
+              "description": "Applied Agile software development practices to build web based tools",
+              "distinguishedAttributes": ["Software Engineer"],
+              "accomplishments": [
+                {
+                  "description": "Created internal facing tools that allowed business to more rapidly update data mapping for doctor and criteria information, improving search results."
+                },
+                {
+                  "description": "Attended discussions and participated in shaping the way for improvements to companies core product offering."
+                },
+                {
+                  "description": "Began rewrite of companies core product offering, a search site for doctors. Improvements include shorter time to results, smarter suggestions, and an upgrade to the latest Angular version."
+                }
+              ],
+              "technologyNames": [
+                "ASP .NET Core",
+                "Angular 8"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Texas at Arlington",
+      "city": "Arlington",
+      "state": "Texas",
+      "url": "https://www.uta.edu/",
+      "certificates": [
+        {
+          "type": "Degrees",
+          "certName": "Bachelor of Science in Computer Science",
+          "certUrl": "https://www.uta.edu/academics/undergraduate-studies/",
+          "school": "The department of Computer Science and Engineering",
+          "schoolUrl": "https://cse.uta.edu/",
+          "date": "May 2012"
+        }
+      ]
+    }
+  ],
+  "additionalExperience": {
+    "personalProjects": [
+      {
+        "title": "Awards: 1st PLace Overall Winner",
+        "subTitle": "(August 2018)",
+        "description": "HackUTA",
+        "distinguishedAttributes": [],
+        "accomplishments": [
+          {
+            "description": "Won first placeover all out of over 40 teams and 400 total participants at HackUTA 2018. Team of 4 developers.",
+            "children": []
+          },
+          {
+            "description": "Built an AR/VR mixed reality application that would help insurance companies create a better insurance claim process.",
+            "children": []
+          }
+        ],
+        "technologyNames": []
+      }
+    ]
+  }
+}

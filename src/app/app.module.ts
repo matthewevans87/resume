@@ -18,12 +18,11 @@ import { TestimonialComponent } from './components/testimonial/testimonial.compo
 import { AdditionalExperienceComponent } from './components/additional-experience/additional-experience.component';
 import { StackExchangeAccomplishmentComponent } from './components/stack-exchange-accomplishment/stack-exchange-accomplishment.component';
 
-
 const appRoutes: Routes = [
-    { path: 'professional', component: ProfessionalResumeComponent },
+    { path: 'professional/:name', component: ProfessionalResumeComponent },
     {
         path: '',
-        redirectTo: '/professional',
+        redirectTo: '/professional/',
         pathMatch: 'full'
     },
     { path: '**', component: ProfessionalResumeComponent }

@@ -12,11 +12,11 @@ export class StaticStoreService {
 
   private termsDictionary$: ReplaySubject<{ [termName: string]: Term }>;
   private resume$: ReplaySubject<Resume>;
-
+  public name: string;
   public getResume(): Observable<Resume> {
     if (null == this.resume$) {
       this.resume$ = new ReplaySubject<Resume>(1);
-      this.httpClient.get<Resume>("assets/resume.json").subscribe(this.resume$);
+      this.httpClient.get<Resume>(`assets/${this.name}.json`).subscribe(this.resume$);
     }
     return this.resume$;
   }

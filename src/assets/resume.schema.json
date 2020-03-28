@@ -73,6 +73,16 @@
             "matthewevans87@gmail.com"
           ],
           "pattern": "^(.*)$"
+        },
+        "stackOverflowUsername": {
+          "$id": "#/properties/candidate/properties/name",
+          "type": "string",
+          "title": "The Stackoverflowusername Schema",
+          "default": "",
+          "examples": [
+            "mattevansdev"
+          ],
+          "pattern": "^(.*)$"
         }
       }
     },
