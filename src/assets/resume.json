@@ -5,14 +5,213 @@
     "location": "Richardson / Plano / Remote",
     "locationUrl": "https://drive.google.com/open?id=1ZhWrL9GIoy0y5TSgQhOacgPGIsHM1oJS&usp=sharing",
     "phoneNumber": "(214) 674 - 0842",
-    "emailAddress": "matthewevans87@gmail.com"
+    "emailAddress": "matt@matthewevansconsulting.com"
   },
   "leadStatements": [
     "Full-stack Software Engineer with a passion for learning",
-    "10 years’ experience developing enterprise web applications with Microsoft technology stack",
-    "Seeking opportunity to solve complex problems in interesting domains using computer science techniques"
+    "14 years’ experience developing enterprise web applications with Microsoft technology stack",
+    "\"Software should free up human beings to do what only human beings can do\""
   ],
   "companies": [
+    {
+      "name": "Zeal IT Consultants",
+      "city": "Dallas",
+      "state": "Texas",
+      "url": "https://www.zealitconsultants.com/",
+      "positions": [
+        {
+          "name": "Associate Partner",
+          "startYear": 2020,
+          "endYear": 2023,
+          "responsibilities": [
+            {
+              "description": "Organizational Leadership. Responsible for providing thought and personnel leadership for the wider Zeal IT Consultants organization. Involved in the hiring, termination, and management of technical and non-technical personnel. Involved in process improvement and documentation. Responsible for the training and mentoring of dozens of software developers at various phases in their careers."
+            },
+            {
+              "description": "Account Management. Responsible for the health, growth, and longevity of multiple client accounts achieved through stakeholder discovery, relationship building, and keeping promises. Deeply involved in business development, drafting of Statements of Work, budgeting profitable consulting teams, execution of contracts, navigating VMOs and MSPs, etc. Managed multiple simultaneous project teams across multiple clients with total budgets exceeding $4MM/year revenue."
+            },
+            {
+              "description": "Engagement Management. Responsible for the successful delivery of working software in a timely manner according to the details of Statements of Work. Achieved through problem discovery, the hiring and managing Agile software development teams, continuous communication with executive client leadership, and excellent technical execution."
+            }
+          ],
+          "projects": [
+            {
+              "title": "Alight Solutions",
+              "description": "Alight Clarity",
+              "subTitle": "",
+              "distinguishedAttributes": [
+                "Account Manager",
+                "Engagement Manager",
+                "Team Lead"
+              ],
+              "technologyNames": [
+                "C#",
+                ".NET 5",
+                ".NET 6",
+                "Docker",
+                "Angular",
+                "TypeScript",
+                "SQL Server",
+                "EF Core",
+                "YAML",
+                "AWS Cloud",
+                "AWS S3",
+                "AWS Fargate",
+                "AWS Cloud Formation Templates",
+                "Go Pipelines",
+                "xUnit"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Collaborated with client and consulting team to draft product architecture and technical design"
+                },
+                {
+                  "description": "Hired and lead Agile development team through the entire SDLC"
+                },
+                {
+                  "description": "Interfaced with executive client stakeholders and technical leadership"
+                },
+                {
+                  "description": "Trained, coached, and mentored client on Agile philosophies and execution"
+                },
+                {
+                  "description": "Successfully delivered working SaaS product opening additional revenue stream for client"
+                },
+                {
+                  "description": "Developed ETL process to ingest terabyte scale datasets in minutes via massive parallelism achieved with AWS Fargate"
+                }
+              ]
+            },
+            {
+              "title": "Bankers Financial",
+              "subTitle": "",
+              "distinguishedAttributes": ["Engagement Manager", "Team Lead"],
+              "description": "Maverick",
+              "technologyNames": [
+                "C#",
+                ".NET 5",
+                "Angular",
+                "TypeScript",
+                "Docker",
+                "SQL Server",
+                "EF Core",
+                "YAML",
+                "Azure DevOps YAML Pipelines",
+                "xUnit"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Responsible for all aspects of product architecture and technical design"
+                },
+                {
+                  "description": "Hired and lead Agile development team through the entire SDLC"
+                },
+                {
+                  "description": "Interfaced with executive client stakeholders and technical leadership"
+                },
+                {
+                  "description": "Trained, coached, and mentored client on Agile philosophies and led execution"
+                },
+                {
+                  "description": "Successfully delivered working SaaS product opening additional revenue stream for client"
+                }
+              ]
+            },
+
+            {
+              "title": "Essilor",
+              "subTitle": "",
+              "description": "Eyebook Now",
+              "distinguishedAttributes": ["Engagement Manager", "Team Lead"],
+              "accomplishments": [
+                {
+                  "description": "Served as Team Lead for core Eye Book Now product; interfaced with product owner and business managers; mentored junior developers, reviewed PRs, handled production releases, set pace and tone for team through positive reinforcement, coaching, relationships, and influence"
+                },
+                {
+                  "description": "Rescued Beacon project; product suffered from loosely defined requirements, over-engineering, and being passed from team to team; delivered product ahead of schedule"
+                },
+                {
+                  "description": "Full stack development of React consumer-facing front ends, RESTful .NET Core API micro services hosted in AWS EC2, and a persistence layer backed by SQL Server, Redis, and Cosmos DB"
+                }
+              ],
+              "technologyNames": [
+                "C#",
+                ".NET 5",
+                "ReactJS",
+                "AWS Cloud",
+                "AWS S3",
+                "AWS EC2",
+                "Redis",
+                "Azure Cosmos DB",
+                "SQL Server",
+                "Docker",
+                "Twilio",
+                "GitHub Actions",
+                "YAML",
+                "Dapper",
+                "xUnit"
+              ]
+            },
+            {
+              "title": "Greyhound Lines",
+              "subTitle": "",
+              "description": "Route Planning",
+              "distinguishedAttributes": ["Engagement Manager", "Team Lead"],
+              "accomplishments": [
+                {
+                  "description": "Served as Team Lead for experimental proof of concept product; interfaced with chief executives; mentored junior developers; identified core business problems through extensive client interviews and research; developed and demoed experimental solutions in a highly iterative fashion"
+                },
+                {
+                  "description": "Full stack development of Angular front end with complex D3 visualizations enabling the exploration of Greyhound's transit schedule and passenger data to highlight business risks and opportunities for transit schedule optimization"
+                },
+                {
+                  "description": "Extensive unguided exploration of customer's Snowflake data warehouse to uncover trends and insights"
+                }
+              ],
+              "technologyNames": [
+                "TypeScript",
+                "Angular",
+                "Google Maps",
+                "Snowflake",
+                "Azure Cloud",
+                "Azure Storage Accounts",
+                "SQL Server",
+                "YAML",
+                "Azure DevOps YAML Pipelines"
+              ]
+            },
+            {
+              "title": "McKesson",
+              "subTitle": "",
+              "description": "ETL Process Monitoring",
+              "technologyNames": [
+                "TypeScript",
+                "C#",
+                "Angular",
+                "Sql Server",
+                "Azure DevOps YAML Pipelines",
+                "Azure Cloud",
+                "Azure Storage Accounts",
+                "Azure API Gateway",
+                "OAuth",
+                "Dapper"
+              ],
+              "accomplishments": [
+                {
+                  "description": "Created APIs, microservices, and web applications on Azure Cloud within an Agile Kanban team"
+                },
+                {
+                  "description": "Developed ETL status monitoring system to give account managers real-time visibility enabling improved customer support; application serves as reference architecture for new projects "
+                },
+                {
+                  "description": "Created fully scripted CI/CD pipelines to handle code linting, unit testing, builds, releases, templated cloud infrastructure deployment, and environment configuration"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "name": "HKS, Inc.",
       "city": "Dallas",
@@ -23,6 +222,7 @@
         {
           "name": "Sr. Software Engineer",
           "startYear": 2018,
+          "endYear": 2020,
           "team": "Business Systems",
           "responsibilities": [
             {
