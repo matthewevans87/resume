@@ -736,6 +736,16 @@
           "school": "The Erik Johnson School of Engineering and Computer Science",
           "schoolUrl": "https://engineering.utdallas.edu/",
           "date": "May 2012"
+        },
+        {
+          "type": "Additional Coursework for Personal Enrichment",
+          "certName": "Differential Calculus",
+          "date": "Spring 2023"
+        },
+        {
+          "type": "Additional Coursework for Personal Enrichment",
+          "certName": "Discrete Mathematics II",
+          "date": "Spring 2023"
         }
       ]
     },
