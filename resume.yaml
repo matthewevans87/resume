@@ -610,7 +610,7 @@ projects:
     url: "https://github.com/utd-fall-25-cs-6341-robotics/cs6341-robotics-project-direct"
     type: "academic"
     description: "Developed a complete sim-to-real RL pipeline for vision-based cube manipulation on the SO-101 robotic arm using NVIDIA Isaac Sim and Isaac Lab. Trained vision-conditioned PPO policies with asymmetric actor-critic architecture, frozen ResNet18 + spatial softmax encoding, and extensive domain randomization. Achieved zero-shot sim-to-real transfer for a proprioception-only task and demonstrated cube-seeking behavior in the vision-based task."
-    role: "Researcher / Co-Developer"
+    role: "Researcher, Author"
     start_date: "2025-08"
     end_date: "2025-12"
     highlights:
@@ -637,7 +637,7 @@ projects:
     url: "https://github.com/matthewevans87/cs6319-computational-geometry-project"
     type: "academic"
     description: "Augmented the naive visibility-graph algorithm with a learned LSTM-based sector predictor for motion planning in bounded planes with polygonal obstacles. The model restricts visibility checks to predicted regions containing shortest-path vertices, sharply reducing graph-construction overhead while closely matching exact path lengths."
-    role: "Researcher / Lead Developer"
+    role: "Researcher, Author"
     start_date: "2025-01"
     end_date: "2025-12"
     highlights:
@@ -676,7 +676,7 @@ projects:
     url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-project"
     type: "academic"
     description: "Investigated whether lightweight future-token prediction could improve next-token accuracy in autoregressive language models. Designed and evaluated IALM-Lite, a causal transformer architecture augmented with an auxiliary future prediction head, intent pooling, and FiLM/gated fusion modules. Conducted systematic experiments across 21 model variants on WikiText-2, yielding rigorous negative results with analysis of multi-task interference and capacity allocation."
-    role: "Researcher / Co-Developer"
+    role: "Researcher, Author"
     start_date: "2025-08"
     end_date: "2025-12"
     highlights:
@@ -700,7 +700,6 @@ projects:
     url: null
     type: "personal"
     description: "Autonomous trading system for cryptocurrency exchange with real-time market analysis, machine learning predictions, and automated execution. Personal exploration of algorithmic trading, ML, and data analysis."
-    role: "Creator / Lead Developer"
     start_date: "2018"
     highlights:
       - "Developed services for real-time market data collection and signal computation using online algorithms"
