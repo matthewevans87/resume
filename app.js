@@ -1,32 +1,82 @@
 // Utility Functions
-const notify = (message, timeout = 3000, onClick = null) => {
-  const container = document.getElementById("notifications");
-  const el = document.createElement("div");
-  el.className = "notification";
-  el.textContent = message;
+const notify = (() => {
+  const mobileQueue = [];
+  let mobileActive = false;
+  const isMobile = () => window.matchMedia("(max-width: 640px)").matches;
 
-  const dismiss = (immediate) => {
-    const fadeDuration = immediate ? 150 : 1000;
-    el.style.transition = `opacity ${fadeDuration}ms ease`;
-    el.style.opacity = "0";
-    setTimeout(() => {
-      el.style.transition =
-        "max-height 0.3s ease, margin-bottom 0.3s ease, padding-top 0.3s ease, padding-bottom 0.3s ease";
-      el.style.maxHeight = "0";
-      el.style.marginBottom = "0";
-      el.style.paddingTop = "0";
-      el.style.paddingBottom = "0";
-      setTimeout(() => el.remove(), 300);
-    }, fadeDuration);
+  // Mobile: show one notification at a time; start next only after current dismisses.
+  const showMobile = (message, timeout, onClick) => {
+    mobileActive = true;
+    const container = document.getElementById("notifications");
+    const el = document.createElement("div");
+    el.className = "notification";
+    el.textContent = message;
+
+    const dismiss = (immediate) => {
+      const dur = immediate ? 150 : 280;
+      el.style.transition = `opacity ${dur}ms ease, transform ${dur}ms ease`;
+      el.style.opacity = "0";
+      el.style.transform = "translateY(12px) scale(0.88)";
+      setTimeout(() => {
+        el.remove();
+        mobileActive = false;
+        if (mobileQueue.length) {
+          const next = mobileQueue.shift();
+          showMobile(next.message, next.timeout, next.onClick);
+        }
+      }, dur);
+    };
+
+    el.addEventListener("click", () => {
+      if (onClick) onClick();
+      dismiss(true);
+    });
+    container.appendChild(el);
+    setTimeout(() => dismiss(false), timeout);
   };
 
-  el.addEventListener("click", () => {
-    if (onClick) onClick();
-    dismiss(true);
-  });
-  container.appendChild(el);
-  setTimeout(() => dismiss(false), timeout);
-};
+  // Desktop: original stacking behaviour.
+  const showDesktop = (message, timeout, onClick) => {
+    const container = document.getElementById("notifications");
+    const el = document.createElement("div");
+    el.className = "notification";
+    el.textContent = message;
+
+    const dismiss = (immediate) => {
+      const fadeDuration = immediate ? 150 : 1000;
+      el.style.transition = `opacity ${fadeDuration}ms ease`;
+      el.style.opacity = "0";
+      setTimeout(() => {
+        el.style.transition =
+          "max-height 0.3s ease, margin-bottom 0.3s ease, padding-top 0.3s ease, padding-bottom 0.3s ease";
+        el.style.maxHeight = "0";
+        el.style.marginBottom = "0";
+        el.style.paddingTop = "0";
+        el.style.paddingBottom = "0";
+        setTimeout(() => el.remove(), 300);
+      }, fadeDuration);
+    };
+
+    el.addEventListener("click", () => {
+      if (onClick) onClick();
+      dismiss(true);
+    });
+    container.appendChild(el);
+    setTimeout(() => dismiss(false), timeout);
+  };
+
+  return (message, timeout = 3000, onClick = null) => {
+    if (isMobile()) {
+      if (mobileActive) {
+        mobileQueue.push({ message, timeout, onClick });
+      } else {
+        showMobile(message, timeout, onClick);
+      }
+    } else {
+      showDesktop(message, timeout, onClick);
+    }
+  };
+})();
 
 // Utility Functions
 const formatDate = (dateString) => {
@@ -135,7 +185,15 @@ const renderHeader = (data) => {
     },
   ];
 
-  const socialIcons = { linkedin: "work", x: "chat", github: "code" };
+  // Brand SVG paths (viewBox 0 0 24 24) sourced from Simple Icons (simpleicons.org)
+  const brandSvgPaths = {
+    linkedin:
+      "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+    x: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
+    github:
+      "M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12",
+  };
+  const socialIcons = {};
   if (personal.social) {
     Object.entries(personal.social).forEach(([platform, info]) => {
       if (info.enabled === false) return;
@@ -144,6 +202,7 @@ const renderHeader = (data) => {
         printText: info.print_enabled === false ? null : info.handle,
         printHidden: info.print_enabled === false,
         icon: socialIcons[platform] || "link",
+        svgPath: brandSvgPaths[platform] || null,
         link: info.url,
       });
     });
@@ -186,10 +245,24 @@ const renderHeader = (data) => {
     wrapper.className = "contact-item";
     if (item.printHidden) wrapper.classList.add("contact-print-hidden");
 
-    // Add icon
-    const icon = createElement("span", "material-symbols-outlined");
-    icon.textContent = item.icon;
-    wrapper.appendChild(icon);
+    // Add icon - use inline SVG for brand icons, Material Symbols for everything else
+    if (item.svgPath) {
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("aria-hidden", "true");
+      svg.classList.add("contact-brand-icon");
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", item.svgPath);
+      svg.appendChild(path);
+      wrapper.appendChild(svg);
+    } else {
+      const icon = createElement("span", "material-symbols-outlined");
+      icon.textContent = item.icon;
+      wrapper.appendChild(icon);
+    }
+
+    // Add title attribute for tooltip when labels are hidden (small screens)
+    if (item.text) wrapper.title = item.text;
 
     // Add text (social items get separate screen/print spans)
     if (item.printText) {
@@ -198,7 +271,7 @@ const renderHeader = (data) => {
       wrapper.appendChild(screenSpan);
       wrapper.appendChild(printSpan);
     } else {
-      const textSpan = createElement("span", "", item.text);
+      const textSpan = createElement("span", "contact-label", item.text);
       wrapper.appendChild(textSpan);
     }
 
@@ -223,13 +296,14 @@ const renderExperience = (experiences) => {
 
   // Companies to collapse by default (Cisco and prior)
   const collapsedCompanies = ["Cisco Systems, Inc.", "Clickmotive, Inc.", "Ericsson, Inc."];
+  const isMobileView = window.matchMedia("(max-width: 640px)").matches;
 
   // Filter enabled companies
   const enabledExperiences = experiences.filter((exp) => exp.enabled !== false);
 
   enabledExperiences.forEach((exp) => {
     const expItem = createElement("div", "experience-item");
-    const isCollapsed = collapsedCompanies.includes(exp.company);
+    const isCollapsed = isMobileView || collapsedCompanies.includes(exp.company);
 
     // Calculate company date range from positions
     const positions = exp.positions || [];
@@ -448,6 +522,7 @@ const renderExperience = (experiences) => {
 const renderProjects = (projects) => {
   const projectsList = document.getElementById("projects-list");
   projectsList.innerHTML = "";
+  const isMobileView = window.matchMedia("(max-width: 640px)").matches;
 
   // Filter enabled projects and group by type
   const enabledProjects = projects.filter((p) => p.enabled !== false);
@@ -487,19 +562,31 @@ const renderProjects = (projects) => {
         formatDateRange(project.start_date, project.end_date),
       );
 
+      // Chevron toggle indicator (mobile only, hidden via CSS on desktop)
+      const chevron = createElement(
+        "span",
+        "material-symbols-outlined project-item-chevron",
+        "expand_more",
+      );
+
       header.appendChild(nameWrapper);
       header.appendChild(dateRange);
+      header.appendChild(chevron);
       projectItem.appendChild(header);
+
+      // Collapsible body
+      const body = createElement("div", "project-body");
+      if (isMobileView) body.classList.add("collapsed");
 
       // Role
       if (project.role) {
         const role = createElement("div", "project-role", project.role);
-        projectItem.appendChild(role);
+        body.appendChild(role);
       }
 
       // Description
       const description = createElement("div", "project-description", project.description);
-      projectItem.appendChild(description);
+      body.appendChild(description);
 
       // Highlights
       if (project.highlights && project.highlights.length > 0) {
@@ -508,7 +595,7 @@ const renderProjects = (projects) => {
           const li = createElement("li", "", highlight);
           highlights.appendChild(li);
         });
-        projectItem.appendChild(highlights);
+        body.appendChild(highlights);
       }
 
       // Technologies
@@ -518,7 +605,7 @@ const renderProjects = (projects) => {
           const tag = createElement("span", "tech-tag", tech);
           techDiv.appendChild(tag);
         });
-        projectItem.appendChild(techDiv);
+        body.appendChild(techDiv);
       }
 
       // Metrics
@@ -528,8 +615,16 @@ const renderProjects = (projects) => {
           const metricSpan = createElement("span", "metric", metric);
           metricsDiv.appendChild(metricSpan);
         });
-        projectItem.appendChild(metricsDiv);
+        body.appendChild(metricsDiv);
       }
+
+      projectItem.appendChild(body);
+
+      // Toggle on header click
+      header.addEventListener("click", (e) => {
+        if (e.target.closest(".project-link-btn")) return;
+        body.classList.toggle("collapsed");
+      });
 
       projectsList.appendChild(projectItem);
     });
@@ -851,9 +946,16 @@ const renderCareerTimeline = (data) => {
     tooltip.style.display = "none";
   };
   const attachTip = (el, text) => {
+    el.dataset.ctvTip = text; // used by mobile scrub hit-testing
     el.addEventListener("mouseenter", (e) => showTip(e, text));
     el.addEventListener("mousemove", moveTip);
     el.addEventListener("mouseleave", hideTip);
+  };
+
+  // Snap points for the scrub needle — collect every notable year position
+  const snapYears = new Map(); // year(float) → label
+  const addSnap = (year, label) => {
+    if (!snapYears.has(year)) snapYears.set(year, label);
   };
 
   // Band row with overlaid project dots
@@ -864,6 +966,8 @@ const renderCareerTimeline = (data) => {
       bandEl.style.left = toPct(band.start);
       bandEl.style.width = toWidthPct(band.start, band.end);
       attachTip(bandEl, band.label);
+      addSnap(band.start, band.label);
+      addSnap(band.end, band.label);
       row.appendChild(bandEl);
       const count = projects.length;
       projects.forEach((proj, i) => {
@@ -872,6 +976,7 @@ const renderCareerTimeline = (data) => {
         el.style.left = toPct(x);
         el.addEventListener("click", () => navigateToProject(proj.id));
         attachTip(el, proj.label);
+        addSnap(x, proj.label);
         row.appendChild(el);
       });
     });
@@ -898,6 +1003,7 @@ const renderCareerTimeline = (data) => {
       el.style.left = toPct(dot.mid);
       el.addEventListener("click", () => navigateToProject(dot.id));
       attachTip(el, dot.label);
+      addSnap(dot.mid, dot.label);
       projRow.appendChild(el);
     });
     chart.appendChild(projRow);
@@ -907,16 +1013,214 @@ const renderCareerTimeline = (data) => {
   const axis = createElement("div", "ctv-axis");
   const tickStart = Math.ceil(drawMin + 0.5);
   const tickEnd = Math.floor(drawMax - 0.5);
+
+  // Compute label step so labels never overlap on narrow viewports.
+  // ~32px per label is enough for a 4-digit year at 0.625rem with spacing.
+  const containerWidth = container.offsetWidth || window.innerWidth || 600;
+  const maxLabels = Math.max(2, Math.floor(containerWidth / 32));
+  const rawStep = (tickEnd - tickStart) / maxLabels;
+  // Round up to the nearest "nice" step: 1, 2, 5, 10
+  const niceStep = rawStep <= 1 ? 1 : rawStep <= 2 ? 2 : rawStep <= 5 ? 5 : 10;
+
   for (let y = tickStart; y <= tickEnd; y++) {
     const tick = createElement("div", "ctv-tick");
     tick.style.left = toPct(y);
     tick.appendChild(createElement("div", "ctv-tick-line"));
-    tick.appendChild(createElement("div", "ctv-tick-label", String(y)));
+    if ((y - tickStart) % niceStep === 0) {
+      tick.appendChild(createElement("div", "ctv-tick-label", String(y)));
+    }
     axis.appendChild(tick);
   }
   chart.appendChild(axis);
 
+  // ── Mobile scrub label + needle ────────────────────────────────────────────
+  const scrubLabel = createElement("div", "ctv-scrub-label");
+  const scrubText = createElement("span", "ctv-scrub-text", "\u00a0");
+  scrubLabel.appendChild(scrubText);
+
+  const needle = createElement("div", "ctv-scrub-needle");
+  chart.appendChild(needle);
+
+  // Sorted snap array for fast nearest-neighbour lookup
+  const snapArr = Array.from(snapYears.entries()).sort((a, b) => a[0] - b[0]);
+  const nearestSnap = (year) => {
+    if (!snapArr.length) return null;
+    let lo = 0,
+      hi = snapArr.length - 1;
+    while (lo < hi) {
+      const mid = (lo + hi) >> 1;
+      if (snapArr[mid][0] < year) lo = mid + 1;
+      else hi = mid;
+    }
+    // compare lo and lo-1
+    if (lo > 0 && Math.abs(snapArr[lo - 1][0] - year) <= Math.abs(snapArr[lo][0] - year))
+      return snapArr[lo - 1];
+    return snapArr[lo];
+  };
+
+  // Hold-and-scrub: horizontal drag = scrub, vertical drag = scroll passthrough
+  {
+    let touchStartX = 0,
+      touchStartY = 0;
+    let scrubbing = false,
+      scrollDetected = false;
+
+    const showScrub = (text) => {
+      scrubText.textContent = text || "\u00a0";
+      scrubLabel.classList.add("ctv-scrub-label--active");
+    };
+    const clearScrub = () => {
+      scrubLabel.classList.remove("ctv-scrub-label--active");
+      needle.classList.remove("ctv-scrub-needle--active");
+      // reset text content after the fade-out transition finishes
+      setTimeout(() => {
+        if (!scrubLabel.classList.contains("ctv-scrub-label--active")) {
+          scrubText.textContent = "\u00a0";
+        }
+      }, 220);
+    };
+
+    const updateNeedle = (clientX) => {
+      const rect = chart.getBoundingClientRect();
+      const fraction = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+      const year = drawMin + fraction * drawRange;
+      const snap = nearestSnap(year);
+      if (!snap) return null;
+      needle.style.left = toPct(snap[0]);
+      needle.classList.add("ctv-scrub-needle--active");
+      return snap[1]; // label
+    };
+
+    chart.addEventListener(
+      "touchstart",
+      (e) => {
+        const t = e.touches[0];
+        touchStartX = t.clientX;
+        touchStartY = t.clientY;
+        scrubbing = false;
+        scrollDetected = false;
+      },
+      { passive: true },
+    );
+
+    chart.addEventListener(
+      "touchmove",
+      (e) => {
+        if (scrollDetected) return;
+        const t = e.touches[0];
+        const dx = Math.abs(t.clientX - touchStartX);
+        const dy = Math.abs(t.clientY - touchStartY);
+
+        if (!scrubbing) {
+          // Commit to scrub on clear horizontal intent
+          if (dx > 6 && dx >= dy) {
+            scrubbing = true;
+          } else if (dy > dx + 4) {
+            // Clear vertical intent → let page scroll
+            scrollDetected = true;
+            clearScrub();
+            return;
+          } else {
+            return; // too early to tell
+          }
+        }
+
+        // Scrub is active — prevent page scroll, snap needle, update label
+        e.preventDefault();
+        const snapLabel = updateNeedle(t.clientX);
+        if (snapLabel) {
+          showScrub(snapLabel);
+        } else {
+          const hit = document.elementFromPoint(t.clientX, t.clientY);
+          const tipEl = hit && hit.closest("[data-ctv-tip]");
+          showScrub(tipEl ? tipEl.dataset.ctvTip : "\u00a0");
+        }
+      },
+      { passive: false },
+    );
+
+    const onScrubEnd = () => {
+      if (scrubbing) clearScrub();
+      scrubbing = false;
+      scrollDetected = false;
+    };
+    chart.addEventListener("touchend", onScrubEnd, { passive: true });
+    chart.addEventListener("touchcancel", onScrubEnd, { passive: true });
+
+    // ── One-time affordance hint (mobile only) ───────────────────────────────
+    // Sweeps the needle through representative snap points so users discover
+    // the scrub gesture before ever touching the chart.
+    {
+      let hintCancelled = false;
+      // Any real touch immediately cancels the hint
+      chart.addEventListener(
+        "touchstart",
+        () => {
+          hintCancelled = true;
+        },
+        { once: true, passive: true },
+      );
+
+      if (window.matchMedia("(max-width: 640px)").matches && snapArr.length >= 2) {
+        const pause = (ms) => new Promise((r) => setTimeout(r, ms));
+
+        // Pick 3 representative snap points spread evenly across the timeline
+        const pickCount = Math.min(3, snapArr.length);
+        const hintPoints = Array.from(
+          { length: pickCount },
+          (_, i) => snapArr[Math.round((i * (snapArr.length - 1)) / Math.max(pickCount - 1, 1))],
+        ).filter((p, i, arr) => i === 0 || arr[i - 1][0] !== p[0]);
+
+        (async () => {
+          await pause(1000);
+          if (hintCancelled) return;
+
+          // Step 1 – show the affordance prompt without the needle
+          scrubText.textContent = "Swipe to explore \u2194";
+          scrubLabel.classList.add("ctv-scrub-label--active");
+
+          await pause(800);
+          if (hintCancelled) {
+            clearScrub();
+            return;
+          }
+
+          // Step 2 – sweep needle through the representative snap points
+          needle.classList.add("ctv-scrub-needle--hinting");
+          for (const [year, label] of hintPoints) {
+            if (hintCancelled) break;
+            needle.style.left = toPct(year);
+            needle.classList.add("ctv-scrub-needle--active");
+            scrubText.textContent = label;
+            await pause(700);
+          }
+
+          await pause(350);
+          clearScrub();
+          needle.classList.remove("ctv-scrub-needle--hinting");
+        })();
+      }
+    }
+    // ─────────────────────────────────────────────────────────────────────────
+  }
+  // ────────────────────────────────────────────────────────────────────────────
+
+  // Re-render when the container width changes (e.g. phone rotation)
+  if (typeof ResizeObserver !== "undefined") {
+    let lastWidth = container.offsetWidth;
+    const ro = new ResizeObserver(() => {
+      const newWidth = container.offsetWidth;
+      if (Math.abs(newWidth - lastWidth) > 20) {
+        lastWidth = newWidth;
+        ro.disconnect();
+        renderCareerTimeline(data);
+      }
+    });
+    ro.observe(container);
+  }
+
   container.appendChild(chart);
+  chart.appendChild(scrubLabel);
   window.addEventListener("scroll", hideTip, { passive: true });
 };
 
