@@ -817,8 +817,23 @@ button.contact-item:hover .contact-brand-icon {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   gap: var(--spacing-sm);
+  margin-bottom: 0;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+  padding: var(--spacing-xs) 0;
+  margin-left: calc(-1 * var(--spacing-xs));
+  padding-left: var(--spacing-xs);
+  border-radius: var(--border-radius);
+}
+
+.project-header:hover {
+  background-color: var(--color-accent-light);
+  transform: translateX(2px);
+}
+
+.project-item:has(.project-body:not(.collapsed)) .project-header {
   margin-bottom: var(--spacing-sm);
 }
 
@@ -835,36 +850,6 @@ button.contact-item:hover .contact-brand-icon {
 .project-body.collapsed {
   max-height: 0;
   opacity: 0;
-}
-
-/* Chevron — hidden on desktop, visible + animated on mobile */
-.project-item-chevron {
-  display: none;
-  font-size: 1.2rem;
-  color: var(--color-text-tertiary);
-  transition: transform 0.25s ease;
-  flex-shrink: 0;
-  margin-left: auto;
-  padding-left: var(--spacing-xs);
-}
-
-@media (max-width: 640px) {
-  .project-header {
-    cursor: pointer;
-    margin-bottom: 0;
-  }
-
-  .project-item:has(.project-body:not(.collapsed)) .project-header {
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .project-item-chevron {
-    display: inline-flex;
-  }
-
-  .project-item:has(.project-body:not(.collapsed)) .project-item-chevron {
-    transform: rotate(180deg);
-  }
 }
 
 .project-name-wrapper {

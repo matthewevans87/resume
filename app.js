@@ -562,21 +562,19 @@ const renderProjects = (projects) => {
         formatDateRange(project.start_date, project.end_date),
       );
 
-      // Chevron toggle indicator (mobile only, hidden via CSS on desktop)
-      const chevron = createElement(
-        "span",
-        "material-symbols-outlined project-item-chevron",
-        "expand_more",
-      );
-
       header.appendChild(nameWrapper);
       header.appendChild(dateRange);
-      header.appendChild(chevron);
       projectItem.appendChild(header);
 
       // Collapsible body
       const body = createElement("div", "project-body");
       if (isMobileView) body.classList.add("collapsed");
+
+      // Toggle on header click
+      header.addEventListener("click", (e) => {
+        if (e.target.closest(".project-link-btn")) return;
+        body.classList.toggle("collapsed");
+      });
 
       // Role
       if (project.role) {
@@ -619,12 +617,6 @@ const renderProjects = (projects) => {
       }
 
       projectItem.appendChild(body);
-
-      // Toggle on header click
-      header.addEventListener("click", (e) => {
-        if (e.target.closest(".project-link-btn")) return;
-        body.classList.toggle("collapsed");
-      });
 
       projectsList.appendChild(projectItem);
     });
@@ -1282,7 +1274,9 @@ const loadResume = async () => {
     const yamlText = await response.text();
     const data = jsyaml.load(yamlText);
     renderResume(data);
-    notify("This page prints nicely. Give it a try!", 5000, () => window.print());
+    notify("This page prints nicely. Expand the sections you want and give it a try!", 5000, () =>
+      window.print(),
+    );
   } catch (error) {
     console.error("Error loading resume:", error);
     document.getElementById("resume").innerHTML =

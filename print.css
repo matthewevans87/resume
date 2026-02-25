@@ -129,8 +129,9 @@
     color: #000;
   }
 
-  .contact-item .material-symbols-outlined {
-    display: none;
+  .material-symbols-outlined,
+  .contact-brand-icon {
+    display: none !important;
   }
 
   .contact-screen-text {
