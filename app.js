@@ -294,8 +294,6 @@ const renderExperience = (experiences) => {
   const timeline = document.getElementById("experience-timeline");
   timeline.innerHTML = "";
 
-  // Companies to collapse by default (Cisco and prior)
-  const collapsedCompanies = ["Cisco Systems, Inc.", "Clickmotive, Inc.", "Ericsson, Inc."];
   const isMobileView = window.matchMedia("(max-width: 640px)").matches;
 
   // Filter enabled companies
@@ -303,7 +301,7 @@ const renderExperience = (experiences) => {
 
   enabledExperiences.forEach((exp) => {
     const expItem = createElement("div", "experience-item");
-    const isCollapsed = isMobileView || collapsedCompanies.includes(exp.company);
+    const isCollapsed = isMobileView || exp.expanded === false;
 
     // Calculate company date range from positions
     const positions = exp.positions || [];
@@ -418,7 +416,9 @@ const renderExperience = (experiences) => {
           projectsHeader.textContent = `Key Projects (${enabledProjects.length})`;
           posDiv.appendChild(projectsHeader);
 
-          const projectsContainer = createElement("div", "position-projects-container collapsed");
+          const projectsContainerClasses =
+            "position-projects-container" + (exp.projects_expanded === false ? " collapsed" : "");
+          const projectsContainer = createElement("div", projectsContainerClasses);
 
           enabledProjects.forEach((project) => {
             const projectItem = createElement("div", "company-project-item");
@@ -568,7 +568,7 @@ const renderProjects = (projects) => {
 
       // Collapsible body
       const body = createElement("div", "project-body");
-      if (isMobileView) body.classList.add("collapsed");
+      if (isMobileView || project.projects_expanded === false) body.classList.add("collapsed");
 
       // Toggle on header click
       header.addEventListener("click", (e) => {

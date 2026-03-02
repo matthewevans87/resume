@@ -450,7 +450,7 @@
   }
 
   .project-metrics {
-    display: inline;
+    display: block;
     margin-top: 4pt;
     padding-top: 0;
     border-top: none;
