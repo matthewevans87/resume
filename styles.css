@@ -244,6 +244,49 @@ button.contact-item:hover .contact-brand-icon {
   color: var(--color-text-secondary);
 }
 
+.skills-highlight {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 0 var(--spacing-md);
+  max-width: 42rem;
+  margin: var(--spacing-lg) auto 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.skills-highlight-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  white-space: nowrap;
+}
+
+.skills-highlight-title {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.skills-highlight-colon {
+  color: var(--color-text-tertiary);
+}
+
+.skills-highlight-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.skills-highlight-dot {
+  color: var(--color-text-tertiary);
+  margin: 0 var(--spacing-sm);
+  line-height: 1;
+}
+
+.skills-highlight-item {
+  white-space: nowrap;
+}
+
 .tagline {
   max-width: 42rem;
   margin: var(--spacing-sm) auto 0;
@@ -733,6 +776,23 @@ button.contact-item:hover .contact-brand-icon {
   color: var(--color-text-primary);
 }
 
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
+}
+
+.course-tag {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text-secondary);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: calc(var(--border-radius) * 0.5);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
 /* Position Projects (Company Projects) */
 .position-projects-header {
   margin-top: var(--spacing-lg);
@@ -873,6 +933,16 @@ button.contact-item:hover .contact-brand-icon {
 
 .project-link-btn .material-symbols-outlined {
   font-size: 1.15rem;
+}
+
+.project-link-btn .contact-brand-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.project-link-print-url {
+  display: none;
 }
 
 .project-name {

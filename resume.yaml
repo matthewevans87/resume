@@ -25,6 +25,7 @@ mission_statement: |
   Software Engineer with 15 years' experience shipping production systems and M.S. Computer Science (Machine Learning) from UT Dallas. Targeting Software Engineer III (ML) roles in systems/infrastructure (evaluation, experimentation, data pipelines, and deployment) where measurable wins compound into larger, high-impact bets.
 
 tagline: "Software should return time, attention, and agency to people."
+enable_tagline: false
 
 # order_by controls the display order of resume sections.
 # Options:
@@ -62,7 +63,7 @@ experience:
         promotion: false
         technologies: []
         summary: |
-          Architected and delivered a full-featured, greenfield ERP system for a metal nameplate fabrication company, replacing a decade-old legacy system with a modern Clean Architecture stack. The system manages the complete operational lifecycle — from customer quoting and job tracking to metal inventory, fabrication work centers, purchasing, AR/AP, and delivery — across a domain of 87+ entities, served through a reflection-driven, auto-generated API framework designed to maximize consistency and minimize ongoing maintenance burden.
+          Architected and delivered a greenfield ERP platform, replacing a decade-old legacy system with a modern Clean Architecture stack. Owned the full lifecycle end-to-end—domain modeling (87+ entities), API/service design, and production operations—with heavy emphasis on data work: complex SQL, ETL pipelines, large-scale data migration, and data-quality remediation. Built a reflection-driven, auto-generated API framework to enforce consistency, reduce defects, and minimize long-term maintenance.
         projects:
           - name: "Augurware (ERP Product)"
             start_date: "2024"
@@ -85,10 +86,7 @@ experience:
         end_date: "2023"
         promotion: false
         summary: |
-          Organizational and Account Leadership responsible for thought leadership, personnel management, 
-          account health and growth, business development, and successful delivery of enterprise software 
-          solutions. Managed multiple simultaneous project teams across multiple clients with total budgets 
-          exceeding $4MM/year revenue.
+          Responsible for thought leadership, personnel management, account health and growth, business development, and successful delivery of enterprise software solutions. Owned multiple simultaneous project teams across multiple clients with total budgets exceeding $4MM/year revenue.
         highlights:
           - "Led hiring, training, and mentoring of dozens of software developers at various career phases"
           - "Managed multiple client accounts through stakeholder discovery, relationship building, and execution"
@@ -96,16 +94,12 @@ experience:
           - "Delivered working software through Agile teams, problem discovery, and excellent technical execution"
         technologies:
           - "C#"
-          - ".NET 5"
-          - ".NET 6"
-          - "Angular"
+          - "Dotnet"
+          - "Containerization (Docker)"
           - "TypeScript"
-          - "ReactJS"
-          - "Docker"
           - "AWS Cloud"
           - "Azure Cloud"
           - "SQL Server"
-          - "EF Core"
         projects:
           - name: "Alight Clarity (SaaS Product)"
             url: null
@@ -120,10 +114,10 @@ experience:
               - "Successfully delivered working SaaS product opening additional revenue stream for client"
             technologies:
               - "C#"
-              - ".NET 6"
+              - "Dotnet"
               - "Angular"
               - "TypeScript"
-              - "Docker"
+              - "Containerization (Docker)"
               - "AWS Fargate"
               - "AWS S3"
               - "AWS CloudFormation"
@@ -149,7 +143,7 @@ experience:
               - "D3.js"
               - "Google Maps API"
               - "Snowflake"
-              - "Azure Cloud"
+              - "Azure"
               - "SQL Server"
             metrics:
               - "Nationwide route network visualization"
@@ -188,14 +182,14 @@ experience:
               - "Full stack development of React frontends and RESTful .NET Core API microservices"
             technologies:
               - "C#"
-              - ".NET 5"
-              - "ReactJS"
+              - "Dotnet"
+              - "React"
               - "AWS EC2"
               - "AWS S3"
               - "Redis"
               - "Azure Cosmos DB"
               - "SQL Server"
-              - "Docker"
+              - "Containerization (Docker)"
               - "GitHub Actions"
             metrics: null
           - name: "McKesson - ETL Process Monitoring"
@@ -241,9 +235,9 @@ experience:
           - "Established CI/CD pipelines and Azure DevOps workflows"
         technologies:
           - "TypeScript"
-          - "Angular 7"
+          - "Angular"
           - "React"
-          - "ASP.NET Core Web API"
+          - "Dotnet"
           - "C#"
           - "SQL Server"
           - "Dapper"
@@ -262,9 +256,8 @@ experience:
               - "Performed data migration for legacy statistics data"
             technologies:
               - "TypeScript"
-              - "Angular 7"
-              - "AngularJS"
-              - "ASP.NET Web API"
+              - "Dotnet"
+              - "Angular"
               - "C#"
               - "SQL Server"
               - "Dapper"
@@ -284,7 +277,7 @@ experience:
             technologies:
               - "TypeScript"
               - "JavaScript"
-              - "ASP.NET Core Web API"
+              - "Dotnet"
               - "C#"
               - "React"
               - "KnockoutJS"
@@ -318,8 +311,8 @@ experience:
           - "Built market research and sales lead generation web applications"
         technologies:
           - "TypeScript"
-          - "Angular 2/4"
-          - "ASP.NET Core Web API"
+          - "Angular"
+          - "Dotnet"
           - "C#"
           - "D3.js"
           - "Chart.js"
@@ -344,7 +337,7 @@ experience:
             technologies:
               - "TypeScript"
               - "Angular 4"
-              - "ASP.NET Core Web API"
+              - "Dotnet"
               - "C#"
               - "SQL Server"
               - "Bootstrap"
@@ -362,8 +355,8 @@ experience:
               - "Built complex D3.js and Chart.js visualizations"
             technologies:
               - "TypeScript"
-              - "Angular 4"
-              - "ASP.NET Core Web API"
+              - "Angular"
+              - "Dotnet"
               - "C#"
               - "SQL Server"
               - "D3.js"
@@ -383,8 +376,8 @@ experience:
               - "Delivered significant performance gains through algorithmic optimization"
             technologies:
               - "TypeScript"
-              - "Angular 2"
-              - "ASP.NET Core Web API"
+              - "Angular"
+              - "Dotnet"
               - "C#"
               - "SQL Server"
               - "Chart.js"
@@ -631,111 +624,101 @@ experience:
               - "SQL Server"
             metrics: null
 
+projects_config:
+  title: "Selected AI/ML Projects"
+  group_by_type: false
+
 projects:
   - name: "Vision-Based Manipulation via Sim-to-Real RL"
     enabled: true
     url: "https://github.com/utd-fall-25-cs-6341-robotics/cs6341-robotics-project-direct"
     type: "academic"
-    description: "Developed a complete sim-to-real RL pipeline for vision-based cube manipulation on the SO-101 robotic arm using NVIDIA Isaac Sim and Isaac Lab. Trained vision-conditioned PPO policies with asymmetric actor-critic architecture, frozen ResNet18 + spatial softmax encoding, and extensive domain randomization. Achieved zero-shot sim-to-real transfer for a proprioception-only task and demonstrated cube-seeking behavior in the vision-based task."
-    role: "Researcher, Author"
     start_date: "2025-08"
     end_date: "2025-12"
+    role: "Research Engineer / Author"
+    description: "End-to-end sim-to-real RL pipeline for vision-conditioned cube manipulation on the SO-101 arm using Isaac Sim/Isaac Lab."
     highlights:
-      - "Implemented two Isaac Lab tasks: proprioception-only end-effector height maximization and vision-based cube interaction"
-      - "Designed asymmetric actor-critic PPO architecture with frozen ResNet18 + spatial softmax for the actor and privileged sim state for the critic"
-      - "Built multi-stage gated reward structure (distance → contact → lift) to prevent reward hacking during training"
-      - "Applied extensive per-episode domain randomization: camera augmentation pipeline (blur, noise, brightness, pose jitter), lighting variation, distractor objects, and cube placement randomization"
-      - "Achieved zero-shot sim-to-real transfer for proprioception task; vision policy demonstrated partial cube-seeking behavior on physical hardware"
-      - "Documented engineering challenges: reward hacking, servo imprecision, camera quality gap, and sim-to-real perception mismatch"
+      - "Built a sim-to-real RL pipeline (simulation → training → evaluation → hardware tests) for vision-conditioned manipulation on SO-101."
+      - "Implemented asymmetric actor–critic PPO with frozen ResNet18 + spatial-softmax visual encoder and privileged critic state."
+      - "Designed staged/gated rewards (distance → contact → lift) and performed deep-dive diagnostics to mitigate reward hacking."
+      - "Applied extensive domain randomization (camera augmentation, lighting variation, distractors, pose randomization) to improve robustness."
+      - "Results: zero-shot sim-to-real transfer on proprioception-only task; partial cube-seeking behavior on vision task; documented blockers (camera gap, servo imprecision, perception mismatch)."
     technologies:
       - "Python"
       - "PyTorch"
       - "NVIDIA Isaac Sim / Isaac Lab"
-      - "PPO / RL (SKRL)"
-      - "ResNet18"
-      - "LeRobot API"
+      - "PPO (SKRL)"
+      - "ResNet18 + Spatial Softmax"
       - "TensorBoard"
       - "Docker"
-    metrics:
-      - "Zero-shot sim-to-real transfer (proprioception task)"
 
   - name: "ML Assisted Visibility Graph Construction"
     enabled: true
     url: "https://github.com/matthewevans87/cs6319-computational-geometry-project"
     type: "academic"
-    description: "Augmented the naive visibility-graph algorithm with a learned LSTM-based sector predictor for motion planning in bounded planes with polygonal obstacles. The model restricts visibility checks to predicted regions containing shortest-path vertices, sharply reducing graph-construction overhead while closely matching exact path lengths."
-    role: "Researcher, Author"
+    description: "Reduced visibility-graph construction cost for shortest-path motion planning by learning to predict where the next shortest-path vertex will lie, pruning visibility checks while preserving near-exact path quality."
+    role: "Research Engineer / Author"
     start_date: "2025-01"
     end_date: "2025-12"
     highlights:
-      - "Dataset Creation: Developed custom StarCraft map parser using RichChk to extract tile walkability, producing binary obstacle matrices for 1,670 maps"
-      - "Constructed polygonal obstacle representations from connected components using alpha shapes and Shapely with colinear point removal"
-      - "Designed LSTM-based RNN model with sector geometry (256-dim rasterized binary vector) and global start/end features to predict next-sector in shortest path sequence"
-      - "Trained model with five-fold cross-validation achieving 82.1% validation accuracy"
-      - "Integrated model with DFS-based visibility graph construction, pruning checks to model-suggested sectors with dynamic programming over reachable vertices"
-      - "Achieved up to 98% reduction in vertex comparisons on StarCraft map benchmarks"
+      - "Built a large training dataset by parsing 1,670 StarCraft maps into binary walkability/obstacle grids."
+      - "Converted obstacle grids into polygonal representations (connected components → alpha shapes) with geometric cleanup using Shapely."
+      - "Designed an LSTM-based “sector predictor” to estimate the next region containing shortest-path vertices and restrict visibility checks."
+      - "Trained with five-fold cross-validation, achieving 82.1% validation accuracy; integrated the predictor into DFS/DP-based visibility-graph construction."
+      - "Result: up to 98% reduction in vertex comparisons on benchmarks while closely matching exact shortest-path lengths."
     technologies:
       - "Python"
       - "PyTorch"
       - "LSTM"
       - "RNN"
-      - "Scipy"
+      - "SciPy"
       - "Shapely"
       - "NumPy"
-    metrics:
-      - "Up to 98% reduction in vertex comparisons"
-      - "82.1% validation accuracy"
 
   - name: "Neural Networks Independent Study"
     enabled: true
     url: "https://github.com/matthewevans87/neural-networks-independent-study"
     type: "academic"
-    description: "Self-designed 15-week independent study covering the full arc of modern deep learning—from 1986 backpropagation through vision-language foundation models—executed under the supervision of Prof. Jessiya Ouyang. Surveyed 17 seminal papers, each accompanied by a written LaTeX review; implemented four neural network architectures from scratch in PyTorch; and produced a master's thesis proposal for a novel Transformer-based autonomous driving model."
-    role: "Researcher, Course Designer, Author"
+    description: "15-week supervised independent study spanning modern deep learning fundamentals through foundation models, combining paper-driven learning with from-scratch implementations and a thesis-level research proposal."
+    role: "Research Engineer / Course Designer / Author"
     start_date: "2025-01"
     end_date: "2025-05"
     highlights:
-      - "Implemented a CNN in PyTorch for MNIST digit classification, achieving 97.99% test accuracy; applied Xavier weight initialization, max-pooling, and cross-entropy loss with SGD"
-      - "Built a 2-layer stacked LSTM character-level language model trained on the Tiny Shakespeare corpus; achieved perplexity of 6.47, top-1 accuracy of 53.3%, and top-5 accuracy of 82.7% with an interactive text-generation inference mode"
-      - "Implemented a GAN (MLP generator/discriminator with LeakyReLU and dropout) to synthesize MNIST digits; trained for 200 epochs and verified convergence to the theoretical minimax equilibrium (D loss → log 4, G loss → −log 2)"
-      - "Developed practical familiarity with autoregressive foundation models by running GPT-2 (up to 1.5B parameters) locally via Hugging Face Transformers, exploring prompt engineering, greedy vs. sampled decoding, and few-shot in-context learning"
-      - "Wrote 17 structured LaTeX literature reviews spanning backpropagation (Rumelhart 1986) through AlexNet, ResNet, LSTM, Transformer (Vaswani 2017), GAN, DDPM, BERT, GPT-2/3, ViT, CLIP, and DALL-E"
-      - "Authored a master's thesis proposal for a Vision-Only Planning Transformer for autonomous driving that unifies long-horizon trajectory planning and low-level vehicle control in a single model using interleaved Planning Tokens trained via imitation learning in CARLA"
+      - "Surveyed 17 seminal deep-learning papers and produced structured LaTeX reviews (backprop → CNNs/ResNets → LSTMs → Transformers → diffusion/VLMs)."
+      - "Implemented an MLP from scratch in NumPy for MNIST (manual forward/backprop, training loop, and optimization)."
+      - "Implemented core architectures in PyTorch, including a CNN for MNIST (97.99% test accuracy) and a stacked LSTM character LM (perplexity 6.47; top-1 53.3%, top-5 82.7%) with interactive generation."
+      - "Built and trained a GAN for MNIST digit synthesis (MLP G/D with LeakyReLU + dropout), validating expected minimax dynamics over 200 epochs."
+      - "Capstone: authored a master's thesis proposal for a Transformer-based autonomous driving model (vision-only planning + low-level control) with a CARLA-based imitation-learning training plan."
     technologies:
       - "Python"
       - "PyTorch"
+      - "NumPy"
       - "CNN"
+      - "MLP (from scratch)"
       - "LSTM"
       - "GAN"
+      - "Transformers"
       - "LaTeX"
-    metrics:
-      - "17 seminal papers reviewed across the full deep learning literature (1986-2021)"
-      - "CNN: 97.99% test accuracy on MNIST"
-      - "LSTM: perplexity 6.47 | top-1 53.3% | top-5 82.7% | top-10 91.8% on Tiny Shakespeare"
-      - "GAN: confirmed minimax equilibrium convergence at epoch ~40 over 200-epoch run"
 
   - name: "Intent-Aware Lookahead for Language Modeling"
     enabled: true
     url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-project"
     type: "academic"
-    description: "Investigated whether lightweight future-token prediction could improve next-token accuracy in autoregressive language models. Designed and evaluated IALM-Lite, a causal transformer architecture augmented with an auxiliary future prediction head, intent pooling, and FiLM/gated fusion modules. Conducted systematic experiments across 21 model variants on WikiText-2, yielding rigorous negative results with analysis of multi-task interference and capacity allocation."
-    role: "Researcher, Author"
+    description: "Tested whether lightweight future-token prediction can improve next-token accuracy in causal language models, using a modified transformer with auxiliary lookahead heads and intent-conditioned fusion."
+    role: "Research Engineer / Author"
     start_date: "2025-08"
     end_date: "2025-12"
     highlights:
-      - "Proposed and implemented IALM-Lite: a causal transformer (6-layer, 44.9M params) extended with a future prediction head, intent pooling (mean and attention), and fusion modules (FiLM and gated)"
-      - "Evaluated 21 model variants across a hyperparameter grid of future horizon, auxiliary loss weight, pooling method, and fusion mechanism"
-      - "Identified auxiliary loss weight λ as the dominant performance factor, with λ=0.3 producing 3.7× worse perplexity than λ=0.1"
-      - "Demonstrated that vanilla baseline (PPL 141.2) outperforms best auxiliary-only (235.4, +66.7%) and best IALM-Lite (292.4, +107.0%) variants"
-      - "Documented negative results with detailed analysis of multi-task interference, capacity allocation, and training dynamics to guide future research"
+      - "Designed and implemented IALM-Lite: a 6-layer causal transformer (~44.9M params) augmented with an auxiliary future prediction head, intent pooling (mean/attention), and FiLM vs gated fusion."
+      - "Ran controlled study of 21 model variants across a grid of lookahead horizon, aux loss weight, pooling method, and fusion mechanism."
+      - "Identified auxiliary loss weight (λ) as the dominant factor shaping training dynamics and overall performance."
+      - "Built an evaluation workflow on WikiText-2 to compare baselines vs augmented models under matched training settings."
+      - "Result: baseline transformer outperformed all lookahead variants; documented negative results with analysis of multi-task interference and capacity allocation to guide future designs."
     technologies:
       - "Python"
       - "PyTorch"
       - "Transformers"
       - "TensorBoard"
-    metrics:
-      - "21 model variants evaluated"
-      - "Rigorous negative result: baseline outperforms all variants"
 
   - name: "Crypto Currency Trading Bot"
     url: null
@@ -810,52 +793,64 @@ achievements:
     description: "Microsoft Azure cloud fundamentals certification"
     url: "https://www.youracclaim.com/badges/2e76f13a-6072-4b74-8e58-6b026015399d/public_url"
 
+skills_highlight:
+  title: "ML Systems"
+  items:
+    - "Training/Eval Pipelines"
+    - "Experiment Design/Ablation"
+    - "Data Pipelines/ETL"
+    - "Model Serving/Inference"
+    - "Monitoring/Telemetry"
+
 skills:
-  - category: "Machine Learning and Robotics"
+  - category: "AI/ML, Robotics & Experimentation"
     items:
-      - "NumPy"
       - "PyTorch"
+      - "NumPy"
+      - "TensorBoard"
       - "NVIDIA Isaac Sim / Isaac Lab"
       - "ROS"
-      - "ETL/Data Pipelines"
-      - "Le Robot"
-      - "TensorBoard"
+      - "LeRobot"
+
+  - category: "ML Systems & Data"
+    items:
+      - "Experiment design / ablations"
+      - "Evaluation harnesses & metrics"
+      - "ETL / Data Pipelines"
+      - "Message queues (RabbitMQ, AWS SQS)"
+      - "Analytics (AWS Athena)"
 
   - category: "Programming Languages"
     items:
-      - "C#"
       - "Python"
+      - "C#"
       - "TypeScript"
       - "SQL"
 
-  - category: "Web Technologies & Frameworks"
+  - category: "Infrastructure, Containers & CI/CD"
     items:
-      - "Dotnet"
-      - "Angular"
-      - "React"
-      - "Node.js"
-      - "RxJS"
-      - "D3.js"
-
-  - category: "Cloud & Infrastructure"
-    items:
-      - "AWS (S3, Fargate, ECS, CloudFormation)"
+      - "Linux"
+      - "Docker (images, containers)"
+      - "AWS ECS / Fargate"
+      - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
       - "Azure (App Service, Storage, DevOps)"
-      - "Docker"
+      - "Observability (CloudWatch, Application Insights, Seq)"
       - "CI/CD Pipelines"
+      - "GitHub Actions"
+      - "Azure DevOps YAML Pipelines"
 
-  - category: "Databases & Data Tools"
+  - category: "Databases, Caching & Data Stores"
     items:
       - "SQL Server"
       - "PostgreSQL / PostGIS"
-      - "No SQL (Cosmos DB, MongoDB)"
+      - "Cosmos DB"
+      - "MongoDB"
       - "Redis"
       - "Entity Framework"
-      - "Dapper"
 
-  - category: "Tools & Methodologies"
+  - category: "Software Engineering"
     items:
       - "Git"
-      - "Agile / Scrum"
-      - "Azure DevOps YAML Pipelines"
-      - "GitHub Actions"
+      - "Distributed systems fundamentals"
+      - "API design"
+      - "Testing & code review"

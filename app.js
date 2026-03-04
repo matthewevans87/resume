@@ -153,6 +153,46 @@ const showModal = (message) => {
   });
 };
 
+// Brand SVG paths (viewBox 0 0 24 24) sourced from Simple Icons (simpleicons.org)
+const brandSvgPaths = {
+  linkedin:
+    "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+  x: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
+  github:
+    "M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12",
+};
+
+// Build a project source-link button. Uses brand SVG for known hosts, falls
+// back to a generic Material Symbol icon. Includes a print-only URL label.
+const createProjectLinkBtn = (url) => {
+  const btn = document.createElement("a");
+  btn.className = "project-link-btn";
+  btn.href = url;
+  btn.target = "_blank";
+  btn.rel = "noopener noreferrer";
+  btn.setAttribute("aria-label", "View source");
+
+  const isGitHub = url.includes("github.com");
+  if (isGitHub) {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    svg.classList.add("contact-brand-icon");
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", brandSvgPaths.github);
+    svg.appendChild(path);
+    btn.appendChild(svg);
+  } else {
+    btn.appendChild(createElement("span", "material-symbols-outlined", "code"));
+  }
+
+  // Print-only: show the URL text next to the icon
+  const printUrl = createElement("span", "project-link-print-url", url);
+  btn.appendChild(printUrl);
+
+  return btn;
+};
+
 // Render Functions
 const renderHeader = (data) => {
   const personal = data.personal;
@@ -186,19 +226,13 @@ const renderHeader = (data) => {
   ];
 
   // Brand SVG paths (viewBox 0 0 24 24) sourced from Simple Icons (simpleicons.org)
-  const brandSvgPaths = {
-    linkedin:
-      "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
-    x: "M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z",
-    github:
-      "M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12",
-  };
+  // (brandSvgPaths is now defined at module scope above)
   const socialIcons = {};
   if (personal.social) {
     Object.entries(personal.social).forEach(([platform, info]) => {
       if (info.enabled === false) return;
       contactItems.push({
-        text: platform.charAt(0).toUpperCase() + platform.slice(1),
+        tooltip: platform.charAt(0).toUpperCase() + platform.slice(1),
         printText: info.print_enabled === false ? null : info.handle,
         printHidden: info.print_enabled === false,
         icon: socialIcons[platform] || "link",
@@ -210,7 +244,7 @@ const renderHeader = (data) => {
 
   contactItems.forEach((item) => {
     // Skip if no data
-    if (!item.text && !item.link) return;
+    if (!item.text && !item.link && !item.svgPath) return;
     if (
       item.link &&
       !item.link.startsWith("http") &&
@@ -262,14 +296,19 @@ const renderHeader = (data) => {
     }
 
     // Add title attribute for tooltip when labels are hidden (small screens)
-    if (item.text) wrapper.title = item.text;
+    if (item.tooltip || item.text) wrapper.title = item.tooltip || item.text;
 
     // Add text (social items get separate screen/print spans)
-    if (item.printText) {
-      const screenSpan = createElement("span", "contact-screen-text", item.text);
-      const printSpan = createElement("span", "contact-print-text", item.printText);
-      wrapper.appendChild(screenSpan);
-      wrapper.appendChild(printSpan);
+    if ("printText" in item) {
+      // Social item: icon-only on screen, handle shown in print
+      if (item.text) {
+        const screenSpan = createElement("span", "contact-screen-text", item.text);
+        wrapper.appendChild(screenSpan);
+      }
+      if (item.printText) {
+        const printSpan = createElement("span", "contact-print-text", item.printText);
+        wrapper.appendChild(printSpan);
+      }
     } else {
       const textSpan = createElement("span", "contact-label", item.text);
       wrapper.appendChild(textSpan);
@@ -281,8 +320,32 @@ const renderHeader = (data) => {
   // Mission Statement
   document.getElementById("mission-statement").textContent = data.mission_statement;
 
+  // Skills Highlight
+  const skillsHighlightEl = document.getElementById("skills-highlight");
+  const sh = data.skills_highlight;
+  if (sh && sh.items && sh.items.length > 0) {
+    skillsHighlightEl.innerHTML = "";
+    const labelEl = createElement("div", "skills-highlight-label");
+    if (sh.title) {
+      labelEl.appendChild(createElement("span", "skills-highlight-title", sh.title));
+      labelEl.appendChild(createElement("span", "skills-highlight-colon", ":"));
+    }
+    skillsHighlightEl.appendChild(labelEl);
+    const listEl = createElement("div", "skills-highlight-items");
+    sh.items.forEach((item, i) => {
+      if (i > 0) {
+        listEl.appendChild(createElement("span", "skills-highlight-dot", "·"));
+      }
+      listEl.appendChild(createElement("span", "skills-highlight-item", item));
+    });
+    skillsHighlightEl.appendChild(listEl);
+    skillsHighlightEl.style.display = "";
+  } else {
+    skillsHighlightEl.style.display = "none";
+  }
+
   const taglineEl = document.getElementById("tagline");
-  if (data.tagline) {
+  if (data.tagline && data.enable_tagline !== false) {
     taglineEl.textContent = data.tagline;
     taglineEl.style.display = "";
   } else {
@@ -430,14 +493,7 @@ const renderExperience = (experiences) => {
             const projName = createElement("div", "project-name", project.name);
             projNameWrapper.appendChild(projName);
             if (project.url) {
-              const linkBtn = document.createElement("a");
-              linkBtn.className = "project-link-btn";
-              linkBtn.href = project.url;
-              linkBtn.target = "_blank";
-              linkBtn.rel = "noopener noreferrer";
-              linkBtn.setAttribute("aria-label", "View source");
-              linkBtn.appendChild(createElement("span", "material-symbols-outlined", "code"));
-              projNameWrapper.appendChild(linkBtn);
+              projNameWrapper.appendChild(createProjectLinkBtn(project.url));
             }
             projHeader.appendChild(projNameWrapper);
             const projDate = createElement(
@@ -519,111 +575,115 @@ const renderExperience = (experiences) => {
   });
 };
 
-const renderProjects = (projects) => {
+const renderProjects = (projects, config = {}) => {
   const projectsList = document.getElementById("projects-list");
   projectsList.innerHTML = "";
   const isMobileView = window.matchMedia("(max-width: 640px)").matches;
+  const groupByType = config == null || config.group_by_type !== false;
 
-  // Filter enabled projects and group by type
+  // Filter enabled projects
   const enabledProjects = projects.filter((p) => p.enabled !== false);
-  const personalProjects = enabledProjects.filter((p) => p.type === "personal");
-  const academicProjects = enabledProjects.filter((p) => p.type === "academic");
 
-  const renderProjectGroup = (groupProjects, title) => {
-    if (groupProjects.length === 0) return;
+  const renderProjectItem = (project) => {
+    const projectItem = createElement("div", "project-item");
+    projectItem.id = "proj-" + slugify(project.name);
 
-    const groupHeader = createElement("h3", "project-group-header", title);
-    projectsList.appendChild(groupHeader);
+    // Project Header
+    const header = createElement("div", "project-header");
 
-    groupProjects.forEach((project) => {
-      const projectItem = createElement("div", "project-item");
-      projectItem.id = "proj-" + slugify(project.name);
+    const nameWrapper = createElement("div", "project-name-wrapper");
+    const name = createElement("div", "project-name", project.name);
+    nameWrapper.appendChild(name);
+    if (project.url) {
+      nameWrapper.appendChild(createProjectLinkBtn(project.url));
+    }
 
-      // Project Header
-      const header = createElement("div", "project-header");
+    const dateRange = createElement(
+      "div",
+      "date-range",
+      formatDateRange(project.start_date, project.end_date),
+    );
 
-      const nameWrapper = createElement("div", "project-name-wrapper");
-      const name = createElement("div", "project-name", project.name);
-      nameWrapper.appendChild(name);
-      if (project.url) {
-        const linkBtn = document.createElement("a");
-        linkBtn.className = "project-link-btn";
-        linkBtn.href = project.url;
-        linkBtn.target = "_blank";
-        linkBtn.rel = "noopener noreferrer";
-        linkBtn.setAttribute("aria-label", "View source");
-        linkBtn.appendChild(createElement("span", "material-symbols-outlined", "code"));
-        nameWrapper.appendChild(linkBtn);
-      }
+    header.appendChild(nameWrapper);
+    header.appendChild(dateRange);
+    projectItem.appendChild(header);
 
-      const dateRange = createElement(
-        "div",
-        "date-range",
-        formatDateRange(project.start_date, project.end_date),
-      );
+    // Collapsible body
+    const body = createElement("div", "project-body");
+    if (isMobileView || project.projects_expanded === false) body.classList.add("collapsed");
 
-      header.appendChild(nameWrapper);
-      header.appendChild(dateRange);
-      projectItem.appendChild(header);
-
-      // Collapsible body
-      const body = createElement("div", "project-body");
-      if (isMobileView || project.projects_expanded === false) body.classList.add("collapsed");
-
-      // Toggle on header click
-      header.addEventListener("click", (e) => {
-        if (e.target.closest(".project-link-btn")) return;
-        body.classList.toggle("collapsed");
-      });
-
-      // Role
-      if (project.role) {
-        const role = createElement("div", "project-role", project.role);
-        body.appendChild(role);
-      }
-
-      // Description
-      const description = createElement("div", "project-description", project.description);
-      body.appendChild(description);
-
-      // Highlights
-      if (project.highlights && project.highlights.length > 0) {
-        const highlights = createElement("ul", "highlights");
-        project.highlights.forEach((highlight) => {
-          const li = createElement("li", "", highlight);
-          highlights.appendChild(li);
-        });
-        body.appendChild(highlights);
-      }
-
-      // Technologies
-      if (project.technologies && project.technologies.length > 0) {
-        const techDiv = createElement("div", "technologies");
-        project.technologies.forEach((tech) => {
-          const tag = createElement("span", "tech-tag", tech);
-          techDiv.appendChild(tag);
-        });
-        body.appendChild(techDiv);
-      }
-
-      // Metrics
-      if (project.metrics && project.metrics.length > 0) {
-        const metricsDiv = createElement("div", "project-metrics");
-        project.metrics.forEach((metric) => {
-          const metricSpan = createElement("span", "metric", metric);
-          metricsDiv.appendChild(metricSpan);
-        });
-        body.appendChild(metricsDiv);
-      }
-
-      projectItem.appendChild(body);
-
-      projectsList.appendChild(projectItem);
+    // Toggle on header click
+    header.addEventListener("click", (e) => {
+      if (e.target.closest(".project-link-btn")) return;
+      body.classList.toggle("collapsed");
     });
+
+    // Role
+    if (project.role) {
+      const role = createElement("div", "project-role", project.role);
+      body.appendChild(role);
+    }
+
+    // Description
+    const description = createElement("div", "project-description", project.description);
+    body.appendChild(description);
+
+    // Highlights
+    if (project.highlights && project.highlights.length > 0) {
+      const highlights = createElement("ul", "highlights");
+      project.highlights.forEach((highlight) => {
+        const li = createElement("li", "", highlight);
+        highlights.appendChild(li);
+      });
+      body.appendChild(highlights);
+    }
+
+    // Technologies
+    if (project.technologies && project.technologies.length > 0) {
+      const techDiv = createElement("div", "technologies");
+      project.technologies.forEach((tech) => {
+        const tag = createElement("span", "tech-tag", tech);
+        techDiv.appendChild(tag);
+      });
+      body.appendChild(techDiv);
+    }
+
+    // Metrics
+    if (project.metrics && project.metrics.length > 0) {
+      const metricsDiv = createElement("div", "project-metrics");
+      project.metrics.forEach((metric) => {
+        const metricSpan = createElement("span", "metric", metric);
+        metricsDiv.appendChild(metricSpan);
+      });
+      body.appendChild(metricsDiv);
+    }
+
+    projectItem.appendChild(body);
+    return projectItem;
   };
 
-  renderProjectGroup(academicProjects, "Academic Projects");
-  renderProjectGroup(personalProjects, "Personal Projects");
+  if (groupByType) {
+    const academicProjects = enabledProjects.filter((p) => p.type === "academic");
+    const personalProjects = enabledProjects.filter((p) => p.type === "personal");
+
+    const renderProjectGroup = (groupProjects, title) => {
+      if (groupProjects.length === 0) return;
+      const groupHeader = createElement("h3", "project-group-header", title);
+      projectsList.appendChild(groupHeader);
+      groupProjects.forEach((project) => projectsList.appendChild(renderProjectItem(project)));
+    };
+
+    renderProjectGroup(academicProjects, "Academic Projects");
+    renderProjectGroup(personalProjects, "Personal Projects");
+  } else {
+    // Sort all projects by start_date descending (most recent first)
+    const sorted = [...enabledProjects].sort((a, b) => {
+      const aKey = String(a.start_date || "").replace(/-/g, "");
+      const bKey = String(b.start_date || "").replace(/-/g, "");
+      return bKey.localeCompare(aKey);
+    });
+    sorted.forEach((project) => projectsList.appendChild(renderProjectItem(project)));
+  }
 };
 
 const renderEducation = (education) => {
@@ -700,9 +760,9 @@ const renderEducation = (education) => {
       const coursesLabel = createElement("div", "courses-label", "Key Courses:");
       eduItem.appendChild(coursesLabel);
 
-      const coursesDiv = createElement("div", "technologies");
+      const coursesDiv = createElement("div", "courses");
       edu.courses.forEach((course) => {
-        const tag = createElement("span", "tech-tag", course);
+        const tag = createElement("span", "course-tag", course);
         coursesDiv.appendChild(tag);
       });
       eduItem.appendChild(coursesDiv);
@@ -1358,7 +1418,11 @@ const renderResume = (data) => {
   // Check for enabled projects
   const enabledProjects = data.projects && data.projects.filter((p) => p.enabled !== false);
   if (enabledProjects && enabledProjects.length > 0) {
-    renderProjects(data.projects);
+    const projectsTitle = data.projects_config && data.projects_config.title;
+    if (projectsTitle) {
+      document.querySelector("#projects-section h2").textContent = projectsTitle;
+    }
+    renderProjects(data.projects, data.projects_config);
   } else {
     document.getElementById("projects-section").style.display = "none";
   }
