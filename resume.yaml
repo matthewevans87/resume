@@ -22,13 +22,22 @@ personal:
       handle: "github.com/matthewevans87"
 
 mission_statement: |
-  Full-stack Software Engineer with 15 years' experience developing enterprise web applications 
-  and recent MS in Computer Science with focus on Machine Learning from UT Dallas. Passionate about 
-  applying machine learning to robotics, space exploration, and autonomous systems. Seeking to 
-  leverage software engineering expertise and ML foundations to solve complex problems in cutting-edge 
-  domains.
+  Software Engineer with 15 years' experience shipping production systems and M.S. Computer Science (Machine Learning) from UT Dallas. Targeting Software Engineer III (ML) roles in systems/infrastructure (evaluation, experimentation, data pipelines, and deployment) where measurable wins compound into larger, high-impact bets.
 
-tagline: "Software should free up human beings to do what only human beings can do."
+tagline: "Software should return time, attention, and agency to people."
+
+# order_by controls the display order of resume sections.
+# Options:
+#   "date"  - sort sections by most recent activity (most recent first)
+#   list    - explicit ordered list of sections to show, e.g.:
+#             [experience, projects, education, achievements, skills]
+#   Omit or leave blank to keep the default HTML document order.
+order_by:
+  - projects
+  - experience
+  - education
+  - achievements
+  - skills
 
 timeline:
   enabled: true
@@ -646,6 +655,7 @@ projects:
       - "ResNet18"
       - "LeRobot API"
       - "TensorBoard"
+      - "Docker"
     metrics:
       - "Zero-shot sim-to-real transfer (proprioception task)"
 
@@ -667,11 +677,11 @@ projects:
     technologies:
       - "Python"
       - "PyTorch"
-      - "LSTM / RNN"
-      - "scipy"
+      - "LSTM"
+      - "RNN"
+      - "Scipy"
       - "Shapely"
       - "NumPy"
-      - "Dijkstra's Algorithm"
     metrics:
       - "Up to 98% reduction in vertex comparisons"
       - "82.1% validation accuracy"
@@ -694,14 +704,15 @@ projects:
     technologies:
       - "Python"
       - "PyTorch"
-      - "Hugging Face Transformers"
-      - "CARLA (proposed)"
+      - "CNN"
+      - "LSTM"
+      - "GAN"
       - "LaTeX"
     metrics:
+      - "17 seminal papers reviewed across the full deep learning literature (1986-2021)"
       - "CNN: 97.99% test accuracy on MNIST"
       - "LSTM: perplexity 6.47 | top-1 53.3% | top-5 82.7% | top-10 91.8% on Tiny Shakespeare"
       - "GAN: confirmed minimax equilibrium convergence at epoch ~40 over 200-epoch run"
-      - "17 seminal papers reviewed across the full deep learning literature (1986–2021)"
 
   - name: "Intent-Aware Lookahead for Language Modeling"
     enabled: true
@@ -720,10 +731,8 @@ projects:
     technologies:
       - "Python"
       - "PyTorch"
-      - "Transformers (HuggingFace)"
-      - "WikiText-2"
+      - "Transformers"
       - "TensorBoard"
-      - "CUDA / AMP"
     metrics:
       - "21 model variants evaluated"
       - "Rigorous negative result: baseline outperforms all variants"
@@ -802,38 +811,36 @@ achievements:
     url: "https://www.youracclaim.com/badges/2e76f13a-6072-4b74-8e58-6b026015399d/public_url"
 
 skills:
-  - category: "Machine Learning & Data Science"
+  - category: "Machine Learning and Robotics"
     items:
-      - "TensorFlow"
-      - "Python"
       - "NumPy"
-      - "R"
-      - "Statistical Modeling"
-      - "Time Series Analysis"
-      - "Geospatial Analysis"
+      - "PyTorch"
+      - "NVIDIA Isaac Sim / Isaac Lab"
+      - "ROS"
+      - "ETL/Data Pipelines"
+      - "Le Robot"
+      - "TensorBoard"
 
   - category: "Programming Languages"
     items:
-      - "Python"
       - "C#"
-      - "TypeScript / JavaScript"
-      - "SQL / T-SQL"
-      - "R"
+      - "Python"
+      - "TypeScript"
+      - "SQL"
 
   - category: "Web Technologies & Frameworks"
     items:
-      - ".NET / ASP.NET Core"
+      - "Dotnet"
       - "Angular"
       - "React"
       - "Node.js"
       - "RxJS"
       - "D3.js"
-      - "Bootstrap"
 
   - category: "Cloud & Infrastructure"
     items:
-      - "AWS (S3, Fargate, EC2, CloudFormation)"
-      - "Azure (DevOps, Storage, API Gateway)"
+      - "AWS (S3, Fargate, ECS, CloudFormation)"
+      - "Azure (App Service, Storage, DevOps)"
       - "Docker"
       - "CI/CD Pipelines"
 
@@ -841,9 +848,8 @@ skills:
     items:
       - "SQL Server"
       - "PostgreSQL / PostGIS"
-      - "MongoDB"
+      - "No SQL (Cosmos DB, MongoDB)"
       - "Redis"
-      - "Snowflake"
       - "Entity Framework"
       - "Dapper"
 
@@ -851,8 +857,5 @@ skills:
     items:
       - "Git"
       - "Agile / Scrum"
-      - "Azure DevOps"
+      - "Azure DevOps YAML Pipelines"
       - "GitHub Actions"
-      - "qGIS"
-      - "WebSocket"
-      - "OAuth"

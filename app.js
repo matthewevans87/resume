@@ -1216,6 +1216,126 @@ const renderCareerTimeline = (data) => {
   window.addEventListener("scroll", hideTip, { passive: true });
 };
 
+// ---------------------------------------------------------------------------
+// Section ordering
+// ---------------------------------------------------------------------------
+
+// Parse a resume date value into a JS Date. Handles:
+//   null / undefined  → null  (caller treats as "ongoing" / today)
+//   2024              → 2024-01-01
+//   "2024-06"         → 2024-06-01
+//   "2025-12-31"      → 2025-12-31
+const parseResumeDate = (d) => {
+  if (d == null) return null;
+  const s = String(d).trim();
+  if (/^\d{4}$/.test(s)) return new Date(`${s}-01-01`);
+  if (/^\d{4}-\d{2}$/.test(s)) return new Date(`${s}-01`);
+  return new Date(s);
+};
+
+// Returns the recency Date for a section (used when order_by === "date").
+// Primary:   latest end_date (null end_date = ongoing = today)
+// Secondary: latest start_date (used only as a tiebreaker)
+const getSectionRecencyDate = (sectionKey, data) => {
+  const today = new Date();
+
+  const maxDate = (dates) => dates.reduce((best, d) => (!best || (d && d > best) ? d : best), null);
+
+  switch (sectionKey) {
+    case "experience": {
+      const items = (data.experience || []).filter((e) => e.enabled !== false);
+      // If any position is ongoing (end_date null), section is current
+      const hasOngoing = items.some((e) => (e.positions || []).some((p) => p.end_date == null));
+      if (hasOngoing) return today;
+      const ends = items
+        .flatMap((e) => (e.positions || []).map((p) => parseResumeDate(p.end_date)))
+        .filter(Boolean);
+      return (
+        maxDate(ends) ||
+        maxDate(
+          items
+            .flatMap((e) => (e.positions || []).map((p) => parseResumeDate(p.start_date)))
+            .filter(Boolean),
+        )
+      );
+    }
+    case "projects": {
+      const items = (data.projects || []).filter((p) => p.enabled !== false);
+      const hasOngoing = items.some((p) => p.end_date == null);
+      if (hasOngoing) return today;
+      const ends = items.map((p) => parseResumeDate(p.end_date)).filter(Boolean);
+      return (
+        maxDate(ends) || maxDate(items.map((p) => parseResumeDate(p.start_date)).filter(Boolean))
+      );
+    }
+    case "education": {
+      const items = (data.education || []).filter((e) => e.enabled !== false);
+      const ends = items.map((e) => parseResumeDate(e.end_date)).filter(Boolean);
+      return (
+        maxDate(ends) || maxDate(items.map((e) => parseResumeDate(e.start_date)).filter(Boolean))
+      );
+    }
+    case "achievements": {
+      const items = (data.achievements || []).filter((a) => a.enabled !== false);
+      return maxDate(items.map((a) => parseResumeDate(a.date)).filter(Boolean));
+    }
+    case "skills":
+    default:
+      return null; // undated — goes last
+  }
+};
+
+// Reorders (and optionally hides) the five main <section> elements inside
+// #resume according to data.order_by.
+const applyOrderBy = (data) => {
+  const SECTION_IDS = {
+    experience: "experience-section",
+    projects: "projects-section",
+    education: "education-section",
+    achievements: "achievements-section",
+    skills: "skills-section",
+  };
+
+  const orderBy = data.order_by;
+  if (!orderBy) return; // no config — keep HTML document order
+
+  let orderedKeys;
+
+  if (orderBy === "date") {
+    // Sort all sections by recency descending; undated sections go last.
+    orderedKeys = Object.keys(SECTION_IDS).sort((a, b) => {
+      const da = getSectionRecencyDate(a, data);
+      const db = getSectionRecencyDate(b, data);
+      if (!da && !db) return 0;
+      if (!da) return 1;
+      if (!db) return -1;
+      return db - da;
+    });
+  } else if (Array.isArray(orderBy)) {
+    // Explicit ordered list — only the listed sections are shown.
+    orderedKeys = orderBy.map((k) => String(k).toLowerCase().trim()).filter((k) => SECTION_IDS[k]);
+
+    // Hide any section not present in the list.
+    Object.keys(SECTION_IDS).forEach((k) => {
+      if (!orderedKeys.includes(k)) {
+        const el = document.getElementById(SECTION_IDS[k]);
+        if (el) el.style.display = "none";
+      }
+    });
+  } else {
+    return; // unrecognised value — do nothing
+  }
+
+  // Re-append sections in the desired order (moves nodes to end in sequence).
+  const resume = document.getElementById("resume");
+  orderedKeys.forEach((key) => {
+    const el = document.getElementById(SECTION_IDS[key]);
+    if (el) resume.appendChild(el);
+  });
+};
+
+// ---------------------------------------------------------------------------
+
 const renderResume = (data) => {
   renderHeader(data);
 
@@ -1265,6 +1385,8 @@ const renderResume = (data) => {
   } else {
     document.getElementById("skills-section").style.display = "none";
   }
+
+  applyOrderBy(data);
 };
 
 // Load and parse YAML
