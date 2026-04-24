@@ -21,8 +21,7 @@ personal:
       url: "https://github.com/matthewevans87"
       handle: "github.com/matthewevans87"
 
-mission_statement: |
-  Software Engineer with 15 years' experience shipping production systems and M.S. Computer Science (Machine Learning) from UT Dallas. Targeting Software Engineer III (ML) roles in systems/infrastructure (evaluation, experimentation, data pipelines, and deployment) where measurable wins compound into larger, high-impact bets.
+mission_statement: "Software Engineer with 15 years' experience shipping production systems and M.S. in Computer Science (Machine Learning) from UT Dallas. Targeting Software Engineer III (ML) roles focused on applied ML systems and experimentation—training, evaluating, and iterating on models for sequential decision-making and perception-driven tasks across end-to-end pipelines (data, training, evaluation, deployment), where measurable wins compound into larger, high-impact bets."
 
 tagline: "Software should return time, attention, and agency to people."
 enable_tagline: false
@@ -53,6 +52,7 @@ timeline:
 
 experience:
   - company: "Independent Consultant"
+    expanded: false
     company_url: null
     location: "Remote"
     projects_expanded: false
@@ -625,12 +625,41 @@ experience:
             metrics: null
 
 projects_config:
-  title: "Selected AI/ML Projects"
+  title: "Applied Machine Learning Experience"
   group_by_type: false
 
 projects:
-  - name: "Vision-Based Manipulation via Sim-to-Real RL"
+  - name: "Vision-Based Sim-to-Real Manipulation Pipeline"
     enabled: true
+    url: "https://github.com/matthewevans87/so101_sim_to_real"
+    type: "academic"
+    description: "Designed and built an end-to-end ML pipeline for training vision-conditioned reinforcement learning (PPO) policies on the SO-101 robotic arm in NVIDIA Isaac Sim, targeting zero-shot sim-to-real transfer. Evaluated learned CNN vision encoders vs frozen ImageNet backbones (ResNet18) as observation models for sequential decision-making under domain randomization."
+    role: "Research Engineer / Author"
+    start_date: "2026-01"
+    end_date: "2026-05"
+    highlights:
+      - "Built a fully reproducible ML training and evaluation pipeline (train → collect → curate → train-cnn) using typed YAML configs; each run produces versioned artifacts (configs, seeds, checkpoints, metrics) enabling reliable experimentation, debugging, and comparison."
+      - "Applied reinforcement learning (PPO) to a vision-based sequential decision-making control task (cube lifting) in NVIDIA Isaac Lab; designed reward shaping (approach → grasp → lift), domain randomization, and safety-aware termination conditions to guide policy learning."
+      - "Evaluated multiple vision encoder architectures (frozen ResNet18, end-to-end CNN, pretrained CNN feature extractor) and diagnosed training instability via latent feature distribution drift (mean/std) using TensorBoard."
+      - "Built data pipelines to collect and process ~10k episodes of multimodal telemetry (images, joint state, object pose); constructed balanced datasets and trained a multi-head CNN (position/orientation/visibility) for improved perception modeling."
+      - "Developed an experiment framework for large-scale ablations across reward functions, model architectures, and PPO hyperparameters, with automated evaluation, telemetry collection, and video-based policy inspection."
+      # - "Authored visualization tooling (spatial-softmax keypoints, per-channel feature heatmaps, video overlays) to sanity-check that vision features remain meaningful throughout PPO training."
+    technologies:
+      - "Python"
+      - "PyTorch"
+      - "NVIDIA Isaac Sim"
+      - "Isaac Lab"
+      - "skrl (PPO)"
+      - "Reinforcement Learning"
+      - "CNN"
+      - "ResNet18"
+      - "Domain Randomization"
+      - "YAML configs"
+      - "TensorBoard"
+      - "NumPy"
+
+  - name: "Vision-Based Manipulation via Sim-to-Real RL"
+    enabled: false
     url: "https://github.com/utd-fall-25-cs-6341-robotics/cs6341-robotics-project-direct"
     type: "academic"
     start_date: "2025-08"
@@ -796,11 +825,12 @@ achievements:
 skills_highlight:
   title: "ML Systems"
   items:
-    - "Training/Eval Pipelines"
-    - "Experiment Design/Ablation"
-    - "Data Pipelines/ETL"
-    - "Model Serving/Inference"
-    - "Monitoring/Telemetry"
+    - Reinforcement Learning (PPO)
+    - Experimentation & Ablation
+    - Training/Eval Pipelines
+    - Data Pipelines
+    - Model Evaluation & Debugging
+    - Inference & Monitoring
 
 skills:
   - category: "AI/ML, Robotics & Experimentation"
