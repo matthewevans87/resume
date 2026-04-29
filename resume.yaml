@@ -21,7 +21,9 @@ personal:
       url: "https://github.com/matthewevans87"
       handle: "github.com/matthewevans87"
 
-mission_statement: "Software Engineer with 15 years' experience shipping production systems and M.S. in Computer Science (Machine Learning) from UT Dallas. Targeting Software Engineer III (ML) roles focused on applied ML systems and experimentation—training, evaluating, and iterating on models for sequential decision-making and perception-driven tasks across end-to-end pipelines (data, training, evaluation, deployment), where measurable wins compound into larger, high-impact bets."
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems and M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "Targeting Software Engineer III (ML) roles at the boundary of research and engineering — designing and running the experiments, training pipelines, and evaluation frameworks that turn research questions into measurable answers."
 
 tagline: "Software should return time, attention, and agency to people."
 enable_tagline: false
@@ -52,7 +54,7 @@ timeline:
 
 experience:
   - company: "Independent Consultant"
-    expanded: false
+    expanded: true
     company_url: null
     location: "Remote"
     projects_expanded: false
@@ -63,17 +65,17 @@ experience:
         promotion: false
         technologies: []
         summary: |
-          Architected and delivered a greenfield ERP platform, replacing a decade-old legacy system with a modern Clean Architecture stack. Owned the full lifecycle end-to-end—domain modeling (87+ entities), API/service design, and production operations—with heavy emphasis on data work: complex SQL, ETL pipelines, large-scale data migration, and data-quality remediation. Built a reflection-driven, auto-generated API framework to enforce consistency, reduce defects, and minimize long-term maintenance.
-        projects:
-          - name: "Augurware (ERP Product)"
-            start_date: "2024"
-            end_date: "2026"
-            url: null
-            highlights:
-              - "Proprietary sheet metal optimization engine: Designed and implemented a scoring algorithm that determines optimal cutting layouts for raw materials, balancing scrap minimization, certification requirements, batch preferences, and part yield — surfaced to factory workers as schematic visualizations to ensure correct fabrication on the floor."
-              - "Code-generation framework: Applied reflection and generics to auto-scaffold consistent, fully authenticated CRUD endpoints for all entities from a single well-tested code path — ensuring uniform behavior across the data model, reducing defect surface area, and making the system straightforward to extend as requirements evolved."
-              - "Full ERP scope in a single system: Delivered end-to-end manufacturing operations coverage including job management, multi-level inventory, purchase orders, AR/AP invoicing, work center routing, nonconformance tracking, KPI dashboards, QuickBooks Desktop integration, and a role-based permission system all within a single coherent architecture."
-              - "Legacy modernization with verified parity: Systematically replaced a decade-old pricing and metal-cutting codebase by extracting legacy logic into automated test harnesses that generated comprehensive regression cases, then validated that the rewritten implementation produced identical results across all scenarios — ensuring zero regressions during the migration."
+          Designed and shipped a greenfield ERP platform from scratch while completing an M.S. in Computer Science — replacing a decade-old legacy system with a Clean Architecture stack spanning 87+ domain entities, full manufacturing operations scope (job management, multi-level inventory, AR/AP, work center routing, KPI dashboards), and a reflection-driven code-generation framework that auto-scaffolded authenticated CRUD endpoints across the entire data model. Included a proprietary sheet metal optimization engine balancing scrap minimization, certification requirements, and part yield — and a legacy modernization with verified regression parity via automated test harnesses.
+        # projects:
+        #   - name: "Augurware (ERP Product)"
+        #     start_date: "2024"
+        #     end_date: "2026"
+        #     url: null
+        #     highlights: []
+        # - "Proprietary sheet metal optimization engine: Designed and implemented a scoring algorithm that determines optimal cutting layouts for raw materials, balancing scrap minimization, certification requirements, batch preferences, and part yield — surfaced to factory workers as schematic visualizations to ensure correct fabrication on the floor."
+        # - "Code-generation framework: Applied reflection and generics to auto-scaffold consistent, fully authenticated CRUD endpoints for all entities from a single well-tested code path — ensuring uniform behavior across the data model, reducing defect surface area, and making the system straightforward to extend as requirements evolved."
+        # - "Full ERP scope in a single system: Delivered end-to-end manufacturing operations coverage including job management, multi-level inventory, purchase orders, AR/AP invoicing, work center routing, nonconformance tracking, KPI dashboards, QuickBooks Desktop integration, and a role-based permission system all within a single coherent architecture."
+        # - "Legacy modernization with verified parity: Systematically replaced a decade-old pricing and metal-cutting codebase by extracting legacy logic into automated test harnesses that generated comprehensive regression cases, then validated that the rewritten implementation produced identical results across all scenarios — ensuring zero regressions during the migration."
 
   - company: "Zeal IT Consultants"
     company_url: "https://www.zealitconsultants.com/"
@@ -86,12 +88,24 @@ experience:
         end_date: "2023"
         promotion: false
         summary: |
-          Responsible for thought leadership, personnel management, account health and growth, business development, and successful delivery of enterprise software solutions. Owned multiple simultaneous project teams across multiple clients with total budgets exceeding $4MM/year revenue.
+          Led multiple simultaneous client delivery teams with $4MM+/year combined revenue — owning hiring, account relationships, SOW negotiation, and end-to-end software delivery across enterprise SaaS products on AWS and Azure.
         highlights:
-          - "Led hiring, training, and mentoring of dozens of software developers at various career phases"
-          - "Managed multiple client accounts through stakeholder discovery, relationship building, and execution"
-          - "Drafted Statements of Work, budgeted profitable consulting teams, navigated VMOs and MSPs"
-          - "Delivered working software through Agile teams, problem discovery, and excellent technical execution"
+          - [
+              "Team leadership:",
+              "Hired, trained, and mentored dozens of software developers across career levels; led Agile teams through full SDLC on multiple concurrent client accounts.",
+            ]
+          - [
+              "Product delivery:",
+              "Architected and delivered cloud-native SaaS products for clients in benefits administration, financial services, and healthcare — including a multi-tenant AWS platform generating $4MM+ annual revenue.",
+            ]
+          - [
+              "Client engagement:",
+              "Drove stakeholder discovery, drafted Statements of Work, navigated VMOs and MSPs, and maintained executive relationships across accounts.",
+            ]
+          - [
+              "Technical rescue:",
+              "Identified root causes of a stalled project suffering from loosely defined requirements and over-engineering; restructured scope and delivered ahead of schedule.",
+            ]
         technologies:
           - "C#"
           - "Dotnet"
@@ -633,17 +647,35 @@ projects:
     enabled: true
     url: "https://github.com/matthewevans87/so101_sim_to_real"
     type: "academic"
-    description: "Designed and built an end-to-end ML pipeline for training vision-conditioned reinforcement learning (PPO) policies on the SO-101 robotic arm in NVIDIA Isaac Sim, targeting zero-shot sim-to-real transfer. Evaluated learned CNN vision encoders vs frozen ImageNet backbones (ResNet18) as observation models for sequential decision-making under domain randomization."
+    description: "Designed and built an end-to-end ML pipeline for training vision-conditioned PPO policies on the SO-101 robotic arm in NVIDIA Isaac Sim, targeting zero-shot sim-to-real transfer — achieving up to 89.7% episode success rate on a wrist-camera-only cube-lifting task under domain randomization."
     role: "Research Engineer / Author"
     start_date: "2026-01"
     end_date: "2026-05"
     highlights:
-      - "Built a fully reproducible ML training and evaluation pipeline (train → collect → curate → train-cnn) using typed YAML configs; each run produces versioned artifacts (configs, seeds, checkpoints, metrics) enabling reliable experimentation, debugging, and comparison."
-      - "Applied reinforcement learning (PPO) to a vision-based sequential decision-making control task (cube lifting) in NVIDIA Isaac Lab; designed reward shaping (approach → grasp → lift), domain randomization, and safety-aware termination conditions to guide policy learning."
-      - "Evaluated multiple vision encoder architectures (frozen ResNet18, end-to-end CNN, pretrained CNN feature extractor) and diagnosed training instability via latent feature distribution drift (mean/std) using TensorBoard."
-      - "Built data pipelines to collect and process ~10k episodes of multimodal telemetry (images, joint state, object pose); constructed balanced datasets and trained a multi-head CNN (position/orientation/visibility) for improved perception modeling."
-      - "Developed an experiment framework for large-scale ablations across reward functions, model architectures, and PPO hyperparameters, with automated evaluation, telemetry collection, and video-based policy inspection."
-      # - "Authored visualization tooling (spatial-softmax keypoints, per-channel feature heatmaps, video overlays) to sanity-check that vision features remain meaningful throughout PPO training."
+      - [
+          "ML infrastructure:",
+          "Designed a reproducible end-to-end pipeline (train → collect → curate → train-cnn) with typed YAML validation, versioned artifact directories (configs, seeds, checkpoints, metrics), and provenance tracking — enabling systematic experimentation, reliable debugging, and direct run-to-run comparison.",
+        ]
+      - [
+          "Reinforcement learning:",
+          "Applied PPO to a vision-based sequential decision-making task; designed phased reward shaping (approach → grasp → lift), safety-aware termination conditions, and domain randomization (lighting, camera pose, object geometry, distractors) in service of sim-to-real transfer.",
+        ]
+      - [
+          "Vision encoder evaluation:",
+          "Bootstrapped a task-specific CNN from synthetic policy rollouts via iterative self-distillation, replacing a frozen ImageNet backbone (ResNet18); CNN achieved 4.5pp higher episode success rate (87.1% vs. 83.1%), with a second distillation generation yielding further improvement (87.7%).",
+        ]
+      - [
+          "Data pipelines:",
+          "Collected and processed ~10K episodes of multimodal telemetry (images, joint state, object pose); applied histogram rebalancing across episode timestep and grip-zone distance to prevent dominant mid-approach frames from skewing CNN training.",
+        ]
+      - [
+          "Ablation framework:",
+          "Developed a sweep runner executing Cartesian-product ablations across reward functions, vision backbones, and PPO hyperparameters (each over 5 RNG seeds); uncovered that ablating a dense absolute reward for the grasp phase eliminated a soft local optimum, improving both success rate and time-to-first-success.",
+        ]
+      - [
+          "Reward shaping analysis:",
+          "Identified through systematic ablations that the dense absolute reward for the approach phase acted as a soft local optimum — ablating it yielded the highest success rate observed across all experiments (89.7%, +1.9pp over baseline) with shorter mean episode length, consistent with the policy committing to task completion rather than hovering in a rewarded near-approach posture.",
+        ]
     technologies:
       - "Python"
       - "PyTorch"
@@ -658,43 +690,27 @@ projects:
       - "TensorBoard"
       - "NumPy"
 
-  - name: "Vision-Based Manipulation via Sim-to-Real RL"
-    enabled: false
-    url: "https://github.com/utd-fall-25-cs-6341-robotics/cs6341-robotics-project-direct"
-    type: "academic"
-    start_date: "2025-08"
-    end_date: "2025-12"
-    role: "Research Engineer / Author"
-    description: "End-to-end sim-to-real RL pipeline for vision-conditioned cube manipulation on the SO-101 arm using Isaac Sim/Isaac Lab."
-    highlights:
-      - "Built a sim-to-real RL pipeline (simulation → training → evaluation → hardware tests) for vision-conditioned manipulation on SO-101."
-      - "Implemented asymmetric actor–critic PPO with frozen ResNet18 + spatial-softmax visual encoder and privileged critic state."
-      - "Designed staged/gated rewards (distance → contact → lift) and performed deep-dive diagnostics to mitigate reward hacking."
-      - "Applied extensive domain randomization (camera augmentation, lighting variation, distractors, pose randomization) to improve robustness."
-      - "Results: zero-shot sim-to-real transfer on proprioception-only task; partial cube-seeking behavior on vision task; documented blockers (camera gap, servo imprecision, perception mismatch)."
-    technologies:
-      - "Python"
-      - "PyTorch"
-      - "NVIDIA Isaac Sim / Isaac Lab"
-      - "PPO (SKRL)"
-      - "ResNet18 + Spatial Softmax"
-      - "TensorBoard"
-      - "Docker"
-
   - name: "ML Assisted Visibility Graph Construction"
     enabled: true
     url: "https://github.com/matthewevans87/cs6319-computational-geometry-project"
     type: "academic"
-    description: "Reduced visibility-graph construction cost for shortest-path motion planning by learning to predict where the next shortest-path vertex will lie, pruning visibility checks while preserving near-exact path quality."
+    description: "Reduced visibility-graph construction cost for shortest-path motion planning by training an LSTM to predict the next shortest-path region, pruning visibility checks while preserving near-exact path quality — achieving up to 98% reduction in vertex comparisons on benchmarks."
     role: "Research Engineer / Author"
     start_date: "2025-01"
     end_date: "2025-12"
     highlights:
-      - "Built a large training dataset by parsing 1,670 StarCraft maps into binary walkability/obstacle grids."
-      - "Converted obstacle grids into polygonal representations (connected components → alpha shapes) with geometric cleanup using Shapely."
-      - "Designed an LSTM-based “sector predictor” to estimate the next region containing shortest-path vertices and restrict visibility checks."
-      - "Trained with five-fold cross-validation, achieving 82.1% validation accuracy; integrated the predictor into DFS/DP-based visibility-graph construction."
-      - "Result: up to 98% reduction in vertex comparisons on benchmarks while closely matching exact shortest-path lengths."
+      - [
+          "Data pipeline:",
+          "Parsed 1,670 StarCraft maps into binary walkability grids; converted obstacle regions to polygonal representations via connected components and alpha shapes with geometric cleanup using Shapely.",
+        ]
+      - [
+          "Model training:",
+          "Designed and trained an LSTM-based sector predictor with five-fold cross-validation, achieving 82.1% validation accuracy; integrated predictions into DFS/DP-based visibility-graph construction to gate visibility checks.",
+        ]
+      - [
+          "Evaluation:",
+          "Benchmarked pruned vs. exact graph construction across map geometries; achieved up to 98% reduction in vertex comparisons while closely matching exact shortest-path lengths.",
+        ]
     technologies:
       - "Python"
       - "PyTorch"
@@ -708,16 +724,16 @@ projects:
     enabled: true
     url: "https://github.com/matthewevans87/neural-networks-independent-study"
     type: "academic"
-    description: "15-week supervised independent study spanning modern deep learning fundamentals through foundation models, combining paper-driven learning with from-scratch implementations and a thesis-level research proposal."
+    description: "A structured 15-week independent study spanning modern deep learning fundamentals through foundation models — combining paper-driven survey (backprop → CNNs/ResNets → LSTMs → Transformers → diffusion/VLMs) with from-scratch PyTorch implementations, culminating in a master's thesis proposal for a Transformer-based autonomous driving model with vision-only planning, low-level control, and a CARLA-based imitation learning training plan."
     role: "Research Engineer / Course Designer / Author"
     start_date: "2025-01"
     end_date: "2025-05"
-    highlights:
-      - "Surveyed 17 seminal deep-learning papers and produced structured LaTeX reviews (backprop → CNNs/ResNets → LSTMs → Transformers → diffusion/VLMs)."
-      - "Implemented an MLP from scratch in NumPy for MNIST (manual forward/backprop, training loop, and optimization)."
-      - "Implemented core architectures in PyTorch, including a CNN for MNIST (97.99% test accuracy) and a stacked LSTM character LM (perplexity 6.47; top-1 53.3%, top-5 82.7%) with interactive generation."
-      - "Built and trained a GAN for MNIST digit synthesis (MLP G/D with LeakyReLU + dropout), validating expected minimax dynamics over 200 epochs."
-      - "Capstone: authored a master's thesis proposal for a Transformer-based autonomous driving model (vision-only planning + low-level control) with a CARLA-based imitation-learning training plan."
+    # highlights:
+    #   - "Surveyed 17 seminal deep-learning papers and produced structured LaTeX reviews (backprop → CNNs/ResNets → LSTMs → Transformers → diffusion/VLMs)."
+    #   - "Implemented an MLP from scratch in NumPy for MNIST (manual forward/backprop, training loop, and optimization)."
+    #   - "Implemented core architectures in PyTorch, including a CNN for MNIST (97.99% test accuracy) and a stacked LSTM character LM (perplexity 6.47; top-1 53.3%, top-5 82.7%) with interactive generation."
+    #   - "Built and trained a GAN for MNIST digit synthesis (MLP G/D with LeakyReLU + dropout), validating expected minimax dynamics over 200 epochs."
+    #   - "Capstone: authored a master's thesis proposal for a Transformer-based autonomous driving model (vision-only planning + low-level control) with a CARLA-based imitation-learning training plan."
     technologies:
       - "Python"
       - "PyTorch"
@@ -733,16 +749,23 @@ projects:
     enabled: true
     url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-project"
     type: "academic"
-    description: "Tested whether lightweight future-token prediction can improve next-token accuracy in causal language models, using a modified transformer with auxiliary lookahead heads and intent-conditioned fusion."
+    description: "Investigated whether lightweight future-token prediction improves next-token accuracy in causal language models — designing, implementing, and evaluating a modified transformer with auxiliary lookahead heads and intent-conditioned fusion across 21 controlled model variants."
     role: "Research Engineer / Author"
     start_date: "2025-08"
     end_date: "2025-12"
     highlights:
-      - "Designed and implemented IALM-Lite: a 6-layer causal transformer (~44.9M params) augmented with an auxiliary future prediction head, intent pooling (mean/attention), and FiLM vs gated fusion."
-      - "Ran controlled study of 21 model variants across a grid of lookahead horizon, aux loss weight, pooling method, and fusion mechanism."
-      - "Identified auxiliary loss weight (λ) as the dominant factor shaping training dynamics and overall performance."
-      - "Built an evaluation workflow on WikiText-2 to compare baselines vs augmented models under matched training settings."
-      - "Result: baseline transformer outperformed all lookahead variants; documented negative results with analysis of multi-task interference and capacity allocation to guide future designs."
+      - [
+          "Model architecture:",
+          "Designed and implemented IALM-Lite, a 6-layer causal transformer (~44.9M params) augmented with auxiliary future-prediction heads, intent pooling (mean/attention), and FiLM vs. gated fusion mechanisms.",
+        ]
+      - [
+          "Experiment design:",
+          "Ran a controlled ablation study of 21 variants across a grid of lookahead horizon, auxiliary loss weight, pooling method, and fusion mechanism; identified auxiliary loss weight (λ) as the dominant factor shaping training dynamics.",
+        ]
+      - [
+          "Evaluation & negative results:",
+          "Benchmarked all variants against a matched baseline on WikiText-2; baseline outperformed all lookahead variants — documented findings with analysis of multi-task interference and capacity allocation to inform future designs.",
+        ]
     technologies:
       - "Python"
       - "PyTorch"

@@ -105,6 +105,25 @@ const createElement = (tag, className, content = "") => {
   return element;
 };
 
+// Creates a <li> for a highlight entry.
+// If highlight is a string, renders it as plain text.
+// If highlight is an array, renders the first element in <strong> followed by the rest as plain text.
+const createHighlightLi = (highlight) => {
+  const li = document.createElement("li");
+  if (Array.isArray(highlight)) {
+    const [header, ...rest] = highlight;
+    const strong = document.createElement("strong");
+    strong.textContent = header;
+    li.appendChild(strong);
+    if (rest.length > 0) {
+      li.appendChild(document.createTextNode(" " + rest.join(" ")));
+    }
+  } else {
+    li.textContent = highlight;
+  }
+  return li;
+};
+
 const createLink = (url, text) => {
   const link = document.createElement("a");
   link.href = url;
@@ -318,7 +337,15 @@ const renderHeader = (data) => {
   });
 
   // Mission Statement
-  document.getElementById("mission-statement").textContent = data.mission_statement;
+  const missionEl = document.getElementById("mission-statement");
+  const missionStatements = Array.isArray(data.mission_statement)
+    ? data.mission_statement
+    : [data.mission_statement];
+  missionStatements.forEach((text) => {
+    const p = document.createElement("p");
+    p.textContent = text;
+    missionEl.appendChild(p);
+  });
 
   // Skills Highlight
   const skillsHighlightEl = document.getElementById("skills-highlight");
@@ -453,8 +480,7 @@ const renderExperience = (experiences) => {
       if (position.highlights && position.highlights.length > 0) {
         const highlights = createElement("ul", "highlights");
         position.highlights.forEach((highlight) => {
-          const li = createElement("li", "", highlight);
-          highlights.appendChild(li);
+          highlights.appendChild(createHighlightLi(highlight));
         });
         posDiv.appendChild(highlights);
       }
@@ -518,8 +544,7 @@ const renderExperience = (experiences) => {
             if (project.highlights && project.highlights.length > 0) {
               const highlights = createElement("ul", "highlights");
               project.highlights.forEach((highlight) => {
-                const li = createElement("li", "", highlight);
-                highlights.appendChild(li);
+                highlights.appendChild(createHighlightLi(highlight));
               });
               projectItem.appendChild(highlights);
             }
@@ -632,8 +657,7 @@ const renderProjects = (projects, config = {}) => {
     if (project.highlights && project.highlights.length > 0) {
       const highlights = createElement("ul", "highlights");
       project.highlights.forEach((highlight) => {
-        const li = createElement("li", "", highlight);
-        highlights.appendChild(li);
+        highlights.appendChild(createHighlightLi(highlight));
       });
       body.appendChild(highlights);
     }

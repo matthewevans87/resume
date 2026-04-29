@@ -244,6 +244,14 @@ button.contact-item:hover .contact-brand-icon {
   color: var(--color-text-secondary);
 }
 
+.mission-statement p {
+  margin: 0;
+}
+
+.mission-statement p + p {
+  margin-top: 0.75em;
+}
+
 .skills-highlight {
   display: grid;
   grid-template-columns: auto 1fr;
