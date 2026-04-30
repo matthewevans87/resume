@@ -1477,16 +1477,139 @@ const renderResume = (data) => {
   applyOrderBy(data);
 };
 
-// Load and parse YAML
+// Deep merge: plain objects merge recursively; arrays and scalars in `override`
+// fully replace the base value. `null` in override means "keep base value", so
+// authors can omit fields without explicitly nulling them. Missing keys in
+// override always keep the base.
+const isPlainObject = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
+
+const deepMerge = (base, override) => {
+  if (override === undefined || override === null) return base;
+  if (!isPlainObject(base) || !isPlainObject(override)) return override;
+  const out = { ...base };
+  for (const key of Object.keys(override)) {
+    const ov = override[key];
+    if (ov === null) continue; // keep base
+    if (!(key in base)) {
+      out[key] = ov;
+    } else {
+      out[key] = deepMerge(base[key], ov);
+    }
+  }
+  return out;
+};
+
+// Parse `#/<slug>` from the URL hash. Slug is restricted to safe chars to
+// prevent path traversal when constructing the override URL.
+const getOverrideName = () => {
+  const hash = window.location.hash || "";
+  const match = hash.match(/^#\/([A-Za-z0-9_-]+)\/?$/);
+  return match ? match[1] : null;
+};
+
+const fetchYaml = async (url) => {
+  const response = await fetch(url);
+  if (!response.ok) {
+    const err = new Error(`Failed to fetch ${url}: ${response.status}`);
+    err.status = response.status;
+    throw err;
+  }
+  return jsyaml.load(await response.text());
+};
+
+let hasShownPrintTip = false;
+// Snapshot of the initial #resume markup, captured before the first render.
+// Restored before each render so route changes start from a clean slate
+// (otherwise sections hidden via display:none, mutated <h2> titles, and
+// containers that append rather than replace would accumulate state).
+let resumeInitialHtml = null;
+
+// Map of override-`disable:` section name → function returning the
+// identifying string for an entry. Used by `applyDisable` to flip
+// `enabled: false` on entries listed by name in an override file.
+const DISABLE_KEY_FNS = {
+  projects: (e) => e && e.name,
+  experience: (e) => e && e.company,
+  achievements: (e) => e && e.title,
+  skills: (e) => e && e.category,
+  // Composite key — both base education entries are at UTD, so degree alone
+  // also collides; use "Institution — Degree".
+  education: (e) => e && `${e.institution} — ${e.degree}`,
+};
+
+// Apply the override `disable:` directive in place. For each section listed,
+// find entries whose identifying field matches and set `enabled: false`
+// (existing render filters already drop disabled entries). Unknown sections
+// and unmatched names log a warning instead of failing — typos shouldn't
+// silently break a resume, but they shouldn't blow up either. Strips
+// `data.disable` so it never reaches a render function.
+const applyDisable = (data) => {
+  const disable = data && data.disable;
+  if (!disable || !isPlainObject(disable)) return;
+
+  for (const [section, names] of Object.entries(disable)) {
+    const keyFn = DISABLE_KEY_FNS[section];
+    if (!keyFn) {
+      console.warn(`disable: unknown section "${section}"`);
+      continue;
+    }
+    if (!Array.isArray(names)) {
+      console.warn(`disable.${section}: expected an array of names`);
+      continue;
+    }
+    const entries = data[section];
+    if (!Array.isArray(entries)) {
+      console.warn(`disable.${section}: no array found in resume data`);
+      continue;
+    }
+    for (const name of names) {
+      const matches = entries.filter((e) => keyFn(e) === name);
+      if (matches.length === 0) {
+        console.warn(`disable.${section}: no entry matched "${name}"`);
+        continue;
+      }
+      matches.forEach((e) => {
+        e.enabled = false;
+      });
+    }
+  }
+
+  delete data.disable;
+};
+
+// Load and parse YAML, optionally merging a per-route override.
 const loadResume = async () => {
   try {
-    const response = await fetch("resume.yaml");
-    const yamlText = await response.text();
-    const data = jsyaml.load(yamlText);
+    const resumeEl = document.getElementById("resume");
+    if (resumeInitialHtml === null) {
+      resumeInitialHtml = resumeEl.innerHTML;
+    } else {
+      resumeEl.innerHTML = resumeInitialHtml;
+    }
+
+    const base = await fetchYaml("resume.yaml");
+    let data = base;
+
+    const overrideName = getOverrideName();
+    if (overrideName) {
+      try {
+        const override = await fetchYaml(`resumes/${overrideName}.yaml`);
+        data = deepMerge(base, override);
+      } catch (overrideError) {
+        console.warn(`Override "${overrideName}" failed to load:`, overrideError);
+        notify(`Resume variant "${overrideName}" not found — showing default.`, 4000);
+      }
+    }
+
+    applyDisable(data);
     renderResume(data);
-    notify("This page prints nicely. Expand the sections you want and give it a try!", 5000, () =>
-      window.print(),
-    );
+
+    if (!hasShownPrintTip) {
+      hasShownPrintTip = true;
+      notify("This page prints nicely. Expand the sections you want and give it a try!", 5000, () =>
+        window.print(),
+      );
+    }
   } catch (error) {
     console.error("Error loading resume:", error);
     document.getElementById("resume").innerHTML =
@@ -1496,3 +1619,4 @@ const loadResume = async () => {
 
 // Initialize
 document.addEventListener("DOMContentLoaded", loadResume);
+window.addEventListener("hashchange", loadResume);

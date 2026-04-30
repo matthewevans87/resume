@@ -1,0 +1,103 @@
+# Per-route override for the Palantir SWE (New Grad) role.
+# Loaded when the page is visited at `#/palantir`.
+#
+# Merge semantics (see app.js `deepMerge`):
+#   - Plain objects merge by key with the base resume.yaml.
+#   - Arrays and scalars in this file fully REPLACE the base value.
+#   - `null` means "keep base value" (so omitting a field is the same as null).
+
+personal:
+  title: "Software Engineer"
+
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems across full-stack web, distributed services, and cloud infrastructure on AWS and Azure — paired with a recent M.S. in Computer Science from UT Dallas."
+  - "Comfortable picking up new languages and frameworks on demand; drawn to mission-driven platforms that put the right data in front of the people who need it. U.S. citizen, eligible to obtain a security clearance."
+
+# Drop the ML-only headline strip; emphasize the breadth Palantir's JD asks for.
+# Kept short to fit on one rendered line.
+skills_highlight:
+  title: "Engineering Strengths"
+  items:
+    - Distributed Systems
+    - Full-Stack (TypeScript / React)
+    - Cloud Infrastructure (AWS / Azure)
+    - Storage Systems
+    - API Design
+
+# Lead with experience, not academic ML projects, for a SWE audience.
+order_by:
+  - experience
+  - projects
+  - education
+  - achievements
+  - skills
+
+projects_config:
+  title: "Selected Projects"
+  group_by_type: false
+
+# Hide the Neural Networks Independent Study project for this variant.
+disable:
+  projects:
+    - "Neural Networks Independent Study"
+
+# Replace the entire skills list (arrays replace wholesale). Reordered and
+# relabeled to foreground what Palantir's JD names: languages, full-stack
+# frameworks, distributed systems / data stores, cloud + CI/CD. ML/research
+# moves to a secondary category rather than the headline.
+skills:
+  - category: "Programming Languages"
+    items:
+      - "TypeScript / JavaScript"
+      - "Python"
+      - "C#"
+      - "SQL"
+
+  - category: "Full-Stack & Frontend"
+    items:
+      - "React"
+      - "Angular"
+      - ".NET / ASP.NET"
+      - "Node.js"
+      - "REST API design"
+
+  - category: "Distributed Systems & Data"
+    items:
+      - "Distributed systems fundamentals"
+      - "Message queues (RabbitMQ, AWS SQS)"
+      - "ETL / Data pipelines (Athena-style analytics)"
+      - "Search & indexing (Elasticsearch-equivalent patterns)"
+
+  - category: "Databases & Storage"
+    items:
+      - "Distributed NoSQL (Cosmos DB, MongoDB) — Cassandra-equivalent patterns"
+      - "PostgreSQL / PostGIS"
+      - "SQL Server"
+      - "Redis"
+      - "Entity Framework"
+
+  - category: "Cloud, Containers & CI/CD"
+    items:
+      - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
+      - "Azure (App Service, Storage, DevOps)"
+      - "Docker (images, containers)"
+      - "Linux"
+      - "GitHub Actions"
+      - "Azure DevOps YAML Pipelines"
+      - "Observability (CloudWatch, Application Insights, Seq)"
+
+  - category: "Software Engineering"
+    items:
+      - "Git"
+      - "Code review & mentoring"
+      - "Testing (unit, integration, regression harnesses)"
+      - "Agile / SDLC"
+
+  - category: "Machine Learning & Research"
+    items:
+      - "PyTorch"
+      - "NumPy"
+      - "TensorBoard"
+      - "Experiment design / ablations"
+      - "Reinforcement Learning (PPO)"
+      - "NVIDIA Isaac Sim / Isaac Lab"

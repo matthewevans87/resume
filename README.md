@@ -61,10 +61,58 @@ Then open `http://localhost:8000` (or the appropriate port) in your browser.
 ├── index.html       # HTML structure
 ├── styles.css       # Screen styles (with dark/light mode)
 ├── print.css        # Print styles (LaTeX-inspired)
-├── app.js          # JavaScript to load and render YAML data
-├── resume.yaml     # Your resume data (edit this!)
-└── README.md       # This file
+├── app.js           # JavaScript to load and render YAML data
+├── resume.yaml      # Your base resume data (edit this!)
+├── resumes/         # Per-role override YAML files (optional)
+│   └── palantir.yaml
+└── README.md        # This file
 ```
+
+## Per-Role Overrides
+
+You can tailor the resume for specific roles without forking the base data. Drop
+a YAML file into `resumes/<slug>.yaml`, then visit `#/<slug>` (e.g.
+`https://your.site/#/palantir`) to render the merged result.
+
+Merge semantics:
+
+- Plain objects merge recursively with the base.
+- Arrays and scalars in the override **fully replace** the base value (so to
+  tweak one item in a list, restate the whole list).
+- `null` (or omitting a key) means "keep the base value".
+
+If the override file is missing or fails to parse, the page falls back to the
+base resume and shows a notification.
+
+### Hiding entries with `disable:`
+
+Because arrays replace wholesale, hiding a single project (or job, skill
+category, etc.) without the `disable:` directive would force you to restate
+the entire list in the override. Instead, list the entries to hide by name
+under a top-level `disable:` block:
+
+```yaml
+disable:
+  projects:
+    - "Neural Networks Independent Study"
+  experience:
+    - "Ericsson, Inc."
+```
+
+After the deep-merge, matching entries have `enabled: false` set on them
+(which existing render filters already drop). Supported sections and the
+field used to identify entries:
+
+| Section        | Match field                  |
+| -------------- | ---------------------------- |
+| `projects`     | `name`                       |
+| `experience`   | `company`                    |
+| `education`    | `"<institution> — <degree>"` |
+| `achievements` | `title`                      |
+| `skills`       | `category`                   |
+
+Names that don't match log a `console.warn` (so typos surface in DevTools
+without breaking the page).
 
 ## Customization
 
