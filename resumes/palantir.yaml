@@ -1,28 +1,25 @@
 # Per-route override for the Palantir SWE (New Grad) role.
 # Loaded when the page is visited at `#/palantir`.
-#
-# Merge semantics (see app.js `deepMerge`):
-#   - Plain objects merge by key with the base resume.yaml.
-#   - Arrays and scalars in this file fully REPLACE the base value.
-#   - `null` means "keep base value" (so omitting a field is the same as null).
 
 personal:
   title: "Software Engineer"
+  location: "Open to Relocation"
+  # No map link for a non-geographic location.
+  location_url: ""
 
 mission_statement:
   - "Software Engineer with 15 years' experience shipping production systems across full-stack web, distributed services, and cloud infrastructure on AWS and Azure — paired with a recent M.S. in Computer Science from UT Dallas."
-  - "Comfortable picking up new languages and frameworks on demand; drawn to mission-driven platforms that put the right data in front of the people who need it. U.S. citizen, eligible to obtain a security clearance."
+  - "A proven history of pairing deep technical mastery with just-in-time learning across languages, frameworks, and problem domains. Looking to join mission-aligned teams where trust, competence, and humility meet the world's hardest problems. U.S. citizen, eligible to obtain a security clearance."
 
 # Drop the ML-only headline strip; emphasize the breadth Palantir's JD asks for.
 # Kept short to fit on one rendered line.
 skills_highlight:
   title: "Engineering Strengths"
   items:
-    - Distributed Systems
-    - Full-Stack (TypeScript / React)
+    - Production Systems at Scale
+    - Distributed Backends
+    - Full-Stack (C# / .NET / TypeScript / Angular)
     - Cloud Infrastructure (AWS / Azure)
-    - Storage Systems
-    - API Design
 
 # Lead with experience, not academic ML projects, for a SWE audience.
 order_by:
@@ -55,8 +52,8 @@ skills:
 
   - category: "Full-Stack & Frontend"
     items:
-      - "React"
       - "Angular"
+      - "React"
       - ".NET / ASP.NET"
       - "Node.js"
       - "REST API design"

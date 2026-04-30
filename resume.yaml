@@ -2,6 +2,7 @@ personal:
   name: "Matthew Evans"
   title: "Machine Learning Engineer"
   location: "Richardson, TX"
+  location_url: "https://www.google.com/maps/search/?api=1&query=Richardson,+TX"
   email: "matthewevans87@gmail.com"
   phone: "(214) 674-0842"
   social:
@@ -650,7 +651,7 @@ projects:
     description: "Designed and built an end-to-end ML pipeline for training vision-conditioned PPO policies on the SO-101 robotic arm in NVIDIA Isaac Sim, targeting zero-shot sim-to-real transfer — achieving up to 89.7% episode success rate on a wrist-camera-only cube-lifting task under domain randomization."
     role: "Research Engineer / Author"
     start_date: "2026-01"
-    end_date: "2026-05"
+    end_date: "2026-04"
     highlights:
       - [
           "ML infrastructure:",

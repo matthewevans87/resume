@@ -228,7 +228,9 @@ const renderHeader = (data) => {
     {
       text: personal.location,
       icon: "location_on",
-      link: "https://www.google.com/maps/search/?api=1&query=Richardson,+TX",
+      // location_url is optional — when null/missing the location renders as
+      // plain text (no link). Useful for variants like "Open to Relocation".
+      link: personal.location_url || null,
     },
     {
       text: personal.email,
