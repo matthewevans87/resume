@@ -772,6 +772,49 @@ projects:
       - "Transformers"
       - "TensorBoard"
 
+  - name: "Crypton"
+    url: "https://github.com/matthewevans87/crypton-cli"
+    enabled: false
+    type: "personal"
+    description: "Multi-agent LLM system that runs an autonomous learning loop driven by live cryptocurrency market data. Five specialized agents (Plan → Research → Analyze → Synthesize → Evaluate) coordinate through file-based artifacts and bounded inter-agent mailboxes; a deterministic execution engine — fully separated from the AI layer — carries out the resulting strategy in a paper-trading sandbox. Personal exploration of agentic system design, prompt engineering, and tool-using LLMs."
+    role: "Architect / Author"
+    start_date: "2026-04"
+    end_date: "2026-04"
+    highlights:
+      - [
+          "Agentic orchestration:",
+          "Designed a 5-agent learning loop with bounded per-agent contracts (typed inputs, single named output artifact, capped-size mailbox) and a structured agent-to-agent messaging protocol that carries context forward across cycles without unbounded prompt growth.",
+        ]
+      - [
+          "Tool registry / model-side tool use:",
+          "Built a 12-tool composable registry with per-tool rate limiting and a sandboxed Python execution tool, exposed to agents through a uniform invocation surface so each agent operates exclusively through declared tools rather than ad-hoc side effects.",
+        ]
+      - [
+          "Prompt engineering:",
+          "Authored per-agent system prompts driving complex reasoning, planning, and tool use; refined prompts through measured cycle outcomes rather than ad-hoc iteration, with each agent's role, contract, and failure modes specified explicitly.",
+        ]
+      - [
+          "Deterministic execution separated from AI:",
+          "Architected the execution engine as a pure function of a structured strategy artifact — no LLM is in the loop at trade time. The engine hot-reloads the artifact on file change and evaluates entry/exit conditions via a custom DSL, keeping the non-deterministic and deterministic layers cleanly decoupled.",
+        ]
+      - [
+          "Resilience & safe-mode:",
+          "Implemented automatic safe-mode after N consecutive failures (suspends new actions, unwinds simulated exposure), startup-time state reconciliation against the external system of record, and a paper-trading operating mode that simulates orders against live prices with configurable slippage and commission.",
+        ]
+      - [
+          "Self-improvement loop:",
+          "Closed the loop with an Evaluate agent that scores each cycle's outcomes against intent and writes targeted improvement directives into peer agents' mailboxes — a measurable, automated quality-control feedback path between cycles.",
+        ]
+    technologies:
+      - "C# / .NET 10"
+      - "Ollama (local LLM inference)"
+      - "Multi-agent orchestration"
+      - "Prompt engineering"
+      - "Tool registry / sandboxed execution"
+      - "DSL design & parsing"
+      - "REST + WebSocket integration"
+      - "File-based state persistence"
+
   - name: "Crypto Currency Trading Bot"
     url: null
     enabled: false

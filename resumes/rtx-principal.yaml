@@ -1,0 +1,118 @@
+# Per-route override for the Raytheon (RTX)
+# "Principal AI ML Software Developer (Onsite)" role — Richardson, TX.
+# Loaded when the page is visited at `#/rtx-principal`.
+#
+# Merge semantics (see app.js `deepMerge`):
+#   - Plain objects merge by key with the base resume.yaml.
+#   - Arrays and scalars in this file fully REPLACE the base value.
+#   - `null` means "keep base value" (so omitting a field is the same as null).
+
+personal:
+  title: "Principal AI / ML Software Developer"
+
+# Reframe the mission around AI-augmented SDLC tooling and generative AI
+# systems — the JD's stated focus. Surface U.S. citizenship because the role
+# explicitly gates on TS/SCI eligibility. Lead on 15 years of production
+# software engineering (the JD wants 8+) and recent ML / transformer work.
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems on AWS and Azure, plus an M.S. in Computer Science (Machine Learning) from UT Dallas — combining senior software architecture chops with hands-on transformer / LLM and generative-AI work."
+  - "Targeting principal-level roles building AI-augmented developer tooling and agentic systems for the SDLC — code generation, automated testing, CI/CD orchestration, and the platform plumbing that makes them reliable. Based in Richardson, TX; U.S. citizen."
+
+# Replace the headline strip with RTX-JD-aligned strengths.
+# Items are kept short so the rendered "·"-separated line fits on one row
+# (the strip is single-line and silently clips overflow).
+skills_highlight:
+  title: "Engineering Strengths"
+  items:
+    - LLMs & Transformers
+    - Generative AI
+    - Code-Gen Frameworks
+    - CI/CD & DevOps
+    - Distributed Systems
+    - Technical Leadership
+
+# Lead with experience, not projects: this is a principal-level role and the
+# 15-year track record (especially the Augurware code-generation framework
+# and the team-leadership work at Zeal) is the strongest single signal here.
+order_by:
+  - experience
+  - projects
+  - education
+  - achievements
+  - skills
+
+projects_config:
+  title: "Applied AI / ML Projects"
+  group_by_type: false
+
+# Drop the visibility-graph project: it's the least relevant to the RTX JD
+# (computational geometry, no LLM / agent / SDLC connection) and removing
+# it tightens the page around AI / generative-AI signals.
+disable:
+  projects:
+    - "ML Assisted Visibility Graph Construction"
+
+# Surface the Crypton agent system from the base resume (where it is
+# disabled by default). It's the closest direct analog to the RTX JD's
+# agentic-orchestrator / MCP / A2A / prompt-engineering bullets.
+enable:
+  projects:
+    - "Crypton"
+
+# Replace the entire skills list (arrays replace wholesale). Reorganized to
+# mirror the JD's "What You Will Do" + qualifications structure: AI/LLM work
+# first, then platform/DevOps, distributed systems, programming, and the
+# software-engineering practice categories the JD explicitly names.
+skills:
+  - category: "AI / ML & Generative AI"
+    items:
+      - "Large Language Models (transformer architectures, training, fine-tuning)"
+      - "Custom transformer design (causal LMs, auxiliary heads, fusion mechanisms)"
+      - "Generative modeling (GANs, language models)"
+      - "Neural networks: MLPs, CNNs, RNNs / LSTMs, Transformers"
+      - "Reinforcement Learning (PPO)"
+      - "Experiment design, ablations, evaluation harnesses"
+      - "PyTorch, NumPy, TensorBoard"
+
+  - category: "Software Architecture & AI-Augmented SDLC"
+    items:
+      - "Reflection-driven code-generation frameworks"
+      - "Clean Architecture / domain-driven design at scale (87+ entity ERP)"
+      - "Automated regression test harnesses for legacy modernization"
+      - "API design (REST, authenticated CRUD scaffolding)"
+      - "Workflow orchestration (typed-config sweep runners, versioned artifact pipelines)"
+      - "Distributed systems fundamentals"
+
+  - category: "Platform, Containers & CI/CD"
+    items:
+      - "Docker (images, containers)"
+      - "AWS (ECS / Fargate, S3, SQS, Athena, CloudFormation)"
+      - "Azure (App Service, Storage, DevOps)"
+      - "GitHub Actions"
+      - "Azure DevOps YAML Pipelines"
+      - "Observability (CloudWatch, Application Insights, Seq)"
+      - "Linux"
+
+  - category: "Programming Languages"
+    items:
+      - "Python"
+      - "C# / .NET"
+      - "TypeScript / JavaScript"
+      - "SQL"
+
+  - category: "Databases & Data Stores"
+    items:
+      - "SQL Server"
+      - "PostgreSQL / PostGIS"
+      - "Cosmos DB"
+      - "MongoDB"
+      - "Redis"
+      - "Entity Framework"
+
+  - category: "Software Engineering Practice"
+    items:
+      - "Git, code review, mentoring"
+      - "Testing (unit, integration, regression harnesses)"
+      - "Agile / SDLC across multiple concurrent teams"
+      - "Technical leadership (hired and led teams across multi-MM/yr accounts)"
+      - "Stakeholder discovery & SOW negotiation"

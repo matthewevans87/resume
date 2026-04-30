@@ -1524,10 +1524,10 @@ let hasShownPrintTip = false;
 // containers that append rather than replace would accumulate state).
 let resumeInitialHtml = null;
 
-// Map of override-`disable:` section name → function returning the
-// identifying string for an entry. Used by `applyDisable` to flip
-// `enabled: false` on entries listed by name in an override file.
-const DISABLE_KEY_FNS = {
+// Map of override-`disable:` / `enable:` section name → function returning
+// the identifying string for an entry. Used by `applyDisable` and
+// `applyEnable` to flip `enabled` on entries listed by name in an override.
+const ENTRY_KEY_FNS = {
   projects: (e) => e && e.name,
   experience: (e) => e && e.company,
   achievements: (e) => e && e.title,
@@ -1537,44 +1537,63 @@ const DISABLE_KEY_FNS = {
   education: (e) => e && `${e.institution} — ${e.degree}`,
 };
 
-// Apply the override `disable:` directive in place. For each section listed,
-// find entries whose identifying field matches and set `enabled: false`
-// (existing render filters already drop disabled entries). Unknown sections
-// and unmatched names log a warning instead of failing — typos shouldn't
-// silently break a resume, but they shouldn't blow up either. Strips
-// `data.disable` so it never reaches a render function.
-const applyDisable = (data) => {
-  const disable = data && data.disable;
-  if (!disable || !isPlainObject(disable)) return;
+// Shared core: walk an override directive (`disable:` or `enable:`),
+// look up entries by name in each listed section, and apply `mutate` to
+// each match. Unknown sections, non-array values, missing target arrays,
+// and unmatched names log warnings rather than throwing — typos in an
+// override file shouldn't silently break a resume but also shouldn't blow
+// up. The directive key is removed from `data` so it never reaches a
+// render function.
+const applyEntryDirective = (data, directiveKey, mutate) => {
+  const directive = data && data[directiveKey];
+  if (!directive || !isPlainObject(directive)) return;
 
-  for (const [section, names] of Object.entries(disable)) {
-    const keyFn = DISABLE_KEY_FNS[section];
+  for (const [section, names] of Object.entries(directive)) {
+    const keyFn = ENTRY_KEY_FNS[section];
     if (!keyFn) {
-      console.warn(`disable: unknown section "${section}"`);
+      console.warn(`${directiveKey}: unknown section "${section}"`);
       continue;
     }
     if (!Array.isArray(names)) {
-      console.warn(`disable.${section}: expected an array of names`);
+      console.warn(`${directiveKey}.${section}: expected an array of names`);
       continue;
     }
     const entries = data[section];
     if (!Array.isArray(entries)) {
-      console.warn(`disable.${section}: no array found in resume data`);
+      console.warn(`${directiveKey}.${section}: no array found in resume data`);
       continue;
     }
     for (const name of names) {
       const matches = entries.filter((e) => keyFn(e) === name);
       if (matches.length === 0) {
-        console.warn(`disable.${section}: no entry matched "${name}"`);
+        console.warn(`${directiveKey}.${section}: no entry matched "${name}"`);
         continue;
       }
-      matches.forEach((e) => {
-        e.enabled = false;
-      });
+      matches.forEach(mutate);
     }
   }
 
-  delete data.disable;
+  delete data[directiveKey];
+};
+
+// Apply the override `enable:` directive in place — flip `enabled: true`
+// on entries that are hidden by default in `resume.yaml`. Counterpart to
+// `applyDisable`; both share `applyEntryDirective`. Applied before
+// `applyDisable` so that if a single entry appears in both directives,
+// disable wins (the safer default).
+const applyEnable = (data) => {
+  applyEntryDirective(data, "enable", (e) => {
+    e.enabled = true;
+  });
+};
+
+// Apply the override `disable:` directive in place — flip `enabled: false`
+// on entries listed by name (existing render filters already drop disabled
+// entries).
+const applyDisable = (data) => {
+  applyEntryDirective(data, "disable", (e) => {
+    e.enabled = false;
+  });
 };
 
 // Load and parse YAML, optionally merging a per-route override.
@@ -1601,6 +1620,7 @@ const loadResume = async () => {
       }
     }
 
+    applyEnable(data);
     applyDisable(data);
     renderResume(data);
 
