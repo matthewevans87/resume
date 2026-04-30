@@ -1,0 +1,106 @@
+# Per-route override for the Texas Instruments
+# "New College Graduate – AI Solutions Engineer" role (Job ID 25008812, Dallas, TX).
+# Loaded when the page is visited at `#/ti`.
+#
+# Merge semantics (see app.js `deepMerge`):
+#   - Plain objects merge by key with the base resume.yaml.
+#   - Arrays and scalars in this file fully REPLACE the base value.
+#   - `null` means "keep base value" (so omitting a field is the same as null).
+
+personal:
+  title: "AI Solutions Engineer"
+
+# Reframe the mission to mirror the JD: discriminative + generative ML across
+# vision/language/RL, full lifecycle ownership, local + work-authorized.
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems and a recent M.S. in Computer Science (Machine Learning) from UT Dallas — applied ML work spanning discriminative and generative models across vision, language, and reinforcement learning."
+  - "Drawn to applied AI roles where ML solutions ship into real products; comfortable owning the full lifecycle from data pipelines through training, evaluation, and deployment monitoring. Local to Dallas; U.S. citizen."
+
+# Replace the headline strip with TI-JD-aligned strengths.
+skills_highlight:
+  title: "Applied ML Strengths"
+  items:
+    - Generative & Discriminative Models
+    - Transformers / LLMs
+    - Reinforcement Learning
+    - Vision & Sequence Models
+    - Experimentation & Evaluation
+    - Data Pipelines
+
+# Lead with projects for this new-grad posting (matches base order).
+
+projects_config:
+  title: "Applied ML Projects"
+  group_by_type: false
+
+# Hide the Neural Networks Independent Study project — it lacks rendered
+# highlight bullets in the base YAML and reads thin next to its siblings.
+disable:
+  projects:
+    - "Neural Networks Independent Study"
+
+# Replace the entire skills list (arrays replace wholesale). Reorganized to
+# mirror the JD's bullet structure: AI/ML neural network families, traditional
+# ML, ML systems & experimentation (incl. deployment monitoring / drift),
+# programming, math foundations, tooling, and supporting infrastructure.
+skills:
+  - category: "AI / ML"
+    items:
+      - "Neural networks: MLPs, CNNs, RNNs / LSTMs, Transformers"
+      - "Generative modeling (GANs, language models)"
+      - "Large Language Models (transformer architectures, fine-tuning, agent workflows)"
+      - "Reinforcement Learning (PPO)"
+      - "Computer vision (CNNs, ResNet18, vision-conditioned policies)"
+      - "Sim-to-real transfer & domain randomization"
+      - "NLP / sequence modeling"
+
+  - category: "Traditional ML"
+    items:
+      - "Regression & classification"
+      - "Clustering"
+      - "Decision trees & ensembles"
+      - "Statistical methods for ML"
+
+  - category: "ML Systems & Experimentation"
+    items:
+      - "Experiment design & ablations"
+      - "Training / evaluation pipelines"
+      - "Evaluation harnesses & metrics"
+      - "Model debugging & error analysis"
+      - "Deployment monitoring (accuracy, drift)"
+      - "Reproducibility (typed configs, seeded sweeps, versioned artifacts)"
+      - "ETL / data pipelines"
+
+  - category: "Programming Languages"
+    items:
+      - "Python"
+      - "SQL"
+      - "C#"
+      - "TypeScript / JavaScript"
+
+  - category: "Math Foundations"
+    items:
+      - "Linear algebra"
+      - "Probability & statistics"
+      - "Calculus"
+      - "Optimization"
+
+  - category: "ML Tooling"
+    items:
+      - "PyTorch"
+      - "NumPy / SciPy"
+      - "TensorBoard"
+      - "NVIDIA Isaac Sim / Isaac Lab"
+      - "skrl"
+      - "ROS"
+      - "LeRobot"
+
+  - category: "Infrastructure, Data & CI/CD"
+    items:
+      - "Linux"
+      - "Docker"
+      - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
+      - "Azure (App Service, Storage, DevOps)"
+      - "Observability (CloudWatch, Application Insights)"
+      - "GitHub Actions / Azure DevOps Pipelines"
+      - "SQL Server, PostgreSQL / PostGIS, Cosmos DB, MongoDB, Redis"
