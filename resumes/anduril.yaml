@@ -1,0 +1,39 @@
+# Per-route override for the Anduril Software Engineer — Modeling & Simulation role.
+# Loaded when the page is visited at `#/anduril`.
+#
+# Light tailoring — the base resume's robotics/sim-to-real framing already
+# aligns with this role's "What You'll Do" almost one-to-one. Override the
+# title, mission, and headline strip to match the JD's vocabulary; hide the
+# off-topic NLP project; mark the location as relocation-friendly.
+
+personal:
+  title: "Senior Software Engineer, Robotics & Simulation"
+  location: "Open to Relocation"
+  # No map link for a non-geographic location.
+  location_url: ""
+
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems, paired with a recent M.S. in Computer Science from UT Dallas (Intelligent Systems & Machine Learning)."
+  - "I build and validate vision-conditioned policies in simulation, instrument the experiments that make sim-to-real transfer measurable, and ship the tooling that turns ablation runs into decisions. Looking to join mission-aligned teams where trust, competence, and humility meet the world's hardest problems."
+
+# JD vocabulary — each item has a direct echo in "What You'll Do" or
+# "Required Qualifications".
+skills_highlight:
+  title: "Engineering Strengths"
+  items:
+    - Sim-to-Real Transfer
+    - Sensor & Policy Validation in Simulation
+    - Experimentation & Ablation Tooling
+    - Production Systems at Scale
+
+# Frame the section explicitly around the JD's domain.
+projects_config:
+  title: "Robotics & Simulation Projects"
+  group_by_type: false
+
+# Hide the pure-NLP project — off-topic for a sim/sensor role. Visibility
+# Graph stays (motion planning + LSTM is adjacent). Independent Study stays
+# (CARLA-based autonomous-driving thesis proposal is on-message).
+disable:
+  projects:
+    - "Intent-Aware Lookahead for Language Modeling"

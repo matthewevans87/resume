@@ -1,0 +1,39 @@
+# Per-route override for the Shield AI Staff Engineer, G&C role.
+# Loaded when the page is visited at `#/shield-ai`.
+#
+# Pitched as Senior (not Staff). Light tailoring: confident first-person
+# mission, G&C-tilted headline strip, hide one off-topic NLP project,
+# retitle the projects section. Experience and project descriptions are
+# unchanged.
+
+personal:
+  title: "Senior Software Engineer, Robotics & Autonomy"
+
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems, paired with a recent M.S. in Computer Science from UT Dallas (Intelligent Systems & Machine Learning)."
+  - "I train and validate vision-conditioned control policies, close the sim-to-real loop with reproducible experiment infrastructure, and ship the tooling that turns ablation runs into decisions. Looking to join mission-aligned teams where trust, competence, and humility meet the world's hardest problems."
+
+# Robotics/autonomy-tilted headline. CI/CD & TDD hits the JD's "Preferred
+# qualifications" directly; Production Systems at Scale anchors the
+# 15-year SWE track record.
+skills_highlight:
+  title: "Engineering Strengths"
+  items:
+    - Robotics & Reinforcement Learning
+    - Sim-to-Real Transfer
+    - Production Systems at Scale
+    - CI/CD & Test-Driven Development
+
+# Frame the section as robotics-flavored rather than the generic
+# "Applied Machine Learning Experience".
+projects_config:
+  title: "Robotics & Applied ML Projects"
+  group_by_type: false
+
+# Hide the pure-NLP project — off-topic for a G&C role. Visibility Graph
+# stays (motion planning + LSTM is adjacent to autonomy). Independent
+# Study stays (CARLA-based autonomous-driving thesis proposal is a strong
+# connector).
+disable:
+  projects:
+    - "Intent-Aware Lookahead for Language Modeling"
