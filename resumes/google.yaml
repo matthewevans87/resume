@@ -1,0 +1,35 @@
+# Per-route override for Google — Software Engineer III, AI/ML, Core (Sunnyvale).
+# Loaded when the page is visited at `#/google`.
+#
+# The base resume's ML-engineering framing already maps cleanly to this JD:
+# RL (PPO), ML infrastructure, model evaluation, data pipelines, debugging,
+# and a 15-year production-systems track record covering distributed
+# computing, large-scale data, and CI/CD. Override is intentionally light:
+# title, mission, headline strip, location.
+
+personal:
+  title: "Software Engineer, AI/ML"
+  location: "Open to Relocation"
+  # No map link for a non-geographic location.
+  location_url: ""
+
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems at scale, paired with a recent M.S. in Computer Science from UT Dallas (Intelligent Systems & Machine Learning)."
+  - "I build the ML infrastructure — training pipelines, evaluation harnesses, and ablation frameworks — that turns research questions into measurable answers, with hands-on depth in reinforcement learning, vision-conditioned policies, and sim-to-real transfer. Looking to join teams solving foundational problems at Google scale."
+
+# Each item maps directly to JD language:
+#   - "ML Infrastructure"               → min qual + responsibilities
+#   - "Model Evaluation & Debugging"    → min qual ("model evaluation, debugging")
+#   - "Reinforcement Learning"          → min qual (sequential decision making)
+#   - "Production Systems at Scale"     → 15-year SWE track record; lets the
+#                                         reviewer infer "distributed" from the
+#                                         experience section rather than claiming
+#                                         Spanner/Bigtable-class depth we can't
+#                                         defend in interviews.
+skills_highlight:
+  title: "Engineering Strengths"
+  items:
+    - ML Infrastructure
+    - Model Evaluation & Debugging
+    - Reinforcement Learning
+    - Production Systems at Scale
