@@ -1,0 +1,105 @@
+# Per-route override for Capital One — Senior Machine Learning Engineer
+# (R236077, McLean VA / Plano TX / Richmond VA / Chicago IL).
+# Loaded when the page is visited at `#/capital-one`.
+#
+# Plano, TX is local — keep base location. JD asks for: Python, distributed
+# computing, ML frameworks (PyTorch/scikit-learn/Spark/Dask/TF), 1+ yr
+# productionizing/monitoring models, cloud (AWS/Azure/GCP), CI/CD,
+# data pipelines feeding ML, Responsible/Explainable AI. The base resume's
+# 15-year production-systems track record + recent ML M.S. + PyTorch/PPO
+# work maps cleanly; tailoring stays light.
+
+personal:
+  title: "Senior Machine Learning Engineer"
+
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems on AWS and Azure, paired with a recent M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "I bring deep production-engineering instincts — CI/CD, testing, observability, data pipelines — to ML work, and graduate experience designing training pipelines, evaluation harnesses, and ablation frameworks. Looking to join an Agile MLE team and grow into productionizing ML at scale."
+
+# Headline strip — only claims things actually earned on the job or in
+# graduate work. The JD's "1+ yr productionizing models" bar isn't met,
+# so it's not asserted as a strength; instead we lead with the 15-year
+# production-SWE track record and the ML infrastructure built during the
+# M.S. (training pipelines, evaluation harnesses, ablations).
+#   - "Production Systems at Scale"  → 15-yr SWE track record
+#   - "ML Training & Evaluation"     → M.S. RL / vision-policy work
+#   - "Cloud-Native (AWS / Azure)"   → preferred qual (deploy in cloud)
+#   - "CI/CD & Test Automation"      → responsibility (CI/CD, test, monitoring)
+skills_highlight:
+  title: "Engineering Strengths"
+  items:
+    - Production Systems at Scale
+    - ML Training & Evaluation
+    - Cloud-Native (AWS / Azure)
+    - CI/CD & Test Automation
+
+# Lead with applied ML projects (M.S. work demonstrates the modeling /
+# evaluation / pipeline depth the JD asks for), then the long production
+# SWE track record that satisfies the 4+ yr Python/Scala/Java +
+# distributed-computing + cloud bars.
+order_by:
+  - projects
+  - experience
+  - education
+  - achievements
+  - skills
+
+projects_config:
+  title: "Applied Machine Learning Projects"
+  group_by_type: false
+
+# Replace the entire skills list (arrays replace wholesale). Reordered to
+# foreground what Capital One's JD names: Python + ML frameworks first,
+# then MLOps / pipelines / cloud, then the broader SWE foundation.
+skills:
+  - category: "Languages"
+    items:
+      - "Python"
+      - "TypeScript / JavaScript"
+      - "C#"
+      - "SQL"
+
+  - category: "Machine Learning"
+    items:
+      - "PyTorch"
+      - "scikit-learn"
+      - "NumPy / pandas"
+      - "TensorBoard"
+      - "Reinforcement Learning (PPO)"
+      - "Experiment design / ablations"
+      - "Model evaluation & debugging"
+      - "NVIDIA Isaac Sim / Isaac Lab"
+
+  - category: "MLOps & Data Pipelines"
+    items:
+      - "Training pipelines & evaluation harnesses"
+      - "Model monitoring & retraining"
+      - "ETL / batch data pipelines"
+      - "Reproducible experiment infrastructure"
+      - "Responsible & Explainable AI practices"
+
+  - category: "Cloud & Distributed Systems"
+    items:
+      - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
+      - "Azure (App Service, Storage, Cosmos DB, DevOps)"
+      - "Distributed systems fundamentals"
+      - "Message queues (RabbitMQ, AWS SQS)"
+      - "Containers (Docker)"
+      - "Linux"
+
+  - category: "Databases & Storage"
+    items:
+      - "PostgreSQL / PostGIS"
+      - "SQL Server"
+      - "Cosmos DB / MongoDB"
+      - "Snowflake"
+      - "Redis"
+
+  - category: "CI/CD & Software Engineering"
+    items:
+      - "GitHub Actions"
+      - "Azure DevOps YAML Pipelines"
+      - "Test automation (unit, integration, regression harnesses)"
+      - "Observability (CloudWatch, Application Insights, Seq)"
+      - "Git / code review / mentoring"
+      - "Agile / SDLC"
