@@ -14,8 +14,8 @@ personal:
   location_url: ""
 
 mission_statement:
-  - "Software Engineer with 15 years' experience shipping production systems at scale, paired with a recent M.S. in Computer Science from UT Dallas (Intelligent Systems & Machine Learning)."
-  - "I build the ML infrastructure — training pipelines, evaluation harnesses, and ablation frameworks — that turns research questions into measurable answers, with hands-on depth in reinforcement learning, vision-conditioned policies, and sim-to-real transfer. Looking to join teams solving foundational problems at Google scale."
+  - "Software Engineer with 15 years' experience shipping production systems across enterprise and consulting environments, paired with a recent M.S. in Computer Science from UT Dallas (Intelligent Systems & Machine Learning)."
+  - "My recent applied-ML work builds the infrastructure — training pipelines, evaluation harnesses, and ablations — that turns research questions into measurable answers, with hands-on focus on reinforcement learning and vision-based sim-to-real transfer. Looking to solve foundational problems at Google."
 
 # Each item maps directly to JD language:
 #   - "ML Infrastructure"               → min qual + responsibilities
@@ -33,3 +33,59 @@ skills_highlight:
     - Model Evaluation & Debugging
     - Reinforcement Learning
     - Production Systems at Scale
+
+# Hide early-career roles to reclaim space. The 15-year tenure claim in the
+# mission statement plus the 2012 BS graduation already establish the timeline,
+# and the Clarity ETL bullet under Zeal carries the distributed-scale signal.
+# Cisco stays — brand-recognition value at the resume-screen stage.
+disable:
+  experience:
+    - "Clickmotive, Inc."
+    - "Ericsson, Inc."
+
+# Tightened skills for the Google AI/ML route — drops .NET-ecosystem
+# databases (Cosmos, EF) and consulting-flavored CI/CD entries (Azure
+# DevOps YAML) that don't add signal here, and folds the standalone
+# "Software Engineering" line into adjacent categories. Goal: pull the
+# orphaned tail line back onto the previous page without losing any
+# JD-relevant keyword.
+skills:
+  - category: "AI/ML, Robotics & Experimentation"
+    items:
+      - "PyTorch"
+      - "NumPy"
+      - "TensorBoard"
+      - "NVIDIA Isaac Sim / Isaac Lab"
+      - "ROS"
+      - "LeRobot"
+
+  - category: "ML Systems & Data"
+    items:
+      - "Experiment design / ablations"
+      - "Evaluation harnesses & metrics"
+      - "ETL / Data Pipelines"
+      - "Distributed systems fundamentals"
+      - "Message queues (RabbitMQ, AWS SQS)"
+      - "Analytics (AWS Athena)"
+
+  - category: "Programming Languages"
+    items:
+      - "Python"
+      - "C#"
+      - "TypeScript"
+      - "SQL"
+
+  - category: "Infrastructure & CI/CD"
+    items:
+      - "Linux"
+      - "Docker"
+      - "AWS (S3, SQS, Athena, ECS / Fargate, Lambda, CloudFormation)"
+      - "Azure (App Service, Storage, DevOps)"
+      - "Observability (CloudWatch, Application Insights)"
+      - "CI/CD (GitHub Actions)"
+
+  - category: "Databases & Data Stores"
+    items:
+      - "SQL Server"
+      - "PostgreSQL / PostGIS"
+      - "Redis"
