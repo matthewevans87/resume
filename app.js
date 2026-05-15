@@ -462,14 +462,7 @@ const renderExperience = (experiences) => {
         titleWrapper.appendChild(badge);
       }
 
-      const dateRange = createElement(
-        "div",
-        "date-range",
-        formatDateRange(position.start_date, position.end_date),
-      );
-
       posHeader.appendChild(titleWrapper);
-      posHeader.appendChild(dateRange);
       posDiv.appendChild(posHeader);
 
       // Summary
