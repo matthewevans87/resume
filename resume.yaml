@@ -61,7 +61,7 @@ experience:
     projects_expanded: false
     positions:
       - title: "Software Architect"
-        start_date: "2024"
+        start_date: "2023"
         end_date: null
         promotion: false
         technologies: []
@@ -84,7 +84,7 @@ experience:
     expanded: true
     projects_expanded: false
     positions:
-      - title: "Associate Partner"
+      - title: "Associate Partner, Software Architect"
         start_date: "2020"
         end_date: "2023"
         promotion: false
@@ -675,11 +675,11 @@ projects:
         ]
       - [
           "Ablation framework:",
-          "Developed a sweep runner executing Cartesian-product ablations across reward functions, vision backbones, and PPO hyperparameters (each over 5 RNG seeds); uncovered that ablating a dense absolute reward for the grasp phase eliminated a soft local optimum, improving both success rate and time-to-first-success.",
+          "Developed a sweep runner executing Cartesian-product ablations across reward functions, vision backbones, and PPO hyperparameters (each over 5 RNG seeds); captures per-experiment provenance and per-condition success/lift/termination statistics.",
         ]
       - [
           "Reward shaping analysis:",
-          "Identified through systematic ablations that the dense absolute reward for the approach phase acted as a soft local optimum — ablating it yielded the highest success rate observed across all experiments (89.7%, +1.9pp over baseline) with shorter mean episode length, consistent with the policy committing to task completion rather than hovering in a rewarded near-approach posture.",
+          "Used the framework to run leave-one-out and leave-one-in ablations (5 seeds × 50 k PPO steps) across the lift-cube reward function, identifying the dense absolute approach reward as a soft local optimum — removing it gave the highest success rate observed (89.7 %, +2 pp over the 13-term baseline) with shorter mean episode length, and a derived 2-term minimal reward matched the full reward set within statistical noise (Welch z = −0.47).",
         ]
     technologies:
       - "Python"
