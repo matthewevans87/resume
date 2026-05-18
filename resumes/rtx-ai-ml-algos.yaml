@@ -51,7 +51,7 @@ projects:
     start_date: "2026-01"
     end_date: null
     highlights:
-       - [
+      - [
           "ML infrastructure:",
           "Designed a reproducible end-to-end pipeline (train → collect → curate → train-cnn) with typed YAML validation, versioned artifact directories (configs, seeds, checkpoints, metrics), and provenance tracking — enabling systematic experimentation, reliable debugging, and direct run-to-run comparison.",
         ]
