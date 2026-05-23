@@ -101,7 +101,20 @@ order_by:
 - **Header comment** every override with: target company/role, route slug, and a numbered list of what changed vs. base. The existing overrides all follow this pattern — match it.
 - **Don't invent claims.** Only assert strengths backed by base resume content. If the JD asks for something not in the base, either leave it out or anchor it on a real bullet (see Capital One's commentary in [resumes/capital-one.yaml](../../resumes/capital-one.yaml)).
 - **Mission statement** is an array of paragraphs (`- "..."`) — keep voice consistent with base.
-- **`skills_highlight.items`** is a 4–6 item headline strip; choose phrases that map directly to JD vocabulary.
+- **`skills_highlight.items`** is a 4–6 item headline strip; choose phrases that map directly to JD vocabulary. Set `skills_highlight: { disabled: true }` in an override to hide it — typically paired with a `qualifications` block, which subsumes its scan-anchor purpose with JD-anchored proof points.
+- **`qualifications.items`** is an optional bullet-list **section** rendered above the timeline that maps **1:1 to the JD's requirements**. Use it when a JD lists discrete required qualifications and you want a scannable proof-strip at the top of the resume. Each item is a `"Label: value"` string (the label before the first `:` auto-bolds) or `{ label, value }`. Only assert claims backed by base resume content. Example:
+
+  ```yaml
+  qualifications:
+    title: "Qualifications" # optional; becomes the section <h2> (defaults to "Qualifications")
+    items:
+      - "Programming: C# (15 yrs), Python (5 yrs), TypeScript (10 yrs)"
+      - "Cloud: AWS (8 yrs), Azure (6 yrs)"
+      - "ML: PyTorch, RL (PPO), evaluation harnesses, ablations"
+  ```
+
+  Order items to match the JD's requirement order. The section sits in a fixed position (above the career timeline) and is **not** affected by `order_by`. Omit the section entirely (don't set to `null`) to inherit the base.
+
 - **Don't duplicate base content** unless you're changing it. Inheritance is the point.
 - **Don't add `null` fields** to "clear" something — that's a no-op. To hide an element, use `disabled:`. To clear a string, set it to `""` (see Google's `location_url: ""`).
 - **Don't edit base files** ([resume.yaml](../../resume.yaml), [app.js](../../app.js), schema) when the task is just adding an override.

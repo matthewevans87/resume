@@ -23,8 +23,8 @@ personal:
       handle: "github.com/matthewevans87"
 
 mission_statement:
-  - "Software Engineer with 15 years' experience shipping production systems and M.S. in Computer Science (Machine Learning) from UT Dallas."
-  - "Targeting Machine Learning Engineer roles at the boundary of research and engineering — designing and running the experiments, training pipelines, and evaluation frameworks that turn research questions into measurable answers."
+  - "Software Engineer with 15 years' experience shipping production systems and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "Targeting Machine Learning and Perception Engineer roles in autonomy and hard-tech — building the algorithms that turn sensor data into perception and perception into action: detection, tracking, sensor fusion, and learned decision-making for systems that operate in the real world."
 
 tagline: "Software should return time, attention, and agency to people."
 enable_tagline: false
@@ -688,34 +688,34 @@ projects:
       name: "Vision-Based Sim-to-Real Manipulation Pipeline"
       url: "https://github.com/matthewevans87/so101_sim_to_real"
       type: "academic"
-      description: "Designed and built an end-to-end ML pipeline for training vision-conditioned PPO policies on the SO-101 robotic arm in NVIDIA Isaac Sim, targeting zero-shot sim-to-real transfer — achieving up to 89.7% episode success rate on a wrist-camera-only cube-lifting task under domain randomization."
+      description: "Designed and built an end-to-end ML pipeline for training vision-based perception and control policies under domain randomization (lighting, camera pose, object geometry, distractors) targeting zero-shot sim-to-real transfer — achieving up to 89.7% task success on a wrist-camera-only manipulation benchmark in NVIDIA Isaac Sim. Multimodal sensor fusion across RGB imagery, joint-state telemetry, and object-pose data across ~10K synthetic episodes."
       role: "Research Engineer / Author"
       start_date: "2026-01"
       end_date:
       highlights:
         - [
             "ML infrastructure:",
-            "Designed a reproducible end-to-end pipeline (train → collect → curate → train-cnn) with typed YAML validation, versioned artifact directories (configs, seeds, checkpoints, metrics), and provenance tracking — enabling systematic experimentation, reliable debugging, and direct run-to-run comparison.",
+            "Built a reproducible end-to-end pipeline (train → collect → curate → train-cnn) with typed YAML validation, versioned artifact directories (configs, seeds, checkpoints, metrics), and provenance tracking for systematic experimentation and run-to-run comparison.",
           ]
         - [
             "Reinforcement learning:",
-            "Applied PPO to a vision-based sequential decision-making task; designed phased reward shaping (approach → grasp → lift), safety-aware termination conditions, and domain randomization (lighting, camera pose, object geometry, distractors) in service of sim-to-real transfer.",
+            "Applied PPO to a vision-based manipulation task with phased reward shaping (approach → grasp → lift), safety-aware termination, and domain randomization (lighting, camera pose, object geometry, distractors) for sim-to-real transfer.",
           ]
         - [
             "Vision encoder evaluation:",
-            "Bootstrapped a task-specific CNN from synthetic policy rollouts via iterative self-distillation, replacing a frozen ImageNet backbone (ResNet18); CNN achieved 4.5pp higher episode success rate (87.1% vs. 83.1%), with a second distillation generation yielding further improvement (87.7%).",
+            "Bootstrapped a task-specific CNN from synthetic policy rollouts via iterative self-distillation, replacing a frozen ResNet18 ImageNet backbone: +4.5pp success rate (87.1% vs. 83.1%), with a 2nd distillation generation reaching 87.7%.",
           ]
         - [
             "Data pipelines:",
-            "Collected and processed ~10K episodes of multimodal telemetry (images, joint state, object pose); applied histogram rebalancing across episode timestep and grip-zone distance to prevent dominant mid-approach frames from skewing CNN training.",
+            "Processed ~10K episodes of multimodal telemetry (images, joint state, object pose); applied histogram rebalancing across timestep and grip-zone distance to prevent mid-approach frames from skewing CNN training.",
           ]
         - [
             "Ablation framework:",
-            "Developed a sweep runner executing Cartesian-product ablations across reward functions, vision backbones, and PPO hyperparameters (each over 5 RNG seeds); uncovered that ablating a dense absolute reward for the grasp phase eliminated a soft local optimum, improving both success rate and time-to-first-success.",
+            "Built a sweep runner for Cartesian-product ablations across reward functions, vision backbones, and PPO hyperparameters (5 RNG seeds each), capturing per-experiment provenance and per-condition success/lift/termination stats.",
           ]
         - [
             "Reward shaping analysis:",
-            "Identified through systematic ablations that the dense absolute reward for the approach phase acted as a soft local optimum — ablating it yielded the highest success rate observed across all experiments (89.7%, +1.9pp over baseline) with shorter mean episode length, consistent with the policy committing to task completion rather than hovering in a rewarded near-approach posture.",
+            "Via leave-one-out / leave-one-in ablations (5 seeds × 50k PPO steps) on rewards, identified the dense absolute approach reward as a soft local optimum — removing it yielded the best result observed (89.7%, +2pp over the 13-term baseline) with shorter episodes; a derived 2-term minimal reward matched the full set within noise (Welch z = -0.47).",
           ]
       technologies:
         - "Python"
@@ -742,15 +742,15 @@ projects:
       highlights:
         - [
             "Data pipeline:",
-            "Parsed 1,670 StarCraft maps into binary walkability grids; converted obstacle regions to polygonal representations via connected components and alpha shapes with geometric cleanup using Shapely.",
+            "Parsed 1,670 StarCraft maps into binary walkability grids; extracted obstacle polygons via connected components and alpha shapes with Shapely-based geometric cleanup.",
           ]
         - [
             "Model training:",
-            "Designed and trained an LSTM-based sector predictor with five-fold cross-validation, achieving 82.1% validation accuracy; integrated predictions into DFS/DP-based visibility-graph construction to gate visibility checks.",
+            "Trained an LSTM sector predictor (82.1% validation accuracy, 5-fold CV) to gate visibility checks in DFS/DP-based graph construction.",
           ]
         - [
             "Evaluation:",
-            "Benchmarked pruned vs. exact graph construction across map geometries; achieved up to 98% reduction in vertex comparisons while closely matching exact shortest-path lengths.",
+            "Achieved up to 98% reduction in vertex comparisons vs. exact construction while closely matching shortest-path lengths across map geometries.",
           ]
       technologies:
         - "Python"
@@ -791,15 +791,15 @@ projects:
       highlights:
         - [
             "Model architecture:",
-            "Designed and implemented IALM-Lite, a 6-layer causal transformer (~44.9M params) augmented with auxiliary future-prediction heads, intent pooling (mean/attention), and FiLM vs. gated fusion mechanisms.",
+            "Built IALM-Lite, a 6-layer causal transformer (~44.9M params) with auxiliary future-prediction heads, intent pooling (mean/attention), and FiLM vs. gated fusion.",
           ]
         - [
             "Experiment design:",
-            "Ran a controlled ablation study of 21 variants across a grid of lookahead horizon, auxiliary loss weight, pooling method, and fusion mechanism; identified auxiliary loss weight (λ) as the dominant factor shaping training dynamics.",
+            "Ran a 21-variant ablation across lookahead horizon, auxiliary loss weight, pooling, and fusion; identified auxiliary loss weight (λ) as the dominant driver of training dynamics.",
           ]
         - [
             "Evaluation & negative results:",
-            "Benchmarked all variants against a matched baseline on WikiText-2; baseline outperformed all lookahead variants — documented findings with analysis of multi-task interference and capacity allocation to inform future designs.",
+            "On WikiText-2, baseline outperformed all lookahead variants; analyzed multi-task interference and capacity allocation to inform future designs.",
           ]
       technologies:
         - "Python"
@@ -892,12 +892,12 @@ education:
       end_date: "2025-12-31"
       gpa: "3.73 / 4.0"
       honors:
-      courses:
-        - "Machine Learning"
-        - "Computational Geometry"
-        - "Robotics"
-        - "Natural Language Processing"
-        - "Statistical Methods for ML"
+      # courses:
+      #   - "Machine Learning"
+      #   - "Computational Geometry"
+      #   - "Robotics"
+      #   - "Natural Language Processing"
+      #   - "Statistical Methods for Machine Learning"
       highlights:
     - key: bachelor-of-science
       institution: "University of Texas at Dallas"
@@ -969,7 +969,7 @@ skills:
       category: "Infrastructure, Containers & CI/CD"
       items:
         - "Linux"
-        - "Docker (images, containers)"
+        - "Docker / Containerization"
         - "AWS ECS / Fargate"
         - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
         - "Azure (App Service, Storage, DevOps)"

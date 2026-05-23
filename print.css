@@ -20,29 +20,53 @@
   }
 
   @page {
-    size: letter;
+    size: 8.5in 11in;
     margin: 0.75in 0.75in 0.5in 0.75in;
   }
 
   html,
   body {
     font-family: Times, "Times New Roman", serif;
-    font-size: 10pt;
+    /* ---------------------------------------------------------------------
+       Print font-size token system.
+
+       All print font-sizes are derived from a single base via calc(). To
+       globally rescale the printed document, change only `--print-font-base`
+       below. The token ramp matches the discrete sizes used in this file.
+
+       Pinning root + body font-size also prevents Chrome's print engine from
+       deriving an alternate body size from a content-aware "shrink to fit"
+       pass.
+       ---------------------------------------------------------------------- */
+    --print-font-base: 7pt;
+    --print-font-3xs: calc(var(--print-font-base) * 0.7); /* 7pt   */
+    --print-font-2xs: calc(var(--print-font-base) * 0.8); /* 8pt   */
+    --print-font-xs: calc(var(--print-font-base) * 0.9); /* 9pt   */
+    --print-font-sm: calc(var(--print-font-base) * 0.95); /* 9.5pt */
+    --print-font-md: var(--print-font-base); /* 10pt  */
+    --print-font-lg: calc(var(--print-font-base) * 1.05); /* 10.5pt*/
+    --print-font-xl: calc(var(--print-font-base) * 1.1); /* 11pt  */
+    --print-font-2xl: calc(var(--print-font-base) * 1.2); /* 12pt  */
+    --print-font-4xl: calc(var(--print-font-base) * 4); /* 40pt  */
+
+    font-size: var(--print-font-md);
     line-height: 1.4;
     color: #000;
     background: #fff;
   }
 
-  /* Container */
+  /* Container — pin width to the printable area so Chrome's print engine
+     cannot apply a "shrink to fit" scale based on natural content width. */
   .container {
-    max-width: 100%;
+    width: 7in; /* 8.5in page - 0.75in left - 0.75in right */
+    max-width: 7in;
     margin: 0;
     padding: 0 !important;
   }
 
   /* Typography - LaTeX Style */
   h1 {
-    font-size: 4rem;
+    font-size: var(--print-font-4xl);
     font-weight: 400;
     letter-spacing: 0.02em;
     margin-bottom: 6pt;
@@ -51,12 +75,12 @@
   }
 
   h2 {
-    font-size: 12pt;
+    font-size: var(--print-font-2xl);
     font-weight: 700;
     font-variant: small-caps;
     margin-top: 14pt;
     margin-bottom: 8pt;
-    padding-bottom: 2pt;
+    padding-bottom: 1pt;
     border-bottom: 1pt solid #000;
     page-break-after: avoid;
     break-after: avoid;
@@ -64,7 +88,7 @@
   }
 
   h3 {
-    font-size: 11pt;
+    font-size: var(--print-font-xl);
     font-weight: 600;
     margin-top: 8pt;
     margin-bottom: 4pt;
@@ -73,7 +97,7 @@
   }
 
   h4 {
-    font-size: 10.5pt;
+    font-size: var(--print-font-lg);
     font-weight: 600;
     font-style: italic;
     margin-top: 4pt;
@@ -117,7 +141,7 @@
   .contact-info {
     display: block;
     text-align: center;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     margin: 6pt 0;
     color: #000;
   }
@@ -130,7 +154,7 @@
     background: none;
     border: none;
     font-family: Times, "Times New Roman", serif;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     color: #000;
   }
 
@@ -169,54 +193,55 @@
   .mission-statement {
     max-width: 85%;
     margin: 10pt auto 0;
-    font-size: 10pt;
+    font-size: var(--print-font-md);
     line-height: 1.5;
     text-align: justify;
     font-style: italic;
     color: #222;
   }
 
-  .skills-highlight {
-    max-width: 85%;
-    display: table;
-    margin: 10pt auto 0;
-    font-size: 9.5pt;
+  #qualifications-section {
+    margin-bottom: 6pt;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  #qualifications-section h2 {
+    margin-top: 4pt;
+    margin-bottom: 4pt;
+    padding-bottom: 1pt;
+  }
+
+  .qualifications-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 2pt 0 0;
+  }
+
+  .qualifications-item {
+    padding-left: 10pt;
+    margin-bottom: 1pt;
+    font-size: var(--print-font-sm);
+    color: #000;
+    text-indent: -10pt;
+    line-height: 1.3;
+    page-break-inside: avoid;
+  }
+
+  .qualifications-item::before {
+    content: "- ";
+    font-weight: normal;
     color: #000;
   }
 
-  .skills-highlight-label {
-    display: table-cell;
-    white-space: nowrap;
-    padding-right: 6pt;
-    vertical-align: baseline;
-  }
-
-  .skills-highlight-title {
+  .qualifications-label {
     font-weight: 700;
-  }
-
-  .skills-highlight-colon {
-    /* colon is inline after title */
-  }
-
-  .skills-highlight-items {
-    display: table-cell;
-    vertical-align: baseline;
-  }
-
-  .skills-highlight-dot {
-    margin: 0 3pt;
-    color: #000;
-  }
-
-  .skills-highlight-item {
-    display: inline;
   }
 
   .tagline {
     max-width: 85%;
     margin: 6pt auto 0;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     font-style: italic;
     color: #555;
     text-align: center;
@@ -237,7 +262,7 @@
   }
 
   .experience-item {
-    margin-bottom: 10pt;
+    /* margin-bottom: 0pt; */
     padding-left: 0;
     border-left: none;
     page-break-inside: avoid;
@@ -264,7 +289,7 @@
 
   .company-collapsed-role {
     display: none;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     font-style: italic;
     color: #444;
   }
@@ -279,14 +304,14 @@
   }
 
   .company-name {
-    font-size: 11pt;
+    font-size: var(--print-font-xl);
     font-weight: 700;
     font-variant: small-caps;
     color: #000;
   }
 
   .company-location {
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     font-style: italic;
     color: #333;
   }
@@ -307,7 +332,7 @@
   }
 
   .position-title {
-    font-size: 10.5pt;
+    font-size: var(--print-font-lg);
     font-weight: 600;
     font-style: italic;
     color: #000;
@@ -320,7 +345,7 @@
     background: none;
     color: #000;
     border-radius: 0;
-    font-size: 8pt;
+    font-size: var(--print-font-2xs);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -335,14 +360,14 @@
   }
 
   .date-range {
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     color: #333;
     font-weight: normal;
   }
 
   .position-summary {
     margin: 4pt 0;
-    font-size: 9.5pt;
+    font-size: var(--print-font-sm);
     color: #000;
   }
 
@@ -355,7 +380,7 @@
   .highlights li {
     padding-left: 12pt;
     margin-bottom: 2pt;
-    font-size: 9.5pt;
+    font-size: var(--print-font-sm);
     color: #000;
     text-indent: -12pt;
   }
@@ -375,7 +400,7 @@
   .technologies::before {
     content: "Technologies: ";
     font-weight: 600;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
   }
 
   .tech-tag {
@@ -385,7 +410,7 @@
     background: none;
     color: #000;
     border-radius: 0;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     font-weight: normal;
   }
 
@@ -401,7 +426,7 @@
     background: none;
     border: none;
     color: #000;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     font-weight: normal;
   }
 
@@ -422,7 +447,7 @@
     margin: 0;
     padding: 0;
     font-weight: 600;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
   }
 
   .courses-label::after {
@@ -435,7 +460,7 @@
     padding: 0;
     background: none;
     border-radius: 0;
-    font-size: 9.5pt;
+    font-size: var(--print-font-sm);
     font-weight: 600;
     color: #000;
     cursor: default;
@@ -458,7 +483,7 @@
 
   .company-project-item {
     padding: 6pt 0 6pt 8pt;
-    margin-bottom: 6pt;
+    margin-bottom: 2pt;
     background: none;
     border: none;
     border-left: 2pt solid #ccc;
@@ -474,13 +499,13 @@
   }
 
   .project-group-header {
-    font-size: 11pt;
+    font-size: var(--print-font-xl);
     font-weight: 700;
     color: #000;
     margin-bottom: 6pt;
     margin-top: 10pt;
     border-bottom: 1pt solid #ccc;
-    padding-bottom: 2pt;
+    padding-bottom: 1pt;
   }
 
   .project-group-header:first-child {
@@ -503,20 +528,20 @@
   }
 
   .project-name {
-    font-size: 10.5pt;
+    font-size: var(--print-font-lg);
     font-weight: 700;
     color: #000;
   }
 
   .project-role {
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     font-style: italic;
     color: #333;
   }
 
   .project-description {
     margin: 4pt 0;
-    font-size: 9.5pt;
+    font-size: var(--print-font-sm);
     color: #000;
   }
 
@@ -530,12 +555,12 @@
   .project-metrics::before {
     content: "Metrics: ";
     font-weight: 600;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
   }
 
   .metric {
     display: inline;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     font-weight: normal;
     color: #000;
   }
@@ -569,7 +594,7 @@
   }
 
   .institution-name {
-    font-size: 10.5pt;
+    font-size: var(--print-font-lg);
     font-weight: 700;
     color: #000;
   }
@@ -583,17 +608,17 @@
 
   .degree {
     font-weight: 600;
-    font-size: 10pt;
+    font-size: var(--print-font-md);
     color: #000;
   }
 
   .field {
-    font-size: 10pt;
+    font-size: var(--print-font-md);
     color: #000;
   }
 
   .gpa {
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     color: #333;
     white-space: nowrap;
   }
@@ -601,7 +626,7 @@
   .concentration {
     margin-top: 2pt;
     margin-bottom: 3pt;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     color: #333;
     font-style: italic;
   }
@@ -613,7 +638,7 @@
     background: none;
     color: #000;
     border-radius: 0;
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     font-weight: 600;
   }
 
@@ -641,20 +666,20 @@
 
   .achievement-title {
     font-weight: 600;
-    font-size: 10pt;
+    font-size: var(--print-font-md);
     color: #000;
     margin-bottom: 1pt;
   }
 
   .achievement-issuer {
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     font-style: italic;
     color: #333;
     margin-bottom: 2pt;
   }
 
   .achievement-date {
-    font-size: 9pt;
+    font-size: var(--print-font-xs);
     color: #333;
   }
 
@@ -663,7 +688,7 @@
   }
 
   .achievement-description {
-    font-size: 9.5pt;
+    font-size: var(--print-font-sm);
     color: #000;
     margin-bottom: 0;
   }
@@ -682,7 +707,7 @@
   }
 
   .skill-category-name {
-    font-size: 10pt;
+    font-size: var(--print-font-md);
     font-weight: 700;
     color: #000;
     margin-bottom: 3pt;
@@ -703,7 +728,7 @@
     margin: 0;
     background: none;
     border: none;
-    font-size: 9.5pt;
+    font-size: var(--print-font-sm);
     color: #000;
   }
 
@@ -731,7 +756,7 @@
 
   .project-link-btn .material-symbols-outlined {
     display: inline !important;
-    font-size: 8pt;
+    font-size: var(--print-font-2xs);
   }
 
   .loading {

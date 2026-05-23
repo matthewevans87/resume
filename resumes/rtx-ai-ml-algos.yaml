@@ -1,178 +1,30 @@
 # Per-route override for RTX Raytheon — AI/ML Algorithms & Systems Engineer roles.
-# Loaded when the page is visited at `#/rtx-ai-ml-algos`.
-#
-# Key changes vs. base resume:
-#   1. Citizenship/clearance eligibility added to mission statement.
-#   2. Targeting line rewritten for sensing/perception/signal-processing vocabulary.
-#   3. SO-101 project description reframed as perception + sensor-fusion story
-#      (domain randomization, multimodal telemetry) rather than manipulation result.
-#   4. Projects reordered: SO-101 → language modeling (keep negative-results bullet)
-#      → visibility graph → neural networks independent study.
-#   5. Skills: "Sensor & Multimodal Data" category added near top.
-#   6. Skills: "Statistical Modeling & Performance Analysis" replaces "Inference &
-#      Monitoring" in the skills_highlight strip and is added to ML Systems & Data.
-#   7. Independent Consultant trimmed to optimization engine only (ERP/CRUD removed).
-#   8. Zeal IT compressed to ETL scale bullet + delivery breadth (revenue/hiring/VMO removed).
-#   9. Clean Harbors surfaced with statistical forecasting (R) + geospatial (PostGIS/qGIS).
-#  10. Clickmotive and Ericsson omitted (early-career, off-topic for algorithms IC role).
 
 personal:
   title: "AI/ML Algorithms & Systems Engineer"
 
-mission_statement:
-  - "Software Engineer with 15 years' experience shipping production systems and M.S. in Computer Science (Machine Learning) from UT Dallas."
-  - "Targeting AI/ML algorithms and systems engineering roles applying machine learning to sensing, perception, and signal/image processing problems in physical systems — designing experiments, training pipelines, and evaluation frameworks to turn algorithmic questions into measurable answers."
-  - "U.S. citizen, eligible for DoD security clearance sponsorship."
-
 skills_highlight:
-  title: "ML Systems"
+  disabled: true
+
+# Headline bullet list mapped 1:1 to the RTX JD's "Qualifications You Must Have"
+# (degree+experience, AI/ML signal-processing-style work, SCM/VCS/SDLC, clearance)
+# and the relevant "Qualifications We Prefer" items (advanced STEM degree, math
+# modeling, Python, UNIX/Linux). Items are ordered to mirror the JD's own order.
+qualifications:
+  title: "Qualifications"
   items:
-    - Reinforcement Learning (PPO)
-    - Experimentation & Ablation
-    - Statistical Modeling & Performance Analysis
-    - Training/Eval Pipelines
-    - Data Pipelines
-    - Model Eval & Debugging
+    - "Education & Experience: M.S. Computer Science (Machine Learning), UT Dallas (2026) + B.S.; 15 yrs production software; applied ML experience spanning robotics perception, language modeling, and motion planning"
+    - "AI/ML for sensing & perception: Vision-based RL (PPO) policies under domain randomization for sim-to-real transfer (89.7% task success); multimodal sensor fusion across RGB imagery, joint-state telemetry, and object pose; LSTM-pruned visibility-graph construction for shortest-path motion planning"
+    - "Statistical modeling & analytical problem-solving: Statistical forecasting models (R, R.NET) in production at Clean Harbors; controlled ablations across 21 LM variants and PPO reward-shaping sweeps (Cartesian grids × 5 RNG seeds) with quantitative run-to-run comparison"
+    - "Software development processes: Git / version control, peer code review, CI/CD pipelines (GitHub Actions, Azure DevOps YAML), YAML configs, versioned artifacts, provenance tracking"
+    - "Programming: Python (PyTorch, NumPy, SciPy), C# / .NET (15 yrs), TypeScript, SQL"
+    - "UNIX/Linux: Daily Linux development; Docker containers; AWS ECS / Fargate"
+    - "Clearance: U.S. citizen; eligible for DoD security clearance sponsorship"
 
-projects_config:
-  title: "Applied Machine Learning Experience"
-  group_by_type: false
-
-# Reorder: SO-101 first (perception/sensor story), then language modeling (negative-results
-# bullet defense engineers respect), then visibility graph (LSTM + motion planning), then
-# neural networks independent study. Disabled projects omitted from array.
-projects:
-  elements:
-    - key: vision-based-sim-to-real-manipulation-pipeline
-      name: "Vision-Based Sim-to-Real Manipulation Pipeline"
-      url: "https://github.com/matthewevans87/so101_sim_to_real"
-      type: "academic"
-      description: "Designed and built an end-to-end ML pipeline for training vision-based perception and control policies under domain randomization (lighting, camera pose, object geometry, distractors) targeting zero-shot sim-to-real transfer — achieving up to 89.7% task success on a wrist-camera-only manipulation benchmark in NVIDIA Isaac Sim. Multimodal sensor fusion across RGB imagery, joint-state telemetry, and object-pose data across ~10K synthetic episodes."
-      role: "Research Engineer / Author"
-      start_date: "2026-01"
-      end_date:
-      highlights:
-        - [
-            "ML infrastructure:",
-            "Designed a reproducible end-to-end pipeline (train → collect → curate → train-cnn) with typed YAML validation, versioned artifact directories (configs, seeds, checkpoints, metrics), and provenance tracking — enabling systematic experimentation, reliable debugging, and direct run-to-run comparison.",
-          ]
-        - [
-            "Reinforcement learning:",
-            "Applied PPO to a vision-based sequential decision-making task; designed phased reward shaping (approach → grasp → lift), safety-aware termination conditions, and domain randomization (lighting, camera pose, object geometry, distractors) in service of sim-to-real transfer.",
-          ]
-        - [
-            "Vision encoder evaluation:",
-            "Bootstrapped a task-specific CNN from synthetic policy rollouts via iterative self-distillation, replacing a frozen ImageNet backbone (ResNet18); CNN achieved 4.5pp higher episode success rate (87.1% vs. 83.1%), with a second distillation generation yielding further improvement (87.7%).",
-          ]
-        - [
-            "Data pipelines:",
-            "Collected and processed ~10K episodes of multimodal telemetry (images, joint state, object pose); applied histogram rebalancing across episode timestep and grip-zone distance to prevent dominant mid-approach frames from skewing CNN training.",
-          ]
-        - [
-            "Ablation framework:",
-            "Developed a sweep runner executing Cartesian-product ablations across reward functions, vision backbones, and PPO hyperparameters (each over 5 RNG seeds); uncovered that ablating a dense absolute reward for the grasp phase eliminated a soft local optimum, improving both success rate and time-to-first-success.",
-          ]
-        - [
-            "Reward shaping analysis:",
-            "Identified through systematic ablations that the dense absolute reward for the approach phase acted as a soft local optimum — ablating it yielded the highest success rate observed across all experiments (89.7%, +1.9pp over baseline) with shorter mean episode length, consistent with the policy committing to task completion rather than hovering in a rewarded near-approach posture.",
-          ]
-      technologies:
-        - "Python"
-        - "PyTorch"
-        - "NVIDIA Isaac Sim"
-        - "Isaac Lab"
-        - "skrl (PPO)"
-        - "Reinforcement Learning"
-        - "CNN"
-        - "ResNet18"
-        - "Domain Randomization"
-        - "YAML configs"
-        - "TensorBoard"
-        - "NumPy"
-
-    - key: intent-aware-lookahead-for-language-modeling
-      name: "Intent-Aware Lookahead for Language Modeling"
-      url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-project"
-      type: "academic"
-      description: "Investigated whether lightweight future-token prediction improves next-token accuracy in causal language models — designing, implementing, and evaluating a modified transformer with auxiliary lookahead heads and intent-conditioned fusion across 21 controlled model variants."
-      role: "Research Engineer / Author"
-      start_date: "2025-08"
-      end_date: "2025-12"
-      highlights:
-        - [
-            "Model architecture:",
-            "Designed and implemented IALM-Lite, a 6-layer causal transformer (~44.9M params) augmented with auxiliary future-prediction heads, intent pooling (mean/attention), and FiLM vs. gated fusion mechanisms.",
-          ]
-        - [
-            "Experiment design:",
-            "Ran a controlled ablation study of 21 variants across a grid of lookahead horizon, auxiliary loss weight, pooling method, and fusion mechanism; identified auxiliary loss weight (λ) as the dominant factor shaping training dynamics.",
-          ]
-        - [
-            "Evaluation & negative results:",
-            "Benchmarked all variants against a matched baseline on WikiText-2; baseline outperformed all lookahead variants — documented findings with analysis of multi-task interference and capacity allocation to inform future designs.",
-          ]
-      technologies:
-        - "Python"
-        - "PyTorch"
-        - "Transformers"
-        - "TensorBoard"
-
-    - key: ml-assisted-visibility-graph-construction
-      name: "ML Assisted Visibility Graph Construction"
-      url: "https://github.com/matthewevans87/cs6319-computational-geometry-project"
-      type: "academic"
-      description: "Reduced visibility-graph construction cost for shortest-path motion planning by training an LSTM to predict the next shortest-path region, pruning visibility checks while preserving near-exact path quality — achieving up to 98% reduction in vertex comparisons on benchmarks."
-      role: "Research Engineer / Author"
-      start_date: "2025-01"
-      end_date: "2025-12"
-      highlights:
-        - [
-            "Data pipeline:",
-            "Parsed 1,670 StarCraft maps into binary walkability grids; converted obstacle regions to polygonal representations via connected components and alpha shapes with geometric cleanup using Shapely.",
-          ]
-        - [
-            "Model training:",
-            "Designed and trained an LSTM-based sector predictor with five-fold cross-validation, achieving 82.1% validation accuracy; integrated predictions into DFS/DP-based visibility-graph construction to gate visibility checks.",
-          ]
-        - [
-            "Evaluation:",
-            "Benchmarked pruned vs. exact graph construction across map geometries; achieved up to 98% reduction in vertex comparisons while closely matching exact shortest-path lengths.",
-          ]
-      technologies:
-        - "Python"
-        - "PyTorch"
-        - "LSTM"
-        - "RNN"
-        - "SciPy"
-        - "Shapely"
-        - "NumPy"
-
-    - key: neural-networks-independent-study
-      name: "Neural Networks Independent Study"
-      url: "https://github.com/matthewevans87/neural-networks-independent-study"
-      type: "academic"
-      description: "A structured 15-week independent study spanning modern deep learning fundamentals through foundation models — combining paper-driven survey (backprop → CNNs/ResNets → LSTMs → Transformers → diffusion/VLMs) with from-scratch PyTorch implementations, culminating in a master's thesis proposal for a Transformer-based autonomous driving model with vision-only planning, low-level control, and a CARLA-based imitation learning training plan."
-      role: "Research Engineer / Course Designer / Author"
-      start_date: "2025-01"
-      end_date: "2025-05"
-      technologies:
-        - "Python"
-        - "PyTorch"
-        - "NumPy"
-        - "CNN"
-        - "MLP (from scratch)"
-        - "LSTM"
-        - "GAN"
-        - "Transformers"
-        - "LaTeX"
-
-  # Full experience array — arrays replace wholesale in the merge system.
-  # Clickmotive and Ericsson omitted entirely (not rendered, no disable warning needed).
-  # HKS and Cisco copied verbatim from base (collapsed, no content changes).
-  disabled:
-    - crypton
-    - crypto-currency-trading-bot
 experience:
+  disabled:
+    - clickmotive-inc
+    - ericsson-inc
   elements:
     - key: independent-consultant
       company: "Independent Consultant"
@@ -184,7 +36,7 @@ experience:
         elements:
           - key: software-architect
             title: "Software Architect"
-            start_date: "2024"
+            start_date: "2023"
             end_date:
             promotion: false
             technologies: []
@@ -222,116 +74,8 @@ experience:
               - "AWS Cloud"
               - "Azure Cloud"
               - "SQL Server"
-
-    - key: hks-inc
-      company: "HKS, Inc."
-      company_url: "https://www.hksinc.com/"
-      location: "Dallas, Texas"
-      expanded: false
-      projects_expanded: false
-      positions:
-        elements:
-          - key: sr-software-engineer
-            title: "Sr. Software Engineer"
-            start_date: "2018"
-            end_date: "2020"
-            promotion: false
-            summary: |
-              Full stack design, development, deployment and maintenance of enterprise web applications,
-              web services (APIs) and databases relied on by a firm with over 1,300 architects. DevOps
-              management using Microsoft Azure. Managed and mentored junior software developers.
-            highlights:
-              - "Successfully implemented piecemeal migration from AngularJS to Angular 7 with both frameworks running simultaneously"
-              - "Led development of Project Explorer - comprehensive project information and asset reference library"
-              - "Built Nominator - employee recommendation and promotion web application"
-              - "Established CI/CD pipelines and Azure DevOps workflows"
-            technologies:
-              - "TypeScript"
-              - "Angular"
-              - "React"
-              - "Dotnet"
-              - "C#"
-              - "SQL Server"
-              - "Dapper"
-              - "Azure"
-              - "SASS"
-              - "Bootstrap"
-
-    - key: clean-harbors-inc
-      company: "Clean Harbors, Inc."
-      company_url: "https://www.cleanharbors.com/"
-      location: "Richardson, Texas"
-      expanded: true
-      projects_expanded: false
-      positions:
-        elements:
-          - key: sr-software-engineer
-            title: "Sr. Software Engineer"
-            start_date: "2013"
-            end_date: "2018"
-            promotion: false
-            summary: |
-              Statistical forecasting models (R, R.NET) for sales predictions; geospatial data analysis (qGIS, PostGIS) for market segmentation across $3B+ enterprise.
-            highlights: []
-            technologies:
-              - "R"
-              - "R.NET"
-              - "PostgreSQL"
-              - "PostGIS"
-              - "qGIS"
-              - "TypeScript"
-              - "Angular"
-              - "Dotnet"
-              - "C#"
-              - "D3.js"
-              - "SQL Server"
-
-    - key: cisco-systems-inc
-      company: "Cisco Systems, Inc."
-      company_url: "https://www.cisco.com/"
-      location: "Richardson, Texas"
-      expanded: false
-      positions:
-        elements:
-          - key: software-developer
-            title: "Software Developer"
-            start_date: "2012"
-            end_date: "2013"
-            promotion: false
-            summary: |
-              Data Center Management division. Developed web applications for hardware cabinet configuration,
-              site management, and data collection services.
-            highlights:
-              - "Built drag-and-drop hardware cabinet configurator web application"
-              - "Developed interactive site management tool with Silverlight"
-              - "Created hardware polling service for data collection and aggregation"
-            technologies:
-              - "C#"
-              - "ASP.NET"
-              - "Silverlight"
-              - "jQuery"
-              - "NHibernate"
-              - "SQL Server"
-
-  # Full skills replacement — arrays replace wholesale.
-  # Adds "Sensor & Multimodal Data" category near top (maps SO-101 telemetry work to RTX vocab).
-  # Adds "Statistical modeling & performance analysis" to ML Systems & Data.
-  # Linux remains first item in Infrastructure (already top-of-list in base).
-  disabled:
-    - clickmotive-inc
-    - ericsson-inc
 skills:
   elements:
-    - key: ai-ml-robotics-and-experimentation
-      category: "AI/ML, Robotics & Experimentation"
-      items:
-        - "PyTorch"
-        - "NumPy"
-        - "TensorBoard"
-        - "NVIDIA Isaac Sim / Isaac Lab"
-        - "ROS"
-        - "LeRobot"
-
     - key: sensor-and-multimodal-data
       category: "Sensor & Multimodal Data"
       items:
@@ -343,48 +87,8 @@ skills:
     - key: ml-systems-and-data
       category: "ML Systems & Data"
       items:
-        - "Experiment design / ablations"
-        - "Statistical modeling & performance analysis"
+        - "Experiment design / ablations / analysis"
         - "Evaluation harnesses & metrics"
         - "ETL / Data Pipelines"
-        - "Message queues (RabbitMQ, AWS SQS)"
-        - "Analytics (AWS Athena)"
-
-    - key: programming-languages
-      category: "Programming Languages"
-      items:
-        - "Python"
-        - "C#"
-        - "TypeScript"
-        - "SQL"
-
-    - key: infrastructure-containers-and-ci-cd
-      category: "Infrastructure, Containers & CI/CD"
-      items:
-        - "Linux"
-        - "Docker (images, containers)"
-        - "AWS ECS / Fargate"
-        - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
-        - "Azure (App Service, Storage, DevOps)"
-        - "Observability (CloudWatch, Application Insights, Seq)"
-        - "CI/CD Pipelines"
-        - "GitHub Actions"
-        - "Azure DevOps YAML Pipelines"
-
-    - key: databases-caching-and-data-stores
-      category: "Databases, Caching & Data Stores"
-      items:
-        - "SQL Server"
-        - "PostgreSQL / PostGIS"
-        - "Cosmos DB"
-        - "MongoDB"
-        - "Redis"
-        - "Entity Framework"
-
-    - key: software-engineering
-      category: "Software Engineering"
-      items:
-        - "Git"
-        - "Distributed systems fundamentals"
-        - "API design"
-        - "Testing & code review"
+        - "RabbitMQ / AWS SQS"
+        - "AWS Athena"

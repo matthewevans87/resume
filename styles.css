@@ -252,7 +252,7 @@ button.contact-item:hover .contact-brand-icon {
   margin-top: 0.75em;
 }
 
-.skills-highlight {
+/* .skills-highlight {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: baseline;
@@ -293,6 +293,37 @@ button.contact-item:hover .contact-brand-icon {
 
 .skills-highlight-item {
   white-space: nowrap;
+} */
+
+.qualifications-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.qualifications-item {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.qualifications-item::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.qualifications-label {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.qualifications-colon {
+  color: var(--color-text-tertiary);
 }
 
 .tagline {

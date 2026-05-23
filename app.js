@@ -349,28 +349,45 @@ const renderHeader = (data) => {
     missionEl.appendChild(p);
   });
 
-  // Skills Highlight
-  const skillsHighlightEl = document.getElementById("skills-highlight");
-  const sh = data.skills_highlight;
-  if (sh && sh.items && sh.items.length > 0) {
-    skillsHighlightEl.innerHTML = "";
-    const labelEl = createElement("div", "skills-highlight-label");
-    if (sh.title) {
-      labelEl.appendChild(createElement("span", "skills-highlight-title", sh.title));
-      labelEl.appendChild(createElement("span", "skills-highlight-colon", ":"));
-    }
-    skillsHighlightEl.appendChild(labelEl);
-    const listEl = createElement("div", "skills-highlight-items");
-    sh.items.forEach((item, i) => {
-      if (i > 0) {
-        listEl.appendChild(createElement("span", "skills-highlight-dot", "·"));
+  // Qualifications: optional headline bullet list mapping 1:1 to JD requirements.
+  // Rendered as a standard <section> above the timeline. Each item may be a
+  // string ("Label: value" auto-bolds the label) or an object { label, value }.
+  const qualificationsSection = document.getElementById("qualifications-section");
+  const qualificationsTitleEl = document.getElementById("qualifications-title");
+  const qualificationsListEl = document.getElementById("qualifications-list");
+  const quals = data.qualifications;
+  const qualItems = quals && Array.isArray(quals.items) ? quals.items : [];
+  if (qualItems.length > 0) {
+    qualificationsTitleEl.textContent = quals.title || "Qualifications";
+    qualificationsListEl.innerHTML = "";
+    qualItems.forEach((item) => {
+      const li = createElement("li", "qualifications-item");
+      let label = null;
+      let value = null;
+      if (item && typeof item === "object" && !Array.isArray(item)) {
+        label = item.label || null;
+        value = item.value != null ? String(item.value) : "";
+      } else if (typeof item === "string") {
+        const idx = item.indexOf(":");
+        if (idx > 0) {
+          label = item.slice(0, idx).trim();
+          value = item.slice(idx + 1).trim();
+        } else {
+          value = item;
+        }
       }
-      listEl.appendChild(createElement("span", "skills-highlight-item", item));
+      if (label) {
+        li.appendChild(createElement("span", "qualifications-label", label));
+        li.appendChild(createElement("span", "qualifications-colon", ": "));
+      }
+      if (value) {
+        li.appendChild(createElement("span", "qualifications-value", value));
+      }
+      qualificationsListEl.appendChild(li);
     });
-    skillsHighlightEl.appendChild(listEl);
-    skillsHighlightEl.style.display = "";
+    qualificationsSection.style.display = "";
   } else {
-    skillsHighlightEl.style.display = "none";
+    qualificationsSection.style.display = "none";
   }
 
   const taglineEl = document.getElementById("tagline");
@@ -720,7 +737,14 @@ const renderEducation = (education) => {
       formatDateRange(edu.start_date, edu.end_date),
     );
 
-    header.appendChild(institution);
+    const nameLoc = createElement("div", "company-name-loc");
+    nameLoc.appendChild(institution);
+    if (edu.location) {
+      const location = createElement("div", "company-location", edu.location);
+      nameLoc.appendChild(location);
+    }
+
+    header.appendChild(nameLoc);
     header.appendChild(dateRange);
     eduItem.appendChild(header);
 
@@ -760,10 +784,7 @@ const renderEducation = (education) => {
     }
 
     // Location
-    if (edu.location) {
-      const location = createElement("div", "company-location", edu.location);
-      eduItem.appendChild(location);
-    }
+    // Location is now rendered next to/under the institution name in the header.
 
     // Courses
     if (edu.courses && edu.courses.length > 0) {
@@ -878,28 +899,77 @@ const slugify = (str) =>
 
 const isCollection = (v) => v && typeof v === "object" && v.__collection === true;
 
+// Default ordering helper: sorts keys by their element's start_date descending
+// (most recent first). Elements without a start_date keep their relative
+// insertion order and are placed after all dated elements.
+const orderByStartDate = (insertionOrder, elements, startDateFrom) => {
+  if (!startDateFrom) return insertionOrder.slice();
+  const dated = [];
+  const undated = [];
+  insertionOrder.forEach((k, idx) => {
+    const el = elements.get(k);
+    const raw = el ? startDateFrom(el) : null;
+    const d = raw ? parseResumeDate(raw) : null;
+    if (d && !isNaN(d.getTime())) dated.push({ k, t: d.getTime(), idx });
+    else undated.push({ k, idx });
+  });
+  dated.sort((a, b) => b.t - a.t || a.idx - b.idx);
+  return [...dated.map((x) => x.k), ...undated.map((x) => x.k)];
+};
+
 // Schema: which keys in the resume tree are collections, how to derive a key
-// from each element when one isn't explicitly provided, and any nested
-// collection sites inside an element's payload.
+// from each element when one isn't explicitly provided, any nested
+// collection sites inside an element's payload, and how to extract a
+// start_date used for default ordering when no explicit `ordering` is given.
+const rawPositionsList = (positions) => {
+  if (!positions) return [];
+  if (Array.isArray(positions)) return positions;
+  if (Array.isArray(positions.elements)) return positions.elements;
+  if (positions.__collection && positions.elements instanceof Map) {
+    return Array.from(positions.elements.values());
+  }
+  return [];
+};
+
+const latestStartDate = (items) => {
+  const dates = items.map((p) => p && p.start_date).filter(Boolean);
+  if (!dates.length) return null;
+  return dates.slice().sort().reverse()[0];
+};
+
 const COLLECTION_SCHEMA = {
   experience: {
     keyFrom: (e) => e && e.company,
+    startDateFrom: (e) => (e ? latestStartDate(rawPositionsList(e.positions)) : null),
     childSchema: {
       positions: {
         keyFrom: (p) => p && p.title,
+        startDateFrom: (p) => p && p.start_date,
         childSchema: {
-          projects: { keyFrom: (p) => p && p.name },
+          projects: {
+            keyFrom: (p) => p && p.name,
+            startDateFrom: (p) => p && p.start_date,
+          },
         },
       },
     },
   },
-  projects: { keyFrom: (p) => p && p.name },
-  education: { keyFrom: (e) => e && e.degree },
-  achievements: { keyFrom: (a) => a && a.title },
+  projects: {
+    keyFrom: (p) => p && p.name,
+    startDateFrom: (p) => p && p.start_date,
+  },
+  education: {
+    keyFrom: (e) => e && e.degree,
+    startDateFrom: (e) => e && e.start_date,
+  },
+  achievements: {
+    keyFrom: (a) => a && a.title,
+    startDateFrom: (a) => a && (a.date || a.start_date),
+  },
   skills: { keyFrom: (s) => s && s.category },
 };
 
-const normalizeCollection = (raw, keyFrom) => {
+const normalizeCollection = (raw, keyFrom, startDateFrom) => {
   if (isCollection(raw)) return raw;
 
   let elementsArr = [];
@@ -925,11 +995,14 @@ const normalizeCollection = (raw, keyFrom) => {
   }
 
   const insertionOrder = Array.from(elements.keys());
-  let order = insertionOrder;
-  if (Array.isArray(ordering) && ordering.length) {
+  let order;
+  const hasExplicitOrdering = Array.isArray(ordering) && ordering.length > 0;
+  if (hasExplicitOrdering) {
     const listed = ordering.map((k) => slugify(String(k))).filter((k) => elements.has(k));
     const rest = insertionOrder.filter((k) => !listed.includes(k));
     order = [...listed, ...rest];
+  } else {
+    order = orderByStartDate(insertionOrder, elements, startDateFrom);
   }
 
   const toSet = (arr) => new Set(Array.isArray(arr) ? arr.map((k) => slugify(String(k))) : []);
@@ -937,6 +1010,7 @@ const normalizeCollection = (raw, keyFrom) => {
   return {
     __collection: true,
     order,
+    hasExplicitOrdering,
     enabled: toSet(enabled),
     disabled: toSet(disabled),
     elements,
@@ -949,7 +1023,7 @@ const normalizeTree = (data, schema = COLLECTION_SCHEMA) => {
   if (!data || typeof data !== "object") return data;
   for (const [k, spec] of Object.entries(schema)) {
     if (data[k] == null) continue;
-    data[k] = normalizeCollection(data[k], spec.keyFrom);
+    data[k] = normalizeCollection(data[k], spec.keyFrom, spec.startDateFrom);
     if (spec.childSchema) {
       for (const el of data[k].elements.values()) {
         normalizeTree(el, spec.childSchema);
@@ -1022,26 +1096,26 @@ const renderCareerTimeline = (data) => {
   const showWorkProjects = !tl.work_projects || tl.work_projects.enabled !== false;
 
   collectionEnabled(data.experience).forEach((exp) => {
-      if (!showPositions) return;
-      collectionEnabled(exp.positions).forEach((pos) => {
-        const start = parseDecimalYear(pos.start_date);
-        const end = parseDecimalYear(pos.end_date) || new Date().getFullYear();
-        if (start == null) return;
-        const band = { label: `${pos.title} — ${exp.company}`, start, end };
-        experienceBands.push(band);
-        const projects = showWorkProjects
-          ? collectionEnabled(pos.projects)
-              .map((proj) => ({
-                label: `${proj.name} (${pos.title} @ ${exp.company})`,
-                url: proj.url || null,
-                id: "proj-" + slugify(proj.name),
-                chronoKey: parseDecimalYear(proj.start_date) ?? 0,
-              }))
-              .sort((a, b) => a.chronoKey - b.chronoKey)
-          : [];
-        experienceBandGroups.push({ band, projects });
-      });
+    if (!showPositions) return;
+    collectionEnabled(exp.positions).forEach((pos) => {
+      const start = parseDecimalYear(pos.start_date);
+      const end = parseDecimalYear(pos.end_date) || new Date().getFullYear();
+      if (start == null) return;
+      const band = { label: `${pos.title} — ${exp.company}`, start, end };
+      experienceBands.push(band);
+      const projects = showWorkProjects
+        ? collectionEnabled(pos.projects)
+            .map((proj) => ({
+              label: `${proj.name} (${pos.title} @ ${exp.company})`,
+              url: proj.url || null,
+              id: "proj-" + slugify(proj.name),
+              chronoKey: parseDecimalYear(proj.start_date) ?? 0,
+            }))
+            .sort((a, b) => a.chronoKey - b.chronoKey)
+        : [];
+      experienceBandGroups.push({ band, projects });
     });
+  });
 
   collectionEnabled(data.education)
     .filter(() => showEducation)
@@ -1606,7 +1680,7 @@ const mergeGeneric = (base, override) => {
 // elements). Elements present in both are deep-merged via the schema;
 // elements new to the override are appended.
 const mergeCollection = (baseColl, ovrRaw, spec) => {
-  const ovr = normalizeCollection(ovrRaw, spec.keyFrom);
+  const ovr = normalizeCollection(ovrRaw, spec.keyFrom, spec.startDateFrom);
 
   const elements = new Map();
   for (const [k, v] of baseColl.elements) elements.set(k, v);
@@ -1628,12 +1702,16 @@ const mergeCollection = (baseColl, ovrRaw, spec) => {
   for (const k of elements.keys()) if (!order.includes(k)) order.push(k);
 
   const rawHas = (key) => isPlainObject(ovrRaw) && Array.isArray(ovrRaw[key]);
+  let hasExplicitOrdering = baseColl.hasExplicitOrdering;
   if (rawHas("ordering")) {
-    const listed = ovrRaw.ordering
-      .map((k) => slugify(String(k)))
-      .filter((k) => elements.has(k));
+    const listed = ovrRaw.ordering.map((k) => slugify(String(k))).filter((k) => elements.has(k));
     const rest = Array.from(elements.keys()).filter((k) => !listed.includes(k));
     order = [...listed, ...rest];
+    hasExplicitOrdering = true;
+  } else if (!baseColl.hasExplicitOrdering && spec.startDateFrom) {
+    // No explicit ordering on either base or override — default to sorting
+    // by element start_date (most recent first).
+    order = orderByStartDate(Array.from(elements.keys()), elements, spec.startDateFrom);
   }
   const enabled = rawHas("enabled")
     ? new Set(ovrRaw.enabled.map((k) => slugify(String(k))))
@@ -1642,7 +1720,7 @@ const mergeCollection = (baseColl, ovrRaw, spec) => {
     ? new Set(ovrRaw.disabled.map((k) => slugify(String(k))))
     : new Set(baseColl.disabled);
 
-  return { __collection: true, order, enabled, disabled, elements };
+  return { __collection: true, order, hasExplicitOrdering, enabled, disabled, elements };
 };
 
 // Schema-aware merge: recurses through plain objects, delegating to
