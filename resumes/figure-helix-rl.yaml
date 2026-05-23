@@ -1,0 +1,32 @@
+# Per-route override for Figure — Helix AI Engineer, Reinforcement Learning (San Jose, CA).
+# Route slug: figure-helix-rl
+# Changes vs. base:
+#   1. personal.title set to "Helix AI Engineer, Reinforcement Learning".
+#   2. skills_highlight hidden (subsumed by qualifications block).
+#   3. qualifications block mapped to Figure's JD: Requirements first
+#      (RL experience, RL fundamentals, sim/real policy training, Python/PyTorch,
+#      large-scale experimentation, experimental rigor, software engineering,
+#      independent operation), then Bonus Qualifications anchored to base
+#      content (RL for embodied/robotics, sim infra, imitation learning).
+#      "Leading AI lab" and "publication record" are intentionally omitted.
+
+personal:
+  title: "Helix AI Engineer, Reinforcement Learning"
+
+skills_highlight:
+  disabled: true
+
+qualifications:
+  title: "Qualifications"
+  items:
+    - "Reinforcement learning in complex environments: Applied PPO to a vision-based manipulation task with phased reward shaping (approach → grasp → lift), safety-aware termination, and domain randomization for sim-to-real transfer — 89.7% task success on a wrist-camera-only benchmark in NVIDIA Isaac Sim"
+    - "RL fundamentals: Policy-gradient methods (PPO via skrl); reward shaping and credit assignment via phased dense/sparse rewards; from-scratch implementations across CNNs, LSTMs, and Transformers in 15-week independent study covering modern deep learning fundamentals"
+    - "Training policies in simulation: ~10K synthetic episodes generated in NVIDIA Isaac Sim / Isaac Lab under domain randomization (lighting, camera pose, object geometry, distractors) targeting zero-shot real-world transfer"
+    - "Python & PyTorch: Daily driver across vision-based RL (PPO), LSTM motion-planning, and 21-variant transformer language-modeling project; NumPy, SciPy, TensorBoard"
+    - "Large-scale experimentation: Sweep runner for Cartesian-product ablations across reward functions, vision backbones, and PPO hyperparameters (5 RNG seeds each), with versioned artifact directories and provenance tracking for systematic run-to-run comparison"
+    - "Experimental rigor & diagnosis: Leave-one-out / leave-one-in reward ablations (5 seeds × 50k PPO steps) identified the dense absolute approach reward as a soft local optimum — removing it yielded the best result observed (+2pp over the 13-term baseline); a derived 2-term minimal reward matched the full set within noise (Welch z = -0.47)"
+    - "Software engineering at scale: 15 yrs production software; architected an event-driven ETL platform on AWS streaming terabyte-scale data across thousands of concurrent Lambda + ECS Fargate workers feeding a multi-tenant SaaS"
+    - "Independent operation on ambiguous problems: Designed and ran a self-directed 15-week neural networks independent study (paper survey → from-scratch PyTorch implementations → thesis proposal); sole author / research engineer across four graduate ML research projects"
+    - "RL applied to robotics / embodied AI: Wrist-camera manipulation policies in Isaac Sim with multimodal observations (RGB imagery + joint-state proprioception + object-pose telemetry)"
+    - "Distributed rollouts & simulation infrastructure: End-to-end reproducible pipeline (train → collect → curate → train-cnn) with typed YAML validation; iterative self-distillation replacing frozen ResNet18 backbone (+4.5pp success rate, 87.1% vs. 83.1%)"
+    - "Imitation / hybrid learning approaches: Task-specific CNN bootstrapped from synthetic policy rollouts via iterative self-distillation; CARLA-based imitation-learning training plan authored as part of master's thesis proposal for a Transformer-based autonomous driving model"
