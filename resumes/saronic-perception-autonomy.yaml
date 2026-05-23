@@ -1,0 +1,33 @@
+# Per-route override for Saronic Technologies — Perception and Autonomy Engineer (Austin, TX).
+# Route slug: saronic-perception-autonomy
+# Changes vs. base:
+#   1. personal.title set to "Perception and Autonomy Engineer".
+#   2. skills_highlight hidden (subsumed by qualifications block).
+#   3. qualifications block mapped 1:1 to the Saronic JD: Requirements
+#      (programming, computing fundamentals, willingness to learn) followed
+#      by the Useful Skills items I can anchor to base content (DL frameworks,
+#      sensor fusion, low-latency inference & tracking pipelines, path
+#      planning, multi-modal models, cameras, deployed/optimized ML systems,
+#      large data systems for training/eval, quantitative metrics).
+#      Rust and radar/lidar are intentionally omitted — not in the base.
+
+personal:
+  title: "Perception and Autonomy Engineer"
+
+skills_highlight:
+  disabled: true
+
+qualifications:
+  title: "Qualifications"
+  items:
+    - "Programming fundamentals: 15 yrs production software across Python (PyTorch, NumPy, SciPy), C# / .NET, and TypeScript; led delivery of large-system architectures end-to-end"
+    - "Large-scale systems: Architected an event-driven ETL platform on AWS that streamed terabyte-scale CMS Transparency in Coverage data across thousands of concurrent Lambda + ECS Fargate workers feeding a multi-tenant SaaS"
+    - "Computing fundamentals: Daily Linux development, Docker containerization, AWS ECS / Fargate; graduate coursework in Computer Architecture (UT Dallas M.S.)"
+    - "Willingness to learn & pivot: Mid-career M.S. Computer Science (Machine Learning, UT Dallas, 2026); self-directed 15-week independent study from backprop → CNNs → LSTMs → Transformers → diffusion/VLMs with from-scratch PyTorch implementations"
+    - "Deep learning frameworks: PyTorch across vision-based RL (PPO), LSTM motion-planning, and transformer language-modeling projects; skrl, Isaac Lab, TensorBoard"
+    - "Sensor fusion & multi-modal models: Trained vision-based manipulation policies fusing RGB imagery, joint-state proprioception, and object-pose telemetry over ~10K synthetic episodes in NVIDIA Isaac Sim"
+    - "Cameras / vision perception: Vision-only RL policies under domain randomization (lighting, camera pose, geometry, distractors) for sim-to-real transfer — 89.7% task success on wrist-camera manipulation benchmark"
+    - "Path planning algorithms: LSTM-pruned visibility-graph construction for shortest-path motion planning — up to 98% reduction in vertex comparisons vs. exact construction while closely matching optimal path length"
+    - "Deployed / optimized ML systems: End-to-end reproducible training pipeline (train → collect → curate → train-cnn) with typed YAML validation, versioned artifacts, provenance tracking; iterative self-distillation replacing frozen ResNet18 backbone (+4.5pp success rate)"
+    - "Quantitative metrics for model performance: Sweep runner for Cartesian-product ablations (5 RNG seeds each) capturing per-condition success/lift/termination stats; leave-one-out reward analyses with Welch significance testing for run-to-run comparison"
+    - "Clearance / U.S. Person: U.S. citizen, eligible for export-controlled work"
