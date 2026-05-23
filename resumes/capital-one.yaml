@@ -52,54 +52,68 @@ projects_config:
 # foreground what Capital One's JD names: Python + ML frameworks first,
 # then MLOps / pipelines / cloud, then the broader SWE foundation.
 skills:
-  - category: "Languages"
-    items:
-      - "Python"
-      - "TypeScript / JavaScript"
-      - "C#"
-      - "SQL"
+  elements:
+    - key: languages
+      category: "Languages"
+      items:
+        - "Python"
+        - "TypeScript / JavaScript"
+        - "C#"
+        - "SQL"
 
-  - category: "Machine Learning"
-    items:
-      - "PyTorch"
-      - "scikit-learn"
-      - "NumPy / pandas"
-      - "TensorBoard"
-      - "Reinforcement Learning (PPO)"
-      - "Experiment design / ablations"
-      - "Model evaluation & debugging"
-      - "NVIDIA Isaac Sim / Isaac Lab"
+    - key: machine-learning
+      category: "Machine Learning"
+      items:
+        - "PyTorch"
+        - "scikit-learn"
+        - "NumPy / pandas"
+        - "TensorBoard"
+        - "Reinforcement Learning (PPO)"
+        - "Experiment design / ablations"
+        - "Model evaluation & debugging"
+        - "NVIDIA Isaac Sim / Isaac Lab"
 
-  - category: "MLOps & Data Pipelines"
-    items:
-      - "Training pipelines & evaluation harnesses"
-      - "Model monitoring & retraining"
-      - "ETL / batch data pipelines"
-      - "Reproducible experiment infrastructure"
-      - "Responsible & Explainable AI practices"
+    - key: mlops-and-data-pipelines
+      category: "MLOps & Data Pipelines"
+      items:
+        - "Training pipelines & evaluation harnesses"
+        - "Model monitoring & retraining"
+        - "ETL / batch data pipelines"
+        - "Reproducible experiment infrastructure"
+        - "Responsible & Explainable AI practices"
 
-  - category: "Cloud & Distributed Systems"
-    items:
-      - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
-      - "Azure (App Service, Storage, Cosmos DB, DevOps)"
-      - "Distributed systems fundamentals"
-      - "Message queues (RabbitMQ, AWS SQS)"
-      - "Containers (Docker)"
-      - "Linux"
+    - key: cloud-and-distributed-systems
+      category: "Cloud & Distributed Systems"
+      items:
+        - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
+        - "Azure (App Service, Storage, Cosmos DB, DevOps)"
+        - "Distributed systems fundamentals"
+        - "Message queues (RabbitMQ, AWS SQS)"
+        - "Containers (Docker)"
+        - "Linux"
 
-  - category: "Databases & Storage"
-    items:
-      - "PostgreSQL / PostGIS"
-      - "SQL Server"
-      - "Cosmos DB / MongoDB"
-      - "Snowflake"
-      - "Redis"
+    - key: databases-and-storage
+      category: "Databases & Storage"
+      items:
+        - "PostgreSQL / PostGIS"
+        - "SQL Server"
+        - "Cosmos DB / MongoDB"
+        - "Snowflake"
+        - "Redis"
 
-  - category: "CI/CD & Software Engineering"
-    items:
-      - "GitHub Actions"
-      - "Azure DevOps YAML Pipelines"
-      - "Test automation (unit, integration, regression harnesses)"
-      - "Observability (CloudWatch, Application Insights, Seq)"
-      - "Git / code review / mentoring"
-      - "Agile / SDLC"
+    - key: ci-cd-and-software-engineering
+      category: "CI/CD & Software Engineering"
+      items:
+        - "GitHub Actions"
+        - "Azure DevOps YAML Pipelines"
+        - "Test automation (unit, integration, regression harnesses)"
+        - "Observability (CloudWatch, Application Insights, Seq)"
+        - "Git / code review / mentoring"
+        - "Agile / SDLC"
+  disabled:
+    - ai-ml-robotics-and-experimentation
+    - ml-systems-and-data
+    - programming-languages
+    - infrastructure-containers-and-ci-cd
+    - databases-caching-and-data-stores
+    - software-engineering

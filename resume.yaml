@@ -54,845 +54,878 @@ timeline:
     enabled: true
 
 experience:
-  - company: "Independent Consultant"
-    expanded: true
-    company_url: null
-    location: "Remote"
-    projects_expanded: false
-    positions:
-      - title: "Software Architect"
-        start_date: "2023"
-        end_date: null
-        promotion: false
-        technologies: []
-        summary: |
-          Designed and shipped a greenfield ERP platform from scratch while completing an M.S. in Computer Science — replacing a decade-old legacy system with a Clean Architecture stack spanning 87+ domain entities, full manufacturing operations scope (job management, multi-level inventory, AR/AP, work center routing, KPI dashboards), and a reflection-driven code-generation framework that auto-scaffolded authenticated CRUD endpoints across the entire data model. Included a proprietary sheet metal optimization engine balancing scrap minimization, certification requirements, and part yield — and a legacy modernization with verified regression parity via automated test harnesses.
-        # projects:
-        #   - name: "Augurware (ERP Product)"
-        #     start_date: "2024"
-        #     end_date: "2026"
-        #     url: null
-        #     highlights: []
-        # - "Proprietary sheet metal optimization engine: Designed and implemented a scoring algorithm that determines optimal cutting layouts for raw materials, balancing scrap minimization, certification requirements, batch preferences, and part yield — surfaced to factory workers as schematic visualizations to ensure correct fabrication on the floor."
-        # - "Code-generation framework: Applied reflection and generics to auto-scaffold consistent, fully authenticated CRUD endpoints for all entities from a single well-tested code path — ensuring uniform behavior across the data model, reducing defect surface area, and making the system straightforward to extend as requirements evolved."
-        # - "Full ERP scope in a single system: Delivered end-to-end manufacturing operations coverage including job management, multi-level inventory, purchase orders, AR/AP invoicing, work center routing, nonconformance tracking, KPI dashboards, QuickBooks Desktop integration, and a role-based permission system all within a single coherent architecture."
-        # - "Legacy modernization with verified parity: Systematically replaced a decade-old pricing and metal-cutting codebase by extracting legacy logic into automated test harnesses that generated comprehensive regression cases, then validated that the rewritten implementation produced identical results across all scenarios — ensuring zero regressions during the migration."
-
-  - company: "Zeal IT Consultants"
-    company_url: "https://www.zealitconsultants.com/"
-    location: "Dallas, Texas"
-    expanded: true
-    projects_expanded: false
-    positions:
-      - title: "Associate Partner, Software Architect"
-        start_date: "2020"
-        end_date: "2023"
-        promotion: false
-        summary: |
-          Led multiple simultaneous client delivery teams with $4MM+/year combined revenue — owning hiring, account relationships, SOW negotiation, and end-to-end software delivery across enterprise SaaS products on AWS and Azure.
-        highlights:
-          - [
-              "Distributed data processing at scale:",
-              "Architected an event-driven ETL platform on AWS that ingested terabyte-scale CMS Transparency in Coverage data — JSON files too large for standard parsers, spanning the cartesian product of every US health insurance plan × in-network provider × medical procedure — using a custom streaming parser fanned out across thousands of concurrent Lambda and ECS Fargate workers to feed a multi-tenant benefits-administration SaaS product.",
-            ]
-          - [
-              "Team leadership:",
-              "Hired, trained, and mentored dozens of software developers across career levels; led Agile teams through full SDLC on multiple concurrent client accounts.",
-            ]
-          - [
-              "Product delivery:",
-              "Architected and delivered cloud-native SaaS products for clients in benefits administration, financial services, and healthcare — including a multi-tenant AWS platform generating $4MM+ annual revenue.",
-            ]
-          - [
-              "Client engagement:",
-              "Drove stakeholder discovery, drafted Statements of Work, navigated VMOs and MSPs, and maintained executive relationships across accounts.",
-            ]
-          - [
-              "Technical rescue:",
-              "Identified root causes of a stalled project suffering from loosely defined requirements and over-engineering; restructured scope and delivered ahead of schedule.",
-            ]
-        technologies:
-          - "C#"
-          - "Dotnet"
-          - "Containerization (Docker)"
-          - "TypeScript"
-          - "AWS Cloud"
-          - "Azure Cloud"
-          - "SQL Server"
-        projects:
-          - name: "Alight Clarity (SaaS Product)"
-            url: null
-            description: "Cloud-native SaaS platform for benefits administration built on AWS. Led full SDLC from architecture to delivery, managing Agile development team and interfacing with executive stakeholders."
-            role: "Account Manager / Engagement Manager / Team Lead"
+  elements:
+    - key: independent-consultant
+      company: "Independent Consultant"
+      expanded: true
+      company_url:
+      location: "Remote"
+      projects_expanded: false
+      positions:
+        elements:
+          - key: software-architect
+            title: "Software Architect"
+            start_date: "2024"
+            end_date:
+            promotion: false
+            technologies: []
+            summary: |
+              Designed and shipped a greenfield ERP platform from scratch while completing an M.S. in Computer Science — replacing a decade-old legacy system with a Clean Architecture stack spanning 87+ domain entities, full manufacturing operations scope (job management, multi-level inventory, AR/AP, work center routing, KPI dashboards), and a reflection-driven code-generation framework that auto-scaffolded authenticated CRUD endpoints across the entire data model. Included a proprietary sheet metal optimization engine balancing scrap minimization, certification requirements, and part yield — and a legacy modernization with verified regression parity via automated test harnesses.
+    - key: zeal-it-consultants
+      company: "Zeal IT Consultants"
+      company_url: "https://www.zealitconsultants.com/"
+      location: "Dallas, Texas"
+      expanded: true
+      projects_expanded: false
+      positions:
+        elements:
+          - key: associate-partner
+            title: "Associate Partner"
             start_date: "2020"
             end_date: "2023"
+            promotion: false
+            summary: |
+              Led multiple simultaneous client delivery teams with $4MM+/year combined revenue — owning hiring, account relationships, SOW negotiation, and end-to-end software delivery across enterprise SaaS products on AWS and Azure.
             highlights:
-              - "Collaborated with client to draft product architecture and technical design"
-              - "Hired and led Agile development team through entire SDLC"
-              - "Trained and coached client on Agile philosophies and execution"
-              - "Successfully delivered working SaaS product opening additional revenue stream for client"
+              - [
+                  "Distributed data processing at scale:",
+                  "Architected an event-driven ETL platform on AWS that ingested terabyte-scale CMS Transparency in Coverage data — JSON files too large for standard parsers, spanning the cartesian product of every US health insurance plan × in-network provider × medical procedure — using a custom streaming parser fanned out across thousands of concurrent Lambda and ECS Fargate workers to feed a multi-tenant benefits-administration SaaS product.",
+                ]
+              - [
+                  "Team leadership:",
+                  "Hired, trained, and mentored dozens of software developers across career levels; led Agile teams through full SDLC on multiple concurrent client accounts.",
+                ]
+              - [
+                  "Product delivery:",
+                  "Architected and delivered cloud-native SaaS products for clients in benefits administration, financial services, and healthcare — including a multi-tenant AWS platform generating $4MM+ annual revenue.",
+                ]
+              - [
+                  "Client engagement:",
+                  "Drove stakeholder discovery, drafted Statements of Work, navigated VMOs and MSPs, and maintained executive relationships across accounts.",
+                ]
+              - [
+                  "Technical rescue:",
+                  "Identified root causes of a stalled project suffering from loosely defined requirements and over-engineering; restructured scope and delivered ahead of schedule.",
+                ]
             technologies:
               - "C#"
               - "Dotnet"
-              - "Angular"
-              - "TypeScript"
               - "Containerization (Docker)"
-              - "AWS Fargate"
-              - "AWS S3"
-              - "AWS CloudFormation"
-              - "SQL Server"
-              - "EF Core"
-            metrics:
-              - "Multi-tenant SaaS platform"
-              - "$4MM+ annual revenue"
-          - name: "Greyhound Route Planning Tool"
-            description: "Experimental proof-of-concept tool for transit schedule optimization. Complex D3 visualizations enabling exploration of Greyhound's transit schedule and passenger data to identify business risks and opportunities."
-            role: "Engagement Manager / Team Lead"
-            start_date: "2021"
-            end_date: "2022"
-            highlights:
-              - "Identified core business problems through extensive client interviews and research"
-              - "Developed interactive Angular frontend with complex D3 visualizations"
-              - "Integrated Google Maps for geospatial route visualization"
-              - "Connected to Snowflake data warehouse for large-scale passenger data analysis"
-              - "Delivered iterative experimental solutions with executive demos"
-            technologies:
               - "TypeScript"
-              - "Angular"
-              - "D3.js"
-              - "Google Maps API"
-              - "Snowflake"
-              - "Azure"
-              - "SQL Server"
-            metrics:
-              - "Nationwide route network visualization"
-              - "Passenger flow analysis"
-          - name: "Bankers Financial - Maverick"
-            description: "SaaS product for financial services built with .NET 5 and Angular. Led architecture, development, and Agile team execution."
-            role: "Engagement Manager / Team Lead"
-            start_date: "2020"
-            end_date: "2022"
-            highlights:
-              - "Responsible for all aspects of product architecture and technical design"
-              - "Hired and led Agile development team through entire SDLC"
-              - "Interfaced with executive client stakeholders and technical leadership"
-              - "Trained, coached, and mentored client on Agile philosophies and led execution"
-              - "Successfully delivered working SaaS product opening additional revenue stream for client"
-            technologies:
-              - "C#"
-              - ".NET 5"
-              - "Angular"
-              - "TypeScript"
-              - "Docker"
-              - "SQL Server"
-              - "EF Core"
-              - "Azure DevOps"
-            metrics: null
-          - name: "Essilor - Eye Book Now"
-            description: "React consumer-facing frontend with .NET Core microservices hosted in AWS. Led team through product delivery and rescued stalled Beacon project."
-            role: "Engagement Manager / Team Lead"
-            start_date: "2021"
-            end_date: "2022"
-            highlights:
-              - "Served as Team Lead for core Eye Book Now product interfacing with product owner and business managers"
-              - "Mentored junior developers, reviewed PRs, handled production releases"
-              - "Rescued Beacon project suffering from loosely defined requirements and over-engineering"
-              - "Delivered Beacon product ahead of schedule"
-              - "Full stack development of React frontends and RESTful .NET Core API microservices"
-            technologies:
-              - "C#"
-              - "Dotnet"
-              - "React"
-              - "AWS EC2"
-              - "AWS S3"
-              - "Redis"
-              - "Azure Cosmos DB"
-              - "SQL Server"
-              - "Containerization (Docker)"
-              - "GitHub Actions"
-            metrics: null
-          - name: "McKesson - ETL Process Monitoring"
-            description: "ETL status monitoring system providing real-time visibility to account managers for improved customer support."
-            role: "Developer"
-            start_date: "2020"
-            end_date: "2021"
-            highlights:
-              - "Created APIs, microservices, and web applications on Azure Cloud within Agile Kanban team"
-              - "Developed ETL status monitoring system giving account managers real-time visibility"
-              - "Application serves as reference architecture for new projects"
-              - "Created fully scripted CI/CD pipelines for linting, testing, builds, releases, and infrastructure deployment"
-            technologies:
-              - "TypeScript"
-              - "C#"
-              - "Angular"
-              - "SQL Server"
+              - "AWS Cloud"
               - "Azure Cloud"
-              - "Azure API Gateway"
-              - "Azure DevOps"
-              - "OAuth"
-              - "Dapper"
-            metrics: null
-
-  - company: "HKS, Inc."
-    company_url: "https://www.hksinc.com/"
-    location: "Dallas, Texas"
-    expanded: false
-    projects_expanded: false
-    positions:
-      - title: "Sr. Software Engineer"
-        start_date: "2018"
-        end_date: "2020"
-        promotion: false
-        summary: |
-          Full stack design, development, deployment and maintenance of enterprise web applications, 
-          web services (APIs) and databases relied on by a firm with over 1,300 architects. DevOps 
-          management using Microsoft Azure. Managed and mentored junior software developers.
-        highlights:
-          - "Successfully implemented piecemeal migration from AngularJS to Angular 7 with both frameworks running simultaneously"
-          - "Led development of Project Explorer - comprehensive project information and asset reference library"
-          - "Built Nominator - employee recommendation and promotion web application"
-          - "Established CI/CD pipelines and Azure DevOps workflows"
-        technologies:
-          - "TypeScript"
-          - "Angular"
-          - "React"
-          - "Dotnet"
-          - "C#"
-          - "SQL Server"
-          - "Dapper"
-          - "Azure"
-          - "SASS"
-          - "Bootstrap"
-        projects:
-          - name: "Project Explorer"
-            description: "Project Information and Asset Reference Library web application. Led migration from AngularJS to Angular 7 and redesigned Statistics Management feature."
-            role: "Lead Developer"
+              - "SQL Server"
+            projects:
+              elements:
+                - key: alight-clarity-saas-product
+                  name: "Alight Clarity (SaaS Product)"
+                  url:
+                  description: "Cloud-native SaaS platform for benefits administration built on AWS. Led full SDLC from architecture to delivery, managing Agile development team and interfacing with executive stakeholders."
+                  role: "Account Manager / Engagement Manager / Team Lead"
+                  start_date: "2020"
+                  end_date: "2023"
+                  highlights:
+                    - "Collaborated with client to draft product architecture and technical design"
+                    - "Hired and led Agile development team through entire SDLC"
+                    - "Trained and coached client on Agile philosophies and execution"
+                    - "Successfully delivered working SaaS product opening additional revenue stream for client"
+                  technologies:
+                    - "C#"
+                    - "Dotnet"
+                    - "Angular"
+                    - "TypeScript"
+                    - "Containerization (Docker)"
+                    - "AWS Fargate"
+                    - "AWS S3"
+                    - "AWS CloudFormation"
+                    - "SQL Server"
+                    - "EF Core"
+                  metrics:
+                    - "Multi-tenant SaaS platform"
+                    - "$4MM+ annual revenue"
+                - key: greyhound-route-planning-tool
+                  name: "Greyhound Route Planning Tool"
+                  description: "Experimental proof-of-concept tool for transit schedule optimization. Complex D3 visualizations enabling exploration of Greyhound's transit schedule and passenger data to identify business risks and opportunities."
+                  role: "Engagement Manager / Team Lead"
+                  start_date: "2021"
+                  end_date: "2022"
+                  highlights:
+                    - "Identified core business problems through extensive client interviews and research"
+                    - "Developed interactive Angular frontend with complex D3 visualizations"
+                    - "Integrated Google Maps for geospatial route visualization"
+                    - "Connected to Snowflake data warehouse for large-scale passenger data analysis"
+                    - "Delivered iterative experimental solutions with executive demos"
+                  technologies:
+                    - "TypeScript"
+                    - "Angular"
+                    - "D3.js"
+                    - "Google Maps API"
+                    - "Snowflake"
+                    - "Azure"
+                    - "SQL Server"
+                  metrics:
+                    - "Nationwide route network visualization"
+                    - "Passenger flow analysis"
+                - key: bankers-financial-maverick
+                  name: "Bankers Financial - Maverick"
+                  description: "SaaS product for financial services built with .NET 5 and Angular. Led architecture, development, and Agile team execution."
+                  role: "Engagement Manager / Team Lead"
+                  start_date: "2020"
+                  end_date: "2022"
+                  highlights:
+                    - "Responsible for all aspects of product architecture and technical design"
+                    - "Hired and led Agile development team through entire SDLC"
+                    - "Interfaced with executive client stakeholders and technical leadership"
+                    - "Trained, coached, and mentored client on Agile philosophies and led execution"
+                    - "Successfully delivered working SaaS product opening additional revenue stream for client"
+                  technologies:
+                    - "C#"
+                    - ".NET 5"
+                    - "Angular"
+                    - "TypeScript"
+                    - "Docker"
+                    - "SQL Server"
+                    - "EF Core"
+                    - "Azure DevOps"
+                  metrics:
+                - key: essilor-eye-book-now
+                  name: "Essilor - Eye Book Now"
+                  description: "React consumer-facing frontend with .NET Core microservices hosted in AWS. Led team through product delivery and rescued stalled Beacon project."
+                  role: "Engagement Manager / Team Lead"
+                  start_date: "2021"
+                  end_date: "2022"
+                  highlights:
+                    - "Served as Team Lead for core Eye Book Now product interfacing with product owner and business managers"
+                    - "Mentored junior developers, reviewed PRs, handled production releases"
+                    - "Rescued Beacon project suffering from loosely defined requirements and over-engineering"
+                    - "Delivered Beacon product ahead of schedule"
+                    - "Full stack development of React frontends and RESTful .NET Core API microservices"
+                  technologies:
+                    - "C#"
+                    - "Dotnet"
+                    - "React"
+                    - "AWS EC2"
+                    - "AWS S3"
+                    - "Redis"
+                    - "Azure Cosmos DB"
+                    - "SQL Server"
+                    - "Containerization (Docker)"
+                    - "GitHub Actions"
+                  metrics:
+                - key: mckesson-etl-process-monitoring
+                  name: "McKesson - ETL Process Monitoring"
+                  description: "ETL status monitoring system providing real-time visibility to account managers for improved customer support."
+                  role: "Developer"
+                  start_date: "2020"
+                  end_date: "2021"
+                  highlights:
+                    - "Created APIs, microservices, and web applications on Azure Cloud within Agile Kanban team"
+                    - "Developed ETL status monitoring system giving account managers real-time visibility"
+                    - "Application serves as reference architecture for new projects"
+                    - "Created fully scripted CI/CD pipelines for linting, testing, builds, releases, and infrastructure deployment"
+                  technologies:
+                    - "TypeScript"
+                    - "C#"
+                    - "Angular"
+                    - "SQL Server"
+                    - "Azure Cloud"
+                    - "Azure API Gateway"
+                    - "Azure DevOps"
+                    - "OAuth"
+                    - "Dapper"
+                  metrics:
+    - key: hks-inc
+      company: "HKS, Inc."
+      company_url: "https://www.hksinc.com/"
+      location: "Dallas, Texas"
+      expanded: false
+      projects_expanded: false
+      positions:
+        elements:
+          - key: sr-software-engineer
+            title: "Sr. Software Engineer"
             start_date: "2018"
             end_date: "2020"
+            promotion: false
+            summary: |
+              Full stack design, development, deployment and maintenance of enterprise web applications, 
+              web services (APIs) and databases relied on by a firm with over 1,300 architects. DevOps 
+              management using Microsoft Azure. Managed and mentored junior software developers.
             highlights:
               - "Successfully implemented piecemeal migration from AngularJS to Angular 7 with both frameworks running simultaneously"
-              - "Complete rewrite of Statistics Management feature including UI, Web API, and database schema redesign"
-              - "Performed data migration for legacy statistics data"
+              - "Led development of Project Explorer - comprehensive project information and asset reference library"
+              - "Built Nominator - employee recommendation and promotion web application"
+              - "Established CI/CD pipelines and Azure DevOps workflows"
             technologies:
               - "TypeScript"
-              - "Dotnet"
               - "Angular"
-              - "C#"
-              - "SQL Server"
-              - "Dapper"
-              - "RxJS"
-              - "SASS"
-              - "Bootstrap"
-            metrics: null
-          - name: "Nominator"
-            description: "Employee recommendation and promotion web application. Overhauled codebase with mixed technologies under tight deadline."
-            role: "Lead Developer"
-            start_date: "2018"
-            end_date: "2020"
-            highlights:
-              - "Overhauled and cleaned up codebase with wide variety of mismatched technologies"
-              - "Delivered under tight deadline constraints"
-              - "Integrated React, KnockoutJS, and KendoUI components"
-            technologies:
-              - "TypeScript"
-              - "JavaScript"
+              - "React"
               - "Dotnet"
               - "C#"
-              - "React"
-              - "KnockoutJS"
-              - "KendoUI"
               - "SQL Server"
               - "Dapper"
               - "Azure"
-            metrics: null
-
-  - company: "Clean Harbors, Inc."
-    company_url: "https://www.cleanharbors.com/"
-    location: "Richardson, Texas"
-    expanded: false
-    projects_expanded: false
-    positions:
-      - title: "Sr. Software Engineer"
-        start_date: "2013"
-        end_date: "2018"
-        promotion: false
-        summary: |
-          Full stack design, development, deployment and maintenance of enterprise web applications, 
-          web services (APIs) and databases relied on by thousands of users in a $3B+ company. Daily 
-          communication with executive management and domain experts to translate business needs into 
-          actionable requirements. Balanced and prioritized multiple simultaneous projects.
-        highlights:
-          - "Designed and implemented profitability reporting SPA for executive management team"
-          - "Built data aggregation processes and dashboards for sales performance analysis using D3.js and Chart.js"
-          - "Analyzed market landscape using geospatial data (qGIS, PostGIS) to determine new market segment feasibility"
-          - "Implemented statistical forecasting models using R and R.NET for sales predictions"
-          - "Developed customer record matching and de-duplication system"
-          - "Built market research and sales lead generation web applications"
-        technologies:
-          - "TypeScript"
-          - "Angular"
-          - "Dotnet"
-          - "C#"
-          - "D3.js"
-          - "Chart.js"
-          - "SQL Server"
-          - "PostgreSQL"
-          - "qGIS"
-          - "PostGIS"
-          - "R"
-          - "R.NET"
-          - "Bootstrap"
-          - "RxJS"
-        projects:
-          - name: "Performance-Plus Deal Calculator"
-            description: "Service Level Agreement profitability calculator responsive web application enabling sales team to evaluate agreement profitability in office or on-site."
-            role: "Lead Developer"
-            start_date: "2013"
-            end_date: "2018"
-            highlights:
-              - "Designed and implemented responsive SPA for quick profitability evaluation of customer agreements"
-              - "Enabled mobile usage for on-site customer meetings"
-              - "Built complex financial calculation engine for SLA analysis"
-            technologies:
-              - "TypeScript"
-              - "Angular 4"
-              - "Dotnet"
-              - "C#"
-              - "SQL Server"
+              - "SASS"
               - "Bootstrap"
-              - "RxJS"
-            metrics: null
-          - name: "Epicenter"
-            description: "Data aggregation process with web dashboard for sales performance analysis. Used daily by executive management team."
-            role: "Lead Developer"
+            projects:
+              elements:
+                - key: project-explorer
+                  name: "Project Explorer"
+                  description: "Project Information and Asset Reference Library web application. Led migration from AngularJS to Angular 7 and redesigned Statistics Management feature."
+                  role: "Lead Developer"
+                  start_date: "2018"
+                  end_date: "2020"
+                  highlights:
+                    - "Successfully implemented piecemeal migration from AngularJS to Angular 7 with both frameworks running simultaneously"
+                    - "Complete rewrite of Statistics Management feature including UI, Web API, and database schema redesign"
+                    - "Performed data migration for legacy statistics data"
+                  technologies:
+                    - "TypeScript"
+                    - "Dotnet"
+                    - "Angular"
+                    - "C#"
+                    - "SQL Server"
+                    - "Dapper"
+                    - "RxJS"
+                    - "SASS"
+                    - "Bootstrap"
+                  metrics:
+                - key: nominator
+                  name: "Nominator"
+                  description: "Employee recommendation and promotion web application. Overhauled codebase with mixed technologies under tight deadline."
+                  role: "Lead Developer"
+                  start_date: "2018"
+                  end_date: "2020"
+                  highlights:
+                    - "Overhauled and cleaned up codebase with wide variety of mismatched technologies"
+                    - "Delivered under tight deadline constraints"
+                    - "Integrated React, KnockoutJS, and KendoUI components"
+                  technologies:
+                    - "TypeScript"
+                    - "JavaScript"
+                    - "Dotnet"
+                    - "C#"
+                    - "React"
+                    - "KnockoutJS"
+                    - "KendoUI"
+                    - "SQL Server"
+                    - "Dapper"
+                    - "Azure"
+                  metrics:
+    - key: clean-harbors-inc
+      company: "Clean Harbors, Inc."
+      company_url: "https://www.cleanharbors.com/"
+      location: "Richardson, Texas"
+      expanded: false
+      projects_expanded: false
+      positions:
+        elements:
+          - key: sr-software-engineer
+            title: "Sr. Software Engineer"
             start_date: "2013"
             end_date: "2018"
+            promotion: false
+            summary: |
+              Full stack design, development, deployment and maintenance of enterprise web applications, 
+              web services (APIs) and databases relied on by thousands of users in a $3B+ company. Daily 
+              communication with executive management and domain experts to translate business needs into 
+              actionable requirements. Balanced and prioritized multiple simultaneous projects.
             highlights:
-              - "Designed and implemented responsive SPA for analyzing sales performance by product and organizational hierarchy"
-              - "Used daily by executive management team for $50M+ monthly revenue organization"
-              - "Optimized SQL Server queries with table indexes, indexed views, and performance strategies"
-              - "Built complex D3.js and Chart.js visualizations"
+              - "Designed and implemented profitability reporting SPA for executive management team"
+              - "Built data aggregation processes and dashboards for sales performance analysis using D3.js and Chart.js"
+              - "Analyzed market landscape using geospatial data (qGIS, PostGIS) to determine new market segment feasibility"
+              - "Implemented statistical forecasting models using R and R.NET for sales predictions"
+              - "Developed customer record matching and de-duplication system"
+              - "Built market research and sales lead generation web applications"
             technologies:
               - "TypeScript"
               - "Angular"
               - "Dotnet"
               - "C#"
-              - "SQL Server"
               - "D3.js"
               - "Chart.js"
-              - "Bootstrap"
-              - "RxJS"
-            metrics:
-              - "$50M+ monthly revenue reporting"
-          - name: "Margin Reporting Tool"
-            description: "Profitability analysis data process with web dashboard replacing Silverlight solution."
-            role: "Lead Developer"
-            start_date: "2013"
-            end_date: "2018"
-            highlights:
-              - "Designed and implemented profitability reporting SPA to replace existing Silverlight solution"
-              - "Redesigned data processing procedure with 5x code reduction and 60x performance improvement"
-              - "Delivered significant performance gains through algorithmic optimization"
-            technologies:
-              - "TypeScript"
-              - "Angular"
-              - "Dotnet"
-              - "C#"
-              - "SQL Server"
-              - "Chart.js"
-              - "Bootstrap"
-            metrics:
-              - "60x faster processing"
-              - "5x smaller codebase"
-          - name: "Exploratory Market Segment Research"
-            description: "Geospatial analysis of market data to determine feasibility of new medical waste market segment."
-            role: "Lead Developer"
-            start_date: "2013"
-            end_date: "2018"
-            highlights:
-              - "Analyzed market landscape using geospatial data for new market segment feasibility"
-              - "Utilized SQL Server spatial indexes and PostGIS features"
-              - "Worked with coordinate systems and map projections (WGS 84)"
-            technologies:
               - "SQL Server"
               - "PostgreSQL"
-              - "PostGIS"
               - "qGIS"
-            metrics: null
-          - name: "Sales Forecasting Tool"
-            description: "Statistical model calculation process with web dashboard for sales predictions using R."
-            role: "Lead Developer"
-            start_date: "2013"
-            end_date: "2018"
-            highlights:
-              - "Reduced forecast model processing time from 48+ hours to 30 minutes"
-              - "Achieved through database optimization, code optimization, parallelism, and distributed computing"
-              - "Integrated R statistical models with .NET application"
-            technologies:
+              - "PostGIS"
               - "R"
               - "R.NET"
-              - "C#"
-              - ".NET"
-              - "SQL Server"
-              - "ASP.NET"
-            metrics:
-              - "96x faster processing (48hrs → 30min)"
-          - name: "Customer Record Matching and De-duplication"
-            description: "Data processing service automating identification of duplicate customer records using fuzzy matching algorithms."
-            role: "Lead Developer"
-            start_date: "2013"
-            end_date: "2018"
+              - "Bootstrap"
+              - "RxJS"
+            projects:
+              elements:
+                - key: performance-plus-deal-calculator
+                  name: "Performance-Plus Deal Calculator"
+                  description: "Service Level Agreement profitability calculator responsive web application enabling sales team to evaluate agreement profitability in office or on-site."
+                  role: "Lead Developer"
+                  start_date: "2013"
+                  end_date: "2018"
+                  highlights:
+                    - "Designed and implemented responsive SPA for quick profitability evaluation of customer agreements"
+                    - "Enabled mobile usage for on-site customer meetings"
+                    - "Built complex financial calculation engine for SLA analysis"
+                  technologies:
+                    - "TypeScript"
+                    - "Angular 4"
+                    - "Dotnet"
+                    - "C#"
+                    - "SQL Server"
+                    - "Bootstrap"
+                    - "RxJS"
+                  metrics:
+                - key: epicenter
+                  name: "Epicenter"
+                  description: "Data aggregation process with web dashboard for sales performance analysis. Used daily by executive management team."
+                  role: "Lead Developer"
+                  start_date: "2013"
+                  end_date: "2018"
+                  highlights:
+                    - "Designed and implemented responsive SPA for analyzing sales performance by product and organizational hierarchy"
+                    - "Used daily by executive management team for $50M+ monthly revenue organization"
+                    - "Optimized SQL Server queries with table indexes, indexed views, and performance strategies"
+                    - "Built complex D3.js and Chart.js visualizations"
+                  technologies:
+                    - "TypeScript"
+                    - "Angular"
+                    - "Dotnet"
+                    - "C#"
+                    - "SQL Server"
+                    - "D3.js"
+                    - "Chart.js"
+                    - "Bootstrap"
+                    - "RxJS"
+                  metrics:
+                    - "$50M+ monthly revenue reporting"
+                - key: margin-reporting-tool
+                  name: "Margin Reporting Tool"
+                  description: "Profitability analysis data process with web dashboard replacing Silverlight solution."
+                  role: "Lead Developer"
+                  start_date: "2013"
+                  end_date: "2018"
+                  highlights:
+                    - "Designed and implemented profitability reporting SPA to replace existing Silverlight solution"
+                    - "Redesigned data processing procedure with 5x code reduction and 60x performance improvement"
+                    - "Delivered significant performance gains through algorithmic optimization"
+                  technologies:
+                    - "TypeScript"
+                    - "Angular"
+                    - "Dotnet"
+                    - "C#"
+                    - "SQL Server"
+                    - "Chart.js"
+                    - "Bootstrap"
+                  metrics:
+                    - "60x faster processing"
+                    - "5x smaller codebase"
+                - key: exploratory-market-segment-research
+                  name: "Exploratory Market Segment Research"
+                  description: "Geospatial analysis of market data to determine feasibility of new medical waste market segment."
+                  role: "Lead Developer"
+                  start_date: "2013"
+                  end_date: "2018"
+                  highlights:
+                    - "Analyzed market landscape using geospatial data for new market segment feasibility"
+                    - "Utilized SQL Server spatial indexes and PostGIS features"
+                    - "Worked with coordinate systems and map projections (WGS 84)"
+                  technologies:
+                    - "SQL Server"
+                    - "PostgreSQL"
+                    - "PostGIS"
+                    - "qGIS"
+                  metrics:
+                - key: sales-forecasting-tool
+                  name: "Sales Forecasting Tool"
+                  description: "Statistical model calculation process with web dashboard for sales predictions using R."
+                  role: "Lead Developer"
+                  start_date: "2013"
+                  end_date: "2018"
+                  highlights:
+                    - "Reduced forecast model processing time from 48+ hours to 30 minutes"
+                    - "Achieved through database optimization, code optimization, parallelism, and distributed computing"
+                    - "Integrated R statistical models with .NET application"
+                  technologies:
+                    - "R"
+                    - "R.NET"
+                    - "C#"
+                    - ".NET"
+                    - "SQL Server"
+                    - "ASP.NET"
+                  metrics:
+                    - "96x faster processing (48hrs → 30min)"
+                - key: customer-record-matching-and-de-duplication
+                  name: "Customer Record Matching and De-duplication"
+                  description: "Data processing service automating identification of duplicate customer records using fuzzy matching algorithms."
+                  role: "Lead Developer"
+                  start_date: "2013"
+                  end_date: "2018"
+                  highlights:
+                    - "Automated identification of thousands of duplicate customer records"
+                    - "Implemented word adjacency graph algorithm and fuzzy matching (Jaro-Winkler)"
+                    - "Improved data quality across customer database"
+                  technologies:
+                    - "C#"
+                    - ".NET"
+                    - "SQL Server"
+                  metrics:
+                - key: bizpoint
+                  name: "BizPoint"
+                  description: "Market research and sales lead generation web application with EPA and Dun & Bradstreet data integration."
+                  role: "Developer"
+                  start_date: "2013"
+                  end_date: "2018"
+                  highlights:
+                    - "Developed ETL process to ingest EPA hazardous waste datasets"
+                    - "Integrated Dun and Bradstreet data with Clean Harbors customer list"
+                    - "Built lead generation system for sales team"
+                  technologies:
+                    - "C#"
+                    - "ASP.NET"
+                    - "Silverlight"
+                    - "SQL Server"
+                  metrics:
+    - key: cisco-systems-inc
+      company: "Cisco Systems, Inc."
+      company_url: "https://www.cisco.com/"
+      location: "Richardson, Texas"
+      expanded: false
+      positions:
+        elements:
+          - key: software-developer
+            title: "Software Developer"
+            start_date: "2012"
+            end_date: "2013"
+            promotion: false
+            summary: |
+              Data Center Management division. Developed web applications for hardware cabinet configuration, 
+              site management, and data collection services.
             highlights:
-              - "Automated identification of thousands of duplicate customer records"
-              - "Implemented word adjacency graph algorithm and fuzzy matching (Jaro-Winkler)"
-              - "Improved data quality across customer database"
-            technologies:
-              - "C#"
-              - ".NET"
-              - "SQL Server"
-            metrics: null
-          - name: "BizPoint"
-            description: "Market research and sales lead generation web application with EPA and Dun & Bradstreet data integration."
-            role: "Developer"
-            start_date: "2013"
-            end_date: "2018"
-            highlights:
-              - "Developed ETL process to ingest EPA hazardous waste datasets"
-              - "Integrated Dun and Bradstreet data with Clean Harbors customer list"
-              - "Built lead generation system for sales team"
+              - "Built drag-and-drop hardware cabinet configurator web application"
+              - "Developed interactive site management tool with Silverlight"
+              - "Created hardware polling service for data collection and aggregation"
             technologies:
               - "C#"
               - "ASP.NET"
               - "Silverlight"
-              - "SQL Server"
-            metrics: null
-
-  - company: "Cisco Systems, Inc."
-    company_url: "https://www.cisco.com/"
-    location: "Richardson, Texas"
-    expanded: false
-    positions:
-      - title: "Software Developer"
-        start_date: "2012"
-        end_date: "2013"
-        promotion: false
-        summary: |
-          Data Center Management division. Developed web applications for hardware cabinet configuration, 
-          site management, and data collection services.
-        highlights:
-          - "Built drag-and-drop hardware cabinet configurator web application"
-          - "Developed interactive site management tool with Silverlight"
-          - "Created hardware polling service for data collection and aggregation"
-        technologies:
-          - "C#"
-          - "ASP.NET"
-          - "Silverlight"
-          - "jQuery"
-          - "NHibernate"
-          - "SQL Server"
-        projects:
-          - name: "Hardware Cabinet Buildout Tool"
-            description: "Drag and drop hardware cabinet configurator web application with automatic compatibility checking."
-            role: "Lead Developer"
-            start_date: "2012"
-            end_date: "2012"
-            highlights:
-              - "Built interactive drag-and-drop interface for hardware configuration"
-              - "Implemented automatic hardware compatibility checking system"
-              - "Created power requirement validation"
-            technologies:
-              - "C#"
-              - "ASP.NET"
               - "jQuery"
               - "NHibernate"
               - "SQL Server"
-            metrics: null
-          - name: "Visual Data Center Management Tool"
-            description: "Interactive site management web application with navigable data center floorplan maps."
-            role: "Developer"
-            start_date: "2012"
-            end_date: "2013"
+            projects:
+              elements:
+                - key: hardware-cabinet-buildout-tool
+                  name: "Hardware Cabinet Buildout Tool"
+                  description: "Drag and drop hardware cabinet configurator web application with automatic compatibility checking."
+                  role: "Lead Developer"
+                  start_date: "2012"
+                  end_date: "2012"
+                  highlights:
+                    - "Built interactive drag-and-drop interface for hardware configuration"
+                    - "Implemented automatic hardware compatibility checking system"
+                    - "Created power requirement validation"
+                  technologies:
+                    - "C#"
+                    - "ASP.NET"
+                    - "jQuery"
+                    - "NHibernate"
+                    - "SQL Server"
+                  metrics:
+                - key: visual-data-center-management-tool
+                  name: "Visual Data Center Management Tool"
+                  description: "Interactive site management web application with navigable data center floorplan maps."
+                  role: "Developer"
+                  start_date: "2012"
+                  end_date: "2013"
+                  highlights:
+                    - "Created rich visual tool with navigable floorplan maps of Cisco data centers"
+                    - "Enabled users to inspect, query, and monitor deployed network equipment"
+                    - "Built interactive Silverlight-based visualization"
+                  technologies:
+                    - "C#"
+                    - "ASP.NET"
+                    - "Silverlight"
+                    - "NHibernate"
+                    - "SQL Server"
+                  metrics:
+                - key: hardware-polling-service
+                  name: "Hardware Polling Service"
+                  description: "Multi-threaded data collection and aggregation service for networked data center equipment."
+                  role: "Developer"
+                  start_date: "2012"
+                  end_date: "2013"
+                  highlights:
+                    - "Implemented multi-threaded polling service for data center hardware"
+                    - "Collected status and metrics from servers, routers, and equipment"
+                    - "Monitored power supplies, thermal sensors, and other data center equipment"
+                  technologies:
+                    - "C#"
+                    - "NHibernate"
+                    - "SQL Server"
+                  metrics:
+    - key: clickmotive-inc
+      company: "Clickmotive, Inc."
+      company_url: "http://clickmotive.com/"
+      location: "Plano, Texas"
+      expanded: false
+      positions:
+        elements:
+          - key: jr-software-engineer
+            title: "Jr. Software Engineer"
+            start_date: "2011"
+            end_date: "2012"
+            promotion: false
+            summary: |
+              Projects Team. Developed inventory processing systems and dealership website solutions.
             highlights:
-              - "Created rich visual tool with navigable floorplan maps of Cisco data centers"
-              - "Enabled users to inspect, query, and monitor deployed network equipment"
-              - "Built interactive Silverlight-based visualization"
+              - "Built automobile dealership inventory data aggregation service using C# and Redis"
+              - "Contributed to Fusion - turn-key solution for deploying dealership websites"
             technologies:
               - "C#"
               - "ASP.NET"
-              - "Silverlight"
-              - "NHibernate"
-              - "SQL Server"
-            metrics: null
-          - name: "Hardware Polling Service"
-            description: "Multi-threaded data collection and aggregation service for networked data center equipment."
-            role: "Developer"
-            start_date: "2012"
-            end_date: "2013"
-            highlights:
-              - "Implemented multi-threaded polling service for data center hardware"
-              - "Collected status and metrics from servers, routers, and equipment"
-              - "Monitored power supplies, thermal sensors, and other data center equipment"
-            technologies:
-              - "C#"
-              - "NHibernate"
-              - "SQL Server"
-            metrics: null
-
-  - company: "Clickmotive, Inc."
-    company_url: "http://clickmotive.com/"
-    location: "Plano, Texas"
-    expanded: false
-    positions:
-      - title: "Jr. Software Engineer"
-        start_date: "2011"
-        end_date: "2012"
-        promotion: false
-        summary: |
-          Projects Team. Developed inventory processing systems and dealership website solutions.
-        highlights:
-          - "Built automobile dealership inventory data aggregation service using C# and Redis"
-          - "Contributed to Fusion - turn-key solution for deploying dealership websites"
-        technologies:
-          - "C#"
-          - "ASP.NET"
-          - "SQL Server"
-          - "Redis"
-        projects:
-          - name: "Inventory Processing System"
-            description: "Automobile dealership inventory data aggregation service with major performance improvements."
-            role: "Developer"
-            start_date: "2011"
-            end_date: "2012"
-            highlights:
-              - "Worked with team on multi-month project to develop new inventory processing application"
-              - "Reduced processing time from 4 hours to 15 minutes"
-              - "Utilized Redis for high-performance caching"
-            technologies:
-              - "C#"
               - "SQL Server"
               - "Redis"
-            metrics:
-              - "16x faster processing (4hrs → 15min)"
-          - name: "Fusion"
-            description: "Turn-key solution for deploying automobile dealership websites with customer-facing components."
-            role: "Developer"
-            start_date: "2011"
-            end_date: "2012"
+            projects:
+              elements:
+                - key: inventory-processing-system
+                  name: "Inventory Processing System"
+                  description: "Automobile dealership inventory data aggregation service with major performance improvements."
+                  role: "Developer"
+                  start_date: "2011"
+                  end_date: "2012"
+                  highlights:
+                    - "Worked with team on multi-month project to develop new inventory processing application"
+                    - "Reduced processing time from 4 hours to 15 minutes"
+                    - "Utilized Redis for high-performance caching"
+                  technologies:
+                    - "C#"
+                    - "SQL Server"
+                    - "Redis"
+                  metrics:
+                    - "16x faster processing (4hrs → 15min)"
+                - key: fusion
+                  name: "Fusion"
+                  description: "Turn-key solution for deploying automobile dealership websites with customer-facing components."
+                  role: "Developer"
+                  start_date: "2011"
+                  end_date: "2012"
+                  highlights:
+                    - "Developed many customer-facing web UI components for Clickmotive's core product"
+                    - "Built reusable components for rapid dealership site deployment"
+                  technologies:
+                    - "C#"
+                    - "ASP.NET"
+                    - "jQuery"
+                    - "HTML"
+                    - "CSS"
+                    - "SQL Server"
+                  metrics:
+    - key: ericsson-inc
+      company: "Ericsson, Inc."
+      company_url: "https://www.ericsson.com/en"
+      location: "Plano, Texas"
+      expanded: false
+      positions:
+        elements:
+          - key: software-engineer-intern
+            title: "Software Engineer Intern"
+            start_date: "2010"
+            end_date: "2011"
+            promotion: false
+            summary: |
+              North America Wireless Radio Access Network division. Developed automation tools and 
+              resource management systems.
             highlights:
-              - "Developed many customer-facing web UI components for Clickmotive's core product"
-              - "Built reusable components for rapid dealership site deployment"
+              - "Built automated neighbor selection tool for wireless network optimization (Windows Forms, GDI+)"
+              - "Developed resource management web application with SOLR search integration"
             technologies:
               - "C#"
               - "ASP.NET"
-              - "jQuery"
-              - "HTML"
-              - "CSS"
               - "SQL Server"
-            metrics: null
-
-  - company: "Ericsson, Inc."
-    company_url: "https://www.ericsson.com/en"
-    location: "Plano, Texas"
-    expanded: false
-    positions:
-      - title: "Software Engineer Intern"
-        start_date: "2010"
-        end_date: "2011"
-        promotion: false
-        summary: |
-          North America Wireless Radio Access Network division. Developed automation tools and 
-          resource management systems.
-        highlights:
-          - "Built automated neighbor selection tool for wireless network optimization (Windows Forms, GDI+)"
-          - "Developed resource management web application with SOLR search integration"
-        technologies:
-          - "C#"
-          - "ASP.NET"
-          - "SQL Server"
-          - "GDI+"
-          - "SOLR"
-        projects:
-          - name: "Automated Neighbor Selection Tool"
-            description: "Windows Forms application implementing Ericsson patent for wireless network optimization. Awarded 'Intern of the Month' for excellence."
-            role: "Lead Developer"
-            start_date: "2010"
-            end_date: "2011"
-            highlights:
-              - "Implemented patent US7050803B2 for automated cell network sector neighbor calculation"
-              - "Visualized cell network sectors and automatically calculated sector neighbors in geographic regions"
-              - "Awarded Ericsson 'Intern of the Month' for excellence during this project"
-              - "Built custom GDI+ visualizations for network topology"
-            technologies:
-              - "C#"
               - "GDI+"
-              - "SQL Server"
-            metrics: null
-          - name: "Resource Management Tool"
-            description: "Web-based staffing and resource management tool with SOLR search integration."
-            role: "Lead Developer"
-            start_date: "2010"
-            end_date: "2011"
-            highlights:
-              - "Developed web-based staffing and resource management tool"
-              - "Enabled managers to identify department resources and subject matter experts"
-              - "Integrated SOLR search for finding underutilized personnel"
-            technologies:
-              - "C#"
-              - "ASP.NET"
               - "SOLR"
-              - "SQL Server"
-            metrics: null
-
+            projects:
+              elements:
+                - key: automated-neighbor-selection-tool
+                  name: "Automated Neighbor Selection Tool"
+                  description: "Windows Forms application implementing Ericsson patent for wireless network optimization. Awarded 'Intern of the Month' for excellence."
+                  role: "Lead Developer"
+                  start_date: "2010"
+                  end_date: "2011"
+                  highlights:
+                    - "Implemented patent US7050803B2 for automated cell network sector neighbor calculation"
+                    - "Visualized cell network sectors and automatically calculated sector neighbors in geographic regions"
+                    - "Awarded Ericsson 'Intern of the Month' for excellence during this project"
+                    - "Built custom GDI+ visualizations for network topology"
+                  technologies:
+                    - "C#"
+                    - "GDI+"
+                    - "SQL Server"
+                  metrics:
+                - key: resource-management-tool
+                  name: "Resource Management Tool"
+                  description: "Web-based staffing and resource management tool with SOLR search integration."
+                  role: "Lead Developer"
+                  start_date: "2010"
+                  end_date: "2011"
+                  highlights:
+                    - "Developed web-based staffing and resource management tool"
+                    - "Enabled managers to identify department resources and subject matter experts"
+                    - "Integrated SOLR search for finding underutilized personnel"
+                  technologies:
+                    - "C#"
+                    - "ASP.NET"
+                    - "SOLR"
+                    - "SQL Server"
+                  metrics:
 projects_config:
   title: "Applied Machine Learning Experience"
   group_by_type: false
 
 projects:
-  - name: "Vision-Based Sim-to-Real Manipulation Pipeline"
-    enabled: true
-    url: "https://github.com/matthewevans87/so101_sim_to_real"
-    type: "academic"
-    description: "Designed and built an end-to-end ML pipeline for training vision-conditioned PPO policies on the SO-101 robotic arm in NVIDIA Isaac Sim, targeting zero-shot sim-to-real transfer — achieving up to 89.7% episode success rate on a wrist-camera-only cube-lifting task under domain randomization."
-    role: "Research Engineer / Author"
-    start_date: "2026-01"
-    end_date: null
-    highlights:
-      - [
-          "ML infrastructure:",
-          "Designed a reproducible end-to-end pipeline (train → collect → curate → train-cnn) with typed YAML validation, versioned artifact directories (configs, seeds, checkpoints, metrics), and provenance tracking — enabling systematic experimentation, reliable debugging, and direct run-to-run comparison.",
-        ]
-      - [
-          "Reinforcement learning:",
-          "Applied PPO to a vision-based sequential decision-making task; designed phased reward shaping (approach → grasp → lift), safety-aware termination conditions, and domain randomization (lighting, camera pose, object geometry, distractors) in service of sim-to-real transfer.",
-        ]
-      - [
-          "Vision encoder evaluation:",
-          "Bootstrapped a task-specific CNN from synthetic policy rollouts via iterative self-distillation, replacing a frozen ImageNet backbone (ResNet18); CNN achieved 4.5pp higher episode success rate (87.1% vs. 83.1%), with a second distillation generation yielding further improvement (87.7%).",
-        ]
-      - [
-          "Data pipelines:",
-          "Collected and processed ~10K episodes of multimodal telemetry (images, joint state, object pose); applied histogram rebalancing across episode timestep and grip-zone distance to prevent dominant mid-approach frames from skewing CNN training.",
-        ]
-      - [
-          "Ablation framework:",
-          "Developed a sweep runner executing Cartesian-product ablations across reward functions, vision backbones, and PPO hyperparameters (each over 5 RNG seeds); captures per-experiment provenance and per-condition success/lift/termination statistics.",
-        ]
-      - [
-          "Reward shaping analysis:",
-          "Used the framework to run leave-one-out and leave-one-in ablations (5 seeds × 50 k PPO steps) across the lift-cube reward function, identifying the dense absolute approach reward as a soft local optimum — removing it gave the highest success rate observed (89.7 %, +2 pp over the 13-term baseline) with shorter mean episode length, and a derived 2-term minimal reward matched the full reward set within statistical noise (Welch z = −0.47).",
-        ]
-    technologies:
-      - "Python"
-      - "PyTorch"
-      - "NVIDIA Isaac Sim"
-      - "Isaac Lab"
-      - "skrl (PPO)"
-      - "Reinforcement Learning"
-      - "CNN"
-      - "ResNet18"
-      - "Domain Randomization"
-      - "YAML configs"
-      - "TensorBoard"
-      - "NumPy"
+  disabled:
+    - crypton
+    - crypto-currency-trading-bot
+  elements:
+    - key: vision-based-sim-to-real-manipulation-pipeline
+      name: "Vision-Based Sim-to-Real Manipulation Pipeline"
+      url: "https://github.com/matthewevans87/so101_sim_to_real"
+      type: "academic"
+      description: "Designed and built an end-to-end ML pipeline for training vision-conditioned PPO policies on the SO-101 robotic arm in NVIDIA Isaac Sim, targeting zero-shot sim-to-real transfer — achieving up to 89.7% episode success rate on a wrist-camera-only cube-lifting task under domain randomization."
+      role: "Research Engineer / Author"
+      start_date: "2026-01"
+      end_date:
+      highlights:
+        - [
+            "ML infrastructure:",
+            "Designed a reproducible end-to-end pipeline (train → collect → curate → train-cnn) with typed YAML validation, versioned artifact directories (configs, seeds, checkpoints, metrics), and provenance tracking — enabling systematic experimentation, reliable debugging, and direct run-to-run comparison.",
+          ]
+        - [
+            "Reinforcement learning:",
+            "Applied PPO to a vision-based sequential decision-making task; designed phased reward shaping (approach → grasp → lift), safety-aware termination conditions, and domain randomization (lighting, camera pose, object geometry, distractors) in service of sim-to-real transfer.",
+          ]
+        - [
+            "Vision encoder evaluation:",
+            "Bootstrapped a task-specific CNN from synthetic policy rollouts via iterative self-distillation, replacing a frozen ImageNet backbone (ResNet18); CNN achieved 4.5pp higher episode success rate (87.1% vs. 83.1%), with a second distillation generation yielding further improvement (87.7%).",
+          ]
+        - [
+            "Data pipelines:",
+            "Collected and processed ~10K episodes of multimodal telemetry (images, joint state, object pose); applied histogram rebalancing across episode timestep and grip-zone distance to prevent dominant mid-approach frames from skewing CNN training.",
+          ]
+        - [
+            "Ablation framework:",
+            "Developed a sweep runner executing Cartesian-product ablations across reward functions, vision backbones, and PPO hyperparameters (each over 5 RNG seeds); uncovered that ablating a dense absolute reward for the grasp phase eliminated a soft local optimum, improving both success rate and time-to-first-success.",
+          ]
+        - [
+            "Reward shaping analysis:",
+            "Identified through systematic ablations that the dense absolute reward for the approach phase acted as a soft local optimum — ablating it yielded the highest success rate observed across all experiments (89.7%, +1.9pp over baseline) with shorter mean episode length, consistent with the policy committing to task completion rather than hovering in a rewarded near-approach posture.",
+          ]
+      technologies:
+        - "Python"
+        - "PyTorch"
+        - "NVIDIA Isaac Sim"
+        - "Isaac Lab"
+        - "skrl (PPO)"
+        - "Reinforcement Learning"
+        - "CNN"
+        - "ResNet18"
+        - "Domain Randomization"
+        - "YAML configs"
+        - "TensorBoard"
+        - "NumPy"
 
-  - name: "ML Assisted Visibility Graph Construction"
-    enabled: true
-    url: "https://github.com/matthewevans87/cs6319-computational-geometry-project"
-    type: "academic"
-    description: "Reduced visibility-graph construction cost for shortest-path motion planning by training an LSTM to predict the next shortest-path region, pruning visibility checks while preserving near-exact path quality — achieving up to 98% reduction in vertex comparisons on benchmarks."
-    role: "Research Engineer / Author"
-    start_date: "2025-01"
-    end_date: "2025-12"
-    highlights:
-      - [
-          "Data pipeline:",
-          "Parsed 1,670 StarCraft maps into binary walkability grids; converted obstacle regions to polygonal representations via connected components and alpha shapes with geometric cleanup using Shapely.",
-        ]
-      - [
-          "Model training:",
-          "Designed and trained an LSTM-based sector predictor with five-fold cross-validation, achieving 82.1% validation accuracy; integrated predictions into DFS/DP-based visibility-graph construction to gate visibility checks.",
-        ]
-      - [
-          "Evaluation:",
-          "Benchmarked pruned vs. exact graph construction across map geometries; achieved up to 98% reduction in vertex comparisons while closely matching exact shortest-path lengths.",
-        ]
-    technologies:
-      - "Python"
-      - "PyTorch"
-      - "LSTM"
-      - "RNN"
-      - "SciPy"
-      - "Shapely"
-      - "NumPy"
+    - key: ml-assisted-visibility-graph-construction
+      name: "ML Assisted Visibility Graph Construction"
+      url: "https://github.com/matthewevans87/cs6319-computational-geometry-project"
+      type: "academic"
+      description: "Reduced visibility-graph construction cost for shortest-path motion planning by training an LSTM to predict the next shortest-path region, pruning visibility checks while preserving near-exact path quality — achieving up to 98% reduction in vertex comparisons on benchmarks."
+      role: "Research Engineer / Author"
+      start_date: "2025-01"
+      end_date: "2025-12"
+      highlights:
+        - [
+            "Data pipeline:",
+            "Parsed 1,670 StarCraft maps into binary walkability grids; converted obstacle regions to polygonal representations via connected components and alpha shapes with geometric cleanup using Shapely.",
+          ]
+        - [
+            "Model training:",
+            "Designed and trained an LSTM-based sector predictor with five-fold cross-validation, achieving 82.1% validation accuracy; integrated predictions into DFS/DP-based visibility-graph construction to gate visibility checks.",
+          ]
+        - [
+            "Evaluation:",
+            "Benchmarked pruned vs. exact graph construction across map geometries; achieved up to 98% reduction in vertex comparisons while closely matching exact shortest-path lengths.",
+          ]
+      technologies:
+        - "Python"
+        - "PyTorch"
+        - "LSTM"
+        - "RNN"
+        - "SciPy"
+        - "Shapely"
+        - "NumPy"
 
-  - name: "Neural Networks Independent Study"
-    enabled: true
-    url: "https://github.com/matthewevans87/neural-networks-independent-study"
-    type: "academic"
-    description: "A structured 15-week independent study spanning modern deep learning fundamentals through foundation models — combining paper-driven survey (backprop → CNNs/ResNets → LSTMs → Transformers → diffusion/VLMs) with from-scratch PyTorch implementations, culminating in a master's thesis proposal for a Transformer-based autonomous driving model with vision-only planning, low-level control, and a CARLA-based imitation learning training plan."
-    role: "Research Engineer / Course Designer / Author"
-    start_date: "2025-01"
-    end_date: "2025-05"
-    # highlights:
-    #   - "Surveyed 17 seminal deep-learning papers and produced structured LaTeX reviews (backprop → CNNs/ResNets → LSTMs → Transformers → diffusion/VLMs)."
-    #   - "Implemented an MLP from scratch in NumPy for MNIST (manual forward/backprop, training loop, and optimization)."
-    #   - "Implemented core architectures in PyTorch, including a CNN for MNIST (97.99% test accuracy) and a stacked LSTM character LM (perplexity 6.47; top-1 53.3%, top-5 82.7%) with interactive generation."
-    #   - "Built and trained a GAN for MNIST digit synthesis (MLP G/D with LeakyReLU + dropout), validating expected minimax dynamics over 200 epochs."
-    #   - "Capstone: authored a master's thesis proposal for a Transformer-based autonomous driving model (vision-only planning + low-level control) with a CARLA-based imitation-learning training plan."
-    technologies:
-      - "Python"
-      - "PyTorch"
-      - "NumPy"
-      - "CNN"
-      - "MLP (from scratch)"
-      - "LSTM"
-      - "GAN"
-      - "Transformers"
-      - "LaTeX"
+    - key: neural-networks-independent-study
+      name: "Neural Networks Independent Study"
+      url: "https://github.com/matthewevans87/neural-networks-independent-study"
+      type: "academic"
+      description: "A structured 15-week independent study spanning modern deep learning fundamentals through foundation models — combining paper-driven survey (backprop → CNNs/ResNets → LSTMs → Transformers → diffusion/VLMs) with from-scratch PyTorch implementations, culminating in a master's thesis proposal for a Transformer-based autonomous driving model with vision-only planning, low-level control, and a CARLA-based imitation learning training plan."
+      role: "Research Engineer / Course Designer / Author"
+      start_date: "2025-01"
+      end_date: "2025-05"
+      technologies:
+        - "Python"
+        - "PyTorch"
+        - "NumPy"
+        - "CNN"
+        - "MLP (from scratch)"
+        - "LSTM"
+        - "GAN"
+        - "Transformers"
+        - "LaTeX"
 
-  - name: "Intent-Aware Lookahead for Language Modeling"
-    enabled: true
-    url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-project"
-    type: "academic"
-    description: "Investigated whether lightweight future-token prediction improves next-token accuracy in causal language models — designing, implementing, and evaluating a modified transformer with auxiliary lookahead heads and intent-conditioned fusion across 21 controlled model variants."
-    role: "Research Engineer / Author"
-    start_date: "2025-08"
-    end_date: "2025-12"
-    highlights:
-      - [
-          "Model architecture:",
-          "Designed and implemented IALM-Lite, a 6-layer causal transformer (~44.9M params) augmented with auxiliary future-prediction heads, intent pooling (mean/attention), and FiLM vs. gated fusion mechanisms.",
-        ]
-      - [
-          "Experiment design:",
-          "Ran a controlled ablation study of 21 variants across a grid of lookahead horizon, auxiliary loss weight, pooling method, and fusion mechanism; identified auxiliary loss weight (λ) as the dominant factor shaping training dynamics.",
-        ]
-      - [
-          "Evaluation & negative results:",
-          "Benchmarked all variants against a matched baseline on WikiText-2; baseline outperformed all lookahead variants — documented findings with analysis of multi-task interference and capacity allocation to inform future designs.",
-        ]
-    technologies:
-      - "Python"
-      - "PyTorch"
-      - "Transformers"
-      - "TensorBoard"
+    - key: intent-aware-lookahead-for-language-modeling
+      name: "Intent-Aware Lookahead for Language Modeling"
+      url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-project"
+      type: "academic"
+      description: "Investigated whether lightweight future-token prediction improves next-token accuracy in causal language models — designing, implementing, and evaluating a modified transformer with auxiliary lookahead heads and intent-conditioned fusion across 21 controlled model variants."
+      role: "Research Engineer / Author"
+      start_date: "2025-08"
+      end_date: "2025-12"
+      highlights:
+        - [
+            "Model architecture:",
+            "Designed and implemented IALM-Lite, a 6-layer causal transformer (~44.9M params) augmented with auxiliary future-prediction heads, intent pooling (mean/attention), and FiLM vs. gated fusion mechanisms.",
+          ]
+        - [
+            "Experiment design:",
+            "Ran a controlled ablation study of 21 variants across a grid of lookahead horizon, auxiliary loss weight, pooling method, and fusion mechanism; identified auxiliary loss weight (λ) as the dominant factor shaping training dynamics.",
+          ]
+        - [
+            "Evaluation & negative results:",
+            "Benchmarked all variants against a matched baseline on WikiText-2; baseline outperformed all lookahead variants — documented findings with analysis of multi-task interference and capacity allocation to inform future designs.",
+          ]
+      technologies:
+        - "Python"
+        - "PyTorch"
+        - "Transformers"
+        - "TensorBoard"
 
-  - name: "Crypton"
-    url: "https://github.com/matthewevans87/crypton-cli"
-    enabled: false
-    type: "personal"
-    description: "Multi-agent LLM system that runs an autonomous learning loop driven by live cryptocurrency market data. Five specialized agents (Plan → Research → Analyze → Synthesize → Evaluate) coordinate through file-based artifacts and bounded inter-agent mailboxes; a deterministic execution engine — fully separated from the AI layer — carries out the resulting strategy in a paper-trading sandbox. Personal exploration of agentic system design, prompt engineering, and tool-using LLMs."
-    role: "Architect / Author"
-    start_date: "2026-04"
-    end_date: "2026-04"
-    highlights:
-      - [
-          "Agentic orchestration:",
-          "Designed a 5-agent learning loop with bounded per-agent contracts (typed inputs, single named output artifact, capped-size mailbox) and a structured agent-to-agent messaging protocol that carries context forward across cycles without unbounded prompt growth.",
-        ]
-      - [
-          "Tool registry / model-side tool use:",
-          "Built a 12-tool composable registry with per-tool rate limiting and a sandboxed Python execution tool, exposed to agents through a uniform invocation surface so each agent operates exclusively through declared tools rather than ad-hoc side effects.",
-        ]
-      - [
-          "Prompt engineering:",
-          "Authored per-agent system prompts driving complex reasoning, planning, and tool use; refined prompts through measured cycle outcomes rather than ad-hoc iteration, with each agent's role, contract, and failure modes specified explicitly.",
-        ]
-      - [
-          "Deterministic execution separated from AI:",
-          "Architected the execution engine as a pure function of a structured strategy artifact — no LLM is in the loop at trade time. The engine hot-reloads the artifact on file change and evaluates entry/exit conditions via a custom DSL, keeping the non-deterministic and deterministic layers cleanly decoupled.",
-        ]
-      - [
-          "Resilience & safe-mode:",
-          "Implemented automatic safe-mode after N consecutive failures (suspends new actions, unwinds simulated exposure), startup-time state reconciliation against the external system of record, and a paper-trading operating mode that simulates orders against live prices with configurable slippage and commission.",
-        ]
-      - [
-          "Self-improvement loop:",
-          "Closed the loop with an Evaluate agent that scores each cycle's outcomes against intent and writes targeted improvement directives into peer agents' mailboxes — a measurable, automated quality-control feedback path between cycles.",
-        ]
-    technologies:
-      - "C# / .NET 10"
-      - "Ollama (local LLM inference)"
-      - "Multi-agent orchestration"
-      - "Prompt engineering"
-      - "Tool registry / sandboxed execution"
-      - "DSL design & parsing"
-      - "REST + WebSocket integration"
-      - "File-based state persistence"
+    - key: crypton
+      name: "Crypton"
+      url: "https://github.com/matthewevans87/crypton-cli"
+      type: "personal"
+      description: "Multi-agent LLM system that runs an autonomous learning loop driven by live cryptocurrency market data. Five specialized agents (Plan → Research → Analyze → Synthesize → Evaluate) coordinate through file-based artifacts and bounded inter-agent mailboxes; a deterministic execution engine — fully separated from the AI layer — carries out the resulting strategy in a paper-trading sandbox. Personal exploration of agentic system design, prompt engineering, and tool-using LLMs."
+      role: "Architect / Author"
+      start_date: "2026-04"
+      end_date: "2026-04"
+      highlights:
+        - [
+            "Agentic orchestration:",
+            "Designed a 5-agent learning loop with bounded per-agent contracts (typed inputs, single named output artifact, capped-size mailbox) and a structured agent-to-agent messaging protocol that carries context forward across cycles without unbounded prompt growth.",
+          ]
+        - [
+            "Tool registry / model-side tool use:",
+            "Built a 12-tool composable registry with per-tool rate limiting and a sandboxed Python execution tool, exposed to agents through a uniform invocation surface so each agent operates exclusively through declared tools rather than ad-hoc side effects.",
+          ]
+        - [
+            "Prompt engineering:",
+            "Authored per-agent system prompts driving complex reasoning, planning, and tool use; refined prompts through measured cycle outcomes rather than ad-hoc iteration, with each agent's role, contract, and failure modes specified explicitly.",
+          ]
+        - [
+            "Deterministic execution separated from AI:",
+            "Architected the execution engine as a pure function of a structured strategy artifact — no LLM is in the loop at trade time. The engine hot-reloads the artifact on file change and evaluates entry/exit conditions via a custom DSL, keeping the non-deterministic and deterministic layers cleanly decoupled.",
+          ]
+        - [
+            "Resilience & safe-mode:",
+            "Implemented automatic safe-mode after N consecutive failures (suspends new actions, unwinds simulated exposure), startup-time state reconciliation against the external system of record, and a paper-trading operating mode that simulates orders against live prices with configurable slippage and commission.",
+          ]
+        - [
+            "Self-improvement loop:",
+            "Closed the loop with an Evaluate agent that scores each cycle's outcomes against intent and writes targeted improvement directives into peer agents' mailboxes — a measurable, automated quality-control feedback path between cycles.",
+          ]
+      technologies:
+        - "C# / .NET 10"
+        - "Ollama (local LLM inference)"
+        - "Multi-agent orchestration"
+        - "Prompt engineering"
+        - "Tool registry / sandboxed execution"
+        - "DSL design & parsing"
+        - "REST + WebSocket integration"
+        - "File-based state persistence"
 
-  - name: "Crypto Currency Trading Bot"
-    url: null
-    enabled: false
-    type: "personal"
-    description: "Autonomous trading system for cryptocurrency exchange with real-time market analysis, machine learning predictions, and automated execution. Personal exploration of algorithmic trading, ML, and data analysis."
-    start_date: "2018"
-    highlights:
-      - "Developed services for real-time market data collection and signal computation using online algorithms"
-      - "Built machine learning systems for predicting profitable trade prices using TensorFlow and Python"
-      - "Created autonomous trading bots operating in live cryptocurrency markets"
-      - "Implemented WebSocket client/server for real-time market data broadcasting"
-      - "Built telemetry visualization dashboard and manual bot control interface"
-      - "Designed data warehousing and ETL processes for market analysis"
-    technologies:
-      - "Python"
-      - "TensorFlow"
-      - "Node.js"
-      - "TypeScript"
-      - "Angular"
-      - "MongoDB"
-      - "SQL Server"
-      - "Docker"
-      - "Redis"
-      - "WebSocket"
-      - "NumPy"
-    metrics:
-      - "Real-time algorithmic trading"
-      - "Machine learning price prediction"
+    - key: crypto-currency-trading-bot
+      name: "Crypto Currency Trading Bot"
+      url:
+      type: "personal"
+      description: "Autonomous trading system for cryptocurrency exchange with real-time market analysis, machine learning predictions, and automated execution. Personal exploration of algorithmic trading, ML, and data analysis."
+      start_date: "2018"
+      highlights:
+        - "Developed services for real-time market data collection and signal computation using online algorithms"
+        - "Built machine learning systems for predicting profitable trade prices using TensorFlow and Python"
+        - "Created autonomous trading bots operating in live cryptocurrency markets"
+        - "Implemented WebSocket client/server for real-time market data broadcasting"
+        - "Built telemetry visualization dashboard and manual bot control interface"
+        - "Designed data warehousing and ETL processes for market analysis"
+      technologies:
+        - "Python"
+        - "TensorFlow"
+        - "Node.js"
+        - "TypeScript"
+        - "Angular"
+        - "MongoDB"
+        - "SQL Server"
+        - "Docker"
+        - "Redis"
+        - "WebSocket"
+        - "NumPy"
+      metrics:
+        - "Real-time algorithmic trading"
+        - "Machine learning price prediction"
 
 education:
-  - institution: "University of Texas at Dallas"
-    institution_url: "https://www.utdallas.edu/"
-    degree: "Master of Science"
-    field: "Computer Science"
-    concentration: "Intelligent Systems and Machine Learning"
-    location: "Richardson, Texas"
-    start_date: "2023-01"
-    end_date: "2025-12-31"
-    gpa: "3.73 / 4.0"
-    honors: null
-    courses:
-      - "Machine Learning"
-      - "Computational Geometry"
-      - "Robotics"
-      - "Natural Language Processing"
-      - "Statistical Methods for ML"
-    highlights: null
-
-  - institution: "University of Texas at Dallas"
-    institution_url: "https://www.utdallas.edu/"
-    degree: "Bachelor of Science"
-    field: "Computer Science"
-    location: "Richardson, Texas"
-    start_date: "2008-01"
-    end_date: "2012-05"
-    gpa: null
-    honors: null
-
+  elements:
+    - key: master-of-science
+      institution: "University of Texas at Dallas"
+      institution_url: "https://www.utdallas.edu/"
+      degree: "Master of Science"
+      field: "Computer Science"
+      concentration: "Intelligent Systems and Machine Learning"
+      location: "Richardson, Texas"
+      start_date: "2023-01"
+      end_date: "2025-12-31"
+      gpa: "3.73 / 4.0"
+      honors:
+      courses:
+        - "Machine Learning"
+        - "Computational Geometry"
+        - "Robotics"
+        - "Natural Language Processing"
+        - "Statistical Methods for ML"
+      highlights:
+    - key: bachelor-of-science
+      institution: "University of Texas at Dallas"
+      institution_url: "https://www.utdallas.edu/"
+      degree: "Bachelor of Science"
+      field: "Computer Science"
+      location: "Richardson, Texas"
+      start_date: "2008-01"
+      end_date: "2012-05"
+      gpa:
+      honors:
 achievements:
-  - title: "Machine Learning Specialization"
-    enabled: false
-    issuer: "Stanford University Online (Coursera)"
-    date: "2018-02"
-    description: "Comprehensive machine learning course covering supervised learning, unsupervised learning, neural networks, and practical ML applications"
-    url: "https://www.coursera.org/account/accomplishments/certificate/PEPQTSHX8UYP"
-
-  - title: "AZ-900: Microsoft Azure Fundamentals"
-    enabled: false
-    issuer: "Microsoft"
-    date: "2019-11"
-    description: "Microsoft Azure cloud fundamentals certification"
-    url: "https://www.youracclaim.com/badges/2e76f13a-6072-4b74-8e58-6b026015399d/public_url"
-
+  disabled:
+    - machine-learning-specialization
+    - az-900-microsoft-azure-fundamentals
+  elements:
+    - key: machine-learning-specialization
+      title: "Machine Learning Specialization"
+      issuer: "Stanford University Online (Coursera)"
+      date: "2018-02"
+      description: "Comprehensive machine learning course covering supervised learning, unsupervised learning, neural networks, and practical ML applications"
+      url: "https://www.coursera.org/account/accomplishments/certificate/PEPQTSHX8UYP"
+    - key: az-900-microsoft-azure-fundamentals
+      title: "AZ-900: Microsoft Azure Fundamentals"
+      issuer: "Microsoft"
+      date: "2019-11"
+      description: "Microsoft Azure cloud fundamentals certification"
+      url: "https://www.youracclaim.com/badges/2e76f13a-6072-4b74-8e58-6b026015399d/public_url"
 skills_highlight:
   title: "ML Systems"
   items:
@@ -904,54 +937,61 @@ skills_highlight:
     - Inference & Monitoring
 
 skills:
-  - category: "AI/ML, Robotics & Experimentation"
-    items:
-      - "PyTorch"
-      - "NumPy"
-      - "TensorBoard"
-      - "NVIDIA Isaac Sim / Isaac Lab"
-      - "ROS"
-      - "LeRobot"
+  elements:
+    - key: ai-ml-robotics-and-experimentation
+      category: "AI/ML, Robotics & Experimentation"
+      items:
+        - "PyTorch"
+        - "NumPy"
+        - "TensorBoard"
+        - "NVIDIA Isaac Sim / Isaac Lab"
+        - "ROS"
+        - "LeRobot"
 
-  - category: "ML Systems & Data"
-    items:
-      - "Experiment design / ablations"
-      - "Evaluation harnesses & metrics"
-      - "ETL / Data Pipelines"
-      - "Message queues (RabbitMQ, AWS SQS)"
-      - "Analytics (AWS Athena)"
+    - key: ml-systems-and-data
+      category: "ML Systems & Data"
+      items:
+        - "Experiment design / ablations"
+        - "Evaluation harnesses & metrics"
+        - "ETL / Data Pipelines"
+        - "Message queues (RabbitMQ, AWS SQS)"
+        - "Analytics (AWS Athena)"
 
-  - category: "Programming Languages"
-    items:
-      - "Python"
-      - "C#"
-      - "TypeScript"
-      - "SQL"
+    - key: programming-languages
+      category: "Programming Languages"
+      items:
+        - "Python"
+        - "C#"
+        - "TypeScript"
+        - "SQL"
 
-  - category: "Infrastructure, Containers & CI/CD"
-    items:
-      - "Linux"
-      - "Docker (images, containers)"
-      - "AWS ECS / Fargate"
-      - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
-      - "Azure (App Service, Storage, DevOps)"
-      - "Observability (CloudWatch, Application Insights, Seq)"
-      - "CI/CD Pipelines"
-      - "GitHub Actions"
-      - "Azure DevOps YAML Pipelines"
+    - key: infrastructure-containers-and-ci-cd
+      category: "Infrastructure, Containers & CI/CD"
+      items:
+        - "Linux"
+        - "Docker (images, containers)"
+        - "AWS ECS / Fargate"
+        - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
+        - "Azure (App Service, Storage, DevOps)"
+        - "Observability (CloudWatch, Application Insights, Seq)"
+        - "CI/CD Pipelines"
+        - "GitHub Actions"
+        - "Azure DevOps YAML Pipelines"
 
-  - category: "Databases, Caching & Data Stores"
-    items:
-      - "SQL Server"
-      - "PostgreSQL / PostGIS"
-      - "Cosmos DB"
-      - "MongoDB"
-      - "Redis"
-      - "Entity Framework"
+    - key: databases-caching-and-data-stores
+      category: "Databases, Caching & Data Stores"
+      items:
+        - "SQL Server"
+        - "PostgreSQL / PostGIS"
+        - "Cosmos DB"
+        - "MongoDB"
+        - "Redis"
+        - "Entity Framework"
 
-  - category: "Software Engineering"
-    items:
-      - "Git"
-      - "Distributed systems fundamentals"
-      - "API design"
-      - "Testing & code review"
+    - key: software-engineering
+      category: "Software Engineering"
+      items:
+        - "Git"
+        - "Distributed systems fundamentals"
+        - "API design"
+        - "Testing & code review"

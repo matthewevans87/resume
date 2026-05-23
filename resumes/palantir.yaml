@@ -34,67 +34,78 @@ projects_config:
   group_by_type: false
 
 # Hide the Neural Networks Independent Study project for this variant.
-disable:
-  projects:
-    - "Neural Networks Independent Study"
-
-# Replace the entire skills list (arrays replace wholesale). Reordered and
-# relabeled to foreground what Palantir's JD names: languages, full-stack
-# frameworks, distributed systems / data stores, cloud + CI/CD. ML/research
-# moves to a secondary category rather than the headline.
 skills:
-  - category: "Programming Languages"
-    items:
-      - "TypeScript / JavaScript"
-      - "Python"
-      - "C#"
-      - "SQL"
+  elements:
+    - key: programming-languages
+      category: "Programming Languages"
+      items:
+        - "TypeScript / JavaScript"
+        - "Python"
+        - "C#"
+        - "SQL"
 
-  - category: "Full-Stack & Frontend"
-    items:
-      - "Angular"
-      - "React"
-      - ".NET / ASP.NET"
-      - "Node.js"
-      - "REST API design"
+    - key: full-stack-and-frontend
+      category: "Full-Stack & Frontend"
+      items:
+        - "Angular"
+        - "React"
+        - ".NET / ASP.NET"
+        - "Node.js"
+        - "REST API design"
 
-  - category: "Distributed Systems & Data"
-    items:
-      - "Distributed systems fundamentals"
-      - "Message queues (RabbitMQ, AWS SQS)"
-      - "ETL / Data pipelines (Athena-style analytics)"
-      - "Search & indexing (Elasticsearch-equivalent patterns)"
+    - key: distributed-systems-and-data
+      category: "Distributed Systems & Data"
+      items:
+        - "Distributed systems fundamentals"
+        - "Message queues (RabbitMQ, AWS SQS)"
+        - "ETL / Data pipelines (Athena-style analytics)"
+        - "Search & indexing (Elasticsearch-equivalent patterns)"
 
-  - category: "Databases & Storage"
-    items:
-      - "Distributed NoSQL (Cosmos DB, MongoDB) — Cassandra-equivalent patterns"
-      - "PostgreSQL / PostGIS"
-      - "SQL Server"
-      - "Redis"
-      - "Entity Framework"
+    - key: databases-and-storage
+      category: "Databases & Storage"
+      items:
+        - "Distributed NoSQL (Cosmos DB, MongoDB) — Cassandra-equivalent patterns"
+        - "PostgreSQL / PostGIS"
+        - "SQL Server"
+        - "Redis"
+        - "Entity Framework"
 
-  - category: "Cloud, Containers & CI/CD"
-    items:
-      - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
-      - "Azure (App Service, Storage, DevOps)"
-      - "Docker (images, containers)"
-      - "Linux"
-      - "GitHub Actions"
-      - "Azure DevOps YAML Pipelines"
-      - "Observability (CloudWatch, Application Insights, Seq)"
+    - key: cloud-containers-and-ci-cd
+      category: "Cloud, Containers & CI/CD"
+      items:
+        - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
+        - "Azure (App Service, Storage, DevOps)"
+        - "Docker (images, containers)"
+        - "Linux"
+        - "GitHub Actions"
+        - "Azure DevOps YAML Pipelines"
+        - "Observability (CloudWatch, Application Insights, Seq)"
 
-  - category: "Software Engineering"
-    items:
-      - "Git"
-      - "Code review & mentoring"
-      - "Testing (unit, integration, regression harnesses)"
-      - "Agile / SDLC"
+    - key: software-engineering
+      category: "Software Engineering"
+      items:
+        - "Git"
+        - "Code review & mentoring"
+        - "Testing (unit, integration, regression harnesses)"
+        - "Agile / SDLC"
 
-  - category: "Machine Learning & Research"
-    items:
-      - "PyTorch"
-      - "NumPy"
-      - "TensorBoard"
-      - "Experiment design / ablations"
-      - "Reinforcement Learning (PPO)"
-      - "NVIDIA Isaac Sim / Isaac Lab"
+    - key: machine-learning-and-research
+      category: "Machine Learning & Research"
+      items:
+        - "PyTorch"
+        - "NumPy"
+        - "TensorBoard"
+        - "Experiment design / ablations"
+        - "Reinforcement Learning (PPO)"
+        - "NVIDIA Isaac Sim / Isaac Lab"
+  disabled:
+    - ai-ml-robotics-and-experimentation
+    - ml-systems-and-data
+    - infrastructure-containers-and-ci-cd
+    - databases-caching-and-data-stores
+projects:
+  elements: []
+  disabled:
+    - neural-networks-independent-study
+    - crypton
+    - crypto-currency-trading-bot

@@ -388,15 +388,14 @@ const renderExperience = (experiences) => {
 
   const isMobileView = window.matchMedia("(max-width: 640px)").matches;
 
-  // Filter enabled companies
-  const enabledExperiences = experiences.filter((exp) => exp.enabled !== false);
+  const enabledExperiences = collectionEnabled(experiences);
 
   enabledExperiences.forEach((exp) => {
     const expItem = createElement("div", "experience-item");
     const isCollapsed = isMobileView || exp.expanded === false;
 
     // Calculate company date range from positions
-    const positions = exp.positions || [];
+    const positions = collectionEnabled(exp.positions);
     const startDates = positions.map((p) => p.start_date).filter(Boolean);
     const endDates = positions.map((p) => p.end_date).filter(Boolean);
     const companyStartDate = startDates.length > 0 ? startDates.sort()[0] : null;
@@ -447,7 +446,7 @@ const renderExperience = (experiences) => {
     }
 
     // Positions
-    exp.positions.forEach((position) => {
+    positions.forEach((position) => {
       const posDiv = createElement("div", "position");
 
       // Position Header
@@ -491,11 +490,9 @@ const renderExperience = (experiences) => {
       }
 
       // Projects (Company Projects)
-      if (position.projects && position.projects.length > 0) {
-        // Filter enabled projects
-        const enabledProjects = position.projects.filter((p) => p.enabled !== false);
-
-        if (enabledProjects.length > 0) {
+      const enabledProjects = collectionEnabled(position.projects);
+      if (enabledProjects.length > 0) {
+        {
           const projectsHeader = createElement("div", "position-projects-header");
           projectsHeader.textContent = `Key Projects (${enabledProjects.length})`;
           posDiv.appendChild(projectsHeader);
@@ -601,8 +598,7 @@ const renderProjects = (projects, config = {}) => {
   const isMobileView = window.matchMedia("(max-width: 640px)").matches;
   const groupByType = config == null || config.group_by_type !== false;
 
-  // Filter enabled projects
-  const enabledProjects = projects.filter((p) => p.enabled !== false);
+  const enabledProjects = collectionEnabled(projects);
 
   const renderProjectItem = (project) => {
     const projectItem = createElement("div", "project-item");
@@ -695,13 +691,9 @@ const renderProjects = (projects, config = {}) => {
     renderProjectGroup(academicProjects, "Academic Projects");
     renderProjectGroup(personalProjects, "Personal Projects");
   } else {
-    // Sort all projects by start_date descending (most recent first)
-    const sorted = [...enabledProjects].sort((a, b) => {
-      const aKey = String(a.start_date || "").replace(/-/g, "");
-      const bKey = String(b.start_date || "").replace(/-/g, "");
-      return bKey.localeCompare(aKey);
-    });
-    sorted.forEach((project) => projectsList.appendChild(renderProjectItem(project)));
+    // Use collection order (caller controls via `ordering`); preserves the
+    // author's intended sequence without forcing a date sort.
+    enabledProjects.forEach((project) => projectsList.appendChild(renderProjectItem(project)));
   }
 };
 
@@ -709,8 +701,7 @@ const renderEducation = (education) => {
   const educationList = document.getElementById("education-list");
   educationList.innerHTML = "";
 
-  // Filter enabled education items
-  const enabledEducation = education.filter((edu) => edu.enabled !== false);
+  const enabledEducation = collectionEnabled(education);
 
   enabledEducation.forEach((edu) => {
     const eduItem = createElement("div", "education-item");
@@ -805,8 +796,7 @@ const renderAchievements = (achievements) => {
   const achievementsList = document.getElementById("achievements-list");
   achievementsList.innerHTML = "";
 
-  // Filter enabled achievements
-  const enabledAchievements = achievements.filter((a) => a.enabled !== false);
+  const enabledAchievements = collectionEnabled(achievements);
 
   enabledAchievements.forEach((achievement) => {
     const li = createElement("li", "achievement-item");
@@ -840,7 +830,7 @@ const renderSkills = (skills) => {
   const skillsList = document.getElementById("skills-list");
   skillsList.innerHTML = "";
 
-  skills.forEach((skillCategory) => {
+  collectionEnabled(skills).forEach((skillCategory) => {
     const categoryDiv = createElement("div", "skill-category");
 
     const categoryName = createElement("div", "skill-category-name", skillCategory.category);
@@ -861,7 +851,124 @@ const slugify = (str) =>
   String(str)
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
+    .replace(/^-+|-+$/g, "");
+
+// ---------------------------------------------------------------------------
+// ResumeCollection
+// ---------------------------------------------------------------------------
+// A ResumeCollection is the uniform shape used for every array-of-objects in
+// resume data (experience, projects, education, achievements, skills, plus the
+// nested per-company positions and per-position projects).
+//
+// YAML shape:
+//   projects:
+//     ordering: [a, b, c]      # optional
+//     enabled:  [c]            # optional — wins ties
+//     disabled: [b]            # optional
+//     elements:
+//       - key: a
+//         name: ...
+//
+// Normalized runtime shape:
+//   { __collection: true, order: string[],
+//     enabled: Set<string>, disabled: Set<string>,
+//     elements: Map<string, payload> }
+//
+// An element is visible iff (enabled.has(key) || !disabled.has(key)).
+
+const isCollection = (v) => v && typeof v === "object" && v.__collection === true;
+
+// Schema: which keys in the resume tree are collections, how to derive a key
+// from each element when one isn't explicitly provided, and any nested
+// collection sites inside an element's payload.
+const COLLECTION_SCHEMA = {
+  experience: {
+    keyFrom: (e) => e && e.company,
+    childSchema: {
+      positions: {
+        keyFrom: (p) => p && p.title,
+        childSchema: {
+          projects: { keyFrom: (p) => p && p.name },
+        },
+      },
+    },
+  },
+  projects: { keyFrom: (p) => p && p.name },
+  education: { keyFrom: (e) => e && e.degree },
+  achievements: { keyFrom: (a) => a && a.title },
+  skills: { keyFrom: (s) => s && s.category },
+};
+
+const normalizeCollection = (raw, keyFrom) => {
+  if (isCollection(raw)) return raw;
+
+  let elementsArr = [];
+  let ordering, enabled, disabled;
+  if (Array.isArray(raw)) {
+    elementsArr = raw;
+  } else if (raw && typeof raw === "object") {
+    elementsArr = Array.isArray(raw.elements) ? raw.elements : [];
+    ordering = raw.ordering;
+    enabled = raw.enabled;
+    disabled = raw.disabled;
+  }
+
+  const elements = new Map();
+  for (const el of elementsArr) {
+    if (!el || typeof el !== "object") continue;
+    let base = el.key || (keyFrom ? keyFrom(el) : null) || "item";
+    let key = slugify(String(base)) || "item";
+    let unique = key,
+      i = 2;
+    while (elements.has(unique)) unique = `${key}-${i++}`;
+    elements.set(unique, { ...el, key: unique });
+  }
+
+  const insertionOrder = Array.from(elements.keys());
+  let order = insertionOrder;
+  if (Array.isArray(ordering) && ordering.length) {
+    const listed = ordering.map((k) => slugify(String(k))).filter((k) => elements.has(k));
+    const rest = insertionOrder.filter((k) => !listed.includes(k));
+    order = [...listed, ...rest];
+  }
+
+  const toSet = (arr) => new Set(Array.isArray(arr) ? arr.map((k) => slugify(String(k))) : []);
+
+  return {
+    __collection: true,
+    order,
+    enabled: toSet(enabled),
+    disabled: toSet(disabled),
+    elements,
+  };
+};
+
+// Walk a parsed-YAML tree and normalize every collection site declared in the
+// schema (in-place on the returned shallow copy).
+const normalizeTree = (data, schema = COLLECTION_SCHEMA) => {
+  if (!data || typeof data !== "object") return data;
+  for (const [k, spec] of Object.entries(schema)) {
+    if (data[k] == null) continue;
+    data[k] = normalizeCollection(data[k], spec.keyFrom);
+    if (spec.childSchema) {
+      for (const el of data[k].elements.values()) {
+        normalizeTree(el, spec.childSchema);
+      }
+    }
+  }
+  return data;
+};
+
+// Returns the payloads of all enabled elements in display order.
+const collectionEnabled = (c) => {
+  if (!c) return [];
+  if (Array.isArray(c)) return c; // defensive fallback
+  if (!isCollection(c)) return [];
+  return c.order
+    .filter((k) => c.enabled.has(k) || !c.disabled.has(k))
+    .map((k) => c.elements.get(k))
+    .filter(Boolean);
+};
 
 const navigateToProject = (id) => {
   const el = document.getElementById(id);
@@ -914,19 +1021,16 @@ const renderCareerTimeline = (data) => {
   const showProjects = !tl.projects || tl.projects.enabled !== false;
   const showWorkProjects = !tl.work_projects || tl.work_projects.enabled !== false;
 
-  (data.experience || [])
-    .filter((e) => e.enabled !== false)
-    .forEach((exp) => {
+  collectionEnabled(data.experience).forEach((exp) => {
       if (!showPositions) return;
-      (exp.positions || []).forEach((pos) => {
+      collectionEnabled(exp.positions).forEach((pos) => {
         const start = parseDecimalYear(pos.start_date);
         const end = parseDecimalYear(pos.end_date) || new Date().getFullYear();
         if (start == null) return;
         const band = { label: `${pos.title} — ${exp.company}`, start, end };
         experienceBands.push(band);
         const projects = showWorkProjects
-          ? (pos.projects || [])
-              .filter((p) => p.enabled !== false)
+          ? collectionEnabled(pos.projects)
               .map((proj) => ({
                 label: `${proj.name} (${pos.title} @ ${exp.company})`,
                 url: proj.url || null,
@@ -939,8 +1043,8 @@ const renderCareerTimeline = (data) => {
       });
     });
 
-  (data.education || [])
-    .filter((e) => e.enabled !== false && showEducation)
+  collectionEnabled(data.education)
+    .filter(() => showEducation)
     .forEach((edu) => {
       const start = parseDecimalYear(edu.start_date);
       const end = parseDecimalYear(edu.end_date) || start;
@@ -954,8 +1058,8 @@ const renderCareerTimeline = (data) => {
       educationBandGroups.push({ band, projects: [] });
     });
 
-  (data.projects || [])
-    .filter((p) => p.enabled !== false && showProjects)
+  collectionEnabled(data.projects)
+    .filter(() => showProjects)
     .forEach((proj) => {
       const start = parseDecimalYear(proj.start_date);
       const end = parseDecimalYear(proj.end_date) || start;
@@ -1322,24 +1426,27 @@ const getSectionRecencyDate = (sectionKey, data) => {
 
   switch (sectionKey) {
     case "experience": {
-      const items = (data.experience || []).filter((e) => e.enabled !== false);
-      // If any position is ongoing (end_date null), section is current
-      const hasOngoing = items.some((e) => (e.positions || []).some((p) => p.end_date == null));
+      const items = collectionEnabled(data.experience);
+      const hasOngoing = items.some((e) =>
+        collectionEnabled(e.positions).some((p) => p.end_date == null),
+      );
       if (hasOngoing) return today;
       const ends = items
-        .flatMap((e) => (e.positions || []).map((p) => parseResumeDate(p.end_date)))
+        .flatMap((e) => collectionEnabled(e.positions).map((p) => parseResumeDate(p.end_date)))
         .filter(Boolean);
       return (
         maxDate(ends) ||
         maxDate(
           items
-            .flatMap((e) => (e.positions || []).map((p) => parseResumeDate(p.start_date)))
+            .flatMap((e) =>
+              collectionEnabled(e.positions).map((p) => parseResumeDate(p.start_date)),
+            )
             .filter(Boolean),
         )
       );
     }
     case "projects": {
-      const items = (data.projects || []).filter((p) => p.enabled !== false);
+      const items = collectionEnabled(data.projects);
       const hasOngoing = items.some((p) => p.end_date == null);
       if (hasOngoing) return today;
       const ends = items.map((p) => parseResumeDate(p.end_date)).filter(Boolean);
@@ -1348,14 +1455,14 @@ const getSectionRecencyDate = (sectionKey, data) => {
       );
     }
     case "education": {
-      const items = (data.education || []).filter((e) => e.enabled !== false);
+      const items = collectionEnabled(data.education);
       const ends = items.map((e) => parseResumeDate(e.end_date)).filter(Boolean);
       return (
         maxDate(ends) || maxDate(items.map((e) => parseResumeDate(e.start_date)).filter(Boolean))
       );
     }
     case "achievements": {
-      const items = (data.achievements || []).filter((a) => a.enabled !== false);
+      const items = collectionEnabled(data.achievements);
       return maxDate(items.map((a) => parseResumeDate(a.date)).filter(Boolean));
     }
     case "skills":
@@ -1426,17 +1533,16 @@ const renderResume = (data) => {
   }
 
   // Check for enabled experiences
-  const enabledExperiences =
-    data.experience && data.experience.filter((exp) => exp.enabled !== false);
-  if (enabledExperiences && enabledExperiences.length > 0) {
+  const enabledExperiences = collectionEnabled(data.experience);
+  if (enabledExperiences.length > 0) {
     renderExperience(data.experience);
   } else {
     document.getElementById("experience-section").style.display = "none";
   }
 
   // Check for enabled projects
-  const enabledProjects = data.projects && data.projects.filter((p) => p.enabled !== false);
-  if (enabledProjects && enabledProjects.length > 0) {
+  const enabledProjects = collectionEnabled(data.projects);
+  if (enabledProjects.length > 0) {
     const projectsTitle = data.projects_config && data.projects_config.title;
     if (projectsTitle) {
       document.querySelector("#projects-section h2").textContent = projectsTitle;
@@ -1447,23 +1553,22 @@ const renderResume = (data) => {
   }
 
   // Check for enabled education
-  const enabledEducation = data.education && data.education.filter((edu) => edu.enabled !== false);
-  if (enabledEducation && enabledEducation.length > 0) {
+  const enabledEducation = collectionEnabled(data.education);
+  if (enabledEducation.length > 0) {
     renderEducation(data.education);
   } else {
     document.getElementById("education-section").style.display = "none";
   }
 
   // Check for enabled achievements
-  const enabledAchievements =
-    data.achievements && data.achievements.filter((a) => a.enabled !== false);
-  if (enabledAchievements && enabledAchievements.length > 0) {
+  const enabledAchievements = collectionEnabled(data.achievements);
+  if (enabledAchievements.length > 0) {
     renderAchievements(data.achievements);
   } else {
     document.getElementById("achievements-section").style.display = "none";
   }
 
-  if (data.skills && data.skills.length > 0) {
+  if (collectionEnabled(data.skills).length > 0) {
     renderSkills(data.skills);
   } else {
     document.getElementById("skills-section").style.display = "none";
@@ -1475,10 +1580,11 @@ const renderResume = (data) => {
 // Deep merge: plain objects merge recursively; arrays and scalars in `override`
 // fully replace the base value. `null` in override means "keep base value", so
 // authors can omit fields without explicitly nulling them. Missing keys in
-// override always keep the base.
+// override always keep the base. At schema-declared collection sites
+// (experience, projects, …), collections merge by `key`.
 const isPlainObject = (v) => v !== null && typeof v === "object" && !Array.isArray(v);
 
-const deepMerge = (base, override) => {
+const mergeGeneric = (base, override) => {
   if (override === undefined || override === null) return base;
   if (!isPlainObject(base) || !isPlainObject(override)) return override;
   const out = { ...base };
@@ -1488,7 +1594,75 @@ const deepMerge = (base, override) => {
     if (!(key in base)) {
       out[key] = ov;
     } else {
-      out[key] = deepMerge(base[key], ov);
+      out[key] = mergeGeneric(base[key], ov);
+    }
+  }
+  return out;
+};
+
+// Deep-merge two ResumeCollections by key. `ordering`/`enabled`/`disabled`
+// in the override raw object REPLACE the base versions when present (so
+// authors can freely reorder or change visibility without restating
+// elements). Elements present in both are deep-merged via the schema;
+// elements new to the override are appended.
+const mergeCollection = (baseColl, ovrRaw, spec) => {
+  const ovr = normalizeCollection(ovrRaw, spec.keyFrom);
+
+  const elements = new Map();
+  for (const [k, v] of baseColl.elements) elements.set(k, v);
+
+  for (const [k, payload] of ovr.elements) {
+    if (elements.has(k)) {
+      const merged = spec.childSchema
+        ? mergeTree(elements.get(k), payload, spec.childSchema)
+        : mergeGeneric(elements.get(k), payload);
+      merged.key = k;
+      elements.set(k, merged);
+    } else {
+      if (spec.childSchema) normalizeTree(payload, spec.childSchema);
+      elements.set(k, payload);
+    }
+  }
+
+  let order = baseColl.order.slice();
+  for (const k of elements.keys()) if (!order.includes(k)) order.push(k);
+
+  const rawHas = (key) => isPlainObject(ovrRaw) && Array.isArray(ovrRaw[key]);
+  if (rawHas("ordering")) {
+    const listed = ovrRaw.ordering
+      .map((k) => slugify(String(k)))
+      .filter((k) => elements.has(k));
+    const rest = Array.from(elements.keys()).filter((k) => !listed.includes(k));
+    order = [...listed, ...rest];
+  }
+  const enabled = rawHas("enabled")
+    ? new Set(ovrRaw.enabled.map((k) => slugify(String(k))))
+    : new Set(baseColl.enabled);
+  const disabled = rawHas("disabled")
+    ? new Set(ovrRaw.disabled.map((k) => slugify(String(k))))
+    : new Set(baseColl.disabled);
+
+  return { __collection: true, order, enabled, disabled, elements };
+};
+
+// Schema-aware merge: recurses through plain objects, delegating to
+// mergeCollection at known collection sites.
+const mergeTree = (base, override, schema = COLLECTION_SCHEMA) => {
+  if (override === undefined || override === null) return base;
+  if (!isPlainObject(base) || !isPlainObject(override)) return override;
+  const out = { ...base };
+  for (const key of Object.keys(override)) {
+    const ov = override[key];
+    if (ov === null) continue;
+    if (schema[key]) {
+      const baseColl = isCollection(base[key])
+        ? base[key]
+        : normalizeCollection(base[key] ?? [], schema[key].keyFrom);
+      out[key] = mergeCollection(baseColl, ov, schema[key]);
+    } else if (!(key in base)) {
+      out[key] = ov;
+    } else {
+      out[key] = mergeGeneric(base[key], ov);
     }
   }
   return out;
@@ -1519,78 +1693,6 @@ let hasShownPrintTip = false;
 // containers that append rather than replace would accumulate state).
 let resumeInitialHtml = null;
 
-// Map of override-`disable:` / `enable:` section name → function returning
-// the identifying string for an entry. Used by `applyDisable` and
-// `applyEnable` to flip `enabled` on entries listed by name in an override.
-const ENTRY_KEY_FNS = {
-  projects: (e) => e && e.name,
-  experience: (e) => e && e.company,
-  achievements: (e) => e && e.title,
-  skills: (e) => e && e.category,
-  // Composite key — both base education entries are at UTD, so degree alone
-  // also collides; use "Institution — Degree".
-  education: (e) => e && `${e.institution} — ${e.degree}`,
-};
-
-// Shared core: walk an override directive (`disable:` or `enable:`),
-// look up entries by name in each listed section, and apply `mutate` to
-// each match. Unknown sections, non-array values, missing target arrays,
-// and unmatched names log warnings rather than throwing — typos in an
-// override file shouldn't silently break a resume but also shouldn't blow
-// up. The directive key is removed from `data` so it never reaches a
-// render function.
-const applyEntryDirective = (data, directiveKey, mutate) => {
-  const directive = data && data[directiveKey];
-  if (!directive || !isPlainObject(directive)) return;
-
-  for (const [section, names] of Object.entries(directive)) {
-    const keyFn = ENTRY_KEY_FNS[section];
-    if (!keyFn) {
-      console.warn(`${directiveKey}: unknown section "${section}"`);
-      continue;
-    }
-    if (!Array.isArray(names)) {
-      console.warn(`${directiveKey}.${section}: expected an array of names`);
-      continue;
-    }
-    const entries = data[section];
-    if (!Array.isArray(entries)) {
-      console.warn(`${directiveKey}.${section}: no array found in resume data`);
-      continue;
-    }
-    for (const name of names) {
-      const matches = entries.filter((e) => keyFn(e) === name);
-      if (matches.length === 0) {
-        console.warn(`${directiveKey}.${section}: no entry matched "${name}"`);
-        continue;
-      }
-      matches.forEach(mutate);
-    }
-  }
-
-  delete data[directiveKey];
-};
-
-// Apply the override `enable:` directive in place — flip `enabled: true`
-// on entries that are hidden by default in `resume.yaml`. Counterpart to
-// `applyDisable`; both share `applyEntryDirective`. Applied before
-// `applyDisable` so that if a single entry appears in both directives,
-// disable wins (the safer default).
-const applyEnable = (data) => {
-  applyEntryDirective(data, "enable", (e) => {
-    e.enabled = true;
-  });
-};
-
-// Apply the override `disable:` directive in place — flip `enabled: false`
-// on entries listed by name (existing render filters already drop disabled
-// entries).
-const applyDisable = (data) => {
-  applyEntryDirective(data, "disable", (e) => {
-    e.enabled = false;
-  });
-};
-
 // Load and parse YAML, optionally merging a per-route override.
 const loadResume = async () => {
   try {
@@ -1601,22 +1703,20 @@ const loadResume = async () => {
       resumeEl.innerHTML = resumeInitialHtml;
     }
 
-    const base = await fetchYaml("resume.yaml");
+    const base = normalizeTree(await fetchYaml("resume.yaml"));
     let data = base;
 
     const overrideName = getOverrideName();
     if (overrideName) {
       try {
         const override = await fetchYaml(`resumes/${overrideName}.yaml`);
-        data = deepMerge(base, override);
+        data = mergeTree(base, override);
       } catch (overrideError) {
         console.warn(`Override "${overrideName}" failed to load:`, overrideError);
         notify(`Resume variant "${overrideName}" not found — showing default.`, 4000);
       }
     }
 
-    applyEnable(data);
-    applyDisable(data);
     renderResume(data);
 
     if (!hasShownPrintTip) {

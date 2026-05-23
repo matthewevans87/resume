@@ -77,42 +77,92 @@ a YAML file into `resumes/<slug>.yaml`, then visit `#/<slug>` (e.g.
 Merge semantics:
 
 - Plain objects merge recursively with the base.
-- Arrays and scalars in the override **fully replace** the base value (so to
-  tweak one item in a list, restate the whole list).
+- Arrays of scalars (and scalar values) in the override **fully replace** the
+  base value.
 - `null` (or omitting a key) means "keep the base value".
+- **Arrays of objects** (experience, projects, education, achievements,
+  skills, plus nested `positions` and per-position `projects`) use the
+  **ResumeCollection** shape and merge by `key`. See below.
 
 If the override file is missing or fails to parse, the page falls back to the
 base resume and shows a notification.
 
-### Hiding entries with `disable:`
+### ResumeCollection: keyed, mergeable arrays-of-objects
 
-Because arrays replace wholesale, hiding a single project (or job, skill
-category, etc.) without the `disable:` directive would force you to restate
-the entire list in the override. Instead, list the entries to hide by name
-under a top-level `disable:` block:
+Every array-of-objects in the resume data uses this uniform shape:
 
 ```yaml
-disable:
-  projects:
-    - "Neural Networks Independent Study"
-  experience:
-    - "Ericsson, Inc."
+projects:
+  ordering:          # optional — explicit display order of keys
+    - projectA
+    - projectB
+    - projectC
+  disabled:          # optional — keys to hide
+    - projectB
+  enabled:           # optional — keys to force-show (wins over `disabled`)
+    - projectC
+  elements:          # required — the actual entries
+    - key: projectA
+      name: Project A
+      ...
+    - key: projectB
+      name: Project B
+      ...
 ```
 
-After the deep-merge, matching entries have `enabled: false` set on them
-(which existing render filters already drop). Supported sections and the
-field used to identify entries:
+- `key` (auto-derived from a kebab-cased identifying field if omitted —
+  `company` for experience, `title` for positions, `name` for projects,
+  `degree` for education, `title` for achievements, `category` for skills).
+- An entry is rendered iff `key in enabled` OR `key not in disabled`.
 
-| Section        | Match field                  |
-| -------------- | ---------------------------- |
-| `projects`     | `name`                       |
-| `experience`   | `company`                    |
-| `education`    | `"<institution> — <degree>"` |
-| `achievements` | `title`                      |
-| `skills`       | `category`                   |
+#### Per-entry overrides (the whole point)
 
-Names that don't match log a `console.warn` (so typos surface in DevTools
-without breaking the page).
+Patch a single entry by key — no need to restate the rest of the array:
+
+```yaml
+# resumes/acme.yaml
+experience:
+  elements:
+    - key: zeal-it-consultants
+      positions:
+        elements:
+          - key: associate-partner
+            summary: "Custom Acme-flavored summary for this role."
+```
+
+The override deep-merges into the matching base element. Unmentioned base
+entries are preserved as-is.
+
+#### Visibility overrides
+
+To hide or surface entries without touching their payloads, list keys
+under the collection's `disabled` / `enabled`:
+
+```yaml
+experience:
+  disabled: [clickmotive-inc, ericsson-inc]
+
+projects:
+  enabled: [crypton]            # surfaces a base-disabled project
+```
+
+#### Reordering
+
+```yaml
+projects:
+  ordering: [vision-based-sim-to-real-manipulation-pipeline, crypton]
+```
+
+Listed keys appear first in the given order; unlisted keys follow in their
+base insertion order.
+
+#### Merge rules for collections
+
+- Override `elements[]` merges into base by `key` (deep-merge per element).
+  New keys are appended.
+- Override `ordering`, `disabled`, and `enabled` **replace** the base
+  lists when present (so an override can wipe a base `disabled` list by
+  setting its own, including an empty one).
 
 ## Customization
 

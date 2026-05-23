@@ -34,6 +34,9 @@ projects_config:
 # stays (motion planning + LSTM is adjacent to autonomy). Independent
 # Study stays (CARLA-based autonomous-driving thesis proposal is a strong
 # connector).
-disable:
-  projects:
-    - "Intent-Aware Lookahead for Language Modeling"
+projects:
+  elements: []
+  disabled:
+    - intent-aware-lookahead-for-language-modeling
+    - crypton
+    - crypto-currency-trading-bot

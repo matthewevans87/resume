@@ -38,54 +38,58 @@ skills_highlight:
 # mission statement plus the 2012 BS graduation already establish the timeline,
 # and the Clarity ETL bullet under Zeal carries the distributed-scale signal.
 # Cisco stays — brand-recognition value at the resume-screen stage.
-disable:
-  experience:
-    - "Clickmotive, Inc."
-    - "Ericsson, Inc."
-
-# Tightened skills for the Google AI/ML route — drops .NET-ecosystem
-# databases (Cosmos, EF) and consulting-flavored CI/CD entries (Azure
-# DevOps YAML) that don't add signal here, and folds the standalone
-# "Software Engineering" line into adjacent categories. Goal: pull the
-# orphaned tail line back onto the previous page without losing any
-# JD-relevant keyword.
 skills:
-  - category: "AI/ML, Robotics & Experimentation"
-    items:
-      - "PyTorch"
-      - "NumPy"
-      - "TensorBoard"
-      - "NVIDIA Isaac Sim / Isaac Lab"
-      - "ROS"
-      - "LeRobot"
+  elements:
+    - key: ai-ml-robotics-and-experimentation
+      category: "AI/ML, Robotics & Experimentation"
+      items:
+        - "PyTorch"
+        - "NumPy"
+        - "TensorBoard"
+        - "NVIDIA Isaac Sim / Isaac Lab"
+        - "ROS"
+        - "LeRobot"
 
-  - category: "ML Systems & Data"
-    items:
-      - "Experiment design / ablations"
-      - "Evaluation harnesses & metrics"
-      - "ETL / Data Pipelines"
-      - "Distributed systems fundamentals"
-      - "Message queues (RabbitMQ, AWS SQS)"
-      - "Analytics (AWS Athena)"
+    - key: ml-systems-and-data
+      category: "ML Systems & Data"
+      items:
+        - "Experiment design / ablations"
+        - "Evaluation harnesses & metrics"
+        - "ETL / Data Pipelines"
+        - "Distributed systems fundamentals"
+        - "Message queues (RabbitMQ, AWS SQS)"
+        - "Analytics (AWS Athena)"
 
-  - category: "Programming Languages"
-    items:
-      - "Python"
-      - "C#"
-      - "TypeScript"
-      - "SQL"
+    - key: programming-languages
+      category: "Programming Languages"
+      items:
+        - "Python"
+        - "C#"
+        - "TypeScript"
+        - "SQL"
 
-  - category: "Infrastructure & CI/CD"
-    items:
-      - "Linux"
-      - "Docker"
-      - "AWS (S3, SQS, Athena, ECS / Fargate, Lambda, CloudFormation)"
-      - "Azure (App Service, Storage, DevOps)"
-      - "Observability (CloudWatch, Application Insights)"
-      - "CI/CD (GitHub Actions)"
+    - key: infrastructure-and-ci-cd
+      category: "Infrastructure & CI/CD"
+      items:
+        - "Linux"
+        - "Docker"
+        - "AWS (S3, SQS, Athena, ECS / Fargate, Lambda, CloudFormation)"
+        - "Azure (App Service, Storage, DevOps)"
+        - "Observability (CloudWatch, Application Insights)"
+        - "CI/CD (GitHub Actions)"
 
-  - category: "Databases & Data Stores"
-    items:
-      - "SQL Server"
-      - "PostgreSQL / PostGIS"
-      - "Redis"
+    - key: databases-and-data-stores
+      category: "Databases & Data Stores"
+      items:
+        - "SQL Server"
+        - "PostgreSQL / PostGIS"
+        - "Redis"
+  disabled:
+    - infrastructure-containers-and-ci-cd
+    - databases-caching-and-data-stores
+    - software-engineering
+experience:
+  elements: []
+  disabled:
+    - clickmotive-inc
+    - ericsson-inc
