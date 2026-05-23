@@ -25,72 +25,84 @@ projects_config:
   title: "Applied ML Projects"
   group_by_type: false
 
-disable:
-  projects:
-    - "Neural Networks Independent Study"
-
-# Replace the entire skills list (arrays replace wholesale). Reorganized to
-# mirror the JD's bullet structure: AI/ML neural network families, traditional
-# ML, ML systems & experimentation (incl. deployment monitoring / drift),
-# programming, math foundations, tooling, and supporting infrastructure.
 skills:
-  - category: "AI / ML"
-    items:
-      - "Neural networks: MLPs, CNNs, RNNs / LSTMs, Transformers"
-      - "Generative modeling (GANs, language models)"
-      - "Large Language Models (transformer architectures, fine-tuning, agent workflows)"
-      - "Reinforcement Learning (PPO)"
-      - "Computer vision (CNNs, ResNet18, vision-conditioned policies)"
-      - "Sim-to-real transfer & domain randomization"
-      - "NLP / sequence modeling"
+  elements:
+    - key: ai-ml
+      category: "AI / ML"
+      items:
+        - "Neural networks: MLPs, CNNs, RNNs / LSTMs, Transformers"
+        - "Generative modeling (GANs, language models)"
+        - "Large Language Models (transformer architectures, fine-tuning, agent workflows)"
+        - "Reinforcement Learning (PPO)"
+        - "Computer vision (CNNs, ResNet18, vision-conditioned policies)"
+        - "Sim-to-real transfer & domain randomization"
+        - "NLP / sequence modeling"
 
-  - category: "Traditional ML"
-    items:
-      - "Regression & classification"
-      - "Clustering"
-      - "Decision trees & ensembles"
-      - "Statistical methods for ML"
+    - key: traditional-ml
+      category: "Traditional ML"
+      items:
+        - "Regression & classification"
+        - "Clustering"
+        - "Decision trees & ensembles"
+        - "Statistical methods for ML"
 
-  - category: "ML Systems & Experimentation"
-    items:
-      - "Experiment design & ablations"
-      - "Training / evaluation pipelines"
-      - "Evaluation harnesses & metrics"
-      - "Model debugging & error analysis"
-      - "Deployment monitoring (accuracy, drift)"
-      - "Reproducibility (typed configs, seeded sweeps, versioned artifacts)"
-      - "ETL / data pipelines"
+    - key: ml-systems-and-experimentation
+      category: "ML Systems & Experimentation"
+      items:
+        - "Experiment design & ablations"
+        - "Training / evaluation pipelines"
+        - "Evaluation harnesses & metrics"
+        - "Model debugging & error analysis"
+        - "Deployment monitoring (accuracy, drift)"
+        - "Reproducibility (typed configs, seeded sweeps, versioned artifacts)"
+        - "ETL / data pipelines"
 
-  - category: "Programming Languages"
-    items:
-      - "Python"
-      - "SQL"
-      - "C#"
-      - "TypeScript / JavaScript"
+    - key: programming-languages
+      category: "Programming Languages"
+      items:
+        - "Python"
+        - "SQL"
+        - "C#"
+        - "TypeScript / JavaScript"
 
-  - category: "Math Foundations"
-    items:
-      - "Linear algebra"
-      - "Probability & statistics"
-      - "Calculus"
-      - "Optimization"
+    - key: math-foundations
+      category: "Math Foundations"
+      items:
+        - "Linear algebra"
+        - "Probability & statistics"
+        - "Calculus"
+        - "Optimization"
 
-  - category: "ML Tooling"
-    items:
-      - "PyTorch"
-      - "NumPy / SciPy"
-      - "TensorBoard"
-      - "NVIDIA Isaac Sim / Isaac Lab"
-      - "skrl"
-      - "ROS"
-      - "LeRobot"
+    - key: ml-tooling
+      category: "ML Tooling"
+      items:
+        - "PyTorch"
+        - "NumPy / SciPy"
+        - "TensorBoard"
+        - "NVIDIA Isaac Sim / Isaac Lab"
+        - "skrl"
+        - "ROS"
+        - "LeRobot"
 
-  - category: "Infrastructure, Data & CI/CD"
-    items:
-      - "Linux"
-      - "Docker"
-      - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
-      - "Azure (App Service, Storage, DevOps)"
-      - "Observability (CloudWatch, Application Insights)"
-      - "GitHub Actions / Azure DevOps Pipelines"
-      - "SQL Server, PostgreSQL / PostGIS, Cosmos DB, MongoDB, Redis"
+    - key: infrastructure-data-and-ci-cd
+      category: "Infrastructure, Data & CI/CD"
+      items:
+        - "Linux"
+        - "Docker"
+        - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
+        - "Azure (App Service, Storage, DevOps)"
+        - "Observability (CloudWatch, Application Insights)"
+        - "GitHub Actions / Azure DevOps Pipelines"
+        - "SQL Server, PostgreSQL / PostGIS, Cosmos DB, MongoDB, Redis"
+  disabled:
+    - ai-ml-robotics-and-experimentation
+    - ml-systems-and-data
+    - infrastructure-containers-and-ci-cd
+    - databases-caching-and-data-stores
+    - software-engineering
+projects:
+  elements: []
+  disabled:
+    - neural-networks-independent-study
+    - crypton
+    - crypto-currency-trading-bot

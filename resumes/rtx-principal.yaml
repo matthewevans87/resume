@@ -48,71 +48,76 @@ projects_config:
 # Drop the visibility-graph project: it's the least relevant to the RTX JD
 # (computational geometry, no LLM / agent / SDLC connection) and removing
 # it tightens the page around AI / generative-AI signals.
-disable:
-  projects:
-    - "ML Assisted Visibility Graph Construction"
-
-# Surface the Crypton agent system from the base resume (where it is
-# disabled by default). It's the closest direct analog to the RTX JD's
-# agentic-orchestrator / MCP / A2A / prompt-engineering bullets.
-enable:
-  projects:
-    - "Crypton"
-
-# Replace the entire skills list (arrays replace wholesale). Reorganized to
-# mirror the JD's "What You Will Do" + qualifications structure: AI/LLM work
-# first, then platform/DevOps, distributed systems, programming, and the
-# software-engineering practice categories the JD explicitly names.
 skills:
-  - category: "AI / ML & Generative AI"
-    items:
-      - "Large Language Models (transformer architectures, training, fine-tuning)"
-      - "Custom transformer design (causal LMs, auxiliary heads, fusion mechanisms)"
-      - "Generative modeling (GANs, language models)"
-      - "Neural networks: MLPs, CNNs, RNNs / LSTMs, Transformers"
-      - "Reinforcement Learning (PPO)"
-      - "Experiment design, ablations, evaluation harnesses"
-      - "PyTorch, NumPy, TensorBoard"
+  elements:
+    - key: ai-ml-and-generative-ai
+      category: "AI / ML & Generative AI"
+      items:
+        - "Large Language Models (transformer architectures, training, fine-tuning)"
+        - "Custom transformer design (causal LMs, auxiliary heads, fusion mechanisms)"
+        - "Generative modeling (GANs, language models)"
+        - "Neural networks: MLPs, CNNs, RNNs / LSTMs, Transformers"
+        - "Reinforcement Learning (PPO)"
+        - "Experiment design, ablations, evaluation harnesses"
+        - "PyTorch, NumPy, TensorBoard"
 
-  - category: "Software Architecture & AI-Augmented SDLC"
-    items:
-      - "Reflection-driven code-generation frameworks"
-      - "Clean Architecture / domain-driven design at scale (87+ entity ERP)"
-      - "Automated regression test harnesses for legacy modernization"
-      - "API design (REST, authenticated CRUD scaffolding)"
-      - "Workflow orchestration (typed-config sweep runners, versioned artifact pipelines)"
-      - "Distributed systems fundamentals"
+    - key: software-architecture-and-ai-augmented-sdlc
+      category: "Software Architecture & AI-Augmented SDLC"
+      items:
+        - "Reflection-driven code-generation frameworks"
+        - "Clean Architecture / domain-driven design at scale (87+ entity ERP)"
+        - "Automated regression test harnesses for legacy modernization"
+        - "API design (REST, authenticated CRUD scaffolding)"
+        - "Workflow orchestration (typed-config sweep runners, versioned artifact pipelines)"
+        - "Distributed systems fundamentals"
 
-  - category: "Platform, Containers & CI/CD"
-    items:
-      - "Docker (images, containers)"
-      - "AWS (ECS / Fargate, S3, SQS, Athena, CloudFormation)"
-      - "Azure (App Service, Storage, DevOps)"
-      - "GitHub Actions"
-      - "Azure DevOps YAML Pipelines"
-      - "Observability (CloudWatch, Application Insights, Seq)"
-      - "Linux"
+    - key: platform-containers-and-ci-cd
+      category: "Platform, Containers & CI/CD"
+      items:
+        - "Docker (images, containers)"
+        - "AWS (ECS / Fargate, S3, SQS, Athena, CloudFormation)"
+        - "Azure (App Service, Storage, DevOps)"
+        - "GitHub Actions"
+        - "Azure DevOps YAML Pipelines"
+        - "Observability (CloudWatch, Application Insights, Seq)"
+        - "Linux"
 
-  - category: "Programming Languages"
-    items:
-      - "Python"
-      - "C# / .NET"
-      - "TypeScript / JavaScript"
-      - "SQL"
+    - key: programming-languages
+      category: "Programming Languages"
+      items:
+        - "Python"
+        - "C# / .NET"
+        - "TypeScript / JavaScript"
+        - "SQL"
 
-  - category: "Databases & Data Stores"
-    items:
-      - "SQL Server"
-      - "PostgreSQL / PostGIS"
-      - "Cosmos DB"
-      - "MongoDB"
-      - "Redis"
-      - "Entity Framework"
+    - key: databases-and-data-stores
+      category: "Databases & Data Stores"
+      items:
+        - "SQL Server"
+        - "PostgreSQL / PostGIS"
+        - "Cosmos DB"
+        - "MongoDB"
+        - "Redis"
+        - "Entity Framework"
 
-  - category: "Software Engineering Practice"
-    items:
-      - "Git, code review, mentoring"
-      - "Testing (unit, integration, regression harnesses)"
-      - "Agile / SDLC across multiple concurrent teams"
-      - "Technical leadership (hired and led teams across multi-MM/yr accounts)"
-      - "Stakeholder discovery & SOW negotiation"
+    - key: software-engineering-practice
+      category: "Software Engineering Practice"
+      items:
+        - "Git, code review, mentoring"
+        - "Testing (unit, integration, regression harnesses)"
+        - "Agile / SDLC across multiple concurrent teams"
+        - "Technical leadership (hired and led teams across multi-MM/yr accounts)"
+        - "Stakeholder discovery & SOW negotiation"
+  disabled:
+    - ai-ml-robotics-and-experimentation
+    - ml-systems-and-data
+    - infrastructure-containers-and-ci-cd
+    - databases-caching-and-data-stores
+    - software-engineering
+projects:
+  elements: []
+  disabled:
+    - ml-assisted-visibility-graph-construction
+    - crypto-currency-trading-bot
+  enabled:
+    - crypton
