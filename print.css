@@ -139,7 +139,6 @@
   }
 
   .contact-info {
-    display: block;
     text-align: center;
     font-size: var(--print-font-xs);
     margin: 6pt 0;
