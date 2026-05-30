@@ -115,6 +115,22 @@ order_by:
 
   Order items to match the JD's requirement order. The section sits in a fixed position (above the career timeline) and is **not** affected by `order_by`. Omit the section entirely (don't set to `null`) to inherit the base.
 
+### Qualifications quality bar (high signal, low risk)
+
+- **Assume every line prints verbatim on the resume.** Write for recruiter/hiring-manager reading, not internal notes.
+- **Optimize for first read (10-15 seconds).** Lead with role-fit evidence and strongest technical proof before secondary context.
+- **One bullet = one distinct claim.** Merge overlapping bullets (for example, ablations + seeded comparison + diagnosis) to reduce redundancy.
+- **Prefer concrete evidence over broad adjectives.** Use measurable outcomes, named methods, and specific artifacts; avoid vague claims like "strong in X" unless objectively supported.
+- **Avoid over-claiming depth.** If experience is academic/research rather than production, say so explicitly (for example, "reproducible research code" instead of "production ML deployment").
+- **Avoid loaded or inflated phrasing.** Minimize biz-speak (for example, "operationalization") and language that may trigger deeper claims than intended.
+- **Use conservative stats language unless you want to defend formal statistics.** Prefer "ablation-driven evaluation" and "seeded-run comparisons" over heavy statistical framing unless that depth is truly central.
+- **Anchor major claims to a project when helpful.** Add short parenthetical pointers like `(see Vision-Based Sim-to-Real Manipulation Pipeline)` for high-impact claims.
+- **Keep project pointers sparse.** Use them for headline claims only; too many parentheticals increase visual noise.
+- **Drop low-signal legacy details.** Exclude older or peripheral tools/approaches when they dilute relevance for the target role.
+- **Never foreground disqualifier language.** Avoid negative constructions like "no active X" in top qualifications.
+- **For sensitive requirements (for example, clearance), use positive eligibility phrasing when true.** Prefer wording like "U.S. citizen; eligible to obtain Top Secret clearance" over defensive caveats.
+- **Preserve strict defensibility.** Every qualifications line should be explainable in interview with concrete backing from base resume content.
+
 - **Don't duplicate base content** unless you're changing it. Inheritance is the point.
 - **Don't add `null` fields** to "clear" something — that's a no-op. To hide an element, use `disabled:`. To clear a string, set it to `""` (see Google's `location_url: ""`).
 - **Don't edit base files** ([resume.yaml](../../resume.yaml), [app.js](../../app.js), schema) when the task is just adding an override.

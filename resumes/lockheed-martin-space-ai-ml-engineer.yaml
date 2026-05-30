@@ -1,0 +1,27 @@
+# Per-route override for Lockheed Martin Space - AI/ML Engineer (FBM Systems Engineering).
+# Route slug: lockheed-martin-space-ai-ml-engineer
+# Changes vs. base:
+#   1. personal.title set to "AI/ML Engineer".
+#   2. skills_highlight hidden (subsumed by qualifications block).
+#   3. qualifications block added and optimized for first-read impact:
+#      role fit, algorithmic depth, evaluation rigor, Python tooling,
+#      collaboration/communication, education recency, and clearance posture.
+
+personal:
+  title: "AI/ML Engineer"
+
+skills_highlight:
+  disabled: true
+
+qualifications:
+  title: "Qualifications"
+  items:
+    - "AI/ML role fit: Hands-on work in vision RL (PPO), LSTM sequence modeling, and transformer language modeling, with graduate coursework in NLP and Statistical Methods for ML (see Vision-Based Sim-to-Real Manipulation Pipeline; ML Assisted Visibility Graph Construction; Intent-Aware Lookahead for Language Modeling)"
+    - "Algorithmic depth: Implemented PPO training pipelines and an LSTM sector predictor for visibility-graph construction, reducing vertex comparisons by up to 98% while preserving near-exact path quality (see ML Assisted Visibility Graph Construction)"
+    - "Model evaluation rigor: Designed and ran controlled ablations (leave-one-out / leave-one-in, 5 seeds x 50k PPO steps), used seeded-run comparisons and metrics to separate signal from noise, and applied findings to model changes (see Vision-Based Sim-to-Real Manipulation Pipeline)"
+    - "ML workflow execution: Built reproducible train/eval pipelines with typed YAML configs, artifact versioning, and provenance tracking; trained and evaluated models on multimodal telemetry and language-model corpora (see Vision-Based Sim-to-Real Manipulation Pipeline; Intent-Aware Lookahead for Language Modeling)"
+    - "Python and numerical scripting: Daily Python use with PyTorch, NumPy, SciPy, TensorBoard, and ML experiment tooling"
+    - "Applied ML components: Built focused ML components for larger systems, including LSTM-based gating in motion-planning pipelines and compact task-specific CNNs (see ML Assisted Visibility Graph Construction; Vision-Based Sim-to-Real Manipulation Pipeline)"
+    - "Technical collaboration and communication: 15 years building software with engineers, product owners, and business teams; gathered requirements, ran architecture reviews, compared design options, and communicated results through demos, design docs, and project writeups"
+    - "Education: M.S. in Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0"
+    - "Clearance eligibility: U.S. citizen; eligible to obtain Top Secret clearance"
