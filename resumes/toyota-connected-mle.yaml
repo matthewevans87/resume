@@ -1,0 +1,21 @@
+personal:
+  title: "Machine Learning Engineer"
+skills_highlight:
+  disabled: true
+mission_statement:
+  - "Machine Learning Engineer with 15 years shipping production software and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "I design, train, and ship machine-learning models end-to-end — including transformer language modeling and deep learning — and bring the engineering depth to turn research-stage ideas into reliable, maintainable production systems at scale."
+qualifications:
+  title: "Qualifications"
+  items:
+    - "AI/ML role fit (NLP-forward): Hands-on transformer language modeling — designed and evaluated IALM-Lite, a 6-layer causal transformer (~44.9M params) with auxiliary lookahead heads, intent pooling, and FiLM/gated fusion across 21 controlled variants — plus vision RL (PPO) and LSTM sequence modeling, with graduate coursework in Natural Language Processing and Statistical Methods for Machine Learning (see Intent-Aware Lookahead for Language Modeling; Vision-Based Sim-to-Real Manipulation Pipeline)"
+    - "Translating research into code: Implemented modern deep-learning methods from scratch in PyTorch across a paper-driven survey — backprop, CNNs/ResNets, LSTMs, Transformers, diffusion/VLMs — turning published techniques into working, tested implementations (see Neural Networks Independent Study; Intent-Aware Lookahead for Language Modeling)"
+    - "Python and ML frameworks: Daily Python with PyTorch across language-model, vision-RL, and sequence-modeling projects; NumPy, SciPy, and TensorBoard for experiment tooling; prior production ML in TensorFlow (see Vision-Based Sim-to-Real Manipulation Pipeline; Intent-Aware Lookahead for Language Modeling)"
+    - "ML pipelines and full modeling lifecycle: Built reproducible end-to-end pipelines spanning data cleansing, feature creation, iterative model selection, and validation — with typed-config validation, versioned artifacts, and provenance tracking — over ~10K-episode multimodal datasets (see Vision-Based Sim-to-Real Manipulation Pipeline)"
+    - "Scalable, automated large-scale data processing: Architected an event-driven ETL platform on AWS that ingested terabyte-scale data via a custom streaming parser fanned out across thousands of concurrent Lambda and ECS Fargate workers feeding a multi-tenant production product"
+    - "Cloud (AWS / Azure): 15 years building and shipping cloud-native systems across AWS (S3, SQS, Athena, ECS/Fargate, CloudFormation) and Azure (App Service, DevOps), including multi-tenant SaaS in production"
+    - "Algorithm design and complexity analysis: M.S. coursework in Algorithms and Computational Geometry; designed an LSTM-gated visibility-graph construction that cut vertex comparisons up to 98% while preserving near-exact path quality (see ML Assisted Visibility Graph Construction)"
+    - "Model evaluation and experimentation rigor: Designed and ran controlled ablations (leave-one-out / leave-one-in, 5 seeds × 50k steps), used seeded-run comparisons to separate signal from noise, and reported honest negative results to inform design (see Vision-Based Sim-to-Real Manipulation Pipeline; Intent-Aware Lookahead for Language Modeling)"
+    - "Production engineering practice: 15 years shipping maintainable production software — architecture and design reviews, RFC-style design docs, code and merge-request review, CI/CD and automated testing, and mentoring and interviewing engineers across career levels"
+    - "Ownership, collaboration, and measurable results: Owned end-to-end delivery of cloud-native SaaS across engineering, product, and executive stakeholders — leading multiple concurrent client teams, shipping a multi-tenant platform at $4MM+/year in revenue, and rescuing a stalled, over-scoped project to deliver ahead of schedule."
+    - "Education: M.S. in Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0"
