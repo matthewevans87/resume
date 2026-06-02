@@ -1,0 +1,22 @@
+personal:
+  title: "Systems Software Engineer"
+
+skills_highlight:
+  disabled: true
+
+mission_statement:
+  - "Software Engineer with 15 years shipping and leading production systems and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "I build the software backbone of complex systems — distributed, containerized infrastructure and the CI/CD that ships it — and bring the engineering leadership to scale teams and own delivery, now pointed at sensing, autonomy, and defense."
+
+qualifications:
+  title: "Qualifications"
+  items:
+    - "Infrastructure and software-leadership fit: 15 years building and leading production software — distributed, containerized systems at scale, end-to-end CI/CD ownership, and team leadership — now focused on the software backbone of sensing and autonomy systems."
+    - "Containerized infrastructure at scale: Architected an event-driven platform on AWS that processed terabyte-scale data through a custom streaming parser fanned out across thousands of concurrent workers (Docker, AWS ECS/Fargate) — distributed x86 infrastructure built for throughput and reliability."
+    - "CI/CD and pipeline automation: Owned CI/CD end-to-end across production systems — fully scripted pipelines for linting, testing, builds, releases, and infrastructure deployment in GitHub Actions and Azure DevOps YAML."
+    - "Automated testing and verification: Build verification into the system, not onto it — automated test harnesses with verified regression parity for a legacy-to-greenfield modernization, and reproducible evaluation/ablation frameworks for ML experiments."
+    - "Technical leadership, architecture, and independence: Led multiple concurrent software delivery teams at $4MM+/year — hired and mentored dozens of engineers across career levels, owned product architecture and end-to-end delivery of cloud-native multi-tenant SaaS, and rescued a stalled, over-scoped program to deliver ahead of schedule. Comfortable operating with full autonomy and setting technical direction."
+    - "Rapid acquisition of new languages and domains: Strong polyglot (C#, Python, TypeScript) with a track record of going deep in unfamiliar territory fast — earned an M.S. in CS with an ML concentration while working full-time and recently built a vision-based reinforcement-learning pipeline on physical robot hardware in NVIDIA Isaac Sim."
+    - "Applied ML depth: Built vision-conditioned RL policies under domain randomization for sim-to-real transfer and a transformer language model with a 21-variant ablation study — relevant depth as software-defined sensing increasingly incorporates machine learning."
+    - "Clearance eligibility: U.S. citizen; eligible to obtain and maintain clearance."
+    - "Education: M.S. in Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0."
