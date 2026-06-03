@@ -1,0 +1,21 @@
+personal:
+  title: "Algorithms Systems Engineer II"
+
+skills_highlight:
+  disabled: true
+
+mission_statement:
+  - "Machine learning and algorithms engineer with 15 years of production software engineering and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "I develop, analyze, and rigorously evaluate machine-learning and vision algorithms — controlled experiment design, statistical modeling, and performance analysis — to turn sensor data into reliable detection and decisions."
+qualifications:
+  title: "Qualifications"
+  items:
+    - "Algorithm development, analysis, and evaluation: Developed and rigorously analyzed ML and vision algorithms end-to-end — the core of recent work building and evaluating learned perception/control policies; M.S. in CS (Machine Learning)."
+    - "Machine learning and training techniques: Trained vision-conditioned reinforcement-learning policies (PPO) under domain randomization, with a task-specific CNN vision encoder bootstrapped via iterative self-distillation against a ResNet baseline."
+    - "Statistical modeling and performance analysis: Designed and ran controlled algorithm studies — leave-one-out / leave-one-in ablations across 5 RNG seeds × 50k steps — using statistical comparisons (confidence intervals, Welch z-tests) and configuration trade studies to separate signal from noise and predict performance."
+    - "Image and vision processing: Built the vision pipeline behind the policies — CNN/ResNet encoders, image-augmentation chains (noise, brightness, contrast, blur, compression), and OpenCV camera calibration — operating on image data under heavy domain randomization."
+    - "Mathematical and algorithmic problem-solving: Graduate Algorithms and Computational Geometry; designed an LSTM model assisted visibility-graph construction algorithm that cut vertex comparisons up to 98% while preserving near-exact path quality."
+    - "Python, data analysis, and Linux: Daily Python for data analysis and experimentation — NumPy, SciPy, PyTorch, TensorBoard — on Linux, with typed-config, versioned, provenance-tracked experiment pipelines."
+    - "Technical collaboration and communication: 15 years working among engineers and stakeholders — peer and architecture reviews, design docs, demos, customer-facing presentations, and regular status reporting to technical leads."
+    - "Clearance eligibility: U.S. citizen; eligible to obtain a U.S. government security clearance."
+    - "Education: M.S. in Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0."
