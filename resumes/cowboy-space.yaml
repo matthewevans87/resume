@@ -1,0 +1,16 @@
+mission_statement:
+  - "Software Engineer with 15 years shipping production systems and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "I design, build, and own software systems end-to-end — distributed cloud services and operational tooling, plus simulation and sim-to-real testing that validates behavior on real robotics hardware — and I'm driven to bring that range to the software that operates spacecraft and powers the orbital economy."
+
+qualifications:
+  title: "Qualifications"
+  items:
+    - "Ownership-driven software engineer: Built and owned systems end-to-end across simulation, hardware integration, and distributed cloud services — 15 years of production software and an M.S. in CS (Machine Learning), now focused on the systems that operate spacecraft and space infrastructure."
+    - "Simulation and testing frameworks: Built an end-to-end simulation and testing framework in NVIDIA Isaac Sim — domain randomization plus reproducible evaluation and ablation harnesses — to validate learned-control behavior before deployment to hardware."
+    - "Working close to hardware (robotics, sim-to-real): Built the full path from simulation to a physical robot — OpenCV camera calibration, a live sim-vs-real overlay tuning tool, and deploying the trained policy to drive the physical arm — working across the simulation/hardware boundary to integrate, test, and debug end-to-end."
+    - "Distributed systems and cloud for operations: Architected event-driven, terabyte-scale distributed processing on AWS across thousands of concurrent workers, and a real-time operations-monitoring system that gave teams live visibility into running pipelines — the ground/operations and cloud infrastructure this role spans."
+    - "Operational tooling and CI/CD: Built internal tooling and fully scripted CI/CD YAML pipelines (GitHub, Azure, AWS) for testing, builds, releases, and infrastructure deployment to support automation and operational workflows."
+    - "End-to-end ownership in high-autonomy environments: Led delivery (personnel, architecture, and implementation) across multiple concurrent consulting teams; comfortable owning systems with full autonomy in fast-paced, engineering-driven environments."
+    - "Engineering fundamentals and rapid ramp: Python, concurrency, distributed messaging (RabbitMQ/SQS), Linux, and Docker, with a polyglot background (C#, TypeScript) and a track record of going deep in unfamiliar domains fast — an ML-concentration M.S. earned while working full-time, with modern architectures implemented from scratch."
+    - "Work authorization: U.S. citizen (meets ITAR requirements)."
+    - "Education: M.S. in Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0."
