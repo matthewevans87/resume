@@ -737,7 +737,7 @@ projects:
       type: "academic"
       description: "Reduced visibility-graph construction cost for shortest-path motion planning by training an LSTM to predict the next shortest-path region, pruning visibility checks while preserving near-exact path quality — achieving up to 98% reduction in vertex comparisons on benchmarks."
       role: "Research Engineer / Author"
-      start_date: "2025-01"
+      start_date: "2025-08"
       end_date: "2025-12"
       highlights:
         - [

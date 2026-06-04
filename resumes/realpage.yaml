@@ -1,0 +1,68 @@
+mission_statement:
+  - "Machine learning engineer with 15 years of production software engineering and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "I build, evaluate, and ship machine-learning and generative-AI systems end-to-end — model training, rigorous evaluation, and production deployment on streaming, event-driven infrastructure — taking ownership from idea to deployment."
+
+qualifications:
+  title: "Qualifications"
+  items:
+    - "Applied ML and generative AI, end-to-end: Build, evaluate, and ship ML and GenAI systems from idea to deployment; M.S. in CS (Machine Learning) plus 15 years of production software, including streaming and cloud systems at scale."
+    - "Generative AI and LLM systems: Built Crypton, a multi-agent LLM system with a composable tool registry for structured tool use and function calling, prompt engineering, and a self-improvement evaluation loop; plus transformer language-model research — a 6-layer causal transformer with a 21-variant ablation study."
+    - "Production ML pipelines, MLOps, and data prep: Built reproducible end-to-end ML pipelines (data curation, feature creation, iterative model selection, validation) with typed-config validation, versioned artifacts, and provenance tracking, plus a self-contained deployment path — alongside fully scripted CI/CD pipelines (GitHub Actions, Azure DevOps YAML)."
+    - "Real-time, streaming, and event-driven systems at scale: Architected an event-driven platform on AWS that processed terabyte-scale data across thousands of concurrent workers, and a real-time operations-monitoring system giving teams live visibility — low-latency, high-reliability infrastructure for production decisioning."
+    - "Model evaluation and quality: Designed and ran controlled experiments — leave-one-out / leave-one-in ablations across 5 seeds — with statistical comparisons (confidence intervals, Welch z-tests) and honest negative results, to separate real model improvements from noise."
+    - "Python, SQL, cloud, and ML frameworks: Daily Python (PyTorch, NumPy, SciPy, TensorBoard) and strong SQL (SQL Server, PostgreSQL), on AWS and Azure."
+    - "Cross-functional communication: 15 years translating business and product questions into technical solutions with engineers, product owners, and non-technical stakeholders — through design reviews, demos, and writeups."
+    - "Education: M.S. in Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0."
+
+projects:
+  ordering:
+    - crypton
+    - intent-aware-lookahead-for-language-modeling
+    - vision-based-sim-to-real-manipulation-pipeline
+    - neural-networks-independent-study
+    - ml-assisted-visibility-graph-construction
+  enabled:
+    - crypton
+  elements:
+    - key: crypton
+      name: "Crypton"
+      url: "https://github.com/matthewevans87/crypton-cli"
+      type: "personal"
+      description: "Multi-agent LLM system exploring agentic orchestration, structured tool use, prompt engineering, and an automated self-improvement loop. Five specialized agents (Plan → Research → Analyze → Synthesize → Evaluate) coordinate through a structured agent-to-agent messaging protocol and declared tool interfaces, with a deterministic execution layer cleanly separated from the non-deterministic LLM layer. Applied to an autonomous market-analysis task over live data as the testbed domain."
+      role: "Architect"
+      start_date: "2026-04"
+      end_date: "2026-04"
+      highlights:
+        - [
+            "Agentic orchestration:",
+            "Designed a 5-agent learning loop with bounded per-agent contracts (typed inputs, single named output artifact, capped-size mailbox) and a structured agent-to-agent messaging protocol that carries context forward across cycles without unbounded prompt growth.",
+          ]
+        - [
+            "Structured tool use / function calling:",
+            "Built a 12-tool composable registry with per-tool rate limiting and a sandboxed Python execution tool, exposed to agents through a uniform invocation surface so each agent operates exclusively through declared tools rather than ad-hoc side effects.",
+          ]
+        - [
+            "Prompt engineering:",
+            "Authored per-agent system prompts driving complex reasoning, planning, and tool use; refined prompts through measured cycle outcomes rather than ad-hoc iteration, with each agent's role, contract, and failure modes specified explicitly.",
+          ]
+        - [
+            "Automated evaluation & self-improvement:",
+            "Closed the loop with an Evaluate agent that scores each cycle's outcomes against intent and writes targeted improvement directives into peer agents' mailboxes — a measurable, automated quality-control feedback path between cycles.",
+          ]
+        - [
+            "Reliability — deterministic execution separated from the LLM:",
+            "Architected the execution engine as a pure function of a structured strategy artifact — no LLM is in the loop at execution time. The engine hot-reloads the artifact on file change and evaluates conditions via a custom DSL, keeping the non-deterministic and deterministic layers cleanly decoupled.",
+          ]
+        - [
+            "Safety guardrails & resilience:",
+            "Implemented automatic safe-mode after N consecutive failures (suspends new actions, unwinds simulated exposure), startup-time state reconciliation against the external system of record, and a sandboxed paper-trading mode with configurable slippage and commission.",
+          ]
+      technologies:
+        - "C# / .NET 10"
+        - "Ollama (local LLM inference)"
+        - "Multi-agent orchestration"
+        - "Prompt engineering"
+        - "Tool registry / sandboxed execution"
+        - "DSL design & parsing"
+        - "REST + WebSocket integration"
+        - "File-based state persistence"
