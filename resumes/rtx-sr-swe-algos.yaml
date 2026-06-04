@@ -1,0 +1,16 @@
+mission_statement:
+  - "Software Engineer with 15 years of production software engineering and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "I build, optimize, and scale production software, and bring that engineering discipline to algorithm and ML work — turning prototypes into performant, well-tested code on distributed systems, alongside the specialists who own the underlying math."
+
+qualifications:
+  title: "Qualifications"
+  items:
+    - "Senior software engineer: 15 years building, optimizing, and scaling production software, with focused recent work in algorithm design and machine learning, plus an M.S. in CS (Machine Learning)."
+    - "Algorithm development and implementation: Designed and built ML and graph-search algorithms end-to-end — vision-conditioned RL policies and an LSTM-assisted visibility-graph construction — turning algorithm designs into working, tested software."
+    - "Performance optimization: Designed an LSTM-gated visibility-graph construction that cut vertex comparisons up to 98% while preserving near-exact path quality — algorithmic optimization for measurable efficiency gains."
+    - "Parallel processing at scale: Architected event-driven processing that fanned out across thousands of concurrent workers on AWS to handle terabyte-scale data — distributed parallelism built for throughput and reliability."
+    - "Python, Linux, tooling, and rigorous testing: Daily Python (NumPy, SciPy, PyTorch) on Linux, with Git version control, Agile/Scrum delivery, and reproducible, provenance-tracked test and evaluation pipelines."
+    - "Cross-disciplinary collaboration and communication: 15 years working across engineering, product, and business teams — architecture and design reviews, technical writeups, and demos — comfortable partnering with the specialists who own deeper domain expertise to turn their goals into working software."
+    - "Rapid acquisition of new languages and domains: Strong polyglot (Python, C#, TypeScript) with a demonstrated record of going deep in unfamiliar technical territory fast — an ML-concentration M.S. earned while working full-time, with modern architectures implemented from scratch."
+    - "Clearance eligibility: U.S. citizen; eligible to obtain a U.S. government security clearance."
+    - "Education: M.S. in Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0."
