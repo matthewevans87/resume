@@ -122,8 +122,8 @@ experience:
                   url:
                   description: "Cloud-native SaaS platform for benefits administration built on AWS. Led full SDLC from architecture to delivery, managing Agile development team and interfacing with executive stakeholders."
                   role: "Account Manager / Engagement Manager / Team Lead"
-                  start_date: "2020"
-                  end_date: "2023"
+                  start_date: "2022"
+                  end_date: "2022"
                   highlights:
                     - "Collaborated with client to draft product architecture and technical design"
                     - "Hired and led Agile development team through entire SDLC"
@@ -148,7 +148,7 @@ experience:
                   description: "Experimental proof-of-concept tool for transit schedule optimization. Complex D3 visualizations enabling exploration of Greyhound's transit schedule and passenger data to identify business risks and opportunities."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2021"
-                  end_date: "2022"
+                  end_date: "2021"
                   highlights:
                     - "Identified core business problems through extensive client interviews and research"
                     - "Developed interactive Angular frontend with complex D3 visualizations"
@@ -170,7 +170,7 @@ experience:
                   name: "Bankers Financial - Maverick"
                   description: "SaaS product for financial services built with .NET 5 and Angular. Led architecture, development, and Agile team execution."
                   role: "Engagement Manager / Team Lead"
-                  start_date: "2020"
+                  start_date: "2022"
                   end_date: "2022"
                   highlights:
                     - "Responsible for all aspects of product architecture and technical design"
@@ -193,7 +193,7 @@ experience:
                   description: "React consumer-facing frontend with .NET Core microservices hosted in AWS. Led team through product delivery and rescued stalled Beacon project."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2021"
-                  end_date: "2022"
+                  end_date: "2021"
                   highlights:
                     - "Served as Team Lead for core Eye Book Now product interfacing with product owner and business managers"
                     - "Mentored junior developers, reviewed PRs, handled production releases"
@@ -217,7 +217,7 @@ experience:
                   description: "ETL status monitoring system providing real-time visibility to account managers for improved customer support."
                   role: "Developer"
                   start_date: "2020"
-                  end_date: "2021"
+                  end_date: "2020"
                   highlights:
                     - "Created APIs, microservices, and web applications on Azure Cloud within Agile Kanban team"
                     - "Developed ETL status monitoring system giving account managers real-time visibility"

@@ -1,0 +1,56 @@
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems on AWS and Azure, plus an M.S. in Computer Science (Machine Learning) from UT Dallas — combining senior software architecture chops with hands-on transformer / LLM and generative-AI work."
+  - "Targeting principal-level roles building AI-augmented developer tooling and agentic systems for the SDLC — code generation, automated testing, CI/CD orchestration, and the platform plumbing that makes them reliable. Based in Richardson, TX; U.S. citizen."
+
+projects:
+  ordering:
+    - crypton
+    - intent-aware-lookahead-for-language-modeling
+    - vision-based-sim-to-real-manipulation-pipeline
+    - neural-networks-independent-study
+    - ml-assisted-visibility-graph-construction
+  enabled:
+    - crypton
+  elements:
+    - key: crypton
+      name: "Crypton"
+      url: "https://github.com/matthewevans87/crypton-cli"
+      type: "personal"
+      description: "Multi-agent LLM system exploring agentic orchestration, structured tool use, prompt engineering, and an automated self-improvement loop. Five specialized agents (Plan → Research → Analyze → Synthesize → Evaluate) coordinate through a structured agent-to-agent messaging protocol and declared tool interfaces, with a deterministic execution layer cleanly separated from the non-deterministic LLM layer. Applied to an autonomous market-analysis task over live data as the testbed domain."
+      role: "Architect"
+      start_date: "2026-04"
+      end_date: "2026-04"
+      highlights:
+        - [
+            "Agentic orchestration:",
+            "Designed a 5-agent learning loop with bounded per-agent contracts (typed inputs, single named output artifact, capped-size mailbox) and a structured agent-to-agent messaging protocol that carries context forward across cycles without unbounded prompt growth.",
+          ]
+        - [
+            "Structured tool use / function calling:",
+            "Built a 12-tool composable registry with per-tool rate limiting and a sandboxed Python execution tool, exposed to agents through a uniform invocation surface so each agent operates exclusively through declared tools rather than ad-hoc side effects.",
+          ]
+        - [
+            "Prompt engineering:",
+            "Authored per-agent system prompts driving complex reasoning, planning, and tool use; refined prompts through measured cycle outcomes rather than ad-hoc iteration, with each agent's role, contract, and failure modes specified explicitly.",
+          ]
+        - [
+            "Automated evaluation & self-improvement:",
+            "Closed the loop with an Evaluate agent that scores each cycle's outcomes against intent and writes targeted improvement directives into peer agents' mailboxes — a measurable, automated quality-control feedback path between cycles.",
+          ]
+        - [
+            "Reliability — deterministic execution separated from the LLM:",
+            "Architected the execution engine as a pure function of a structured strategy artifact — no LLM is in the loop at execution time. The engine hot-reloads the artifact on file change and evaluates conditions via a custom DSL, keeping the non-deterministic and deterministic layers cleanly decoupled.",
+          ]
+        - [
+            "Safety guardrails & resilience:",
+            "Implemented automatic safe-mode after N consecutive failures (suspends new actions, unwinds simulated exposure), startup-time state reconciliation against the external system of record, and a sandboxed paper-trading mode with configurable slippage and commission.",
+          ]
+      technologies:
+        - "C# / .NET 10"
+        - "Ollama (local LLM inference)"
+        - "Multi-agent orchestration"
+        - "Prompt engineering"
+        - "Tool registry / sandboxed execution"
+        - "DSL design & parsing"
+        - "REST + WebSocket integration"
+        - "File-based state persistence"

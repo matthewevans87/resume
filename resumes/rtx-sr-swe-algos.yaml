@@ -2,6 +2,9 @@ mission_statement:
   - "Software Engineer with 15 years of production software engineering and an M.S. in Computer Science (Machine Learning) from UT Dallas."
   - "I build, optimize, and scale production software, and bring that engineering discipline to algorithm and ML work — turning prototypes into performant, well-tested code on distributed systems, alongside the specialists who own the underlying math."
 
+skills_highlight:
+  disabled: true
+
 qualifications:
   title: "Qualifications"
   items:
