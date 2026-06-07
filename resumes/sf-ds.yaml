@@ -1,0 +1,69 @@
+mission_statement:
+  - "Machine learning engineer who pairs 15 years of production software engineering with an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "I build and evaluate deep-learning and generative-AI solutions — across computer vision, language models, and agentic systems — and bring senior engineering judgment and team leadership to scoping, delivering, and explaining them to business stakeholders."
+
+qualifications:
+  title: "Qualifications"
+  items:
+    - "Machine learning engineer and lead with production-engineering depth: M.S. in CS (Machine Learning) and 15 years of production software, combining GenAI/deep-learning breadth with team leadership and business-facing communication."
+    - "Generative AI and agentic systems: Built Crypton, a multi-agent LLM system with a composable tool registry for structured tool use and function calling, prompt engineering, and an automated self-improvement evaluation loop; plus transformer language-model research with a 21-variant ablation study."
+    - "Deep learning across computer vision and NLP: Built CNN/ResNet-based vision encoders with image-augmentation pipelines for a vision-conditioned RL system, and a transformer language model from scratch — hands-on deep learning spanning vision and language."
+    - "End-to-end model development: Took models from scoping and data collection/curation through training, validation, and rigorous evaluation — reproducible pipelines with typed-config validation, versioned artifacts, and provenance tracking."
+    - "Model evaluation and performance assessment: Designed and ran controlled studies — leave-one-out / leave-one-in ablations across 5 seeds — using statistical comparisons (confidence intervals, Welch z-tests) and honest negative results to assess performance, investigate changes, and drive model updates."
+    - "Technical leadership, mentoring, and peer review: Led delivery teams and mentored dozens of engineers across career levels; ran architecture, design, and code reviews."
+    - "Business consulting and stakeholder communication: 15 years as a trusted technical partner to business and executive stakeholders — discovery, scoping, and translating needs into delivered solutions, explaining technical work to non-technical audiences across business areas and leadership levels."
+    - "Engineering fundamentals and tooling: Python (PyTorch, NumPy, SciPy), Linux, Git, IDEs, and AWS, grounded in distributed-systems experience where latency-versus-throughput trade-offs are daily decisions."
+    - "Education: M.S. in Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0; U.S. citizen."
+
+projects:
+  ordering:
+    - intent-aware-lookahead-for-language-modeling
+    - crypton
+    - vision-based-sim-to-real-manipulation-pipeline
+    - ml-assisted-visibility-graph-construction
+    - neural-networks-independent-study
+  enabled:
+    - crypton
+  elements:
+    - key: crypton
+      name: "Crypton"
+      url: "https://github.com/matthewevans87/crypton-cli"
+      type: "personal"
+      description: "Multi-agent LLM system exploring agentic orchestration, structured tool use, prompt engineering, and an automated self-improvement loop. Five specialized agents (Plan → Research → Analyze → Synthesize → Evaluate) coordinate through a structured agent-to-agent messaging protocol and declared tool interfaces, with a deterministic execution layer cleanly separated from the non-deterministic LLM layer. Applied to an autonomous market-analysis task over live data as the testbed domain."
+      role: "Architect"
+      start_date: "2026-04"
+      end_date: "2026-04"
+      highlights:
+        - [
+            "Agentic orchestration:",
+            "Designed a 5-agent learning loop with bounded per-agent contracts (typed inputs, single named output artifact, capped-size mailbox) and a structured agent-to-agent messaging protocol that carries context forward across cycles without unbounded prompt growth.",
+          ]
+        - [
+            "Structured tool use / function calling:",
+            "Built a 12-tool composable registry with per-tool rate limiting and a sandboxed Python execution tool, exposed to agents through a uniform invocation surface so each agent operates exclusively through declared tools rather than ad-hoc side effects.",
+          ]
+        - [
+            "Prompt engineering:",
+            "Authored per-agent system prompts driving complex reasoning, planning, and tool use; refined prompts through measured cycle outcomes rather than ad-hoc iteration, with each agent's role, contract, and failure modes specified explicitly.",
+          ]
+        - [
+            "Automated evaluation & self-improvement:",
+            "Closed the loop with an Evaluate agent that scores each cycle's outcomes against intent and writes targeted improvement directives into peer agents' mailboxes — a measurable, automated quality-control feedback path between cycles.",
+          ]
+        - [
+            "Reliability — deterministic execution separated from the LLM:",
+            "Architected the execution engine as a pure function of a structured strategy artifact — no LLM is in the loop at execution time. The engine hot-reloads the artifact on file change and evaluates conditions via a custom DSL, keeping the non-deterministic and deterministic layers cleanly decoupled.",
+          ]
+        - [
+            "Safety guardrails & resilience:",
+            "Implemented automatic safe-mode after N consecutive failures (suspends new actions, unwinds simulated exposure), startup-time state reconciliation against the external system of record, and a sandboxed paper-trading mode with configurable slippage and commission.",
+          ]
+      technologies:
+        - "C# / .NET 10"
+        - "Ollama (local LLM inference)"
+        - "Multi-agent orchestration"
+        - "Prompt engineering"
+        - "Tool registry / sandboxed execution"
+        - "DSL design & parsing"
+        - "REST + WebSocket integration"
+        - "File-based state persistence"
