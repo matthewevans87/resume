@@ -1,18 +1,103 @@
+# Target: RealPage — Data Scientist (req. 2026-12946), Richardson TX (Remote)
+# Route:  resumes/realpage.yaml
+# Changes vs. base:
+#   1. personal.title removed — field is not rendered by app.js (no-op)
+#   2. mission_statement → reframed for this role; title framed as "ML Engineer" (defensible)
+#   3. qualifications → rebuilt 1:1 against JD sections; each bullet has a YAML comment citing
+#      the exact source company/project from base resume; no RAG/LoRA/hallucination-detection
+#      claims (not in base); "deploy in production" anchored strictly to Clean Harbors R models
+#   4. skills_highlight → DS-aligned vocabulary (6 items)
+#   5. projects_config.title → "Applied Machine Learning & Data Science Projects"
+#   6. Crypton highlights → reordered to lead with function calling + model quality eval
+#      (top GenAI JD priorities); tightened labels to JD vocabulary
+
 mission_statement:
-  - "Machine learning engineer with 15 years of production software engineering and an M.S. in Computer Science (Machine Learning) from UT Dallas."
-  - "I build, evaluate, and ship machine-learning and generative-AI systems end-to-end — model training, rigorous evaluation, and production deployment on streaming, event-driven infrastructure — taking ownership from idea to deployment."
+  - "ML Engineer with 15 years of production software engineering and an M.S. in Computer Science (Machine Learning, GPA 3.73) from UT Dallas."
+  - "I build, evaluate, and ship machine-learning and generative-AI systems — from feature engineering and model training through rigorous evaluation and deployment on streaming, event-driven infrastructure — translating business questions into working, data-driven solutions."
 
 qualifications:
   title: "Qualifications"
   items:
-    - "Applied ML and generative AI, end-to-end: Build, evaluate, and ship ML and GenAI systems from idea to deployment; M.S. in CS (Machine Learning) plus 15 years of production software, including streaming and cloud systems at scale."
-    - "Generative AI and LLM systems: Built Crypton, a multi-agent LLM system with a composable tool registry for structured tool use and function calling, prompt engineering, and a self-improvement evaluation loop; plus transformer language-model research — a 6-layer causal transformer with a 21-variant ablation study."
-    - "Production ML pipelines, MLOps, and data prep: Built reproducible end-to-end ML pipelines (data curation, feature creation, iterative model selection, validation) with typed-config validation, versioned artifacts, and provenance tracking, plus a self-contained deployment path — alongside fully scripted CI/CD pipelines (GitHub Actions, Azure DevOps YAML)."
-    - "Real-time, streaming, and event-driven systems at scale: Architected an event-driven platform on AWS that processed terabyte-scale data across thousands of concurrent workers, and a real-time operations-monitoring system giving teams live visibility — low-latency, high-reliability infrastructure for production decisioning."
-    - "Model evaluation and quality: Designed and ran controlled experiments — leave-one-out / leave-one-in ablations across 5 seeds — with statistical comparisons (confidence intervals, Welch z-tests) and honest negative results, to separate real model improvements from noise."
-    - "Python, SQL, cloud, and ML frameworks: Daily Python (PyTorch, NumPy, SciPy, TensorBoard) and strong SQL (SQL Server, PostgreSQL), on AWS and Azure."
-    - "Cross-functional communication: 15 years translating business and product questions into technical solutions with engineers, product owners, and non-technical stakeholders — through design reviews, demos, and writeups."
+    # JD: Develop, evaluate, and deploy predictive and generative models for real production use cases
+    # Source (lead): M.S. ML research (2023–2025) — CNN, PPO, transformer architectures; rigorous, defensible
+    # Source (supporting): Crypton (2026) — personal side project, ~1 month, exploratory
+    - "Applied ML and generative AI, end-to-end: Graduate ML research (M.S. Computer Science, 2023–2025) spanning CNNs, PPO reinforcement learning, and custom transformer architectures; personal generative-AI and agentic project work (Crypton, 2026). 15 years of production software engineering."
+    # JD: Build and maintain LLM-powered features and services
+    # JD: Integrate LLMs with APIs and internal tools using structured function calling
+    # Source: Crypton (personal side project, ~1 month, exploratory) — see DEPTH WARNING in resume.yaml.
+    #         Only source for LLM/function-calling experience. Framed explicitly as personal exploration.
+    - "LLM-powered features and structured function calling: Built a multi-agent LLM system where five specialized agents operate exclusively through a 12-tool composable registry — a uniform function-calling surface covering REST/WebSocket API integration, data retrieval, and a sandboxed Python execution tool — with per-agent system prompts refined through measured cycle outcomes."
+    # JD: Evaluate model quality and implement safety guardrails
+    # Source (lead): Intent-Aware Lookahead — 21-variant ablation, 5 seeds, honest negative results;
+    #         rigorous graduate research, fully defensible
+    # Source (lead): Vision-Based Sim-to-Real — leave-one-out/leave-one-in ablations (5 seeds × 50k PPO
+    #         steps), Welch z-tests; rigorous graduate research, fully defensible
+    # Source (supporting): Crypton safe-mode — real pattern but from a shallow side project; secondary only
+    # NOTE: "hallucination detection" is NOT claimed — not present in base resume
+    - "Model quality evaluation and safety guardrails: Designed and ran controlled ablation studies across graduate ML research — a 21-variant study with honest negative results (NLP transformer project) and leave-one-out/leave-one-in reward ablations with seeded comparisons (sim-to-real project); separately, Crypton (personal project) implements an evaluation pattern and automatic safe-mode guardrails after consecutive failures."
+    # JD: Use synthetic data to improve model performance, testing, and fairness
+    # Source: Vision-Based Sim-to-Real Manipulation Pipeline — ~10K synthetic episodes generated in
+    #         NVIDIA Isaac Sim under domain randomization; iterative self-distillation CNN outperformed
+    #         frozen ResNet18 backbone by +4.5pp (87.1% vs. 83.1%)
+    - "Synthetic data for model improvement: Generated ~10K synthetic training episodes in NVIDIA Isaac Sim under domain randomization (lighting, camera pose, object geometry, distractors) and bootstrapped a task-specific CNN via iterative self-distillation — outperforming a frozen ResNet18 ImageNet backbone by +4.5pp success rate (87.1% vs. 83.1%, with a 2nd distillation generation reaching 87.7%)."
+    # JD: Build CI/CD pipelines for models and data workflows; deploy and operate ML models in production;
+    #     design versioning and retraining strategies
+    # Source: McKesson (via Zeal) — "Created fully scripted CI/CD pipelines for linting, testing, builds,
+    #         releases, and infrastructure deployment" (base resume, exact text)
+    # Source: HKS — "Established CI/CD pipelines and Azure DevOps workflows" (base resume, exact text)
+    # Source: Vision-Based Sim-to-Real — reproducible pipeline (train→collect→curate→train-cnn), typed
+    #         YAML config validation, versioned artifact directories (configs, seeds, checkpoints, metrics),
+    #         provenance tracking
+    - "ML pipelines, MLOps, and CI/CD: Built a reproducible end-to-end ML pipeline with typed YAML config validation, versioned artifact directories (configs, seeds, checkpoints, metrics), and provenance tracking for systematic run-to-run comparison (sim-to-real project); created fully scripted CI/CD pipelines for linting, testing, builds, releases, and infrastructure deployment (McKesson via Zeal, Azure DevOps; HKS, Azure DevOps)."
+    # JD: Build low-latency data pipelines and real-time decisioning systems
+    # JD: Work with streaming data and event-driven architectures
+    # Source: Zeal IT Consultants — "event-driven ETL platform on AWS...terabyte-scale CMS Transparency
+    #         in Coverage data...thousands of concurrent Lambda and ECS Fargate workers" (base resume, exact text)
+    # Source: McKesson (via Zeal) — "ETL status monitoring system providing real-time visibility to account
+    #         managers" (base resume, exact text)
+    - "Real-time, streaming, and event-driven systems at scale: Architected an event-driven ETL platform on AWS (Lambda + ECS Fargate, thousands of concurrent workers) ingesting terabyte-scale CMS Transparency in Coverage data across every US health insurance plan × provider × procedure combination (Zeal); built a real-time ETL operations-monitoring system giving account managers live pipeline visibility (McKesson via Zeal)."
+    # JD: Perform feature engineering and data preparation for modeling workflows
+    # Source: Vision-Based Sim-to-Real — "histogram rebalancing across timestep and grip-zone distance to
+    #         prevent mid-approach frames from skewing CNN training" (base resume, exact text)
+    # Source: ML Assisted Visibility Graph — "Parsed 1,670 StarCraft maps into binary walkability grids;
+    #         extracted obstacle polygons via connected components and alpha shapes" (base resume, exact text)
+    # NOTE: Clean Harbors data prep (pre-2020) dropped as lead — too stale to defend in interview
+    - "Feature engineering and data preparation: Applied histogram rebalancing across timestep and grip-zone distance to prevent skewed CNN training (sim-to-real pipeline); parsed 1,670 map grids into binary walkability grids with geometric cleanup via connected components and alpha shapes (ML visibility graph)."
+    # JD: Translate business and product questions into analytical solutions
+    # JD: Communicate clearly with engineers, product managers, and non-technical partners
+    # Source: Clean Harbors position summary — "Daily communication with executive management and domain
+    #         experts to translate business needs into actionable requirements" (base resume, exact text)
+    # Source: Zeal IT Consultants — "Drove stakeholder discovery, drafted Statements of Work, navigated
+    #         VMOs and MSPs, and maintained executive relationships across accounts" (base resume, exact text)
+    - "Business translation and cross-functional communication: 15 years translating business and product questions into technical solutions — daily communication with executive management and domain experts to translate business needs into actionable requirements at Clean Harbors ($3B+ company); stakeholder discovery, SOW negotiation, and executive relationship management across simultaneous client accounts at Zeal IT Consultants."
+    # JD: Strong Python and SQL; ML frameworks (PyTorch, TensorFlow, scikit-learn); cloud (AWS, Azure)
+    # Source: academic ML projects (Python, PyTorch, NumPy, SciPy, TensorBoard); Clean Harbors (R, R.NET,
+    #         SQL Server, PostgreSQL); Zeal (AWS Lambda/ECS/Fargate/S3/SQS; Azure App Service/DevOps);
+    #         crypto trading bot (TensorFlow, Python)
+    - "Python, SQL, cloud, and ML frameworks: Daily Python (PyTorch, NumPy, SciPy, TensorBoard) and strong SQL (SQL Server, PostgreSQL) across production and research systems; ML frameworks include PyTorch, TensorFlow, and R/R.NET; cloud on AWS (Lambda, ECS/Fargate, S3, SQS, CloudFormation) and Azure (App Service, DevOps, Application Insights)."
+    # JD: Master's or better in Computer Science, Data Science, or related fields (preferred)
+    # Source: Education — M.S. Computer Science, UT Dallas, Intelligent Systems and Machine Learning
     - "Education: M.S. in Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0."
+
+experience:
+  elements:
+    - key: independent-consultant
+      expanded: false # ERP/code-gen platform — not DS-relevant; collapses to title+dates only
+    # zeal-it-consultants stays expanded (base default) — event-driven ETL + real-time monitoring
+    # clean-harbors-inc stays collapsed (base default) — pre-2020, recency rule applies
+
+projects_config:
+  title: "Applied Machine Learning & Data Science Projects"
+
+skills_highlight:
+  title: "Data Science"
+  items:
+    - Generative AI & LLMs
+    - Production ML & MLOps
+    - Python / SQL
+    - Streaming & Event-Driven
+    - Model Evaluation & Guardrails
+    - Feature Engineering
 
 projects:
   ordering:
@@ -28,34 +113,34 @@ projects:
       name: "Crypton"
       url: "https://github.com/matthewevans87/crypton-cli"
       type: "personal"
-      description: "Multi-agent LLM system exploring agentic orchestration, structured tool use, prompt engineering, and an automated self-improvement loop. Five specialized agents (Plan → Research → Analyze → Synthesize → Evaluate) coordinate through a structured agent-to-agent messaging protocol and declared tool interfaces, with a deterministic execution layer cleanly separated from the non-deterministic LLM layer. Applied to an autonomous market-analysis task over live data as the testbed domain."
+      description: "Multi-agent LLM system exploring agentic orchestration, structured function calling, prompt engineering, and an automated self-improvement evaluation loop. Five specialized agents (Plan → Research → Analyze → Synthesize → Evaluate) coordinate through a structured agent-to-agent messaging protocol and declared tool interfaces, with a deterministic execution layer cleanly separated from the non-deterministic LLM layer. Applied to an autonomous market-analysis task over live data as the testbed domain."
       role: "Architect"
       start_date: "2026-04"
       end_date: "2026-04"
       highlights:
         - [
+            "Structured function calling and tool registry:",
+            "Built a 12-tool composable registry with per-tool rate limiting and a sandboxed Python execution tool, exposed to agents through a uniform invocation surface so each agent operates exclusively through declared tools rather than ad-hoc side effects.",
+          ]
+        - [
+            "LLM-powered features and prompt engineering:",
+            "Authored per-agent system prompts driving complex reasoning, planning, and tool use; refined prompts through measured cycle outcomes rather than ad-hoc iteration, with each agent's role, contract, and failure modes specified explicitly.",
+          ]
+        - [
+            "Model quality evaluation and automated self-improvement:",
+            "Closed the loop with an Evaluate agent that scores each cycle's outcomes against intent and writes targeted improvement directives into peer agents' mailboxes — a measurable, automated quality-control feedback path between cycles.",
+          ]
+        - [
+            "Safety guardrails and resilience:",
+            "Implemented automatic safe-mode after N consecutive failures (suspends new actions, unwinds simulated exposure), startup-time state reconciliation against the external system of record, and a sandboxed paper-trading mode with configurable slippage and commission.",
+          ]
+        - [
             "Agentic orchestration:",
             "Designed a 5-agent learning loop with bounded per-agent contracts (typed inputs, single named output artifact, capped-size mailbox) and a structured agent-to-agent messaging protocol that carries context forward across cycles without unbounded prompt growth.",
           ]
         - [
-            "Structured tool use / function calling:",
-            "Built a 12-tool composable registry with per-tool rate limiting and a sandboxed Python execution tool, exposed to agents through a uniform invocation surface so each agent operates exclusively through declared tools rather than ad-hoc side effects.",
-          ]
-        - [
-            "Prompt engineering:",
-            "Authored per-agent system prompts driving complex reasoning, planning, and tool use; refined prompts through measured cycle outcomes rather than ad-hoc iteration, with each agent's role, contract, and failure modes specified explicitly.",
-          ]
-        - [
-            "Automated evaluation & self-improvement:",
-            "Closed the loop with an Evaluate agent that scores each cycle's outcomes against intent and writes targeted improvement directives into peer agents' mailboxes — a measurable, automated quality-control feedback path between cycles.",
-          ]
-        - [
-            "Reliability — deterministic execution separated from the LLM:",
+            "Deterministic execution separated from the LLM:",
             "Architected the execution engine as a pure function of a structured strategy artifact — no LLM is in the loop at execution time. The engine hot-reloads the artifact on file change and evaluates conditions via a custom DSL, keeping the non-deterministic and deterministic layers cleanly decoupled.",
-          ]
-        - [
-            "Safety guardrails & resilience:",
-            "Implemented automatic safe-mode after N consecutive failures (suspends new actions, unwinds simulated exposure), startup-time state reconciliation against the external system of record, and a sandboxed paper-trading mode with configurable slippage and commission.",
           ]
       technologies:
         - "C# / .NET 10"
@@ -66,3 +151,60 @@ projects:
         - "DSL design & parsing"
         - "REST + WebSocket integration"
         - "File-based state persistence"
+
+skills:
+  elements:
+    - key: ai-ml-and-generative-ai
+      category: "AI/ML & Generative AI"
+      items:
+        - "PyTorch"
+        - "scikit-learn"
+        - "NumPy / SciPy"
+        - "TensorBoard"
+        - "LLMs (Ollama / local inference)"
+        - "Prompt engineering"
+        - "Multi-agent orchestration"
+
+    - key: ml-systems-and-data
+      category: "ML Systems, MLOps & Data"
+      items:
+        - "Feature engineering & data preparation"
+        - "Experiment design / ablations"
+        - "Model evaluation, monitoring & drift detection"
+        - "Versioned artifact pipelines"
+        - "ETL / Data Pipelines"
+        - "CI/CD for ML (GitHub Actions, Azure DevOps)"
+
+    - key: programming-languages
+      category: "Programming Languages"
+      items:
+        - "Python"
+        - "SQL"
+        - "C#"
+        - "TypeScript"
+
+    - key: infrastructure-and-cloud
+      category: "Infrastructure & Cloud"
+      items:
+        - "AWS (Lambda, ECS/Fargate, SQS, S3, Athena, CloudFormation)"
+        - "Azure (App Service, Storage, DevOps)"
+        - "Docker / Containerization"
+        - "Linux"
+        - "Observability (CloudWatch, Application Insights)"
+
+    - key: databases-caching-and-data-stores
+      category: "Databases, Caching & Data Stores"
+      items:
+        - "SQL Server"
+        - "PostgreSQL / PostGIS"
+        - "Cosmos DB"
+        - "MongoDB"
+        - "Redis"
+
+    - key: software-engineering
+      category: "Software Engineering"
+      items:
+        - "Git"
+        - "Streaming & event-driven systems"
+        - "API design"
+        - "Testing & code review"

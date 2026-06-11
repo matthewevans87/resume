@@ -334,7 +334,7 @@ experience:
               - "Designed and implemented profitability reporting SPA for executive management team"
               - "Built data aggregation processes and dashboards for sales performance analysis using D3.js and Chart.js"
               - "Analyzed market landscape using geospatial data (qGIS, PostGIS) to determine new market segment feasibility"
-              - "Implemented statistical forecasting models using R and R.NET for sales predictions"
+              - "Implemented statistical forecasting models using R and R.NET for sales predictions" # Do not over-index on this - it was a small part of the overall role and not a core competency
               - "Developed customer record matching and de-duplication system"
               - "Built market research and sales lead generation web applications"
             technologies:
@@ -807,6 +807,9 @@ projects:
         - "Transformers"
         - "TensorBoard"
 
+    # DEPTH WARNING: ~1-month personal side project; exploratory / vibe-coded; never production;
+    # never profitable. Demonstrates LLM/agentic concepts on paper but shallow implementation depth.
+    # Do NOT over-index on this in qualifications. Use as supporting evidence only, not as a headline claim.
     - key: crypton
       name: "Crypton"
       url: "https://github.com/matthewevans87/crypton-cli"
