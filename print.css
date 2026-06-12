@@ -265,6 +265,18 @@
     padding-left: 0;
     border-left: none;
     page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Keep the section heading from stranding at the bottom of a page with only
+     the first entry. The h2 is already glued to the first item (break-after:
+     avoid); gluing the first item to the second forces an unbreakable run of
+     heading + first two entries. If that run can't fit in the remaining space,
+     Chrome pushes the whole group (heading included) to the next page instead
+     of leaving a lone entry behind. */
+  .experience-item:first-child {
+    page-break-after: avoid;
+    break-after: avoid;
   }
 
   .experience-item::before {
@@ -321,6 +333,7 @@
     background: none;
     border: none;
     page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .position-header {

@@ -685,7 +685,6 @@ projects:
   disabled:
     - crypton
     - crypto-currency-trading-bot
-    - neural-networks-independent-study
   elements:
     - key: vision-based-sim-to-real-manipulation-pipeline
       name: "Vision-Based Sim-to-Real Manipulation Pipeline"
@@ -1068,11 +1067,20 @@ skills:
       category: "AI/ML, Robotics & Experimentation"
       items:
         - "PyTorch"
-        - "NumPy"
+        - "NumPy / SciPy"
         - "TensorBoard"
+        - "Transformers (PyTorch / custom)"
         - "NVIDIA Isaac Sim / Isaac Lab"
         - "ROS"
         - "LeRobot"
+
+    - key: classical-and-statistical-ml
+      category: "Classical & Statistical ML"
+      items:
+        - "scikit-learn"
+        - "Supervised learning (Naive Bayes, Logistic Regression, SVM, KNN, tree ensembles)"
+        - "Unsupervised learning (K-Means, Collaborative Filtering)"
+        - "Probabilistic Graphical Models (Belief Propagation, Gibbs Sampling, EM)"
 
     - key: ml-systems-and-data
       category: "ML Systems & Data"
