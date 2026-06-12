@@ -1,0 +1,156 @@
+# Per-route override for Google — Machine Learning Software Engineer (Travel Ads).
+# Route slug: google-ml-swe-travel-ads  (index.html#/google-ml-swe-travel-ads)
+#
+# Changes vs. base:
+#   1. mission_statement — reframed for ML SWE building/training/scaling deep-learning
+#      models (ranking/retrieval/generation) and integrating LLMs.
+#   2. skills_highlight — disabled (qualifications block subsumes the scan-anchor role).
+#   3. qualifications — new JD-mapped proof strip (minimum + preferred quals + responsibilities).
+#   4. projects_config.title — "Applied Machine Learning & Deep Learning".
+#   5. experience — collapse independent-consultant (ERP, not ML); keep Zeal expanded
+#      (terabyte-scale data pipelines + delivery ownership). Others unchanged from base.
+#   6. skills — reordered/reframed to lead with deep learning, recommendation, NLP,
+#      and experimentation (the JD's ranking/retrieval/recsys/GenAI focus); robotics
+#      tooling kept but de-emphasized. All items backed by the base skills block.
+#
+# Honest gaps (NOT claimed; see NOTE comments below): no C++; no JAX/Adbrain; no
+# production recommendation/ranking/retrieval systems (recommendation modeling is
+# graduate coursework only — collaborative filtering); LLM work is research/personal,
+# not production; experiment design is ablation-based, not online A/B testing.
+
+personal:
+  name: "Matthew Evans"
+  title: "Machine Learning Engineer"
+  location: ""
+  location_url: ""
+
+skills_highlight:
+  disabled: true
+
+mission_statement:
+  - "Software Engineer with 15 years shipping production systems and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "I build, train, and evaluate deep-learning models end-to-end — vision RL, transformer language modeling, and LSTM sequence models — and bring the production engineering depth to own data pipelines, experimentation, and deployment that turns research-stage models into reliable systems at scale."
+
+projects_config:
+  title: "Applied Machine Learning & Deep Learning"
+  group_by_type: false
+
+qualifications:
+  title: "Qualifications"
+  items:
+    # JD (min): Bachelor's degree or equivalent practical experience.
+    # JD (pref): Master's degree or PhD in Computer Science or related technical fields.
+    # Source: education — M.S. CS (Intelligent Systems and ML), UT Dallas (Dec 2025), GPA 3.73; B.S. CS.
+    - "Education: M.S. Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0; B.S. Computer Science, UT Dallas"
+
+    # JD (min): 2 years of experience in software development (e.g., C++, Python).
+    # JD (min): 2 years of experience in testing, maintaining, or launching software products.
+    # Source: 15 yrs production software (Zeal, HKS, Clean Harbors, etc.); daily Python across ML
+    #         projects; CI/CD + automated testing.
+    # NOTE: C++ not claimed — not present in base resume. Python and C#/.NET are the languages of record.
+    - "Software development & delivery: 15 years building, testing, and launching production software; daily Python across ML projects (PyTorch, NumPy, SciPy); C# / .NET, TypeScript, SQL; CI/CD pipelines and automated testing (GitHub Actions, Azure DevOps)"
+
+    # JD (min): Experience building, training, and deploying machine learning models using
+    #           TensorFlow, JAX, or Adbrain.
+    # Source: Vision-Based Sim-to-Real Manipulation Pipeline (PyTorch, PPO, ~10K episodes);
+    #         Intent-Aware Lookahead LM (~44.9M-param transformer); prior TensorFlow ML in Crypto Bot.
+    # NOTE: primary framework is PyTorch; prior TensorFlow (Crypto Bot, personal). JAX/Adbrain not claimed.
+    - "Building & training deep-learning models: Designed, trained, and evaluated vision-based RL (PPO) policies reaching up to 89.7% task success under domain randomization, plus a ~44.9M-param causal transformer and LSTM sequence models — primarily in PyTorch, with prior ML in TensorFlow (see Vision-Based Sim-to-Real Manipulation Pipeline; Intent-Aware Lookahead for Language Modeling)"
+
+    # JD (min): Experience working with ranking, retrieval and other recommendation systems models.
+    # Source: Intent-Aware Lookahead LM (next-token prediction = ranking over vocabulary);
+    #         ML Assisted Visibility Graph (LSTM predicts next candidate region to prune search);
+    #         Collaborative Filtering (Netflix) — minimal coursework, recommendation systems.
+    # NOTE: primary evidence is ranking/retrieval-adjacent sequence modeling. Recommendation-systems
+    #       work is graduate coursework only (collaborative filtering) — cited as secondary support,
+    #       never as the headline claim. No production recommendation systems in the base resume.
+    - "Ranking, retrieval & recommendation modeling: Transformer next-token prediction (ranking over a vocabulary) and an LSTM that predicts the next shortest-path region to prune candidate search — cutting vertex comparisons up to 98% while preserving near-exact results; implemented collaborative filtering for movie recommendations in graduate coursework (see Intent-Aware Lookahead for Language Modeling; ML Assisted Visibility Graph Construction)"
+
+    # JD (pref): Experience with generative AI techniques (LLMs, NLP) and integrating into production.
+    # Source: Intent-Aware Lookahead LM (academic); Neural Networks Independent Study (Transformers,
+    #         diffusion/VLMs); NLP coursework (n-gram LMs, FFNN/RNN sentiment); Crypton multi-agent
+    #         LLM (personal — DEPTH WARNING).
+    # NOTE: LLM/transformer work is research/personal, not production. NLP coursework is secondary
+    #       support, not a headline claim. Framed honestly as such.
+    - "Generative AI & NLP (research): Hands-on transformer language modeling and a paper-driven deep-learning survey (Transformers, diffusion/VLMs) implemented from scratch in PyTorch, with graduate NLP coursework (n-gram language models, FFNN/RNN sentiment analysis) and a personal multi-agent LLM system with tool-use and prompt engineering (see Intent-Aware Lookahead for Language Modeling; Neural Networks Independent Study)"
+
+    # JD (pref): Proven track record of managing large-scale ML systems, analysis of quality systems,
+    #            identifying bottlenecks to improve performance.
+    # JD (resp): Own end-to-end design, implementation, deployment of ML features and data pipelines.
+    # Source: Vision pipeline (reproducible train→collect→curate→train-cnn, ~10K episodes); Zeal
+    #         terabyte-scale event-driven ETL on AWS feeding a multi-tenant production SaaS.
+    - "End-to-end ML & data pipelines at scale: Built reproducible pipelines (typed-config validation, versioned artifacts, provenance tracking) over ~10K-episode multimodal datasets, and architected a terabyte-scale event-driven ETL platform on AWS — a custom streaming parser fanned out across thousands of concurrent Lambda/Fargate workers feeding a multi-tenant production product (see Vision-Based Sim-to-Real Manipulation Pipeline; Zeal IT Consultants)"
+
+    # JD (pref): Investigative and quantitative reasoning, statistics, experiment design (A/B testing).
+    # JD (resp): Design, launch, and analyze experiments to evaluate model performance.
+    # Source: Statistical Methods for ML coursework; reward-shaping ablations (5 seeds × 50k steps,
+    #         Welch z), 21-variant LM ablation, seeded-run comparisons, honest negative results.
+    # NOTE: experiment design is offline ablation/seeded-comparison based, not online A/B testing.
+    - "Experimentation & quantitative analysis: Designed and ran controlled offline ablations (leave-one-out / leave-one-in, 5 RNG seeds × 50k steps; 21-variant sweeps), used seeded-run comparisons (Welch z) to separate signal from noise, and reported honest negative results to drive design decisions (see Vision-Based Sim-to-Real Manipulation Pipeline; Intent-Aware Lookahead for Language Modeling)"
+
+    # JD (pref): 2 years of experience with data structures and algorithms.
+    # Source: M.S. coursework (Algorithms, Computational Geometry); LSTM-gated visibility-graph project.
+    - "Data structures & algorithms: M.S. coursework in Algorithms and Computational Geometry; designed an LSTM-gated visibility-graph construction (DFS/DP) that cut vertex comparisons up to 98% while preserving near-exact path quality (see ML Assisted Visibility Graph Construction)"
+
+    # JD (resp): Work with cross-functional partners (Product, Data Science, UX); high code quality.
+    # Source: Zeal — led multiple concurrent client teams, $4MM+/yr multi-tenant SaaS, stakeholder
+    #         discovery/SOWs, rescued an over-scoped project ahead of schedule; mentoring/interviewing.
+    - "Ownership & collaboration: Owned end-to-end delivery of cloud-native SaaS across engineering, product, and executive stakeholders — leading multiple concurrent teams, shipping a multi-tenant platform at $4MM+/yr, and rescuing a stalled, over-scoped project to deliver ahead of schedule (see Zeal IT Consultants)"
+
+experience:
+  elements:
+    - key: independent-consultant
+      expanded: false # ERP/manufacturing platform — strong engineering but not ML/ranking relevant
+      projects_expanded: false
+    - key: zeal-it-consultants
+      expanded: true # terabyte-scale event-driven data pipelines + delivery ownership — directly relevant
+      projects_expanded: false
+    # hks-inc, clean-harbors-inc, cisco, clickmotive, ericsson — already collapsed in base, no change.
+
+# Skills reframed for the JD's deep-learning / ranking / retrieval / recommendation /
+# GenAI focus. Categories reordered ML-first; item lists reordered to surface the most
+# JD-relevant competencies. Robotics tooling (Isaac Sim, ROS, LeRobot) is real and kept
+# for breadth but tucked at the tail of the DL category since it's peripheral to ads
+# ranking. Categories not listed below (programming-languages, infrastructure, databases,
+# software-engineering) inherit unchanged from base. All items are backed by the base
+# skills block — nothing added that isn't already claimed there.
+skills:
+  ordering:
+    - ai-ml-robotics-and-experimentation
+    - classical-and-statistical-ml
+    - ml-systems-and-data
+    - programming-languages
+    - infrastructure-containers-and-ci-cd
+    - databases-caching-and-data-stores
+    - software-engineering
+  elements:
+    - key: ai-ml-robotics-and-experimentation
+      category: "Deep Learning & Machine Learning"
+      items:
+        - "PyTorch"
+        - "Transformers (PyTorch / custom)"
+        - "Language modeling & NLP"
+        - "Reinforcement Learning (PPO)"
+        - "CNNs, LSTMs, GANs"
+        - "NumPy / SciPy"
+        - "TensorBoard"
+        - "NVIDIA Isaac Sim / Isaac Lab, ROS, LeRobot"
+
+    - key: classical-and-statistical-ml
+      category: "Classical & Statistical ML"
+      items:
+        - "Recommendation systems (Collaborative Filtering)"
+        - "Supervised learning (Logistic Regression, SVM, KNN, Naive Bayes, tree ensembles)"
+        - "Unsupervised learning (K-Means)"
+        - "Probabilistic Graphical Models (Belief Propagation, Gibbs Sampling, EM)"
+        - "scikit-learn"
+
+    - key: ml-systems-and-data
+      category: "ML Systems, Experimentation & Data"
+      items:
+        - "Experiment design / ablations"
+        - "Evaluation harnesses & metrics"
+        - "ETL / Data Pipelines"
+        - "Distributed processing (Lambda / Fargate fan-out)"
+        - "Message queues (RabbitMQ, AWS SQS)"
+        - "Analytics (AWS Athena)"
