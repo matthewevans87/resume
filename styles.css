@@ -1015,6 +1015,48 @@ button.contact-item:hover .contact-brand-icon {
   color: var(--color-accent);
 }
 
+/* Minimal projects (e.g. coursework) — compact bullet list, no card/timeline */
+.minimal-projects {
+  list-style: none;
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+.minimal-project-item {
+  position: relative;
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.minimal-project-item::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.minimal-project-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.minimal-project-header .date-range {
+  margin-left: auto;
+}
+
+.minimal-project-name {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.minimal-project-description {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
 /* Education */
 .education {
   display: flex;

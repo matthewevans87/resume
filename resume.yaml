@@ -678,11 +678,14 @@ experience:
 projects_config:
   title: "Applied Machine Learning Experience"
   group_by_type: false
+  # Title for the grouped "minimal" projects (rendered after the regular projects).
+  minimal_projects_title: "Selected Machine Learning Coursework"
 
 projects:
   disabled:
     - crypton
     - crypto-currency-trading-bot
+    - neural-networks-independent-study
   elements:
     - key: vision-based-sim-to-real-manipulation-pipeline
       name: "Vision-Based Sim-to-Real Manipulation Pipeline"
@@ -881,6 +884,125 @@ projects:
       metrics:
         - "Real-time algorithmic trading"
         - "Machine learning price prediction"
+
+    # "Minimal" projects render in a compact bullet group titled by
+    # projects_config.minimal_projects_title, placed after the regular projects.
+    # Required: name, description, minimal: true. Single date uses end_date
+    # (falling back to start_date). url is optional. Example:
+
+    - key: cs6375-project1
+      name: "Multinomial, Naive Bayes, and Logistic Regression Classifiers"
+      minimal: true
+      url: "https://github.com/matthewevans87/cs6375-project1"
+      description: "Implemented Multinomial Naive Bayes, Discrete Naive Bayes, and Logistic Regression algorithms for email spam classification."
+      end_date: "2024-09"
+
+    - key: cs6375-project4-part1
+      name: "K-Means Clustering"
+      minimal: true
+      url: "https://github.com/matthewevans87/cs6375-project4/tree/main/part1"
+      description: "Implemented K-Means Clustering as an image compression strategy."
+      end_date: "2024-12"
+
+    - key: cs6375-project3-part1
+      name: "Collaborative Filtering (Netflix)"
+      minimal: true
+      url: "https://github.com/matthewevans87/cs6375-project3/blob/main/colabfilter.py"
+      description: "Implemented Collaborative Filtering (Breese et al. 2018) for movie recommendations using the Netflix dataset."
+      end_date: "2024-11"
+
+    - key: cs6375-project3-part2
+      name: "KNN and SVM Classification (MNIST)"
+      minimal: true
+      url: "https://github.com/matthewevans87/cs6375-project3/blob/main/knn_svm_mnist.py"
+      description: "Evaluated K-Nearest Neighbors and Support Vector Machine classification with SciKitLearn on the MNIST dataset."
+      end_date: "2024-11"
+
+    - key: cs6375-project2
+      name: "Tree Classifiers"
+      minimal: true
+      url: "https://github.com/matthewevans87/cs6375-project2"
+      description: "Evaluated Decision Tree, Bagging, Random Forest, and Gradient Boosting classifier performance on synthetic CNF formula dataset."
+      end_date: "2024-10"
+
+    - key: cs6320-nlp-assignment1
+      name: "N-gram Language Model Implementation"
+      minimal: true
+      url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-assignment1"
+      description: "Implemented N-gram language models for text prediction and analysis."
+      end_date: "2025-09"
+
+    - key: cs6320-nlp-assignment2
+      name: "Sentiment Analysis with FFNN and RNN (Yelp Reviews)"
+      minimal: true
+      url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-assignment2"
+      description: "Implemented 5-class sentiment analysis using Feed-Forward Neural Networks and Recurrent Neural Networks on Yelp reviews."
+      end_date: "2025-10"
+
+    - key: nn-web-demo-mlp
+      name: "MLP Implementation (MNIST)"
+      minimal: true
+      url:
+        - "https://github.com/matthewevans87/neural-networks-independent-study/blob/main/projects/mlp/mlp.py"
+        - "https://matthewevans87.github.io/nn-web-demo-mlp/"
+      description: "Implemented Multi-Layer Perceptron from scratch (NumPy) for digit classification on the MNIST dataset."
+      end_date: "2025-02"
+
+    - key: nn-web-demo-cnn
+      name: "GAN Implementation (MNIST)"
+      minimal: true
+      url:
+        - "https://github.com/matthewevans87/neural-networks-independent-study/blob/main/projects/gan/gan.py"
+      description: "Implemented Generative Adversarial Network (PyTorch) for digit generation on the MNIST dataset."
+      end_date: "2025-05"
+
+    - key: nn-web-demo-rnn
+      name: "RNN Implementation (Tiny Shakespeare)"
+      minimal: true
+      url:
+        - "https://github.com/matthewevans87/neural-networks-independent-study/blob/main/projects/rnn/rnn.py"
+      description: "Implemented Recurrent Neural Network (PyTorch) for character-level language modeling on the Tiny Shakespeare dataset."
+      end_date: "2025-05"
+
+    - key: cs6347-hw2
+      name: "Loopy Belief Propagation (Map Coloring)"
+      minimal: true
+      url:
+        - "https://github.com/matthewevans87/cs6347-hw2"
+      description: "Implemented Loopy Belief Propagation algorithm (Sum and Max Prod) for approximate inference in a Markov Random Field applied to the Map Coloring problem."
+      end_date: "2024-03"
+
+    - key: cs6347-hw3-gibbs
+      name: "Gibbs Sampling (Weighted Map Coloring)"
+      minimal: true
+      url:
+        - "https://github.com/matthewevans87/cs6347-hw3/blob/main/gibbs.py"
+      description: "Implemented Gibbs Sampling algorithm for approximate inference in a Markov Random Field applied to the Weighted Map Coloring problem."
+      end_date: "2024-04"
+
+    - key: cs6347-hw3-mle
+      name: "Maximum Likelihood Estimation (MLE) (Weighted Map Coloring)"
+      minimal: true
+      url:
+        - "https://github.com/matthewevans87/cs6347-hw3/blob/main/mle.py"
+      description: "Implemented Maximum Likelihood Estimation (MLE) with Belief Propagation for approximate inference in a Markov Random Field applied to the Weighted Map Coloring problem."
+      end_date: "2024-04"
+
+    - key: cs6347-hw4-em
+      name: "Expectation Maximization (EM) (Weighted Map Coloring)"
+      minimal: true
+      url:
+        - "https://github.com/matthewevans87/cs6347-hw4/blob/main/colorem.py"
+      description: "Implemented Expectation Maximization (EM) with Belief Propagation for approximate inference with latent variables in a Markov Random Field applied to the Weighted Map Coloring problem."
+      end_date: "2024-05"
+
+    - key: cs6347-hw4-em-colorem
+      name: "Bayesian Expectation Maximization (EM) for Party Affiliation Inference"
+      minimal: true
+      url:
+        - "https://github.com/matthewevans87/cs6347-hw4/blob/main/bayesem.py"
+      description: "Implemented Bayesian Expectation Maximization (EM) with Belief Propagation for approximate inference with latent variables in the Party Affiliation Inference problem."
+      end_date: "2024-05"
 
 education:
   elements:

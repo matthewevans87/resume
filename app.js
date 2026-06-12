@@ -202,7 +202,7 @@ const createProjectLinkBtn = (url) => {
     svg.appendChild(path);
     btn.appendChild(svg);
   } else {
-    btn.appendChild(createElement("span", "material-symbols-outlined", "code"));
+    btn.appendChild(createElement("span", "material-symbols-outlined", "link"));
   }
 
   // Print-only: show the URL text next to the icon
@@ -210,6 +210,14 @@ const createProjectLinkBtn = (url) => {
   btn.appendChild(printUrl);
 
   return btn;
+};
+
+// Appends one or more project-link buttons to a wrapper element.
+// `url` may be a string (single link) or an array of strings (multiple links).
+const appendProjectLinks = (wrapper, url) => {
+  if (!url) return;
+  const urls = Array.isArray(url) ? url : [url];
+  urls.forEach((u) => wrapper.appendChild(createProjectLinkBtn(u)));
 };
 
 // Render Functions
@@ -527,9 +535,7 @@ const renderExperience = (experiences) => {
             const projNameWrapper = createElement("div", "project-name-wrapper");
             const projName = createElement("div", "project-name", project.name);
             projNameWrapper.appendChild(projName);
-            if (project.url) {
-              projNameWrapper.appendChild(createProjectLinkBtn(project.url));
-            }
+            appendProjectLinks(projNameWrapper, project.url);
             projHeader.appendChild(projNameWrapper);
             const projDate = createElement(
               "div",
@@ -615,7 +621,10 @@ const renderProjects = (projects, config = {}) => {
   const isMobileView = window.matchMedia("(max-width: 640px)").matches;
   const groupByType = config == null || config.group_by_type !== false;
 
-  const enabledProjects = collectionEnabled(projects);
+  const allEnabledProjects = collectionEnabled(projects);
+  // Minimal projects render in a compact group after the regular projects.
+  const enabledProjects = allEnabledProjects.filter((p) => p.minimal !== true);
+  const minimalProjects = allEnabledProjects.filter((p) => p.minimal === true);
 
   const renderProjectItem = (project) => {
     const projectItem = createElement("div", "project-item");
@@ -627,9 +636,7 @@ const renderProjects = (projects, config = {}) => {
     const nameWrapper = createElement("div", "project-name-wrapper");
     const name = createElement("div", "project-name", project.name);
     nameWrapper.appendChild(name);
-    if (project.url) {
-      nameWrapper.appendChild(createProjectLinkBtn(project.url));
-    }
+    appendProjectLinks(nameWrapper, project.url);
 
     const dateRange = createElement(
       "div",
@@ -694,6 +701,33 @@ const renderProjects = (projects, config = {}) => {
     return projectItem;
   };
 
+  // Compact, non-interactive bullet for "minimal" projects (e.g. coursework).
+  const renderMinimalProjectItem = (project) => {
+    const item = createElement("li", "minimal-project-item");
+    item.id = "proj-" + slugify(project.name);
+
+    const header = createElement("div", "minimal-project-header");
+
+    const nameWrapper = createElement("div", "project-name-wrapper");
+    const name = createElement("span", "minimal-project-name", project.name);
+    nameWrapper.appendChild(name);
+    appendProjectLinks(nameWrapper, project.url);
+    header.appendChild(nameWrapper);
+
+    // Single date (completion), falling back to start date.
+    const dateValue = project.end_date || project.start_date;
+    if (dateValue) {
+      header.appendChild(createElement("div", "date-range", formatDate(dateValue)));
+    }
+    item.appendChild(header);
+
+    if (project.description) {
+      item.appendChild(createElement("div", "minimal-project-description", project.description));
+    }
+
+    return item;
+  };
+
   if (groupByType) {
     const academicProjects = enabledProjects.filter((p) => p.type === "academic");
     const personalProjects = enabledProjects.filter((p) => p.type === "personal");
@@ -711,6 +745,21 @@ const renderProjects = (projects, config = {}) => {
     // Use collection order (caller controls via `ordering`); preserves the
     // author's intended sequence without forcing a date sort.
     enabledProjects.forEach((project) => projectsList.appendChild(renderProjectItem(project)));
+  }
+
+  // Minimal projects: grouped together and placed after the regular projects.
+  if (minimalProjects.length > 0) {
+    const minimalTitle = (config && config.minimal_projects_title) || "Coursework";
+    const groupHeader = createElement("h3", "project-group-header", minimalTitle);
+    projectsList.appendChild(groupHeader);
+    const list = createElement("ul", "minimal-projects");
+    const sortedMinimal = minimalProjects
+      .slice()
+      .sort((a, b) =>
+        (b.end_date || b.start_date || "").localeCompare(a.end_date || a.start_date || ""),
+      );
+    sortedMinimal.forEach((project) => list.appendChild(renderMinimalProjectItem(project)));
+    projectsList.appendChild(list);
   }
 };
 

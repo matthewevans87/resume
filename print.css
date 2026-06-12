@@ -572,6 +572,45 @@
     content: "";
   }
 
+  /* Minimal projects (e.g. coursework) — compact bullets */
+  .minimal-projects {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .minimal-project-item {
+    position: relative;
+    padding-left: 10pt;
+    margin-bottom: 3pt;
+    page-break-inside: avoid;
+  }
+
+  .minimal-project-item::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-weight: bold;
+  }
+
+  .minimal-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .minimal-project-name {
+    font-size: var(--print-font-sm);
+    font-weight: 700;
+    color: #000;
+  }
+
+  .minimal-project-description {
+    font-size: var(--print-font-xs);
+    color: #000;
+  }
+
   /* Education */
   .education {
     display: block;
