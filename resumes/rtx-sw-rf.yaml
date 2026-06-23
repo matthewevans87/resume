@@ -17,7 +17,7 @@ skills_highlight:
   disabled: true
 
 mission_statement:
-  - "Software Engineer with 15 years shipping and leading production systems and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "Software Engineer with 15 years shipping and leading production systems and recent M.S. in Computer Science (Machine Learning) from UT Dallas."
   - "I build the software backbone of complex systems — distributed, containerized infrastructure and the CI/CD that ships it — and bring the engineering leadership to scale teams and own delivery, now pointed at sensing, autonomy, and defense."
 
 projects_config:
@@ -31,7 +31,7 @@ qualifications:
     # Source: Zeal IT Consultants — "Led multiple simultaneous client delivery teams with $4MM+/year
     #         combined revenue — owning hiring, account relationships, SOW negotiation, and end-to-end
     #         software delivery"; Independent Consultant — greenfield ERP platform, end-to-end delivery
-    - "Infrastructure and software-leadership fit: 15 years building and leading production software — distributed, containerized systems at scale, end-to-end CI/CD ownership, and team leadership — now focused on the software backbone of RF sensing and defense systems (see Zeal IT Consultants)."
+    - "Infrastructure and software-leadership fit: 15 years building and leading production software — distributed, containerized systems at scale, end-to-end CI/CD ownership, and team leadership (see Zeal IT Consultants) — now focused on the software backbone of RF sensing and defense systems."
 
     # JD: Build, integrate, and deploy containerized applications using Docker and/or Kubernetes,
     #     delivering software solutions to multiple customer environments
@@ -39,7 +39,7 @@ qualifications:
     #         across thousands of concurrent Lambda and ECS Fargate workers" (Docker, AWS ECS/Fargate);
     #         Alight Clarity (Docker, AWS Fargate, multi-tenant SaaS); McKesson ETL (Docker)
     # Note: evidence is Docker + managed ECS/Fargate orchestration; raw Kubernetes not explicitly in base
-    - "Containerized infrastructure at scale: Architected an event-driven platform on AWS that processed terabyte-scale data through a custom streaming parser fanned out across thousands of concurrent workers (Docker, AWS ECS/Fargate) — built for throughput and reliability across multiple customer environments (see Alight Clarity SaaS Product)."
+    - "Containerized infrastructure at scale: Architected an event-driven platform on AWS that processed terabyte-scale data through a custom streaming parser fanned out across thousands of concurrent workers (Docker, AWS ECS/Fargate) — built for throughput and reliability across multiple customer environments (see Alight Clarity, McKesson ETL Process Monitoring)."
 
     # JD: Create and maintain DevSecOps CI/CD pipelines supporting rapid iteration, deployment,
     #     and evolving mission requirements
