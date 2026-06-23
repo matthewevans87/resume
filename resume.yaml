@@ -197,8 +197,7 @@ experience:
                   highlights:
                     - "Served as Team Lead for core Eye Book Now product interfacing with product owner and business managers"
                     - "Mentored junior developers, reviewed PRs, handled production releases"
-                    - "Rescued Beacon project suffering from loosely defined requirements and over-engineering"
-                    - "Delivered Beacon product ahead of schedule"
+                    - "Rescued Beacon project suffering from loosely defined requirements and over-engineering, ultimately delivered ahead of schedule"
                     - "Full stack development of React frontends and RESTful .NET Core API microservices"
                   technologies:
                     - "C#"

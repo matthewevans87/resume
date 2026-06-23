@@ -289,6 +289,8 @@
     align-items: baseline;
     margin-bottom: 6pt;
     cursor: default;
+    page-break-after: avoid;
+    break-after: avoid;
   }
 
   .company-name-loc {
@@ -494,11 +496,12 @@
   }
 
   .company-project-item {
-    padding: 6pt 0 6pt 8pt;
-    margin-bottom: 2pt;
+    padding: 3pt 0 3pt 6pt;
+    margin-bottom: 1pt;
     background: none;
     border: none;
-    border-left: 2pt solid #ccc;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .company-project-item:last-child {
@@ -537,6 +540,8 @@
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 3pt;
+    page-break-after: avoid;
+    break-after: avoid;
   }
 
   .project-name {

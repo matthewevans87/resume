@@ -1,3 +1,15 @@
+# Raytheon – Senior Software Engineer (RF/Software-Defined Systems)
+# Route slug: rtx-sw-rf
+# Changes vs. base:
+#   1. personal.title → "Systems Software Engineer"
+#   2. skills_highlight disabled
+#   3. mission_statement reframed for systems/defense SW engineering
+#   4. qualifications block with JD-anchored comments and parenthetical project citations
+#   5. projects_config.title → "Selected Engineering Projects"
+#   6. experience: zeal-it-consultants projects_expanded → true (exposes McKesson CI/CD + Alight Docker)
+#   7. projects: neural-networks-independent-study and intent-aware-lookahead disabled (NLP/survey — not relevant)
+#   8. projects: all ML coursework (minimal) disabled — not relevant to C++/Linux/DevSecOps JD
+
 personal:
   title: "Systems Software Engineer"
 
@@ -8,15 +20,104 @@ mission_statement:
   - "Software Engineer with 15 years shipping and leading production systems and an M.S. in Computer Science (Machine Learning) from UT Dallas."
   - "I build the software backbone of complex systems — distributed, containerized infrastructure and the CI/CD that ships it — and bring the engineering leadership to scale teams and own delivery, now pointed at sensing, autonomy, and defense."
 
+projects_config:
+  title: "Selected Engineering Projects"
+
 qualifications:
   title: "Qualifications"
   items:
-    - "Infrastructure and software-leadership fit: 15 years building and leading production software — distributed, containerized systems at scale, end-to-end CI/CD ownership, and team leadership — now focused on the software backbone of sensing and autonomy systems."
-    - "Containerized infrastructure at scale: Architected an event-driven platform on AWS that processed terabyte-scale data through a custom streaming parser fanned out across thousands of concurrent workers (Docker, AWS ECS/Fargate) — distributed x86 infrastructure built for throughput and reliability."
-    - "CI/CD and pipeline automation: Owned CI/CD end-to-end across production systems — fully scripted pipelines for linting, testing, builds, releases, and infrastructure deployment in GitHub Actions and Azure DevOps YAML."
-    - "Automated testing and verification: Build verification into the system, not onto it — automated test harnesses with verified regression parity for a legacy-to-greenfield modernization, and reproducible evaluation/ablation frameworks for ML experiments."
-    - "Technical leadership, architecture, and independence: Led multiple concurrent software delivery teams at $4MM+/year — hired and mentored dozens of engineers across career levels, owned product architecture and end-to-end delivery of cloud-native multi-tenant SaaS, and rescued a stalled, over-scoped program to deliver ahead of schedule. Comfortable operating with full autonomy and setting technical direction."
-    - "Rapid acquisition of new languages and domains: Strong polyglot (C#, Python, TypeScript) with a track record of going deep in unfamiliar territory fast — earned an M.S. in CS with an ML concentration while working full-time and recently built a vision-based reinforcement-learning pipeline on physical robot hardware in NVIDIA Isaac Sim."
-    - "Applied ML depth: Built vision-conditioned RL policies under domain randomization for sim-to-real transfer and a transformer language model with a 21-variant ablation study — relevant depth as software-defined sensing increasingly incorporates machine learning."
+    # JD: Senior Software Engineer — 5+ years experience; designing, developing, testing, and deploying
+    #     SW-defined capabilities in fast-paced Agile environment
+    # Source: Zeal IT Consultants — "Led multiple simultaneous client delivery teams with $4MM+/year
+    #         combined revenue — owning hiring, account relationships, SOW negotiation, and end-to-end
+    #         software delivery"; Independent Consultant — greenfield ERP platform, end-to-end delivery
+    - "Infrastructure and software-leadership fit: 15 years building and leading production software — distributed, containerized systems at scale, end-to-end CI/CD ownership, and team leadership — now focused on the software backbone of RF sensing and defense systems (see Zeal IT Consultants)."
+
+    # JD: Build, integrate, and deploy containerized applications using Docker and/or Kubernetes,
+    #     delivering software solutions to multiple customer environments
+    # Source: Zeal IT "Distributed data processing at scale" — "custom streaming parser fanned out
+    #         across thousands of concurrent Lambda and ECS Fargate workers" (Docker, AWS ECS/Fargate);
+    #         Alight Clarity (Docker, AWS Fargate, multi-tenant SaaS); McKesson ETL (Docker)
+    # Note: evidence is Docker + managed ECS/Fargate orchestration; raw Kubernetes not explicitly in base
+    - "Containerized infrastructure at scale: Architected an event-driven platform on AWS that processed terabyte-scale data through a custom streaming parser fanned out across thousands of concurrent workers (Docker, AWS ECS/Fargate) — built for throughput and reliability across multiple customer environments (see Alight Clarity SaaS Product)."
+
+    # JD: Create and maintain DevSecOps CI/CD pipelines supporting rapid iteration, deployment,
+    #     and evolving mission requirements
+    # JD Preferred: CI/CD tools such as Jenkins, Git, Bitbucket, or similar
+    # Source: McKesson ETL — "Created fully scripted CI/CD pipelines for linting, testing, builds,
+    #         releases, and infrastructure deployment" (Azure DevOps); Essilor Eye Book Now (GitHub Actions);
+    #         HKS — "Established CI/CD pipelines and Azure DevOps workflows"
+    - "CI/CD and pipeline automation: Owned CI/CD end-to-end across production systems — fully scripted pipelines for linting, testing, builds, releases, and infrastructure deployment in GitHub Actions and Azure DevOps YAML (see McKesson ETL Process Monitoring, Essilor Eye Book Now)."
+
+    # JD: Support both new application development and enhancement of existing capabilities
+    # JD Preferred: Familiarity with Agile lifecycle including TDD / Continuous Integration
+    # Source: Independent Consultant summary — "automated test harnesses with verified regression parity
+    #         for a legacy-to-greenfield modernization"; Vision-Based Sim-to-Real — "reproducible
+    #         end-to-end pipeline with typed YAML validation, versioned artifact directories, and
+    #         provenance tracking for systematic experimentation and run-to-run comparison"
+    - "Automated testing and verification: Build verification into the system, not onto it — automated test harnesses with verified regression parity for a legacy-to-greenfield modernization (see Independent Consultant), and reproducible evaluation/ablation frameworks for ML experiments (see Vision-Based Sim-to-Real Manipulation Pipeline)."
+
+    # JD: Senior Software Engineer; fast-paced Agile; team environment; leading-edge technologies
+    # Source: Zeal IT Consultants — "Led multiple simultaneous client delivery teams with $4MM+/year
+    #         combined revenue"; "rescued a stalled project suffering from loosely defined requirements
+    #         and over-engineering; restructured scope and delivered ahead of schedule"
+    - "Technical leadership, architecture, and independence: Led multiple concurrent software delivery teams — hired and mentored dozens of engineers across career levels, owned product architecture and end-to-end delivery of cloud-native multi-tenant SaaS, and rescued a stalled, over-scoped program to deliver ahead of schedule (see Zeal IT Consultants). Comfortable operating with full autonomy and setting technical direction."
+
+    # JD: Develop C++ software (Must Have) — C++ not in candidate's history; positioning language agility
+    # Source: M.S. CS (ML concentration) completed while working full-time (education section);
+    #         Vision-Based Sim-to-Real — new domain (robotics, RL, NVIDIA Isaac Sim) built from scratch
+    - "Rapid acquisition of new languages and domains: Strong polyglot (C#, Python, TypeScript) with a track record of going deep in unfamiliar territory fast — earned an M.S. in CS with an ML concentration while working full-time and recently built a vision-based RL pipeline in a completely new domain (see Vision-Based Sim-to-Real Manipulation Pipeline)."
+
+    # JD Preferred: Experience developing embedded software for sensors, algorithm development,
+    #     signal or data processing
+    # Source: Vision-Based Sim-to-Real — "multimodal sensor fusion across RGB imagery, joint-state
+    #         telemetry, and object-pose data"; ablation sweep across reward functions and vision
+    #         backbones ("sweep runner for Cartesian-product ablations...capturing per-experiment
+    #         provenance and per-condition success/lift/termination stats")
+    # Note: academic/research context, not embedded production — framed accordingly
+    - "Applied algorithm and sensor-data depth: Built vision-conditioned RL policies processing multimodal sensor streams (camera, joint-state, object pose) under domain randomization for sim-to-real transfer, with systematic ablation evaluation across reward functions and vision backbones — relevant depth as software-defined sensing increasingly incorporates learned algorithms (see Vision-Based Sim-to-Real Manipulation Pipeline)."
+
+    # JD: Active and transferable U.S. government Secret clearance required on day 1
+    # Note: candidate does not hold an active clearance; eligibility framing is accurate and appropriate
+    # Source: personal information (U.S. citizenship)
     - "Clearance eligibility: U.S. citizen; eligible to obtain and maintain clearance."
+
+    # JD: Bachelor's in STEM + 5 years, or Advanced degree + 3 years
+    # Source: education section
     - "Education: M.S. in Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0."
+
+experience:
+  elements:
+    - key: independent-consultant
+      expanded: true # greenfield ERP + automated test harnesses — test/verification relevance
+      projects_expanded: false # ERP client project details not relevant to C++/Linux/DevSecOps role
+    - key: zeal-it-consultants
+      expanded: true # Docker, AWS ECS/Fargate, event-driven ETL at scale, team leadership — directly relevant
+      projects_expanded: true # McKesson (CI/CD pipelines) and Alight Clarity (Docker, multi-tenant SaaS) add supporting detail
+    # hks-inc: pre-2020; already collapsed in base — no change needed
+    # clean-harbors-inc: pre-2020, analytics/reporting role — not relevant; already collapsed
+    # cisco-systems-inc: pre-2020, data center HW context interesting but too old to defend; already collapsed
+    # clickmotive-inc, ericsson-inc: pre-2020; already collapsed — no change needed
+
+projects:
+  disabled:
+    - crypton # depth warning; personal side project; base default
+    - crypto-currency-trading-bot # personal exploration; base default
+    - neural-networks-independent-study # pure ML survey/study — not relevant to this JD
+    - intent-aware-lookahead-for-language-modeling # NLP transformer — not relevant to RF/sensors/C++ JD
+    # Minimal projects (ML coursework) — all disabled: not relevant to C++/Linux/DevSecOps JD
+    - cs6375-project1
+    - cs6375-project4-part1
+    - cs6375-project3-part1
+    - cs6375-project3-part2
+    - cs6375-project2
+    - cs6320-nlp-assignment1
+    - cs6320-nlp-assignment2
+    - nn-web-demo-mlp
+    - nn-web-demo-cnn
+    - nn-web-demo-rnn
+    - cs6347-hw2
+    - cs6347-hw3-gibbs
+    - cs6347-hw3-mle
+    - cs6347-hw4-em
+    - cs6347-hw4-em-colorem
