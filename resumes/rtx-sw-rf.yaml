@@ -104,7 +104,7 @@ projects:
     - crypton # depth warning; personal side project; base default
     - crypto-currency-trading-bot # personal exploration; base default
     - neural-networks-independent-study # pure ML survey/study — not relevant to this JD
-    - intent-aware-lookahead-for-language-modeling # NLP transformer — not relevant to RF/sensors/C++ JD
+    # - intent-aware-lookahead-for-language-modeling # NLP transformer — not relevant to RF/sensors/C++ JD
     # Minimal projects (ML coursework) — all disabled: not relevant to C++/Linux/DevSecOps JD
     - cs6375-project1
     - cs6375-project4-part1
@@ -124,3 +124,10 @@ projects:
   elements:
     - key: expedia-learning-to-rank
       highlights_enabled: false
+    - key: intent-aware-lookahead-for-language-modeling
+      highlights_enabled: false
+  ordering:
+    - vision-based-sim-to-real-manipulation-pipeline
+    - ml-assisted-visibility-graph-construction
+    - intent-aware-lookahead-for-language-modeling
+    - expedia-learning-to-rank

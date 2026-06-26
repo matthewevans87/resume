@@ -128,15 +128,13 @@ experience:
                 - key: alight-clarity-saas-product
                   name: "Alight Clarity (SaaS Product)"
                   url:
-                  description: "Cloud-native SaaS platform for benefits administration built on AWS. Led full SDLC from architecture to delivery, managing Agile development team and interfacing with executive stakeholders."
+                  description: "Multi-tenant, cloud-native SaaS platform for benefits administration on AWS, generating $4MM+ annual revenue. Custom streaming ETL on AWS Fargate ingested terabyte-scale datasets in minutes via massive parallelism."
                   role: "Account Manager / Engagement Manager / Team Lead"
                   start_date: "2022"
                   end_date: "2022"
                   highlights:
-                    - "Collaborated with client to draft product architecture and technical design"
-                    - "Hired and led Agile development team through entire SDLC"
-                    - "Trained and coached client on Agile philosophies and execution"
-                    - "Successfully delivered working SaaS product opening additional revenue stream for client"
+                    - "Co-authored product architecture and technical design with client and consulting team; interfaced with executive stakeholders and technical leadership throughout"
+                    - "Hired and led Agile development team through full SDLC; trained and coached client on Agile practices"
                   technologies:
                     - "C#"
                     - "Dotnet"
@@ -148,21 +146,15 @@ experience:
                     - "AWS CloudFormation"
                     - "SQL Server"
                     - "EF Core"
-                  metrics:
-                    - "Multi-tenant SaaS platform"
-                    - "$4MM+ annual revenue"
                 - key: greyhound-route-planning-tool
                   name: "Greyhound Route Planning Tool"
-                  description: "Experimental proof-of-concept tool for transit schedule optimization. Complex D3 visualizations enabling exploration of Greyhound's transit schedule and passenger data to identify business risks and opportunities."
+                  description: "Proof-of-concept transit schedule optimizer for Greyhound's nationwide route network — led a scope-undefined engagement, defined the problem space through stakeholder interviews, and iterated on prototypes with direct executive feedback."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2021"
                   end_date: "2021"
                   highlights:
-                    - "Identified core business problems through extensive client interviews and research"
-                    - "Developed interactive Angular frontend with complex D3 visualizations"
-                    - "Integrated Google Maps for geospatial route visualization"
-                    - "Connected to Snowflake data warehouse for large-scale passenger data analysis"
-                    - "Delivered iterative experimental solutions with executive demos"
+                    - "Built full-stack Angular frontend with complex D3 and Google Maps visualizations for interactive exploration of transit schedules and passenger flow"
+                    - "Performed open-ended exploration of Snowflake data warehouse to surface schedule anomalies, passenger flow patterns, and optimization opportunities"
                   technologies:
                     - "TypeScript"
                     - "Angular"
@@ -172,20 +164,15 @@ experience:
                     - "Azure"
                     - "SQL Server"
                   metrics:
-                    - "Nationwide route network visualization"
-                    - "Passenger flow analysis"
                 - key: bankers-financial-maverick
                   name: "Bankers Financial - Maverick"
-                  description: "SaaS product for financial services built with .NET 5 and Angular. Led architecture, development, and Agile team execution."
+                  description: "Multi-tenant SaaS platform for financial services on .NET 5 and Angular — designed full system architecture from scratch and delivered on schedule, opening a new revenue stream for the client."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2022"
                   end_date: "2022"
                   highlights:
-                    - "Responsible for all aspects of product architecture and technical design"
-                    - "Hired and led Agile development team through entire SDLC"
-                    - "Interfaced with executive client stakeholders and technical leadership"
-                    - "Trained, coached, and mentored client on Agile philosophies and led execution"
-                    - "Successfully delivered working SaaS product opening additional revenue stream for client"
+                    - "Hired and led Agile development team through full SDLC; trained and coached client team on Agile practices and execution"
+                    - "Collaborated with executive stakeholders and technical leadership on requirements and product direction"
                   technologies:
                     - "C#"
                     - ".NET 5"
@@ -198,15 +185,14 @@ experience:
                   metrics:
                 - key: essilor-eye-book-now
                   name: "Essilor - Eye Book Now"
-                  description: "React consumer-facing frontend with .NET Core microservices hosted in AWS. Led team through product delivery and rescued stalled Beacon project."
+                  description: "Simultaneously tech led Eye Book Now and diagnosed and rescued Beacon — stalled from requirements drift, over-engineering, and repeated team handoffs — delivering both on time."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2021"
                   end_date: "2021"
                   highlights:
-                    - "Served as Team Lead for core Eye Book Now product interfacing with product owner and business managers"
-                    - "Mentored junior developers, reviewed PRs, handled production releases"
-                    - "Rescued Beacon project suffering from loosely defined requirements and over-engineering, ultimately delivered ahead of schedule"
-                    - "Full stack development of React frontends and RESTful .NET Core API microservices"
+                    - "Tech led Eye Book Now: partnered with product owner and business managers on scope; mentored junior developers through PRs, code review, and production releases; set team rhythm through coaching and hands-on engagement"
+                    - "Diagnosed and rescued Beacon — stalled from loosely defined requirements, over-engineering, and repeated team handoffs — restructured scope and delivered ahead of schedule"
+                    - "Built full stack: React consumer-facing frontends, RESTful .NET Core microservices on AWS EC2, and persistence layer across SQL Server, Redis, and Cosmos DB"
                   technologies:
                     - "C#"
                     - "Dotnet"
@@ -221,15 +207,13 @@ experience:
                   metrics:
                 - key: mckesson-etl-process-monitoring
                   name: "McKesson - ETL Process Monitoring"
-                  description: "ETL status monitoring system providing real-time visibility to account managers for improved customer support."
+                  description: "Angular/microservices platform on Azure Cloud for real-time ETL pipeline monitoring — adopted internally as reference architecture for new projects."
                   role: "Developer"
                   start_date: "2020"
                   end_date: "2020"
                   highlights:
-                    - "Created APIs, microservices, and web applications on Azure Cloud within Agile Kanban team"
-                    - "Developed ETL status monitoring system giving account managers real-time visibility"
-                    - "Application serves as reference architecture for new projects"
-                    - "Created fully scripted CI/CD pipelines for linting, testing, builds, releases, and infrastructure deployment"
+                    - "Built full-stack Angular SPA, RESTful APIs, and microservices in an Agile Kanban team; monitoring dashboard gave account managers real-time visibility into ETL job health, directly improving customer support response"
+                    - "Authored fully scripted CI/CD pipelines covering linting, unit testing, builds, releases, templated infrastructure deployment, and environment configuration"
                   technologies:
                     - "TypeScript"
                     - "C#"
@@ -240,7 +224,6 @@ experience:
                     - "Azure DevOps"
                     - "OAuth"
                     - "Dapper"
-                  metrics:
     - key: hks-inc
       company: "HKS, Inc."
       company_url: "https://www.hksinc.com/"
@@ -694,7 +677,7 @@ projects:
     - crypto-currency-trading-bot
   elements:
     - key: expedia-learning-to-rank
-      name: "Hotel Search Ranking: Two-Stage Retrieval and Ranking Pipeline"
+      name: "Hotel Search Ranking: Two-Tower Retrieval and Learning-to-Rank Pipeline"
       url: "https://github.com/matthewevans87/expedia-ltr"
       type: "academic"
       description: "Built an end-to-end learning-to-rank pipeline on ~1M real hotel search logs (Expedia ICDM 2013) — covering data engineering, two-tower retrieval, listwise neural ranking, and a LightGBM LambdaRank baseline — with full query-grouped evaluation (NDCG@k, MRR, Recall@k) and an 18-run hyperparameter sweep."

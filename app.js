@@ -519,7 +519,13 @@ const renderExperience = (experiences) => {
       if (enabledProjects.length > 0) {
         {
           const projectsHeader = createElement("div", "position-projects-header");
-          projectsHeader.textContent = `Key Projects (${enabledProjects.length})`;
+          projectsHeader.appendChild(document.createTextNode("Key Projects "));
+          const projectsCount = createElement(
+            "span",
+            "projects-count",
+            `(${enabledProjects.length})`,
+          );
+          projectsHeader.appendChild(projectsCount);
           posDiv.appendChild(projectsHeader);
 
           const projectsContainerClasses =
