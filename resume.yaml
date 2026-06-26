@@ -68,7 +68,15 @@ experience:
             start_date: "2023"
             end_date:
             promotion: false
-            technologies: []
+            technologies:
+              - "C#"
+              - "Dotnet"
+              - "Angular"
+              - "TypeScript"
+              - "EF Core"
+              - "SQL Server"
+              - "CI/CD YAML Pipelines"
+              - "Automated Testing"
             summary: |
               Designed and shipped a greenfield ERP platform from scratch while completing an M.S. in Computer Science — replacing a decade-old legacy system with a Clean Architecture stack spanning 87+ domain entities, full manufacturing operations scope (job management, multi-level inventory, AR/AP, work center routing, KPI dashboards), and a reflection-driven code-generation framework that auto-scaffolded authenticated CRUD endpoints across the entire data model. Included a proprietary sheet metal optimization engine balancing scrap minimization, certification requirements, and part yield — and a legacy modernization with verified regression parity via automated test harnesses.
     - key: zeal-it-consultants
@@ -1108,6 +1116,7 @@ skills:
       category: "AI/ML, Robotics & Experimentation"
       items:
         - "PyTorch"
+        - "TensorFlow / TensorFlow Recommenders (TFRS)"
         - "NumPy / SciPy"
         - "TensorBoard"
         - "Transformers (PyTorch / custom)"
@@ -1119,6 +1128,8 @@ skills:
       category: "Classical & Statistical ML"
       items:
         - "scikit-learn"
+        - "LightGBM (LambdaRank / gradient boosting)"
+        - "Learning-to-Rank (LTR): two-tower retrieval, listwise ranking (ApproxNDCG)"
         - "Supervised learning (Naive Bayes, Logistic Regression, SVM, KNN, tree ensembles)"
         - "Unsupervised learning (K-Means, Collaborative Filtering)"
         - "Probabilistic Graphical Models (Belief Propagation, Gibbs Sampling, EM)"
@@ -1127,7 +1138,8 @@ skills:
       category: "ML Systems & Data"
       items:
         - "Experiment design / ablations"
-        - "Evaluation harnesses & metrics"
+        - "Evaluation harnesses & metrics (NDCG / MRR / Recall@k)"
+        - "pandas"
         - "ETL / Data Pipelines"
         - "Message queues (RabbitMQ, AWS SQS)"
         - "Analytics (AWS Athena)"
