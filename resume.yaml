@@ -685,6 +685,48 @@ projects:
     - crypton
     - crypto-currency-trading-bot
   elements:
+    - key: expedia-learning-to-rank
+      name: "Hotel Search Ranking: Two-Stage Retrieval and Ranking Pipeline"
+      url: "https://github.com/matthewevans87/expedia-ltr"
+      type: "academic"
+      description: "Built an end-to-end learning-to-rank pipeline on ~1M real hotel search logs (Expedia ICDM 2013) — covering data engineering, two-tower retrieval, listwise neural ranking, and a LightGBM LambdaRank baseline — with full query-grouped evaluation (NDCG@k, MRR, Recall@k) and an 18-run hyperparameter sweep."
+      role: "Research Engineer / Author"
+      start_date: "2026-06"
+      end_date: "2026-06"
+      highlights:
+        - [
+            "Data pipeline:",
+            "Query-grouped train/val/test split (32K/4K/4K groups) with typed YAML config and provenance tracking; EDA surfaced position-bias anomalies at positions 5/11/17/23 — anomalously low on both CTR and exposure relative to neighboring positions, consistent with non-organic display slots rather than low relevance.",
+          ]
+        - [
+            "LightGBM LambdaRank baseline:",
+            "Trained with graded relevance labels (click=1, booking=5); 18-run sweep across num_leaves × learning_rate × 3 seeds yielded NDCG@5 0.368–0.379 (range 0.011) — tight spread indicating the ceiling is feature expressiveness, not hyperparameters. Best: NDCG@5 0.379, NDCG@10 0.444, MRR 0.375.",
+          ]
+        - [
+            "Two-tower retrieval (TensorFlow Recommenders):",
+            "Separate query and item towers (Dense 128→64, L2-normalized) with in-batch negatives; feature split motivated by importance analysis (location scores → item tower; search context → query tower; interaction features deferred to ranker). Loss plateaued at epoch ~10 — diagnosed as in-batch negative quality ceiling, not training duration. Recall@20 0.781.",
+          ]
+        - [
+            "Neural listwise ranker (TensorFlow, ApproxNDCG):",
+            "Pointwise scoring MLP (Dense 128→64→32→1) over padded query groups (list_size=25) with custom ApproxNDCG loss; includes all 16 features including interaction signals (price, promotion) structurally excluded from the two-tower. NDCG@5 0.110; val loss better than train loss rules out overfitting — gap versus LightGBM is architectural, not a tuning failure.",
+          ]
+        - [
+            "Implementation findings:",
+            "Two generalizable lessons: (1) BatchNorm over the list dimension is uninformative when scoring with list_size=1 at eval vs. list_size=25 at train — requires group-wise scoring at inference; (2) unscaled graded labels (0/1/5) cause ApproxNDCG to overweight rare bookings (gain 31×) vs. clicks (gain 1×) — corrected via label normalization (0.0/0.2/1.0) for training.",
+          ]
+      technologies:
+        - "Python"
+        - "TensorFlow"
+        - "TensorFlow Recommenders (TFRS)"
+        - "LightGBM"
+        - "NumPy"
+        - "pandas"
+        - "Learning-to-Rank (LTR)"
+        - "Two-Tower Retrieval"
+        - "Listwise Ranking (ApproxNDCG)"
+        - "NDCG / MRR / Recall@k"
+        - "YAML configs"
+
     - key: vision-based-sim-to-real-manipulation-pipeline
       name: "Vision-Based Sim-to-Real Manipulation Pipeline"
       url: "https://github.com/matthewevans87/so101_sim_to_real"
