@@ -93,7 +93,7 @@ experience:
             end_date: "2023"
             promotion: false
             summary: |
-              Led multiple simultaneous client delivery teams with $4MM+/year combined revenue — owning hiring, account relationships, SOW negotiation, and end-to-end software delivery across enterprise SaaS products on AWS and Azure.
+              Led multiple simultaneous software delivery teams, trusted with $4MM+/year in client engineering budgets — owning hiring, team leadership, and end-to-end technical delivery across enterprise SaaS products on AWS and Azure.
             highlights:
               - [
                   "Distributed data processing at scale:",
@@ -105,11 +105,11 @@ experience:
                 ]
               - [
                   "Product delivery:",
-                  "Architected and delivered cloud-native SaaS products for clients in benefits administration, financial services, and healthcare — including a multi-tenant AWS platform generating $4MM+ annual revenue.",
+                  "Architected and delivered cloud-native SaaS products in benefits administration, financial services, and healthcare.",
                 ]
               - [
                   "Client engagement:",
-                  "Drove stakeholder discovery, drafted Statements of Work, navigated VMOs and MSPs, and maintained executive relationships across accounts.",
+                  "Drove stakeholder discovery and requirements definition; maintained executive relationships across accounts.",
                 ]
               - [
                   "Technical rescue:",
@@ -128,12 +128,12 @@ experience:
                 - key: alight-clarity-saas-product
                   name: "Alight Clarity (SaaS Product)"
                   url:
-                  description: "Multi-tenant, cloud-native SaaS platform for benefits administration on AWS, generating $4MM+ annual revenue. Custom streaming ETL on AWS Fargate ingested terabyte-scale datasets in minutes via massive parallelism."
+                  description: "Multi-tenant, cloud-native SaaS platform for benefits administration on AWS. Custom streaming ETL on AWS Fargate ingested terabyte-scale datasets in minutes via massive parallelism."
                   role: "Account Manager / Engagement Manager / Team Lead"
                   start_date: "2022"
                   end_date: "2022"
                   highlights:
-                    - "Co-authored product architecture and technical design with client and consulting team; interfaced with executive stakeholders and technical leadership throughout"
+                    - "Co-authored product architecture and technical design with client and consulting team; partnered with executive stakeholders and technical leadership throughout"
                     - "Hired and led Agile development team through full SDLC; trained and coached client on Agile practices"
                   technologies:
                     - "C#"
