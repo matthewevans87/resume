@@ -121,3 +121,6 @@ projects:
     - cs6347-hw3-mle
     - cs6347-hw4-em
     - cs6347-hw4-em-colorem
+  elements:
+    - key: expedia-learning-to-rank
+      highlights_enabled: false

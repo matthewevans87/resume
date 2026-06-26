@@ -556,7 +556,11 @@ const renderExperience = (experiences) => {
             projectItem.appendChild(description);
 
             // Highlights
-            if (project.highlights && project.highlights.length > 0) {
+            if (
+              project.highlights_enabled !== false &&
+              project.highlights &&
+              project.highlights.length > 0
+            ) {
               const highlights = createElement("ul", "highlights");
               project.highlights.forEach((highlight) => {
                 highlights.appendChild(createHighlightLi(highlight));
@@ -669,7 +673,11 @@ const renderProjects = (projects, config = {}) => {
     body.appendChild(description);
 
     // Highlights
-    if (project.highlights && project.highlights.length > 0) {
+    if (
+      project.highlights_enabled !== false &&
+      project.highlights &&
+      project.highlights.length > 0
+    ) {
       const highlights = createElement("ul", "highlights");
       project.highlights.forEach((highlight) => {
         highlights.appendChild(createHighlightLi(highlight));
