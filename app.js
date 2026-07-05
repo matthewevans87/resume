@@ -95,6 +95,9 @@ const formatDate = (dateString) => {
 };
 
 const formatDateRange = (start, end) => {
+  if (start && end && String(start) === String(end)) {
+    return formatDate(start);
+  }
   return `${formatDate(start)} – ${formatDate(end)}`;
 };
 
@@ -629,12 +632,106 @@ const renderProjects = (projects, config = {}) => {
   const projectsList = document.getElementById("projects-list");
   projectsList.innerHTML = "";
   const isMobileView = window.matchMedia("(max-width: 640px)").matches;
-  const groupByType = config == null || config.group_by_type !== false;
+
+  const groupsConfig = (projects && projects.groups) || (config && config.groups) || null;
+
+  const normalizeGroupConfig = (rawGroups) => {
+    if (!rawGroups || typeof rawGroups !== "object") return null;
+
+    const defs = new Map();
+    if (Array.isArray(rawGroups.elements)) {
+      rawGroups.elements.forEach((el) => {
+        if (!el || el.key == null) return;
+        const key = slugify(String(el.key));
+        defs.set(key, {
+          key,
+          name: el.name || el.title || String(el.key),
+        });
+      });
+    }
+
+    const orderBy = Array.isArray(rawGroups.order_by)
+      ? rawGroups.order_by.map((k) => slugify(String(k)))
+      : [];
+
+    return { defs, orderBy };
+  };
+
+  const groupMeta = normalizeGroupConfig(groupsConfig);
+
+  const toGroupLabel = (raw, fallback = "Other Projects") => {
+    if (!raw) return fallback;
+    return String(raw)
+      .split(/[_-]+/)
+      .filter(Boolean)
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(" ");
+  };
+
+  const bucketByGroup = (items) => {
+    const buckets = new Map();
+    const seenOrder = [];
+    items.forEach((project) => {
+      const rawGroup =
+        project && project.group != null
+          ? String(project.group)
+          : project && project.type != null
+            ? String(project.type)
+            : "";
+      const key = rawGroup ? slugify(rawGroup) : "ungrouped";
+      if (!buckets.has(key)) {
+        buckets.set(key, []);
+        seenOrder.push(key);
+      }
+      buckets.get(key).push(project);
+    });
+    return { buckets, seenOrder };
+  };
+
+  const orderedGroupKeys = (buckets, seenOrder) => {
+    if (!groupMeta) return seenOrder;
+
+    const ordered = [];
+    groupMeta.orderBy.forEach((k) => {
+      if (buckets.has(k) && !ordered.includes(k)) ordered.push(k);
+    });
+    groupMeta.defs.forEach((_, k) => {
+      if (buckets.has(k) && !ordered.includes(k)) ordered.push(k);
+    });
+    seenOrder.forEach((k) => {
+      if (!ordered.includes(k)) ordered.push(k);
+    });
+    return ordered;
+  };
+
+  const resolveGroupName = (key, projectsInGroup) => {
+    if (groupMeta && groupMeta.defs.has(key)) {
+      return groupMeta.defs.get(key).name;
+    }
+    if (key === "ungrouped") return "Other Projects";
+    const sample = projectsInGroup.find((p) => p && p.group);
+    return toGroupLabel(sample && sample.group ? String(sample.group) : key);
+  };
+
+  const getNonEmptyGroupEntries = (items) => {
+    const { buckets, seenOrder } = bucketByGroup(items);
+    const keys = orderedGroupKeys(buckets, seenOrder);
+    return keys
+      .map((groupKey) => [groupKey, buckets.get(groupKey) || []])
+      .filter(([, groupProjects]) => groupProjects.length > 0);
+  };
+
+  // Render style is extensible (`full`, `minimal`, ...). Default is `full`.
+  const getProjectRenderStyle = (project) => {
+    const raw = project && project.render_style;
+    if (typeof raw === "string") {
+      const normalized = raw.trim().toLowerCase();
+      if (normalized) return normalized;
+    }
+    return "full";
+  };
 
   const allEnabledProjects = collectionEnabled(projects);
-  // Minimal projects render in a compact group after the regular projects.
-  const enabledProjects = allEnabledProjects.filter((p) => p.minimal !== true);
-  const minimalProjects = allEnabledProjects.filter((p) => p.minimal === true);
 
   const renderProjectItem = (project) => {
     const projectItem = createElement("div", "project-item");
@@ -739,41 +836,44 @@ const renderProjects = (projects, config = {}) => {
       item.appendChild(createElement("div", "minimal-project-description", project.description));
     }
 
+    if (project.technologies && project.technologies.length > 0) {
+      const techDiv = createElement("div", "minimal-project-technologies");
+      project.technologies.forEach((tech) => {
+        const tag = createElement("span", "tech-tag minimal-tech-tag", tech);
+        techDiv.appendChild(tag);
+      });
+      item.appendChild(techDiv);
+    }
+
     return item;
   };
 
-  if (groupByType) {
-    const academicProjects = enabledProjects.filter((p) => p.type === "academic");
-    const personalProjects = enabledProjects.filter((p) => p.type === "personal");
-
-    const renderProjectGroup = (groupProjects, title) => {
-      if (groupProjects.length === 0) return;
-      const groupHeader = createElement("h3", "project-group-header", title);
-      projectsList.appendChild(groupHeader);
-      groupProjects.forEach((project) => projectsList.appendChild(renderProjectItem(project)));
-    };
-
-    renderProjectGroup(academicProjects, "Academic Projects");
-    renderProjectGroup(personalProjects, "Personal Projects");
-  } else {
-    // Use collection order (caller controls via `ordering`); preserves the
-    // author's intended sequence without forcing a date sort.
-    enabledProjects.forEach((project) => projectsList.appendChild(renderProjectItem(project)));
-  }
-
-  // Minimal projects: grouped together and placed after the regular projects.
-  if (minimalProjects.length > 0) {
-    const minimalTitle = (config && config.minimal_projects_title) || "Coursework";
-    const groupHeader = createElement("h3", "project-group-header", minimalTitle);
-    projectsList.appendChild(groupHeader);
-    const list = createElement("ul", "minimal-projects");
-    const sortedMinimal = minimalProjects
-      .slice()
-      .sort((a, b) =>
-        (b.end_date || b.start_date || "").localeCompare(a.end_date || a.start_date || ""),
+  // Render by group. Within each group: regular projects first, then minimal.
+  if (allEnabledProjects.length > 0) {
+    const nonEmptyGroups = getNonEmptyGroupEntries(allEnabledProjects);
+    nonEmptyGroups.forEach(([groupKey, groupProjects]) => {
+      const groupHeader = createElement(
+        "h3",
+        "project-group-header",
+        resolveGroupName(groupKey, groupProjects),
       );
-    sortedMinimal.forEach((project) => list.appendChild(renderMinimalProjectItem(project)));
-    projectsList.appendChild(list);
+      projectsList.appendChild(groupHeader);
+
+      const regularProjects = groupProjects.filter((p) => getProjectRenderStyle(p) !== "minimal");
+      regularProjects.forEach((project) => projectsList.appendChild(renderProjectItem(project)));
+
+      const minimalProjects = groupProjects.filter((p) => getProjectRenderStyle(p) === "minimal");
+      if (minimalProjects.length > 0) {
+        const list = createElement("ul", "minimal-projects");
+        const sortedMinimal = minimalProjects
+          .slice()
+          .sort((a, b) =>
+            (b.end_date || b.start_date || "").localeCompare(a.end_date || a.start_date || ""),
+          );
+        sortedMinimal.forEach((project) => list.appendChild(renderMinimalProjectItem(project)));
+        projectsList.appendChild(list);
+      }
+    });
   }
 };
 
@@ -1036,7 +1136,7 @@ const normalizeCollection = (raw, keyFrom, startDateFrom) => {
   if (isCollection(raw)) return raw;
 
   let elementsArr = [];
-  let ordering, enabled, disabled;
+  let ordering, enabled, disabled, groups;
   if (Array.isArray(raw)) {
     elementsArr = raw;
   } else if (raw && typeof raw === "object") {
@@ -1044,6 +1144,7 @@ const normalizeCollection = (raw, keyFrom, startDateFrom) => {
     ordering = raw.ordering;
     enabled = raw.enabled;
     disabled = raw.disabled;
+    groups = raw.groups;
   }
 
   const elements = new Map();
@@ -1076,6 +1177,7 @@ const normalizeCollection = (raw, keyFrom, startDateFrom) => {
     hasExplicitOrdering,
     enabled: toSet(enabled),
     disabled: toSet(disabled),
+    groups,
     elements,
   };
 };
@@ -1146,6 +1248,17 @@ const renderCareerTimeline = (data) => {
     return parts.length >= 2 ? parts[0] + (parts[1] - 1) / 12 : parts[0];
   };
 
+  // Resolve a timeline span from resume dates. If only one date is present,
+  // treat it as a point-in-time event (start == end).
+  const resolveTimelineSpan = (startDate, endDate) => {
+    const parsedStart = parseDecimalYear(startDate);
+    const parsedEnd = parseDecimalYear(endDate);
+    if (parsedStart == null && parsedEnd == null) return null;
+    const start = parsedStart ?? parsedEnd;
+    const end = parsedEnd ?? parsedStart;
+    return { start, end };
+  };
+
   const experienceBands = [];
   const experienceBandGroups = []; // bands paired with their sorted work projects
   const educationBands = [];
@@ -1172,7 +1285,9 @@ const renderCareerTimeline = (data) => {
               label: `${proj.name} (${pos.title} @ ${exp.company})`,
               url: proj.url || null,
               id: "proj-" + slugify(proj.name),
-              chronoKey: parseDecimalYear(proj.start_date) ?? 0,
+              chronoKey:
+                resolveTimelineSpan(proj.start_date, proj.end_date)?.start ??
+                Number.POSITIVE_INFINITY,
             }))
             .sort((a, b) => a.chronoKey - b.chronoKey)
         : [];
@@ -1198,9 +1313,9 @@ const renderCareerTimeline = (data) => {
   collectionEnabled(data.projects)
     .filter(() => showProjects)
     .forEach((proj) => {
-      const start = parseDecimalYear(proj.start_date);
-      const end = parseDecimalYear(proj.end_date) || start;
-      if (start == null) return;
+      const span = resolveTimelineSpan(proj.start_date, proj.end_date);
+      if (!span) return;
+      const { start, end } = span;
       const mid = (start + end) / 2;
       const dot = {
         label: proj.name,
@@ -1783,7 +1898,10 @@ const mergeCollection = (baseColl, ovrRaw, spec) => {
     ? new Set(ovrRaw.disabled.map((k) => slugify(String(k))))
     : new Set(baseColl.disabled);
 
-  return { __collection: true, order, hasExplicitOrdering, enabled, disabled, elements };
+  const hasGroups = isPlainObject(ovrRaw) && Object.prototype.hasOwnProperty.call(ovrRaw, "groups");
+  const groups = hasGroups && ovrRaw.groups !== null ? ovrRaw.groups : baseColl.groups;
+
+  return { __collection: true, order, hasExplicitOrdering, enabled, disabled, groups, elements };
 };
 
 // Schema-aware merge: recurses through plain objects, delegating to

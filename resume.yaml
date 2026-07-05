@@ -666,20 +666,31 @@ experience:
                     - "SQL Server"
                   metrics:
 projects_config:
-  title: "Applied Machine Learning Experience"
+  title: "Selected Projects"
   group_by_type: false
-  # Title for the grouped "minimal" projects (rendered after the regular projects).
-  minimal_projects_title: "Selected Machine Learning Coursework"
 
 projects:
+  groups:
+    order_by:
+      - machine_learning
+      - cpp
+      - coursework
+    elements:
+      - key: machine_learning
+        name: Applied Machine Learning
+      - key: cpp
+        name: "C++ System / System Software"
+      - key: coursework
+        name: Coursework
   disabled:
     - crypton
     - crypto-currency-trading-bot
   elements:
     - key: expedia-learning-to-rank
+      group: machine_learning
+      type: personal
       name: "Hotel Search Ranking: Two-Tower Retrieval and Learning-to-Rank Pipeline"
       url: "https://github.com/matthewevans87/expedia-ltr"
-      type: "academic"
       description: "Built an end-to-end learning-to-rank pipeline on ~1M real hotel search logs (Expedia ICDM 2013) — covering data engineering, two-tower retrieval, listwise neural ranking, and a LightGBM LambdaRank baseline — with full query-grouped evaluation (NDCG@k, MRR, Recall@k) and an 18-run hyperparameter sweep."
       role: "Research Engineer / Author"
       start_date: "2026-06"
@@ -719,13 +730,14 @@ projects:
         - "YAML configs"
 
     - key: vision-based-sim-to-real-manipulation-pipeline
+      group: machine_learning
       name: "Vision-Based Sim-to-Real Manipulation Pipeline"
       url: "https://github.com/matthewevans87/so101_sim_to_real"
-      type: "academic"
+      type: academic
       description: "Designed and built an end-to-end ML pipeline for training vision-based perception and control policies under domain randomization (lighting, camera pose, object geometry, distractors) targeting zero-shot sim-to-real transfer — achieving up to 89.7% task success on a wrist-camera-only manipulation benchmark in NVIDIA Isaac Sim. Multimodal sensor fusion across RGB imagery, joint-state telemetry, and object-pose data across ~10K synthetic episodes."
       role: "Research Engineer / Author"
       start_date: "2026-01"
-      end_date:
+      end_date: "2026-06"
       highlights:
         - [
             "ML infrastructure:",
@@ -766,9 +778,10 @@ projects:
         - "NumPy"
 
     - key: ml-assisted-visibility-graph-construction
+      group: machine_learning
       name: "ML Assisted Visibility Graph Construction"
       url: "https://github.com/matthewevans87/cs6319-computational-geometry-project"
-      type: "academic"
+      type: academic
       description: "Reduced visibility-graph construction cost for shortest-path motion planning by training an LSTM to predict the next shortest-path region, pruning visibility checks while preserving near-exact path quality — achieving up to 98% reduction in vertex comparisons on benchmarks."
       role: "Research Engineer / Author"
       start_date: "2025-08"
@@ -796,9 +809,11 @@ projects:
         - "NumPy"
 
     - key: neural-networks-independent-study
+      group: coursework
       name: "Neural Networks Independent Study"
+      render_style: minimal
       url: "https://github.com/matthewevans87/neural-networks-independent-study"
-      type: "academic"
+      type: academic
       description: "A structured 15-week independent study spanning modern deep learning fundamentals through foundation models — combining paper-driven survey (backprop → CNNs/ResNets → LSTMs → Transformers → diffusion/VLMs) with from-scratch PyTorch implementations, culminating in a master's thesis proposal for a Transformer-based autonomous driving model with vision-only planning, low-level control, and a CARLA-based imitation learning training plan."
       role: "Research Engineer / Course Designer / Author"
       start_date: "2025-01"
@@ -808,16 +823,16 @@ projects:
         - "PyTorch"
         - "NumPy"
         - "CNN"
-        - "MLP (from scratch)"
+        - "MLP"
         - "LSTM"
         - "GAN"
         - "Transformers"
-        - "LaTeX"
 
     - key: intent-aware-lookahead-for-language-modeling
+      group: machine_learning
       name: "Intent-Aware Lookahead for Language Modeling"
       url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-project"
-      type: "academic"
+      type: academic
       description: "Investigated whether lightweight future-token prediction improves next-token accuracy in causal language models — designing, implementing, and evaluating a modified transformer with auxiliary lookahead heads and intent-conditioned fusion across 21 controlled model variants."
       role: "Research Engineer / Author"
       start_date: "2025-08"
@@ -845,12 +860,12 @@ projects:
     # never profitable. Demonstrates LLM/agentic concepts on paper but shallow implementation depth.
     # Do NOT over-index on this in qualifications. Use as supporting evidence only, not as a headline claim.
     - key: crypton
+      group: personal
       name: "Crypton"
       url: "https://github.com/matthewevans87/crypton-cli"
-      type: "personal"
+      type: personal
       description: "Multi-agent LLM system that runs an autonomous learning loop driven by live cryptocurrency market data. Five specialized agents (Plan → Research → Analyze → Synthesize → Evaluate) coordinate through file-based artifacts and bounded inter-agent mailboxes; a deterministic execution engine — fully separated from the AI layer — carries out the resulting strategy in a paper-trading sandbox. Personal exploration of agentic system design, prompt engineering, and tool-using LLMs."
       role: "Architect / Author"
-      start_date: "2026-04"
       end_date: "2026-04"
       highlights:
         - [
@@ -887,153 +902,241 @@ projects:
         - "REST + WebSocket integration"
         - "File-based state persistence"
 
-    - key: crypto-currency-trading-bot
-      name: "Crypto Currency Trading Bot"
-      url:
-      type: "personal"
-      description: "Autonomous trading system for cryptocurrency exchange with real-time market analysis, machine learning predictions, and automated execution. Personal exploration of algorithmic trading, ML, and data analysis."
-      start_date: "2018"
-      highlights:
-        - "Developed services for real-time market data collection and signal computation using online algorithms"
-        - "Built machine learning systems for predicting profitable trade prices using TensorFlow and Python"
-        - "Created autonomous trading bots operating in live cryptocurrency markets"
-        - "Implemented WebSocket client/server for real-time market data broadcasting"
-        - "Built telemetry visualization dashboard and manual bot control interface"
-        - "Designed data warehousing and ETL processes for market analysis"
-      technologies:
-        - "Python"
-        - "TensorFlow"
-        - "Node.js"
-        - "TypeScript"
-        - "Angular"
-        - "MongoDB"
-        - "SQL Server"
-        - "Docker"
-        - "Redis"
-        - "WebSocket"
-        - "NumPy"
-      metrics:
-        - "Real-time algorithmic trading"
-        - "Machine learning price prediction"
-
-    # "Minimal" projects render in a compact bullet group titled by
-    # projects_config.minimal_projects_title, placed after the regular projects.
-    # Required: name, description, minimal: true. Single date uses end_date
+    # "Minimal" projects render in a compact bullet list within their group,
+    # after any regular projects in that same group.
+    # Supported render styles: full (default) or minimal.
+    # For compact bullets use: render_style: minimal. Single date uses end_date
     # (falling back to start_date). url is optional. Example:
 
     - key: cs6375-project1
+      type: academic
+      group: coursework
       name: "Multinomial, Naive Bayes, and Logistic Regression Classifiers"
-      minimal: true
+      render_style: minimal
       url: "https://github.com/matthewevans87/cs6375-project1"
       description: "Implemented Multinomial Naive Bayes, Discrete Naive Bayes, and Logistic Regression algorithms for email spam classification."
       end_date: "2024-09"
+      technologies:
+        - NumPy
+        - SKLearn
 
     - key: cs6375-project4-part1
+      type: academic
+      group: coursework
       name: "K-Means Clustering"
-      minimal: true
+      render_style: minimal
       url: "https://github.com/matthewevans87/cs6375-project4/tree/main/part1"
       description: "Implemented K-Means Clustering as an image compression strategy."
       end_date: "2024-12"
+      technologies:
+        - NumPy
+        - K-Means
+        - Unsupervised Learning
 
     - key: cs6375-project3-part1
+      type: academic
+      group: coursework
       name: "Collaborative Filtering (Netflix)"
-      minimal: true
+      render_style: minimal
       url: "https://github.com/matthewevans87/cs6375-project3/blob/main/colabfilter.py"
       description: "Implemented Collaborative Filtering (Breese et al. 2018) for movie recommendations using the Netflix dataset."
       end_date: "2024-11"
+      technologies:
+        - NumPy
 
     - key: cs6375-project3-part2
+      type: academic
+      group: coursework
       name: "KNN and SVM Classification (MNIST)"
-      minimal: true
-      url: "https://github.com/matthewevans87/cs6375-project3/blob/main/knn_svm_mnist.py"
+      render_style: minimal
+      url: "https://github.com/matthewevans87/cs6375-project3"
       description: "Evaluated K-Nearest Neighbors and Support Vector Machine classification with SciKitLearn on the MNIST dataset."
       end_date: "2024-11"
+      technologies:
+        - NumPy
+        - SKLearn
+        - SVM
 
     - key: cs6375-project2
+      type: academic
+      group: coursework
       name: "Tree Classifiers"
-      minimal: true
+      render_style: minimal
       url: "https://github.com/matthewevans87/cs6375-project2"
       description: "Evaluated Decision Tree, Bagging, Random Forest, and Gradient Boosting classifier performance on synthetic CNF formula dataset."
       end_date: "2024-10"
+      technologies:
+        - NumPy
+        - SKLearn
+        - Decision Trees
 
     - key: cs6320-nlp-assignment1
+      type: academic
+      group: coursework
       name: "N-gram Language Model Implementation"
-      minimal: true
+      render_style: minimal
       url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-assignment1"
       description: "Implemented N-gram language models for text prediction and analysis."
       end_date: "2025-09"
+      technologies:
+        - NumPy
+        - NLP
 
     - key: cs6320-nlp-assignment2
+      type: academic
+      group: coursework
       name: "Sentiment Analysis with FFNN and RNN (Yelp Reviews)"
-      minimal: true
+      render_style: minimal
       url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-assignment2"
       description: "Implemented 5-class sentiment analysis using Feed-Forward Neural Networks and Recurrent Neural Networks on Yelp reviews."
       end_date: "2025-10"
+      technologies:
+        - NumPy
+        - PyTorch
+        - MLP
+        - RNN
+        - NLP
 
     - key: nn-web-demo-mlp
+      type: academic
+      group: coursework
       name: "MLP Implementation (MNIST)"
-      minimal: true
+      render_style: minimal
       url:
         - "https://github.com/matthewevans87/neural-networks-independent-study/blob/main/projects/mlp/mlp.py"
         - "https://matthewevans87.github.io/nn-web-demo-mlp/"
       description: "Implemented Multi-Layer Perceptron from scratch (NumPy) for digit classification on the MNIST dataset."
       end_date: "2025-02"
+      technologies:
+        - NumPy
+        - MLP
 
     - key: nn-web-demo-cnn
+      type: academic
+      group: coursework
       name: "GAN Implementation (MNIST)"
-      minimal: true
+      render_style: minimal
       url:
         - "https://github.com/matthewevans87/neural-networks-independent-study/blob/main/projects/gan/gan.py"
       description: "Implemented Generative Adversarial Network (PyTorch) for digit generation on the MNIST dataset."
       end_date: "2025-05"
+      technologies:
+        - NumPy
+        - PyTorch
+        - GAN
 
     - key: nn-web-demo-rnn
+      type: academic
+      group: coursework
       name: "RNN Implementation (Tiny Shakespeare)"
-      minimal: true
+      render_style: minimal
       url:
         - "https://github.com/matthewevans87/neural-networks-independent-study/blob/main/projects/rnn/rnn.py"
       description: "Implemented Recurrent Neural Network (PyTorch) for character-level language modeling on the Tiny Shakespeare dataset."
       end_date: "2025-05"
+      technologies:
+        - NumPy
+        - PyTorch
+        - RNN
+        - NLP
 
     - key: cs6347-hw2
+      type: academic
+      group: coursework
       name: "Loopy Belief Propagation (Map Coloring)"
-      minimal: true
+      render_style: minimal
       url:
         - "https://github.com/matthewevans87/cs6347-hw2"
       description: "Implemented Loopy Belief Propagation algorithm (Sum and Max Prod) for approximate inference in a Markov Random Field applied to the Map Coloring problem."
       end_date: "2024-03"
+      technologies:
+        - NumPy
 
     - key: cs6347-hw3-gibbs
+      type: academic
+      group: coursework
       name: "Gibbs Sampling (Weighted Map Coloring)"
-      minimal: true
+      render_style: minimal
       url:
         - "https://github.com/matthewevans87/cs6347-hw3/blob/main/gibbs.py"
       description: "Implemented Gibbs Sampling algorithm for approximate inference in a Markov Random Field applied to the Weighted Map Coloring problem."
       end_date: "2024-04"
+      technologies:
+        - NumPy
 
     - key: cs6347-hw3-mle
+      type: academic
+      group: coursework
       name: "Maximum Likelihood Estimation (MLE) (Weighted Map Coloring)"
-      minimal: true
+      render_style: minimal
       url:
         - "https://github.com/matthewevans87/cs6347-hw3/blob/main/mle.py"
       description: "Implemented Maximum Likelihood Estimation (MLE) with Belief Propagation for approximate inference in a Markov Random Field applied to the Weighted Map Coloring problem."
       end_date: "2024-04"
+      technologies:
+        - NumPy
 
     - key: cs6347-hw4-em
+      type: academic
+      group: coursework
       name: "Expectation Maximization (EM) (Weighted Map Coloring)"
-      minimal: true
+      render_style: minimal
       url:
         - "https://github.com/matthewevans87/cs6347-hw4/blob/main/colorem.py"
       description: "Implemented Expectation Maximization (EM) with Belief Propagation for approximate inference with latent variables in a Markov Random Field applied to the Weighted Map Coloring problem."
       end_date: "2024-05"
+      technologies:
+        - NumPy
 
     - key: cs6347-hw4-em-colorem
+      type: academic
+      group: coursework
       name: "Bayesian Expectation Maximization (EM) for Party Affiliation Inference"
-      minimal: true
+      render_style: minimal
       url:
         - "https://github.com/matthewevans87/cs6347-hw4/blob/main/bayesem.py"
       description: "Implemented Bayesian Expectation Maximization (EM) with Belief Propagation for approximate inference with latent variables in the Party Affiliation Inference problem."
       end_date: "2024-05"
+      technologies:
+        - NumPy
+
+    - key: imgtool
+      group: cpp
+      type: personal
+      name: Image Processing CLI
+      description: "Custom transform pipeline (grayscale, Gaussian blur, Sobel, threshold). Zero leaks verified under Valgrind."
+      end_date: "2026-06"
+      render_style: minimal
+      technologies:
+        - "C++"
+        - CMake
+        - Valgrind
+
+    - key: so101_infer
+      group: cpp
+      type: personal
+      name: C++ Inference Port, SO-101 Robotic Arm
+      description: "Ported Python PPO inference loop to C++ with LibTorch. Numerical parity verified end-to-end with GoogleTest suite (atol=1e-4)."
+      end_date: "2026-06"
+      render_style: minimal
+      technologies:
+        - "C++"
+        - CMake
+        - GoogleTest
+        - LibTorch
+
+    - key: framepipe
+      group: cpp
+      type: personal
+      name: Real-Time Frame Pipeline
+      description: "Two-threaded producer/consumer pipeline: camera → ring buffer → transforms → display. Heap-free fixed-capacity ring buffer (overwrite-on-full, mutex/condvar synchronization). Atomic shutdown flag, clean Valgrind exit, live Sobel edge detection at camera rate."
+      end_date: "2026-07"
+      render_style: minimal
+      technologies:
+        - "C++"
+        - CMake
+        - GoogleTest
+        - OpenCV
 
 education:
   elements:
@@ -1099,10 +1202,12 @@ skills:
       category: "AI/ML, Robotics & Experimentation"
       items:
         - "PyTorch"
+        - "LibTorch (C++ inference)"
         - "TensorFlow / TensorFlow Recommenders (TFRS)"
         - "NumPy / SciPy"
         - "TensorBoard"
         - "Transformers (PyTorch / custom)"
+        - "OpenCV"
         - "NVIDIA Isaac Sim / Isaac Lab"
         - "ROS"
         - "LeRobot"
@@ -1131,9 +1236,19 @@ skills:
       category: "Programming Languages"
       items:
         - "Python"
+        - "C++ (C++17/C++20)"
         - "C#"
         - "TypeScript"
         - "SQL"
+
+    - key: c-plus-plus-systems-tooling
+      category: "C++ Systems Tooling"
+      items:
+        - "CMake"
+        - "GoogleTest"
+        - "Valgrind"
+        - "POSIX threads (pthread), mutex/condvar synchronization"
+        - "Real-time frame/data pipeline design"
 
     - key: infrastructure-containers-and-ci-cd
       category: "Infrastructure, Containers & CI/CD"

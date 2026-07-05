@@ -612,6 +612,22 @@
     color: #000;
   }
 
+  .minimal-project-technologies {
+    display: inline;
+    margin-top: 0;
+  }
+
+  .minimal-project-technologies::before {
+    content: " Technologies: ";
+    font-weight: 600;
+    font-size: var(--print-font-xs);
+  }
+
+  .minimal-project-technologies .minimal-tech-tag {
+    font-size: var(--print-font-xs);
+    padding: 0;
+  }
+
   /* Education */
   .education {
     display: block;
