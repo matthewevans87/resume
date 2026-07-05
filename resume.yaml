@@ -679,7 +679,7 @@ projects:
       - key: machine_learning
         name: Applied Machine Learning
       - key: cpp
-        name: "C++ System / System Software"
+        name: "C++ / System Software"
       - key: coursework
         name: Coursework
   disabled:
@@ -1011,7 +1011,7 @@ projects:
         - NumPy
         - MLP
 
-    - key: nn-web-demo-cnn
+    - key: nn-gan
       type: academic
       group: coursework
       name: "GAN Implementation (MNIST)"
@@ -1025,7 +1025,7 @@ projects:
         - PyTorch
         - GAN
 
-    - key: nn-web-demo-rnn
+    - key: nn-rnn
       type: academic
       group: coursework
       name: "RNN Implementation (Tiny Shakespeare)"
