@@ -78,7 +78,7 @@ experience:
               - "CI/CD YAML Pipelines"
               - "Automated Testing"
             summary: |
-              Designed and shipped a greenfield ERP platform from scratch while completing an M.S. in Computer Science — replacing a decade-old legacy system with a Clean Architecture stack spanning 87+ domain entities, full manufacturing operations scope (job management, multi-level inventory, AR/AP, work center routing, KPI dashboards), and a reflection-driven code-generation framework that auto-scaffolded authenticated CRUD endpoints across the entire data model. Included a proprietary sheet metal optimization engine balancing scrap minimization, certification requirements, and part yield — and a legacy modernization with verified regression parity via automated test harnesses.
+              Designed and shipped a greenfield ERP platform from scratch while completing an M.S. in Computer Science — replacing a decade-old legacy system with a Clean Architecture product spanning 87+ domain entities and the full manufacturing operations lifecycle (job management, multi-level inventory, AR/AP, work center routing, KPI dashboards). Built a reflection-driven code-generation framework that auto-scaffolded authenticated endpoints across the entire data model, plus a proprietary sheet metal optimization engine balancing scrap minimization, certification requirements, and part yield. Reduced go-live risk with  regression-parity test harnesses to validate behaviors against legacy system.
     - key: zeal-it-consultants
       company: "Zeal IT Consultants"
       company_url: "https://www.zealitconsultants.com/"
@@ -126,7 +126,7 @@ experience:
             projects:
               elements:
                 - key: alight-clarity-saas-product
-                  name: "Alight Clarity (SaaS Product)"
+                  name: "Clarity (Alight)"
                   url:
                   description: "Multi-tenant, cloud-native SaaS platform for benefits administration on AWS. Custom streaming ETL on AWS Fargate ingested terabyte-scale datasets in minutes via massive parallelism."
                   role: "Account Manager / Engagement Manager / Team Lead"
@@ -147,7 +147,7 @@ experience:
                     - "SQL Server"
                     - "EF Core"
                 - key: greyhound-route-planning-tool
-                  name: "Greyhound Route Planning Tool"
+                  name: "Route Planning (Greyhound)"
                   description: "Proof-of-concept transit schedule optimizer for Greyhound's nationwide route network — led a scope-undefined engagement, defined the problem space through stakeholder interviews, and iterated on prototypes with direct executive feedback."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2021"
@@ -165,7 +165,7 @@ experience:
                     - "SQL Server"
                   metrics:
                 - key: bankers-financial-maverick
-                  name: "Bankers Financial - Maverick"
+                  name: "Maverick (Bankers Financial)"
                   description: "Multi-tenant SaaS platform for financial services on .NET 5 and Angular — designed full system architecture from scratch and delivered on schedule, opening a new revenue stream for the client."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2022"
@@ -184,7 +184,7 @@ experience:
                     - "Azure DevOps"
                   metrics:
                 - key: essilor-eye-book-now
-                  name: "Essilor - Eye Book Now"
+                  name: "Eye Book Now (EssilorLuxottica)"
                   description: "Simultaneously tech led Eye Book Now and diagnosed and rescued Beacon — stalled from requirements drift, over-engineering, and repeated team handoffs — delivering both on time."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2021"
@@ -206,7 +206,7 @@ experience:
                     - "GitHub Actions"
                   metrics:
                 - key: mckesson-etl-process-monitoring
-                  name: "McKesson - ETL Process Monitoring"
+                  name: "ETL Process Monitoring (McKesson)"
                   description: "Angular/microservices platform on Azure Cloud for real-time ETL pipeline monitoring — adopted internally as reference architecture for new projects."
                   role: "Developer"
                   start_date: "2020"
