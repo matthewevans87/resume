@@ -761,7 +761,7 @@ projects:
           ]
         - [
             "Reward shaping analysis:",
-            "Via leave-one-out / leave-one-in ablations (5 seeds × 50k PPO steps) on rewards, identified the dense absolute approach reward as a soft local optimum — removing it yielded the best result observed (89.7%, +2pp over the 13-term baseline) with shorter episodes; a derived 2-term minimal reward matched the full set within noise (Welch z = -0.47).",
+            "Via leave-one-out / leave-one-in ablations (5 seeds × 50k PPO steps) on rewards, identified the dense absolute approach reward as a soft local optimum — removing it yielded the best result observed (89.7%, +2pp over the 13-term baseline) with shorter episodes; a derived 2-term minimal reward matched the full set within noise.",
           ]
       technologies:
         - "Python"
