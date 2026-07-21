@@ -24,7 +24,8 @@ personal:
 
 mission_statement:
   - "Software Engineer with 15 years' experience shipping production systems and an M.S. in Computer Science (Machine Learning) from UT Dallas."
-  - "Targeting Machine Learning and Perception Engineer roles in autonomy and hard-tech — building the algorithms that turn sensor data into perception and perception into action: detection, tracking, sensor fusion, and learned decision-making for systems that operate in the real world."
+  # - "Targeting Machine Learning and Perception Engineer roles in autonomy and hard-tech — building the algorithms that turn sensor data into perception and perception into action: detection, tracking, sensor fusion, and learned decision-making for systems that operate in the real world."
+  - "Targeting SW/ML Engineering roles in sensing and perception at the boundary of research and hard-tech product development on teams making civilization-scale impact."
 
 tagline: "Software should return time, attention, and agency to people."
 enable_tagline: false
