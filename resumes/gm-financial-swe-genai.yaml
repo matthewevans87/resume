@@ -1,0 +1,289 @@
+# https://fa-exvu-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/260109?utm_medium=jobboard&utm_source=linkedin
+# Software Development Engineer - Gen AI
+order_by:
+  - experience
+  - projects
+  - education
+  - achievements
+  - skills
+
+mission_statement:
+  - "Full-Stack Software Engineer with 15 production years' experience shipping production systems. M.S. Computer Science (ML) from UT Dallas (2025)."
+  - "Delighting clients and stakeholders with strategy-aligned delivery-focused engineering leadership and execution across the enterprise SDLC."
+
+qualifications:
+  title: "Qualifications"
+  items:
+    # JD: Strong experience in software development using Python, C# or Java
+    # JD: Cross-training or familiarity with Microsoft .NET technology stack
+    # Source: Independent Consultant (Software Architect, 2023–present) — C#/Dotnet/Angular/TypeScript/EF Core/SQL Server;
+    #         Zeal IT Consultants (2020–2023) — C#/Dotnet/TypeScript across client SaaS platforms;
+    #         Python: personal/academic ML projects (2024–2026), supporting context only
+    - "Production delivery: 15 years shipping enterprise SaaS and platform systems: C#/.NET, TypeScript, Angular, and SQL Server; 3 years ML-flavored Python (PyTorch, NumPy, TensorFlow)."
+
+    # JD: Strong experience in software development using Python, C# or Java (ML credential signal)
+    # Source: resume.yaml education — "concentration: Intelligent Systems and Machine Learning", "gpa: 3.73 / 4.0",
+    #         end_date 2025-12-31
+    - "Education: M.S. Computer Science, Intelligent Systems & Machine Learning concentration — University of Texas at Dallas (2025), 3.73/4.0 GPA."
+
+    # JD: Architect and build production-grade applications using ... microservices, event-driven architecture
+    # JD: Extensive experience building microservices using event-driven architecture
+    # JD: Experience building cloud-native microservices using Docker, Kubernetes, or serverless technologies
+    # Source: Zeal IT Consultants — "Architected an event-driven ETL platform on AWS ... using a custom streaming parser
+    #         fanned out across thousands of concurrent Lambda and ECS Fargate workers"; EssilorLuxottica (2021) —
+    #         "RESTful .NET Core microservices on AWS EC2"; McKesson (2020) — "RESTful APIs and microservices" on Azure;
+    #         Docker across Alight, Bankers Financial, EssilorLuxottica
+    - "Event-driven architecture & microservices: architected a terabyte-scale event-driven ETL platform on AWS (Lambda, Fargate) for a benefits-administration SaaS product; built RESTful .NET Core microservices with OpenAPI support and Azure-based microservices/API Gateway pipelines; Docker-based services across multiple client platforms."
+
+    # JD: Proficient experience working and deploying in Azure cloud
+    # JD: Strong experience with cloud-related concepts & technologies, preferably Azure
+    # Source: McKesson (2020) — "Azure Cloud", "Azure API Gateway", "Azure DevOps"; Bankers Financial Maverick (2022) —
+    #         "Azure DevOps"; Greyhound (2021) — "Azure"; also AWS (Lambda, Fargate, EC2, S3, CloudFormation) at Zeal
+    - "Cloud deployment & DevOps: deployed and operated production services on Azure (Cloud, API Gateway, DevOps) and AWS (Lambda, Fargate, EC2, S3, CloudFormation)."
+
+    # JD: Proficiency in relational databases (MySQL, AzureSQL) and NoSQL databases (MongoDB, CosmosDB)
+    # Source: SQL Server / EF Core / Dapper used across all 2020+ roles; EssilorLuxottica — "Redis", "Azure Cosmos DB";
+    #         Greyhound — "Snowflake"
+    - "Databases: SQL Server with EF Core/Dapper across all recent engagements; Cosmos DB and Redis; Snowflake data warehouse analysis."
+
+    # JD: Experience building micro-frontends using React.js or Angular
+    # Source: Zeal IT Consultants client platforms — Angular (Alight, Bankers Financial, Greyhound); EssilorLuxottica (2021) —
+    #         "React consumer-facing frontends"
+    - "Micro-frontends: production Angular SaaS UIs (Alight, Bankers Financial, Greyhound) and consumer-facing React frontends (EssilorLuxottica)."
+
+    # JD: Proficiency in designing, building, and optimizing automated pipelines with testing
+    # Source: McKesson (2020) — "Authored fully scripted CI/CD pipelines covering linting, unit testing, builds, releases,
+    #         templated infrastructure deployment, and environment configuration"; Independent Consultant — "CI/CD YAML
+    #         Pipelines", "Automated Testing"; Bankers Financial — Azure DevOps; EssilorLuxottica — GitHub Actions
+    - "CI/CD & automated pipelines: authored fully scripted CI/CD (linting, unit tests, builds, releases, templated infrastructure) at McKesson; Azure DevOps and GitHub Actions across roles; CI/CD YAML pipelines with automated testing (xUnit, Moq) on the current ERP platform."
+
+    # JD: Coach and mentor team members to achieve high-quality code reviews
+    # JD: Excellent project management skills including creating and managing program plans, budgets, and resources
+    # JD: Strong leadership and influencing skills with ability to drive consensus and manage stakeholders at all levels
+    # Source: Zeal IT Consultants (Associate Partner, 2020–2023) — "trusted with $4MM+/year in client engineering budgets",
+    #         "Hired, trained, and mentored dozens of software developers"; EssilorLuxottica — "mentored junior developers
+    #         through PRs, code review, and production releases"
+    - "Leadership & mentoring: Associate Partner leading multiple concurrent Agile delivery teams with $4MM+/year in client engineering budgets; hired, trained, and mentored dozens of developers; coached teams through PR review and production releases."
+
+    # JD: Collaborate with cross-functional teams to gather requirements and translate them into technical specifications
+    # JD: Engage beyond immediate team boundaries to influence and collaborate with other teams and external organizations
+    # JD: Rapidly triage and resolve production issues to maintain system reliability and performance
+    # JD: Strong communication skills to serve as tech evangelist and drive adoption of technical standards and enterprise reusable services
+    # Source: Zeal IT Consultants — "Drove stakeholder discovery and requirements definition; maintained executive
+    #         relationships across accounts"; "Identified root causes of a stalled project ... restructured scope and
+    #         delivered ahead of schedule"; EssilorLuxottica — diagnosed and rescued Beacon; McKesson — ETL monitoring
+    #         platform "adopted internally as reference architecture for new projects"
+    - "Cross-functional collaboration & production triage: drove stakeholder discovery and maintained executive relationships across financial services, healthcare, and transit accounts; diagnosed and rescued stalled, over-engineered projects (EssilorLuxottica, Zeal); built an ETL monitoring platform later adopted as internal reference architecture (McKesson)."
+
+    # JD: Experience with Gen AI or AI tools such as Copilot or Claude
+    # JD: Stay current with emerging AI technologies, evaluation frameworks, and industry trends
+    # Source: Crypton (personal project, depth-warning: exploratory, never production) — "five specialized agents
+    #         coordinate through file-based artifacts...", local LLM inference via Ollama; Intent-Aware Lookahead for
+    #         Language Modeling project (resume.yaml) — "6-layer causal transformer LM research ... evaluated across 21
+    #         controlled variants"; daily coding-agent usage (Copilot/Claude Code) is self-reported, not resume.yaml-sourced
+    - "GenAI & coding agents: daily power user of AI coding agents (GitHub Copilot, Claude Code) in production development; built a personal multi-agent LLM system (Crypton) coordinating five agents through a tool registry over local LLM inference (Ollama); authored transformer LM research (Intent-Aware Lookahead for Language Modeling, 21 controlled variants); actively tracking GenAI evaluation frameworks and industry trends."
+
+experience:
+  elements:
+    - key: independent-consultant
+      expanded: true
+      projects_expanded: false
+    - key: zeal-it-consultants
+      expanded: true
+      projects_expanded: true
+    - key: hks-inc
+      expanded: true
+      projects_expanded: false
+    - key: clean-harbors-inc
+      expanded: true
+
+education:
+  elements:
+    - key: master-of-science
+      courses: []
+
+# Enterprise SaaS projects are shown inline under their roles (Zeal, HKS) via
+# projects_expanded, so they are NOT repeated here. This section is reserved for
+# ML / GenAI work, rewritten concisely, that reads as differentiating in a SaaS context.
+projects:
+  groups:
+    order_by:
+      - machine_learning
+    elements:
+      - key: machine_learning
+        name: "Machine Learning & GenAI"
+  disabled:
+    - crypto-currency-trading-bot
+    - so101_infer
+    - cs6375-project1
+    - cs6375-project4-part1
+    - cs6375-project3-part1
+    - cs6375-project3-part2
+    - cs6375-project2
+    - cs6320-nlp-assignment1
+    - cs6320-nlp-assignment2
+    - nn-web-demo-mlp
+    - nn-gan
+    - nn-rnn
+    - cs6347-hw2
+    - cs6347-hw3-gibbs
+    - cs6347-hw3-mle
+    - cs6347-hw4-em
+    - cs6347-hw4-em-colorem
+    - imgtool
+    - framepipe
+    - neural-networks-independent-study
+  elements:
+    - key: expedia-learning-to-rank
+      group: machine_learning
+      name: "Search Ranking & Retrieval Pipeline"
+      url: "https://github.com/matthewevans87/expedia-ltr"
+      description: "End-to-end learning-to-rank pipeline over ~1M real hotel-search logs: two-tower retrieval, a listwise neural ranker, and a LightGBM LambdaRank baseline, with full query-grouped evaluation (NDCG@k, MRR, Recall@k) across an 18-run sweep."
+      role: "Author"
+      start_date: "2026-06"
+      end_date: "2026-06"
+      render_style: minimal
+      technologies:
+        - "Python"
+        - "TensorFlow"
+        - "LightGBM"
+        - "Two-Tower Retrieval"
+        - "Learning-to-Rank"
+        - "NDCG / MRR / Recall@k"
+
+    - key: intent-aware-lookahead-for-language-modeling
+      group: machine_learning
+      name: "Intent-Aware Lookahead for Language Modeling"
+      url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-project"
+      description: "Transformer LM research: built a 6-layer causal transformer (~45M params) with auxiliary future-token prediction, intent pooling, and FiLM/gated fusion; evaluated across 21 controlled variants with honest negative results and interference analysis."
+      role: "Author"
+      start_date: "2025-08"
+      end_date: "2025-12"
+      render_style: minimal
+      technologies:
+        - "Python"
+        - "PyTorch"
+        - "Transformers"
+        - "TensorBoard"
+
+    - key: crypton
+      group: machine_learning
+      name: "Crypton — Multi-Agent LLM System"
+      url: "https://github.com/matthewevans87/crypton-cli"
+      description: "Exploration of agentic GenAI: five specialized LLM agents coordinating through a 12-tool registry and structured messaging, with a deterministic execution layer cleanly separated from the non-deterministic LLM layer."
+      end_date: "2026-04"
+      render_style: minimal
+      technologies:
+        - "C# / .NET 10"
+        - "Ollama (local LLM inference)"
+        - "Multi-agent orchestration"
+        - "Prompt engineering"
+        - "Tool registry / sandboxed execution"
+
+    - key: ml-assisted-visibility-graph-construction
+      render_style: minimal
+
+    - key: vision-based-sim-to-real-manipulation-pipeline
+      render_style: minimal
+
+skills:
+  ordering:
+    - architecture-and-engineering
+    - backend-and-microsoft
+    - databases-and-data
+    - performance-and-observability
+    - cloud-containers-and-devops
+    - frontend-web-apps
+    - delivery-and-leadership
+    - software-engineering
+  disabled:
+    # Disable ALL base skill categories so nothing off-target (ML/robotics/C++) leaks through the merge.
+    - ai-ml-robotics-and-experimentation
+    - classical-and-statistical-ml
+    - ml-systems-and-data
+    - programming-languages
+    - c-plus-plus-systems-tooling
+    - infrastructure-containers-and-ci-cd
+    - databases-caching-and-data-stores
+  elements:
+    - key: architecture-and-engineering
+      category: "Architecture & Engineering"
+      items:
+        - "OOP"
+        - "Design patterns"
+        - "Distributed architecture patterns"
+        - "Microservices & event-driven systems"
+        - "Clean Architecture"
+        - "Full development lifecycle (SDLC)"
+        - "Design & code reviews"
+
+    - key: backend-and-microsoft
+      category: "Backend & Microsoft Stack"
+      items:
+        - "C#"
+        - "dotnet / .NET Standard"
+        - ".NET Core"
+        - "Web API / REST"
+        - "Entity Framework Core"
+        - "Dapper"
+        - "xUnit"
+
+    - key: databases-and-data
+      category: "Databases & Data"
+      items:
+        - "T-SQL / SQL Server"
+        - "Normalized schema design"
+        - "Query & index optimization (indexed views)"
+        - "PostgreSQL / PostGIS"
+        - "Redis"
+        - "Cosmos DB"
+        - "MongoDB"
+        - "Snowflake"
+        - "ETL / data pipelines"
+
+    - key: performance-and-observability
+      category: "Performance & Observability"
+      items:
+        - "System / application / database performance tuning"
+        - "Benchmarking & profiling"
+        - "Scalability & load design"
+        - "Parallelism & distributed computing"
+        - "Logging & observability (Application Insights, CloudWatch, Seq)"
+
+    - key: cloud-containers-and-devops
+      category: "Cloud, Containers & DevOps"
+      items:
+        - "Azure (App Service, DevOps, Storage, API Gateway)"
+        - "AWS (Lambda, ECS/Fargate, EC2, S3, CloudFormation)"
+        - "Docker / Containerization"
+        - "CI/CD (Azure DevOps, GitHub Actions)"
+        - "Linux"
+        - "Git"
+
+    - key: frontend-web-apps
+      category: "Frontend Web Apps"
+      items:
+        - "TypeScript / JavaScript"
+        - "Angular"
+        - "RxJS"
+        - "React"
+        - "SASS"
+
+    - key: delivery-and-leadership
+      category: "Delivery & Leadership"
+      items:
+        - "Agile delivery"
+        - "Team leadership & mentoring"
+        - "Client discovery & requirements"
+        - "Account management / SOWs"
+        - "Cross-functional communication"
+
+    - key: software-engineering
+      category: "Collaborative Engineering"
+      items:
+        - "Requirements gathering"
+        - "Design review"
+        - "Pair programming"
+        - "Peer review processes"
+        - "Testing & Integration"
+        - "Maintenance & Support"
