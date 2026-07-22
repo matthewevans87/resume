@@ -1258,7 +1258,7 @@ skills:
         - "Docker / Containerization"
         - "AWS ECS / Fargate"
         - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
-        - "Azure (App Service, Storage, DevOps)"
+        - "Azure (App Service, Storage, DevOps, Portal, CLI)"
         - "Observability (CloudWatch, Application Insights, Seq)"
         - "CI/CD Pipelines"
         - "GitHub Actions"
