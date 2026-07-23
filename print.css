@@ -475,6 +475,8 @@
 
   .position-projects-container {
     margin-top: 4pt !important;
+    border-left: 1.5pt solid #999;
+    padding-left: 8pt;
   }
 
   .position-projects-container.collapsed {
@@ -483,7 +485,7 @@
   }
 
   .company-project-item {
-    padding: 3pt 0 3pt 6pt;
+    padding: 3pt 0 3pt 0;
     margin-bottom: 1pt;
     background: none;
     border: none;
