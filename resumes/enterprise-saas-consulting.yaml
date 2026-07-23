@@ -12,18 +12,13 @@ mission_statement:
 qualifications:
   title: "Qualifications"
   items:
-    # Source: Independent Consultant; Zeal IT Consultants; HKS, Inc.; Clean Harbors, Inc.
-    - "Enterprise software delivery: 15 years building and shipping production systems, including multi-tenant SaaS and internal enterprise platforms across consulting and in-house roles."
-    # Source: Zeal IT Consultants; old-resume/resume.json — account management, SOWs, budgets, VMOs/MSPs.
-    - "Consulting and management: led multiple simultaneous delivery teams across multiple clients with total engineering budgets exceeding $4MM/year; handled stakeholder discovery, SOW drafting, contract execution, VMO/MSP navigation, and executive relationships."
-    # Source: Independent Consultant; Zeal IT Consultants; HKS, Inc.; Clean Harbors, Inc.; Cisco Systems, Inc.
+    - "Enterprise software delivery: 15 years building and shipping production systems, including multi-tenant enterprise and consumer facing SaaS products across consulting and in-house roles."
+    - "Leadership: led multiple simultaneous delivery teams across multiple clients with engineering budgets exceeding $4MM/year; handled stakeholder discovery, SOW drafting, contract execution, VMO/MSP navigation, and executive relationships. Hired, trained, and mentored numerous software engineers at various stages in their careers."
     - "Full-stack product engineering and delivery: C#/.NET, TypeScript, Angular, React, SQL Server, and APIs — with automated testing, CI/CD pipelines, and release automation across AWS and Azure."
-    # Source: Zeal IT Consultants; HKS, Inc.; Clean Harbors, Inc. (McKesson ETL job-health dashboard; App Insights / CloudWatch / Seq)
-    - "Cloud infrastructure and operations: event-driven ETL, containers, and serverless/Fargate workloads on AWS and Azure, with application logging and metrics (Application Insights, CloudWatch, Seq)."
-    # Source: Zeal IT Consultants (Eye Book Now / Fusion consumer-facing); HKS, Inc.; Clean Harbors, Inc.; Cisco Systems, Inc.
+    - "Cloud infrastructure and operations: event-driven ETL, containers, and serverless/Fargate workloads on AWS and Azure, with application logging and metrics (Application Insights, CloudWatch, Seq). Fully-scripted IoC defined cloud environments."
     - "Breadth of domains and users: shipped both internal enterprise tools and consumer-facing products spanning healthcare, financial services, manufacturing, architecture, transit, and data-center operations — serving executives, business teams, and external end users."
-    # Source: Clean Harbors, Inc.; Zeal IT Consultants; Expedia learning-to-rank project in base resume.
     - "Data-heavy optimization and analytics: built ranking, forecasting, matching, and reporting systems with strong SQL, data preparation, and performance tuning."
+    - "Machine Learning: 3 years academic and independent research designing, training, and evaluating ML models for classification, ranking, retrieval, NLP, perception, and sequential decision making (RL/PPO)."
 
 projects_config:
   title: "Open-Source & Emerging-Technology Projects"
@@ -68,16 +63,20 @@ projects:
     elements:
       - key: machine_learning
         name: "Machine Learning & GenAI"
-  disabled:
-    - crypto-currency-trading-bot
-    - neural-networks-independent-study
-    - so101_infer
+  enabled:
     - cs6375-project1
     - cs6375-project4-part1
     - cs6375-project3-part1
+    - cs6320-nlp-assignment1
+  disabled:
+    # cs6375 = ML
+    # cs6320 = NLP
+    # cs6347 = SM of ML
+    - crypto-currency-trading-bot
+    - neural-networks-independent-study
+    - so101_infer
     - cs6375-project3-part2
     - cs6375-project2
-    - cs6320-nlp-assignment1
     - cs6320-nlp-assignment2
     - nn-web-demo-mlp
     - nn-gan
@@ -90,6 +89,15 @@ projects:
     - imgtool
     - framepipe
   elements:
+    - key: cs6375-project1
+      group: machine_learning
+    - key: cs6375-project4-part1
+      group: machine_learning
+    - key: cs6375-project3-part1
+      group: machine_learning
+    - key: cs6320-nlp-assignment1
+      group: machine_learning
+
     - key: expedia-learning-to-rank
       group: machine_learning
       name: "Search Ranking & Retrieval Pipeline"
