@@ -25,7 +25,7 @@ qualifications:
   title: Qualifications
   items:
     - "Education: M.S. Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0; B.S. Computer Science, UT Dallas"
-    - "Software Engineering: 15 years building, testing, and launching production software. Polyglot. Daily Python across ML projects (TensorFlow, PyTorch, NumPy); C# / .NET, TypeScript, SQL; CI/CD / DevOps; Automated testing; Cloud-scale."
+    - "Software Engineering: 15 years building, testing, and launching production software. Polyglot. Daily Python across ML projects (TensorFlow, PyTorch, NumPy); C# / .NET, TypeScript, SQL; CI/CD / DevOps; Automated testing; Infrastructure as Code; Cloud-scale."
     - "Machine Learning: 3 years designing, training, evaluating ML models: vision-based RL (PPO) policies; causal transformer and sequence models (LSTM/RNN); retrieval and LTR; etc."
     - "Effective Collaboration: Consultant; team leadership; client ownership. Demonstrated ability to quickly absorb domain context, history, and triage complex scenarios and systems, identify root causes and risks, communicate effectively, and foster productive collaboration both vertically and horizontally through formal (e.g., code review) and informal means."
 
