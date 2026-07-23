@@ -1,0 +1,67 @@
+# Anduril
+# Ground Software Engineer, Space
+# https://job-boards.greenhouse.io/andurilindustries/jobs/5143734007?gh_jid=5143734007
+# Colorado Springs, Colorado, United States
+# anduril-5143734007
+
+personal:
+  name: "Matthew Evans"
+  title: "Machine Learning Engineer"
+  location: ""
+  location_url: ""
+
+order_by:
+  - experience
+  - projects
+  - education
+  - achievements
+  - skills
+
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "Targeting autonomy-focused SW/ML Engineering roles in defense and hard-tech at the boundary of frontier ML research and product development on teams making civilization-scale impact."
+
+qualifications:
+  title: Qualifications
+  items:
+    - "Education: M.S. Computer Science (Intelligent Systems and Machine Learning), UT Dallas (Dec 2025), GPA 3.73/4.0; B.S. Computer Science, UT Dallas"
+    - "Software Engineering: 15 years building, testing, and launching production software. Polyglot. Daily Python across ML projects (TensorFlow, PyTorch, NumPy); C# / .NET, TypeScript, SQL; CI/CD / DevOps; Automated testing; Cloud-scale."
+    - "Machine Learning: 3 years designing, training, evaluating ML models: vision-based RL (PPO) policies; causal transformer and sequence models (LSTM/RNN); retrieval and LTR; etc."
+    - "Effective Collaboration: Consultant; team leadership; client ownership. Demonstrated ability to quickly absorb domain context, history, and triage complex scenarios and systems, identify root causes and risks, communicate effectively, and foster productive collaboration both vertically and horizontally through formal (e.g., code review) and informal means."
+
+projects:
+  enabled:
+    - expedia-learning-to-rank
+    - vision-based-sim-to-real-manipulation-pipeline
+    - ml-assisted-visibility-graph-construction
+    - neural-networks-independent-study
+    - intent-aware-lookahead-for-language-modeling
+    - imgtool
+    - so101_infer
+    - framepipe
+    - cs6375-project3-part1
+    - cs6320-nlp-assignment2
+    - nn-web-demo-mlp
+    - nn-cnn
+    - nn-rnn
+    - nn-gan
+    - cs6320-nlp-assignment1
+    - cs6375-project1
+    - cs6375-project2
+    - cs6375-project4-part1
+  disabled:
+    - crypton
+    # cs6375 = ML
+    - cs6375-project3-part2
+    # cs6320 = NLP
+    # cs6347 = SM of ML
+    - cs6347-hw2
+    - cs6347-hw3-gibbs
+    - cs6347-hw3-mle
+    - cs6347-hw4-em
+    - cs6347-hw4-em-colorem
+
+experience:
+  elements:
+    - key: zeal-it-consultants
+      projects_expanded: true
