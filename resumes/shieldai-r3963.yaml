@@ -1,0 +1,182 @@
+# Shield AI
+# Ground System Software Engineer (R4787)
+# https://jobs.lever.co/shieldai/fe7531e1-c25e-4e4a-9661-19e3a2ab8e69/apply?lever-source=LinkedIn
+# Dallas, TX
+# shieldai-r3963
+
+personal:
+  name: "Matthew Evans"
+  title: "Machine Learning Engineer"
+  location: ""
+  location_url: ""
+
+order_by:
+  - experience
+  - projects
+  - education
+  - achievements
+  - skills
+
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems and an M.S. in Computer Science (Machine Learning) from UT Dallas."
+  - "Targeting autonomy-focused SW/ML Engineering roles in defense and hard-tech at the boundary of frontier ML research and product development on teams making civilization-scale impact."
+
+qualifications:
+  title: Qualifications
+  items:
+    - "Enterprise software delivery: 15 years building and shipping production systems, including multi-tenant enterprise and consumer facing SaaS products across consulting and in-house roles."
+    - "Leadership: led multiple simultaneous delivery teams across multiple clients with engineering budgets exceeding $4MM/year; handled stakeholder discovery, SOW drafting, contract execution, VMO/MSP navigation, and executive relationships. Hired, trained, and mentored numerous software engineers at various stages in their careers."
+    - "Full-stack product engineering and delivery: C#/.NET, TypeScript, Angular, React, SQL Server, and APIs — with automated testing, CI/CD pipelines, and release automation across AWS and Azure."
+    - "Cloud infrastructure and operations: event-driven ETL, containers, and serverless/Fargate workloads on AWS and Azure, with application logging and metrics (Application Insights, CloudWatch, Seq). Fully-scripted IoC defined cloud environments."
+    - "Breadth of domains and users: shipped both internal enterprise tools and consumer-facing products spanning healthcare, financial services, manufacturing, architecture, transit, and data-center operations — serving executives, business teams, and external end users."
+    - "Data-heavy optimization and analytics: built ranking, forecasting, matching, and reporting systems with strong SQL, data preparation, and performance tuning."
+    - "Machine Learning: 3 years academic and independent research designing, training, and evaluating ML models for classification, ranking, retrieval, NLP, perception, and sequential decision making (RL/PPO)."
+
+projects:
+  enabled:
+    - vision-based-sim-to-real-manipulation-pipeline
+    - ml-assisted-visibility-graph-construction
+    - imgtool
+    - so101_infer
+    - framepipe
+  disabled:
+    - expedia-learning-to-rank
+    - neural-networks-independent-study
+    - intent-aware-lookahead-for-language-modeling
+    - cs6375-project3-part1
+    - cs6320-nlp-assignment2
+    - cs6320-nlp-assignment1
+    - cs6375-project1
+    - cs6375-project2
+    - cs6375-project4-part1
+    - nn-web-demo-mlp
+    - nn-cnn
+    - nn-rnn
+    - nn-gan
+    - crypton
+    # cs6375 = ML
+    - cs6375-project3-part2
+    # cs6320 = NLP
+    # cs6347 = SM of ML
+    - cs6347-hw2
+    - cs6347-hw3-gibbs
+    - cs6347-hw3-mle
+    - cs6347-hw4-em
+    - cs6347-hw4-em-colorem
+
+experience:
+  elements:
+    - key: zeal-it-consultants
+      projects_expanded: true
+    - key: hks-inc
+      expanded: true
+    - key: clean-harbors-inc
+      expanded: true
+
+skills:
+  ordering:
+    - architecture-and-engineering
+    - backend
+    - frontend
+    - c-plus-plus-systems-tooling
+    - databases-and-data
+    - performance-and-observability
+    - cloud-containers-and-devops
+    - delivery-and-leadership
+    - software-engineering
+  disabled:
+    # Disable ALL base skill categories so nothing off-target (ML/robotics/C++) leaks through the merge.
+    - ai-ml-robotics-and-experimentation
+    - classical-and-statistical-ml
+    - ml-systems-and-data
+    - programming-languages
+    - infrastructure-containers-and-ci-cd
+    - databases-caching-and-data-stores
+  elements:
+    - key: architecture-and-engineering
+      category: "Architecture & Engineering"
+      items:
+        - "OOP"
+        - "Design patterns"
+        - "Distributed architecture patterns"
+        - "Microservices & event-driven systems"
+        - "Clean Architecture"
+        - "Full development lifecycle (SDLC)"
+        - "Design & code reviews"
+
+    - key: backend
+      category: "Backend Languages & Frameworks"
+      items:
+        - "C#"
+        - "dotnet / .NET Standard"
+        - ".NET Core"
+        - "Web API / REST"
+        - "Entity Framework Core"
+        - "Dapper"
+        - "xUnit"
+        - "Python"
+        - PyTorch
+        - NumPy
+        - TensorFlow
+        - "C++ (C++17/C++20)"
+
+    - key: databases-and-data
+      category: "Databases & Data"
+      items:
+        - "T-SQL / SQL Server"
+        - "Normalized schema design"
+        - "Query optimization (indices, indexed views, parameter sniffing, etc.)"
+        - "PostgreSQL / PostGIS"
+        - "Redis"
+        - "Cosmos DB"
+        - "MongoDB"
+        - "Snowflake"
+        - "ETL / data pipelines"
+
+    - key: performance-and-observability
+      category: "Performance & Observability"
+      items:
+        - "System / application / database performance tuning"
+        - "Benchmarking & profiling"
+        - "Scalability & load design"
+        - "Parallelism & distributed computing"
+        - "Logging & observability (Application Insights, CloudWatch, Seq)"
+
+    - key: cloud-containers-and-devops
+      category: "Cloud, Containers & DevOps"
+      items:
+        - "Azure (App Service, DevOps, Storage, API Gateway)"
+        - "AWS (Lambda, ECS/Fargate, EC2, S3, CloudFormation)"
+        - "Docker / Containerization"
+        - "CI/CD (Azure DevOps, GitHub Actions)"
+        - "Linux"
+        - "Git"
+
+    - key: frontend-web-apps
+      category: "Frontend Languages & Frameworks"
+      items:
+        - "TypeScript"
+        - "JavaScript"
+        - "Angular"
+        - "RxJS"
+        - "React"
+        - "SASS"
+
+    - key: delivery-and-leadership
+      category: "Delivery & Leadership"
+      items:
+        - "Agile delivery"
+        - "Team leadership & mentoring"
+        - "Client discovery & requirements"
+        - "Account management / SOWs"
+        - "Cross-functional communication"
+
+    - key: software-engineering
+      category: "Collaborative Engineering"
+      items:
+        - "Requirements gathering"
+        - "Design review"
+        - "Pair programming"
+        - "Peer review processes"
+        - "Testing & Integration"
+        - "Maintenance & Support"
