@@ -646,6 +646,9 @@ const renderProjects = (projects, config = {}) => {
         defs.set(key, {
           key,
           name: el.name || el.title || String(el.key),
+          orderBy: Array.isArray(el.order_by)
+            ? el.order_by.map((k) => slugify(String(k)))
+            : [],
         });
       });
     }
@@ -713,11 +716,30 @@ const renderProjects = (projects, config = {}) => {
     return toGroupLabel(sample && sample.group ? String(sample.group) : key);
   };
 
+  const sortByOrderBy = (projectsInGroup, orderBy) => {
+    if (!orderBy || !orderBy.length) return projectsInGroup;
+    const indexOf = (k) => {
+      const i = orderBy.indexOf(k);
+      return i === -1 ? orderBy.length : i;
+    };
+    return projectsInGroup
+      .map((project, idx) => ({ project, idx }))
+      .sort((a, b) => {
+        const diff = indexOf(a.project.key) - indexOf(b.project.key);
+        return diff !== 0 ? diff : a.idx - b.idx;
+      })
+      .map(({ project }) => project);
+  };
+
   const getNonEmptyGroupEntries = (items) => {
     const { buckets, seenOrder } = bucketByGroup(items);
     const keys = orderedGroupKeys(buckets, seenOrder);
     return keys
-      .map((groupKey) => [groupKey, buckets.get(groupKey) || []])
+      .map((groupKey) => {
+        const groupDef = groupMeta && groupMeta.defs.get(groupKey);
+        const groupProjects = sortByOrderBy(buckets.get(groupKey) || [], groupDef && groupDef.orderBy);
+        return [groupKey, groupProjects];
+      })
       .filter(([, groupProjects]) => groupProjects.length > 0);
   };
 
