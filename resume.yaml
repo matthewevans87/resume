@@ -97,8 +97,8 @@ experience:
               Led multiple simultaneous software delivery teams, trusted with $4MM+/year in client engineering budgets — owning hiring, team leadership, and end-to-end technical delivery across enterprise SaaS products on AWS and Azure.
             highlights:
               - [
-                  "Distributed data processing at scale:",
-                  "Architected an event-driven ETL platform on AWS that ingested terabyte-scale CMS Transparency in Coverage data — JSON files too large for standard parsers, spanning the cartesian product of every US health insurance plan × in-network provider × medical procedure — using a custom streaming parser fanned out across thousands of concurrent Lambda and ECS Fargate workers to feed a multi-tenant benefits-administration SaaS product.",
+                  "Software engineering:",
+                  "Architected and delivered production systems across AWS and Azure spanning benefits administration, financial services, healthcare, and transit-optimization engagements — from event-driven ETL processing terabyte-scale datasets via thousands of concurrent Lambda/Fargate workers, to full-stack Angular/React SPAs and .NET microservices, to real-time pipeline monitoring dashboards — designing architecture from scratch across SQL Server, Cosmos DB, Redis, and Snowflake.",
                 ]
               - [
                   "Team leadership:",
@@ -129,7 +129,7 @@ experience:
                 - key: alight-clarity-saas-product
                   name: "Clarity (Alight)"
                   url:
-                  description: "Multi-tenant, cloud-native SaaS platform for benefits administration on AWS. Custom streaming ETL on AWS Fargate ingested terabyte-scale datasets in minutes via massive parallelism. Co-authored product architecture and technical design with client and consulting team, partnering with executive stakeholders and technical leadership throughout; hired and led Agile development team through full SDLC, training and coaching client on Agile practices."
+                  description: "Multi-tenant, cloud-native SaaS platform for benefits administration on AWS. Architected an event-driven ETL platform that ingested terabyte-scale CMS Transparency in Coverage data — JSON files too large for standard parsers, spanning the cartesian product of every US health insurance plan × in-network provider × medical procedure — using a custom streaming parser fanned out across thousands of concurrent Lambda and ECS Fargate workers. Co-authored product architecture and technical design with client and consulting team, partnering with executive stakeholders and technical leadership throughout; hired and led Agile development team through full SDLC, training and coaching client on Agile practices."
                   role: "Account Manager / Engagement Manager / Team Lead"
                   start_date: "2022"
                   end_date: "2022"
