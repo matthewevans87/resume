@@ -863,6 +863,7 @@ projects:
     - key: crypton
       group: personal
       name: "Crypton"
+      render_style: minimal
       url: "https://github.com/matthewevans87/crypton-cli"
       type: personal
       description: "Multi-agent LLM system that runs an autonomous learning loop driven by live cryptocurrency market data. Five specialized agents (Plan → Research → Analyze → Synthesize → Evaluate) coordinate through file-based artifacts and bounded inter-agent mailboxes; a deterministic execution engine — fully separated from the AI layer — carries out the resulting strategy in a paper-trading sandbox. Personal exploration of agentic system design, prompt engineering, and tool-using LLMs."
