@@ -129,13 +129,11 @@ experience:
                 - key: alight-clarity-saas-product
                   name: "Clarity (Alight)"
                   url:
-                  description: "Multi-tenant, cloud-native SaaS platform for benefits administration on AWS. Custom streaming ETL on AWS Fargate ingested terabyte-scale datasets in minutes via massive parallelism."
+                  description: "Multi-tenant, cloud-native SaaS platform for benefits administration on AWS. Custom streaming ETL on AWS Fargate ingested terabyte-scale datasets in minutes via massive parallelism. Co-authored product architecture and technical design with client and consulting team, partnering with executive stakeholders and technical leadership throughout; hired and led Agile development team through full SDLC, training and coaching client on Agile practices."
                   role: "Account Manager / Engagement Manager / Team Lead"
                   start_date: "2022"
                   end_date: "2022"
-                  highlights:
-                    - "Co-authored product architecture and technical design with client and consulting team; partnered with executive stakeholders and technical leadership throughout"
-                    - "Hired and led Agile development team through full SDLC; trained and coached client on Agile practices"
+                  highlights: []
                   technologies:
                     - "C#"
                     - "Dotnet"
@@ -167,13 +165,11 @@ experience:
                   metrics:
                 - key: bankers-financial-maverick
                   name: "Maverick (Bankers Financial)"
-                  description: "Multi-tenant SaaS platform for financial services on .NET 5 and Angular — designed full system architecture from scratch and delivered on schedule, opening a new revenue stream for the client."
+                  description: "Multi-tenant SaaS platform for financial services on .NET 5 and Angular — designed full system architecture from scratch and delivered on schedule, opening a new revenue stream for the client. Hired and led Agile development team through full SDLC, training and coaching client team on Agile practices and execution; collaborated with executive stakeholders and technical leadership on requirements and product direction."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2022"
                   end_date: "2022"
-                  highlights:
-                    - "Hired and led Agile development team through full SDLC; trained and coached client team on Agile practices and execution"
-                    - "Collaborated with executive stakeholders and technical leadership on requirements and product direction"
+                  highlights: []
                   technologies:
                     - "C#"
                     - ".NET 5"

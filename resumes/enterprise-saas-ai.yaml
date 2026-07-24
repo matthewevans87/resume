@@ -7,17 +7,17 @@ order_by:
 
 mission_statement:
   - "Full-Stack Software Engineer with 15 years' experience shipping production systems. M.S. Computer Science (ML) from UT Dallas (2025)."
-  - "Delighting clients and stakeholders with strategy-aligned delivery-focused engineering leadership and execution across the enterprise SDLC."
+  - "Delighting clients and stakeholders with strategy-aligned delivery-focused engineering leadership and execution across the SDLC."
 
 qualifications:
   title: "Qualifications"
   items:
-    - "Enterprise software delivery: 15 years building and shipping production systems, including multi-tenant enterprise and consumer facing SaaS products across consulting and in-house roles."
-    - "Leadership: led multiple simultaneous delivery teams across multiple clients with engineering budgets exceeding $4MM/year; handled stakeholder discovery, SOW drafting, contract execution, VMO/MSP navigation, and executive relationships. Hired, trained, and mentored numerous software engineers at various stages in their careers."
-    - "Full-stack product engineering and delivery: C#/.NET, TypeScript, Angular, React, SQL Server, and APIs — with automated testing, CI/CD pipelines, and release automation across AWS and Azure."
-    - "Cloud infrastructure and operations: event-driven ETL, containers, and serverless/Fargate workloads on AWS and Azure, with application logging and metrics (Application Insights, CloudWatch, Seq). Fully-scripted IoC defined cloud environments."
-    - "Breadth of domains and users: shipped both internal enterprise tools and consumer-facing products spanning healthcare, financial services, manufacturing, architecture, transit, and data-center operations — serving executives, business teams, and external end users."
-    - "Data-heavy optimization and analytics: built ranking, forecasting, matching, and reporting systems with strong SQL, data preparation, and performance tuning."
+    - "Delivery: 15 years building and shipping production systems, including multi-tenant enterprise and consumer facing SaaS products across consulting and in-house roles."
+    - "Ownership: led simultaneous delivery teams across multiple clients with engineering budgets exceeding $4MM/year; handled stakeholder discovery, SOW drafting, contract execution, VMO/MSP navigation, and executive relationships; hired, trained, and mentored numerous software engineers at various stages in their careers."
+    - "Software Engineering: Polyglot. C# / .NET, TypeScript, SQL, Angular; CI/CD / DevOps. Python (PyTorch, NumPy, TensorFlow); automated testing; clean micro-service architecture."
+    - "Cloud Infrastructure: event-driven ETL; serverless and containerized workloads on AWS and Azure; application logging and metrics (Application Insights, CloudWatch, Seq); fully-scripted IoC defined cloud environments."
+    - "Domain Breadth: shipped products spanning healthcare, financial services, manufacturing, architecture, transit, and data-center operations — serving executives, business teams, and external end users."
+    - "Data: built ranking, forecasting, matching, and reporting systems with strong SQL, data preparation, and performance tuning."
     - "Machine Learning: 3 years academic and independent research designing, training, and evaluating ML models for classification, ranking, retrieval, NLP, perception, and sequential decision making (RL/PPO)."
 
 projects_config:
@@ -60,13 +60,19 @@ projects:
   groups:
     order_by:
       - machine_learning
+      - cpp
     elements:
       - key: machine_learning
         name: "Machine Learning & GenAI"
+      - key: cpp
+        name: "C++ / System Software"
   enabled:
     - cs6375-project1
     - cs6375-project4-part1
     - cs6375-project3-part1
+    - so101_infer
+    - imgtool
+    - framepipe
   disabled:
     # cs6375 = ML
     # cs6320 = NLP
@@ -74,7 +80,6 @@ projects:
     - cs6320-nlp-assignment1
     - crypto-currency-trading-bot
     - neural-networks-independent-study
-    - so101_infer
     - cs6375-project3-part2
     - cs6375-project2
     - cs6320-nlp-assignment2
@@ -86,8 +91,6 @@ projects:
     - cs6347-hw3-mle
     - cs6347-hw4-em
     - cs6347-hw4-em-colorem
-    - imgtool
-    - framepipe
   elements:
     - key: cs6375-project1
       group: machine_learning
