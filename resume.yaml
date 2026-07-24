@@ -94,26 +94,26 @@ experience:
             end_date: "2023"
             promotion: false
             summary: |
-              Led multiple simultaneous software delivery teams, trusted with $4MM+/year in client engineering budgets — owning hiring, team leadership, and end-to-end technical delivery across enterprise SaaS products on AWS and Azure.
+              Led multiple simultaneous software delivery teams, trusted with $4MM+/year in client engineering budgets. Owned hiring, team leadership, and end-to-end technical delivery across enterprise SaaS products on AWS and Azure.
             highlights:
               - [
-                  "Software engineering:",
-                  "Architected and delivered production systems across AWS and Azure spanning benefits administration, financial services, healthcare, and transit-optimization engagements — from event-driven ETL processing terabyte-scale datasets via thousands of concurrent Lambda/Fargate workers, to full-stack Angular/React SPAs and .NET microservices, to real-time pipeline monitoring dashboards — designing architecture from scratch across SQL Server, Cosmos DB, Redis, and Snowflake.",
+                  "Software Engineering:",
+                  "Greenfield architecture across engagements; terabyte-scale distributed processing; full-stack products for financial services and healthcare clients; monitoring tooling adopted as an internal reference architecture; consistently taking ambiguous scope to production on schedule.",
                 ]
               - [
-                  "Team leadership:",
+                  "Team Leadership:",
                   "Hired, trained, and mentored dozens of software developers across career levels; led Agile teams through full SDLC on multiple concurrent client accounts.",
                 ]
               - [
-                  "Product delivery:",
+                  "Product Delivery:",
                   "Architected and delivered cloud-native SaaS products in benefits administration, financial services, and healthcare.",
                 ]
               - [
-                  "Client engagement:",
+                  "Client Engagement:",
                   "Drove stakeholder discovery and requirements definition; maintained executive relationships across accounts.",
                 ]
               - [
-                  "Technical rescue:",
+                  "Technical Rescue:",
                   "Identified root causes of a stalled project suffering from loosely defined requirements and over-engineering; restructured scope and delivered ahead of schedule.",
                 ]
             technologies:
