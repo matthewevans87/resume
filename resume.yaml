@@ -241,7 +241,6 @@ experience:
             highlights:
               - "Successfully implemented piecemeal migration from AngularJS to Angular 7 with both frameworks running simultaneously"
               - "Led development of Project Explorer - comprehensive project information and asset reference library"
-              - "Built Nominator - employee recommendation and promotion web application"
               - "Established CI/CD pipelines and Azure DevOps workflows"
             technologies:
               - "TypeScript"

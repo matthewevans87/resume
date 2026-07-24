@@ -27,24 +27,13 @@ experience:
   elements:
     - key: independent-consultant
       expanded: true
-      projects_expanded: false # ERP and code-generation platform are the headline; no nested project list to surface.
+      projects_expanded: false
     - key: zeal-it-consultants
       expanded: true
-      projects_expanded: true # Multiple client SaaS deliveries read better when the project list is visible.
+      projects_expanded: true
     - key: hks-inc
       expanded: true
       projects_expanded: false
-      positions:
-        elements:
-          - key: sr-software-engineer
-            highlights:
-              - "Successfully implemented piecemeal migration from AngularJS to Angular 7 with both frameworks running simultaneously"
-              - "Led development of Project Explorer - comprehensive project information and asset reference library"
-              - "Established CI/CD pipelines and Azure DevOps workflows"
-            projects:
-              disabled:
-                - nominator
-                - project-explorer # Referenced in the role highlight; don't also render a card for it.
     - key: clean-harbors-inc
       expanded: true
 
