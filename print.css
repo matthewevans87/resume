@@ -844,7 +844,8 @@
   .company-project-item,
   .education-item,
   .achievement-item,
-  .skill-category {
+  .skill-category,
+  .company-header {
     page-break-inside: avoid;
   }
 
@@ -858,9 +859,15 @@
   .project-item:first-child,
   .education-item:first-child,
   .achievement-item:first-child,
-  .skill-category:first-child {
+  .skill-category:first-child,
+  .position-summary,
+  .position .technologies {
     page-break-before: avoid;
     break-before: avoid;
+  }
+
+  .company-header {
+    break-after: avoid;
   }
 
   /* Compact spacing for longer resumes */
