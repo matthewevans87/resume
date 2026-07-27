@@ -129,7 +129,7 @@ experience:
                 - key: alight-clarity-saas-product
                   name: "Clarity (Alight)"
                   url:
-                  description: "Multi-tenant, cloud-native SaaS platform for benefits administration on AWS. Architected an event-driven ETL platform that ingested terabyte-scale CMS Transparency in Coverage data — JSON files too large for standard parsers, spanning the cartesian product of every US health insurance plan × in-network provider × medical procedure — using a custom streaming parser fanned out across thousands of concurrent Lambda and ECS Fargate workers. Co-authored product architecture and technical design with client and consulting team, partnering with executive stakeholders and technical leadership throughout; hired and led Agile development team through full SDLC, training and coaching client on Agile practices."
+                  description: "Multi-tenant SaaS platform for benefits administration on AWS. Architected an event-driven ETL pipeline ingesting terabyte-scale CMS Transparency in Coverage data — spanning every US health plan × in-network provider × procedure — via a custom streaming parser fanned out across thousands of concurrent Lambda/Fargate workers. Co-authored architecture with executive stakeholders and technical leadership; hired and led the Agile delivery team through full SDLC."
                   role: "Account Manager / Engagement Manager / Team Lead"
                   start_date: "2022"
                   end_date: "2022"
@@ -147,13 +147,10 @@ experience:
                     - "EF Core"
                 - key: greyhound-route-planning-tool
                   name: "Route Planning (Greyhound)"
-                  description: "Proof-of-concept transit schedule optimizer for Greyhound's nationwide route network — led a scope-undefined engagement, defined the problem space through stakeholder interviews, and iterated on prototypes with direct executive feedback."
+                  description: "Proof-of-concept transit schedule optimizer for Greyhound's nationwide route network. Defined the problem space through stakeholder interviews on a scope-undefined engagement, iterating on prototypes with direct executive feedback. Built a full-stack Angular frontend with D3 and Google Maps visualizations for exploring transit schedules and passenger flow; mined the Snowflake data warehouse to surface schedule anomalies and optimization opportunities."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2021"
                   end_date: "2021"
-                  highlights:
-                    - "Built full-stack Angular frontend with complex D3 and Google Maps visualizations for interactive exploration of transit schedules and passenger flow"
-                    - "Performed open-ended exploration of Snowflake data warehouse to surface schedule anomalies, passenger flow patterns, and optimization opportunities"
                   technologies:
                     - "TypeScript"
                     - "Angular"
@@ -165,7 +162,7 @@ experience:
                   metrics:
                 - key: bankers-financial-maverick
                   name: "Maverick (Bankers Financial)"
-                  description: "Multi-tenant SaaS platform for financial services on .NET 5 and Angular — designed full system architecture from scratch and delivered on schedule, opening a new revenue stream for the client. Hired and led Agile development team through full SDLC, training and coaching client team on Agile practices and execution; collaborated with executive stakeholders and technical leadership on requirements and product direction."
+                  description: "Multi-tenant SaaS platform for financial services on .NET 5 and Angular. Designed the system architecture from scratch and delivered on schedule, opening a new revenue stream for the client. Hired and led the Agile delivery team through full SDLC; partnered with executive stakeholders on requirements and product direction."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2022"
                   end_date: "2022"
@@ -182,14 +179,10 @@ experience:
                   metrics:
                 - key: essilor-eye-book-now
                   name: "Eye Book Now (EssilorLuxottica)"
-                  description: "Simultaneously tech led Eye Book Now and diagnosed and rescued Beacon — stalled from requirements drift, over-engineering, and repeated team handoffs — delivering both on time."
+                  description: "Simultaneously tech led Eye Book Now and rescued Beacon — stalled from requirements drift, over-engineering, and repeated team handoffs — delivering both on time. Partnered with the product owner on scope and mentored junior developers through PRs and code review; restructured Beacon's scope to ship ahead of schedule. Built full stack: React frontends, RESTful .NET Core microservices on AWS EC2, and persistence across SQL Server, Redis, and Cosmos DB."
                   role: "Engagement Manager / Team Lead"
                   start_date: "2021"
                   end_date: "2021"
-                  highlights:
-                    - "Tech led Eye Book Now: partnered with product owner and business managers on scope; mentored junior developers through PRs, code review, and production releases; set team rhythm through coaching and hands-on engagement"
-                    - "Diagnosed and rescued Beacon — stalled from loosely defined requirements, over-engineering, and repeated team handoffs — restructured scope and delivered ahead of schedule"
-                    - "Built full stack: React consumer-facing frontends, RESTful .NET Core microservices on AWS EC2, and persistence layer across SQL Server, Redis, and Cosmos DB"
                   technologies:
                     - "C#"
                     - "Dotnet"
@@ -204,13 +197,10 @@ experience:
                   metrics:
                 - key: mckesson-etl-process-monitoring
                   name: "ETL Process Monitoring (McKesson)"
-                  description: "Angular/microservices platform on Azure Cloud for real-time ETL pipeline monitoring — adopted internally as reference architecture for new projects."
+                  description: "Angular/microservices platform on Azure for real-time ETL pipeline monitoring — adopted internally as reference architecture for new projects. Built full-stack Angular SPA and RESTful microservices in an Agile Kanban team, giving account managers real-time visibility into ETL job health and improving customer support response. Authored fully scripted CI/CD pipelines covering testing, builds, releases, and infrastructure deployment."
                   role: "Developer"
                   start_date: "2020"
                   end_date: "2020"
-                  highlights:
-                    - "Built full-stack Angular SPA, RESTful APIs, and microservices in an Agile Kanban team; monitoring dashboard gave account managers real-time visibility into ETL job health, directly improving customer support response"
-                    - "Authored fully scripted CI/CD pipelines covering linting, unit testing, builds, releases, templated infrastructure deployment, and environment configuration"
                   technologies:
                     - "TypeScript"
                     - "C#"
