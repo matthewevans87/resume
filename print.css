@@ -200,7 +200,10 @@
     line-height: 1.5;
     text-align: justify;
     font-style: italic;
-    color: #222;
+  }
+
+  .mission-statement p {
+    text-align: center !important;
   }
 
   #qualifications-section {
