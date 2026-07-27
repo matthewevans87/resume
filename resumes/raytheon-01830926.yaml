@@ -1,0 +1,265 @@
+# https://careers.rtx.com/global/en/job/01830926/2026-Raytheon-Full-Time-Systems-Engineer-II-McKinney-TX-Onsite
+# 2026 Raytheon Full Time - Systems Engineer II – McKinney, TX (Onsite)
+# Space and Airborne Systems Engineering and Test Capability (SE&TC)
+# You will support Radar Mode requirement development, engineering testing, integration and flight-testing, production, system deployment, and post deployment support across the product lifecycle. Through Digital Transformation (DTx) you will perform these functions using a variety of methods and enabling technologies, including Model-Based Systems Engineering (MBSE) and Agile product development.
+
+order_by:
+  - experience
+  - projects
+  - education
+  - achievements
+  - skills
+
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems. M.S. Computer Science (ML) from UT Dallas (2025)."
+  - "Pivoting into cleared work in hard-tech domains focused on space, remote sensing, and autonomy."
+
+qualifications:
+  title: "Qualifications"
+  items:
+    - "Education: M.S. Computer Science (Machine Learning concentration) from UT Dallas (2025) (3.73 / 4.0)."
+    - "Delivery: 15 years building and shipping production systems, including multi-tenant enterprise and consumer facing products across consulting and in-house roles."
+    - "Software Engineering: Polyglot. C# / .NET, TypeScript, SQL, Angular; CI/CD / DevOps. Python (PyTorch, NumPy, TensorFlow); automated testing; clean micro-service architecture."
+    - "Cloud Infrastructure: event-driven ETL; serverless and containerized workloads on AWS and Azure; application logging and metrics (Application Insights, CloudWatch, Seq); fully-scripted IoC defined cloud environments."
+    - "Data Analysis: Python (Pandas). SQL (Procedures, Views, Recursive CTEs, Indices, etc.)"
+    - "Automation: Process automation using Python, JavaScript/NodeJS, Bash/Shell, C#, etc."
+    - "Coordination: Consulting experience (6+ years). Proven ability to effectively collaborate and communicate both horizontally (team) vertically (managing stakeholders)."
+    - "Agile Workflows: Served as Scrum Master on Agile teams. Led Agile trainings with 50+ participants. Familiar with both Sprint and Kanban frameworks."
+    - "Hardware: Undergrad coursework in digital electronics, including lab work. Grad coursework in Computer Architecture."
+    - "Software/Hardware Integration: Experience working with SO-101 robotic arm, ROS, LeRobot; running trained PPO policies on real robotics hardware."
+    - "Telemetry / Data Collection: Experience building event-driven systems to capture cloud-scale telemetry and provide real-time monitoring. Built ranking, forecasting, matching, and reporting systems with strong SQL, data preparation, and performance tuning."
+    - "Protocols: Deep experience with RESTful web services communicating over custom protocols, structured data, etc."
+    - "Clearance: US Citizen eligible to obtain clearance."
+
+projects_config:
+  title: "Open-Source & Emerging-Technology Projects"
+
+experience:
+  elements:
+    - key: independent-consultant
+      expanded: true
+      projects_expanded: false
+    - key: zeal-it-consultants
+      expanded: true
+      projects_expanded: true
+    - key: hks-inc
+      expanded: true
+      projects_expanded: false
+    - key: clean-harbors-inc
+      expanded: true
+
+education:
+  elements:
+    - key: bachelor-of-science
+      courses:
+        - "Digital Logic and Computer Design"
+        - "Digital Systems Laboratory"
+        - "C/C++ Programming in a UNIX Environment"
+
+# Enterprise SaaS projects are shown inline under their roles (Zeal, HKS) via
+# projects_expanded, so they are NOT repeated here. This section is reserved for
+# ML / GenAI work, rewritten concisely, that reads as differentiating in a SaaS context.
+projects:
+  groups:
+    order_by:
+      - machine_learning
+      - cpp
+    elements:
+      - key: machine_learning
+        name: "Machine Learning & GenAI"
+      - key: cpp
+        name: "C++ / System Software"
+  enabled:
+    - cs6375-project1
+    - cs6375-project4-part1
+    - cs6375-project3-part1
+    - so101_infer
+    - imgtool
+    - framepipe
+  disabled:
+    # cs6375 = ML
+    # cs6320 = NLP
+    # cs6347 = SM of ML
+    - cs6320-nlp-assignment1
+    - crypto-currency-trading-bot
+    - neural-networks-independent-study
+    - cs6375-project3-part2
+    - cs6375-project2
+    - cs6320-nlp-assignment2
+    - nn-web-demo-mlp
+    - nn-gan
+    - nn-rnn
+    - cs6347-hw2
+    - cs6347-hw3-gibbs
+    - cs6347-hw3-mle
+    - cs6347-hw4-em
+    - cs6347-hw4-em-colorem
+  elements:
+    - key: cs6375-project1
+      group: machine_learning
+    - key: cs6375-project4-part1
+      group: machine_learning
+    - key: cs6375-project3-part1
+      group: machine_learning
+    - key: cs6320-nlp-assignment1
+      group: machine_learning
+
+    - key: expedia-learning-to-rank
+      group: machine_learning
+      name: "Search Ranking & Retrieval Pipeline"
+      url: "https://github.com/matthewevans87/expedia-ltr"
+      description: "End-to-end learning-to-rank pipeline over ~1M real hotel-search logs: two-tower retrieval, a listwise neural ranker, and a LightGBM LambdaRank baseline, with full query-grouped evaluation (NDCG@k, MRR, Recall@k) across an 18-run sweep."
+      role: "Author"
+      start_date: "2026-06"
+      end_date: "2026-06"
+      render_style: minimal
+      technologies:
+        - "Python"
+        - "TensorFlow"
+        - "LightGBM"
+        - "Two-Tower Retrieval"
+        - "Learning-to-Rank"
+        - "NDCG / MRR / Recall@k"
+
+    - key: intent-aware-lookahead-for-language-modeling
+      group: machine_learning
+      name: "Intent-Aware Lookahead for Language Modeling"
+      url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-project"
+      description: "Transformer LM research: built a 6-layer causal transformer (~45M params) with auxiliary future-token prediction, intent pooling, and FiLM/gated fusion; evaluated across 21 controlled variants with honest negative results and interference analysis."
+      role: "Author"
+      start_date: "2025-08"
+      end_date: "2025-12"
+      render_style: minimal
+      technologies:
+        - "Python"
+        - "PyTorch"
+        - "Transformers"
+        - "TensorBoard"
+        - NLP
+
+    - key: crypton
+      group: machine_learning
+      name: "Crypton — Multi-Agent LLM System"
+      url: "https://github.com/matthewevans87/crypton-cli"
+      description: "Exploration of agentic GenAI: five specialized LLM agents coordinating through a 12-tool registry and structured messaging, with a deterministic execution layer cleanly separated from the non-deterministic LLM layer."
+      end_date: "2026-04"
+      render_style: minimal
+      technologies:
+        - "C# / .NET 10"
+        - "Ollama (local LLM inference)"
+        - "Multi-agent orchestration"
+        - "Prompt engineering"
+        - "Tool registry / sandboxed execution"
+
+    - key: ml-assisted-visibility-graph-construction
+      render_style: minimal
+
+    - key: vision-based-sim-to-real-manipulation-pipeline
+      render_style: minimal
+
+# skills:
+#   ordering:
+#     - architecture-and-engineering
+#     - backend
+#     - frontend
+#     - c-plus-plus-systems-tooling
+#     - databases-and-data
+#     - performance-and-observability
+#     - cloud-containers-and-devops
+#     - delivery-and-leadership
+#     - software-engineering
+#   disabled:
+#     # Disable ALL base skill categories so nothing off-target (ML/robotics/C++) leaks through the merge.
+#     - ai-ml-robotics-and-experimentation
+#     - classical-and-statistical-ml
+#     - ml-systems-and-data
+#     - programming-languages
+#     - infrastructure-containers-and-ci-cd
+#     - databases-caching-and-data-stores
+#   elements:
+#     - key: architecture-and-engineering
+#       category: "Architecture & Engineering"
+#       items:
+#         - "OOP"
+#         - "Design patterns"
+#         - "Distributed architecture patterns"
+#         - "Microservices & event-driven systems"
+#         - "Clean Architecture"
+#         - "Full development lifecycle (SDLC)"
+#         - "Design & code reviews"
+
+#     - key: backend
+#       category: "Backend Languages and Frameworks"
+#       items:
+#         - "C#"
+#         - "dotnet / .NET Standard"
+#         - ".NET Core"
+#         - "Web API / REST"
+#         - "Entity Framework Core"
+#         - "Dapper"
+#         - "xUnit"
+#         - "Python"
+#         - PyTorch
+#         - NumPy
+#         - TensorFlow
+#         - "C++ (C++17/C++20)"
+
+#     - key: databases-and-data
+#       category: "Databases & Data"
+#       items:
+#         - "T-SQL / SQL Server"
+#         - "Normalized schema design"
+#         - "Query optimization (indices, indexed views, parameter sniffing, etc.)"
+#         - "PostgreSQL / PostGIS"
+#         - "Redis"
+#         - "Cosmos DB"
+#         - "MongoDB"
+#         - "Snowflake"
+#         - "ETL / data pipelines"
+
+#     - key: performance-and-observability
+#       category: "Performance & Observability"
+#       items:
+#         - "System / application / database performance tuning"
+#         - "Benchmarking & profiling"
+#         - "Scalability & load design"
+#         - "Parallelism & distributed computing"
+#         - "Logging & observability (Application Insights, CloudWatch, Seq)"
+
+#     - key: cloud-containers-and-devops
+#       category: "Cloud, Containers & DevOps"
+#       items:
+#         - "Azure (App Service, DevOps, Storage, API Gateway)"
+#         - "AWS (Lambda, ECS/Fargate, EC2, S3, CloudFormation)"
+#         - "Docker / Containerization"
+#         - "CI/CD (Azure DevOps, GitHub Actions)"
+#         - "Linux"
+#         - "Git"
+
+#     - key: frontend-web-apps
+#       category: "Frontend"
+#       items:
+#         - "TypeScript / JavaScript"
+#         - "Angular"
+#         - "RxJS"
+#         - "React"
+#         - "SASS"
+
+#     - key: delivery-and-leadership
+#       category: "Delivery & Leadership"
+#       items:
+#         - "Agile delivery"
+#         - "Team leadership & mentoring"
+#         - "Client discovery & requirements"
+#         - "Account management / SOWs"
+#         - "Cross-functional communication"
+
+#     - key: software-engineering
+#       category: "Collaborative Engineering"
+#       items:
+#         - "Requirements gathering"
+#         - "Design review"
+#         - "Pair programming"
+#         - "Peer review processes"
+#         - "Testing & Integration"
+#         - "Maintenance & Support"
