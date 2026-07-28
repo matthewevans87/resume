@@ -30,7 +30,7 @@ qualifications:
     - "Outcome Ownership under ambiguity: led multiple simultaneous delivery teams across multiple clients as responsible party. Hired, trained, and mentored numerous software engineers at various stages in their careers. Stakeholder discovery; executive relationship management; signing authority."
     - "Data Pipelines: Delivered containerized data ETL pipeline with custom streaming parser handling dirty TB-scale JSON data. Built reproducible ML pipelines with provenance tracking yielding synthetic vision dataset used for training CNN vision encoder."
     - "Data-heavy optimization and analytics: built ranking, forecasting, matching, and reporting systems with strong SQL, data preparation, and performance tuning."
-    - "Whatever-it-takes Mindset: Forward-deployed experience. Demonstrated ability to quickly absorb new domain context, history, and triage complex scenarios and systems, identify root causes and risks, communicate effectively with diverse stakeholders."
+    - "Whatever-it-takes mindset: Forward-deployed experience. Demonstrated ability to quickly absorb new domain context, history, and triage complex scenarios and systems, identify root causes and risks, communicate effectively with diverse stakeholders."
 
 projects:
   enabled:
@@ -46,14 +46,14 @@ projects:
     - cs6320-nlp-assignment2
     - cs6320-nlp-assignment1
     - nn-cnn
-    - nn-web-demo-mlp
     - nn-rnn
     - cs6375-project1
     - cs6375-project4-part1
     - cs6375-project3-part2
     - cs6375-project2
-    - crypton
   disabled:
+    - crypton
+    - nn-web-demo-mlp
     # cs6375 = ML
     # cs6320 = NLP
     # cs6347 = SM of ML
