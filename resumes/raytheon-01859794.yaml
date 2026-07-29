@@ -1,7 +1,8 @@
-# https://careers.rtx.com/global/en/job/01830926/2026-Raytheon-Full-Time-Systems-Engineer-II-McKinney-TX-Onsite
-# 2026 Raytheon Full Time - Systems Engineer II – McKinney, TX (Onsite)
-# Space and Airborne Systems Engineering and Test Capability (SE&TC)
+# https://careers.rtx.com/global/en/job/01859794/Software-Engineer-II-Onsite
+# Software Engineer II (Onsite)
+# Software Engineering Space and Air Center team -- Surveillance Sensor Radio Frequency (RF) Solutions Engineering Team
 # You will support Radar Mode requirement development, engineering testing, integration and flight-testing, production, system deployment, and post deployment support across the product lifecycle. Through Digital Transformation (DTx) you will perform these functions using a variety of methods and enabling technologies, including Model-Based Systems Engineering (MBSE) and Agile product development.
+# raytheon-01859794
 
 order_by:
   - experience
@@ -19,12 +20,12 @@ qualifications:
   items:
     - "Education: M.S. Computer Science (Machine Learning concentration) from UT Dallas (2025) (3.73 / 4.0)."
     - "Delivery: 15 years building and shipping production systems, including multi-tenant enterprise and consumer facing products across consulting and in-house roles."
-    - "Software Engineering: Polyglot. C# / .NET, TypeScript, SQL, Angular; CI/CD / DevOps. Python (PyTorch, NumPy, TensorFlow); automated testing; clean micro-service architecture."
+    - "Software Engineering: Polyglot. C# / .NET, TypeScript, SQL, C++ (CMake, GoogleTest), Python (PyTorch, NumPy, TensorFlow). Object-Objected Design. CI/CD / DevOps; automated testing; Development against Linux environments."
     - "Cloud Infrastructure: Serverless and containerized workloads on AWS and Azure; event-driven ETL; application logging and metrics (Application Insights, CloudWatch, Seq); fully-scripted IoC defined cloud environments."
     - "Data Analysis: Python (Pandas). SQL (Procedures, Views, Recursive CTEs, Indices, etc.)"
-    - "Automation: Process automation using Python, JavaScript/NodeJS, Bash/Shell, C#, etc."
-    - "Coordination: Consulting experience (6+ years). Proven ability to effectively collaborate and communicate both horizontally (team) vertically (managing stakeholders)."
-    - "Agile Workflows: Served as Scrum Master on Agile teams. Led Agile trainings with 50+ participants. Familiar with both Sprint and Kanban frameworks."
+    - "Automation: Process automation using Python, JavaScript/NodeJS, Bash/Shell, C#, task runners, etc."
+    - "Coordination & Collaboration: Consulting experience (6+ years). Proven ability to effectively collaborate and communicate both horizontally (team) vertically (managing stakeholders)."
+    - "Agile Workflows: Served as Scrum Master on Agile teams. Led Agile trainings with 50+ participants. Familiar with both Sprint and Kanban frameworks. Atlassian /Jira / Azure DevOps."
     - "Hardware: Undergraduate coursework in digital electronics, including lab work. Graduate coursework in Computer Architecture."
     - "Software/Hardware Integration: Experience working with SO-101 robotic arm, ROS, LeRobot; running trained PPO policies on real robotics hardware."
     - "Telemetry / Data Collection: Experience building event-driven systems to capture cloud-scale telemetry and provide real-time monitoring. Built ranking, forecasting, matching, and reporting systems with strong SQL, data preparation, and performance tuning."
