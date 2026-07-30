@@ -78,8 +78,9 @@ experience:
               - "SQL Server"
               - "CI/CD YAML Pipelines"
               - "Automated Testing"
+              - "Legacy Parity Testing"
             summary: |
-              Owned architecture and delivery of a greenfield manufacturing/ERP platform replacing a decade-old legacy system while completing an M.S. in Computer Science. Built extended mediator pattern architecture with RBAC to accelerate delivery; de-risked go-live with regression-parity testing against the legacy system.
+              Owned architecture and delivery of a greenfield manufacturing/ERP platform replacing a decade-old legacy system while completing an M.S. in Computer Science. Built extended mediator pattern architecture with RBAC to accelerate delivery; de-risked go-live with parity testing against the legacy system.
     - key: zeal-it-consultants
       company: "Zeal IT Consultants"
       company_url: "https://www.zealitconsultants.com/"
@@ -1189,46 +1190,53 @@ skills_highlight:
     - Inference & Monitoring
 
 skills:
+  ordering:
+    - programming-languages
+    - c-plus-plus-systems-tooling
+    - infrastructure-containers-and-ci-cd
+    - databases-caching-and-data-stores
+    - software-engineering
+    - machine-learning
+    - robotics
+    - classical-and-statistical-ml
   elements:
-    - key: ai-ml-robotics-and-experimentation
-      category: "AI/ML, Robotics & Experimentation"
+    - key: machine-learning
+      category: "Machine Learning"
       items:
+        - "Neural Architectures: MLP, CNN, RNN, LSTM, GAN, Transformer"
         - "PyTorch"
-        - "LibTorch (C++ inference)"
-        - "TensorFlow / TensorFlow Recommenders (TFRS)"
-        - "NumPy / SciPy"
+        - "LibTorch"
+        - "TensorFlow"
+        - "NumPy"
+        - "pandas"
+        - "scikit-learn"
         - "TensorBoard"
-        - "Transformers (PyTorch / custom)"
-        - "OpenCV"
+        - "Ollama (local inference)"
+        - "Experiment design / ablations"
+        - "Evaluation harnesses & metrics (NDCG / MRR / Recall@k)"
+
+    - key: robotics
+      category: "Robotics & Computer Vision"
+      items:
         - "NVIDIA Isaac Sim / Isaac Lab"
         - "ROS"
         - "LeRobot"
+        - "OpenCV"
 
     - key: classical-and-statistical-ml
       category: "Classical & Statistical ML"
       items:
-        - "scikit-learn"
         - "LightGBM (LambdaRank / gradient boosting)"
         - "Learning-to-Rank (LTR): two-tower retrieval, listwise ranking (ApproxNDCG)"
         - "Supervised learning (Naive Bayes, Logistic Regression, SVM, KNN, tree ensembles)"
         - "Unsupervised learning (K-Means, Collaborative Filtering)"
         - "Probabilistic Graphical Models (Belief Propagation, Gibbs Sampling, EM)"
 
-    - key: ml-systems-and-data
-      category: "ML Systems & Data"
-      items:
-        - "Experiment design / ablations"
-        - "Evaluation harnesses & metrics (NDCG / MRR / Recall@k)"
-        - "pandas"
-        - "ETL / Data Pipelines"
-        - "Message queues (RabbitMQ, AWS SQS)"
-        - "Analytics (AWS Athena)"
-
     - key: programming-languages
       category: "Programming Languages"
       items:
         - "Python"
-        - "C++ (C++17/C++20)"
+        - "C++"
         - "C#"
         - "TypeScript"
         - "SQL"
@@ -1246,10 +1254,10 @@ skills:
       category: "Infrastructure, Containers & CI/CD"
       items:
         - "Linux"
-        - "Docker / Containerization"
-        - "AWS ECS / Fargate"
-        - "AWS (S3, SQS, Athena, ECS, Fargate, CloudFormation)"
-        - "Azure (App Service, Storage, DevOps, Portal, CLI)"
+        - "Docker"
+        - "Containerization"
+        - "AWS (S3, SQS, Lambda, Athena, ECS, Fargate, CloudFormation)"
+        - "Azure (App Service, Functions, Storage, DevOps, Portal, ARM, Bicep, CLI)"
         - "Observability (CloudWatch, Application Insights, Seq)"
         - "CI/CD Pipelines"
         - "GitHub Actions"
@@ -1263,12 +1271,16 @@ skills:
         - "Cosmos DB"
         - "MongoDB"
         - "Redis"
+        - "AWS Athena"
+        - "Message queues (RabbitMQ, AWS SQS)"
         - "Entity Framework"
+        - "ETL / Data Pipelines"
 
     - key: software-engineering
       category: "Software Engineering"
       items:
         - "Git"
-        - "Distributed systems fundamentals"
+        - "Distributed systems"
         - "API design"
-        - "Testing & code review"
+        - "Automated testing"
+        - "Code review"
