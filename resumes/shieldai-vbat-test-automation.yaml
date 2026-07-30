@@ -1,0 +1,158 @@
+# Senior Engineer, VBAT Software Test Automation (Hiring Multiple Levels)
+# https://jobs.lever.co/shieldai/d0635c93-bb07-4585-80d3-c53aaa2fdf6d
+# shieldai-vbat-test-automation
+
+personal:
+  location: Dallas, TX
+
+order_by:
+  - experience
+  - projects
+  - education
+  - achievements
+  - skills
+
+mission_statement:
+  - "Software Engineer with 15 years' experience shipping production systems. M.S. Computer Science (ML) from UT Dallas (2025)."
+  - "Targeting cleared Software Engineering roles in hard-tech domains (aerospace, sensing, and autonomy) on teams making civilization-scale impact."
+
+qualifications:
+  title: "Qualifications"
+  items:
+    - "Education: M.S. Computer Science (Machine Learning concentration) from UT Dallas (2025) (3.73 / 4.0)."
+    - "Delivery: 15 years building and shipping production systems across consulting and in-house roles."
+    - "Software Engineering: Polyglot. C# (.NET), C++ (CMake, GoogleTest), Python (PyTorch, NumPy, TensorFlow), TypeScript, SQL. Object-Objected Design. CI/CD / DevOps; Version Control (Git); automated testing; Development against Linux environments."
+    - "Automated Testing: Unit & System testing on distributed systems; parity testing; IoC and other test-friendly patterns; xUnit, GoogleTest, etc.; test-gated CI/CD Pipelines; self-hosted task runners for large or sensitive tests."
+    - "Cloud Infrastructure: Serverless and containerized workloads on AWS and Azure; event-driven ETL; application logging and metrics (Application Insights, CloudWatch, Seq); fully-scripted IoC defined cloud environments."
+    - "Data Analysis: Python (Pandas). SQL (Procedures, Views, Recursive CTEs, Indices, etc.)."
+    - "Telemetry / Data Collection: Experience building event-driven systems to capture cloud-scale telemetry and provide real-time monitoring. Built ranking, forecasting, matching, and reporting systems with strong SQL, data preparation, and performance tuning."
+    - "Software/Hardware Integration: Experience working with SO-101 robotic arm, ROS, LeRobot; trained and deployed PPO vision-based policies on real robotics hardware."
+    # - "Automation: Process automation using Python, JavaScript/NodeJS, Bash/Shell, C#, task runners, etc."
+    - "Coordination & Collaboration: Consulting experience (6+ years). Proven ability to effectively collaborate and communicate both horizontally (team) vertically (managing stakeholders)."
+    - "Agile Workflows: Served as Scrum Master on Agile teams. Led Agile trainings with 50+ participants. Experience with Sprint and Kanban frameworks. Atlassian /Jira / Azure DevOps."
+    # - "Hardware: Undergraduate coursework in digital electronics, including lab work. Graduate coursework in Computer Architecture."
+    # - "Protocols: Deep experience with RESTful web services communicating over custom protocols, structured data, etc."
+    - "Whatever it takes Attitude: Highly motivated to pivot from Enterprise to Hard-tech/Autonomy."
+    - "Clearance: US Citizen eligible to obtain clearance."
+
+projects_config:
+  title: "Open-Source & Emerging-Technology Projects"
+
+experience:
+  elements:
+    - key: independent-consultant
+      expanded: true
+      projects_expanded: false
+    - key: zeal-it-consultants
+      expanded: true
+      projects_expanded: true
+    - key: hks-inc
+      expanded: true
+      projects_expanded: false
+    - key: clean-harbors-inc
+      expanded: true
+
+education:
+  elements:
+    - key: bachelor-of-science
+      courses:
+        - "Digital Logic and Computer Design"
+        - "Digital Systems Laboratory"
+        - "C/C++ Programming in a UNIX Environment"
+
+# Enterprise SaaS projects are shown inline under their roles (Zeal, HKS) via
+# projects_expanded, so they are NOT repeated here. This section is reserved for
+# ML / GenAI work, rewritten concisely, that reads as differentiating in a SaaS context.
+projects:
+  groups:
+    order_by:
+      - cpp
+      - machine_learning
+    elements:
+      - key: machine_learning
+        name: "Machine Learning"
+        order_by:
+          - vision-based-sim-to-real-manipulation-pipeline
+          - ml-assisted-visibility-graph-construction
+          - intent-aware-lookahead-for-language-modeling
+          - expedia-learning-to-rank
+      - key: cpp
+        name: "C++ / System Software"
+  enabled:
+    - so101_infer
+    - imgtool
+    - framepipe
+    - vision-based-sim-to-real-manipulation-pipeline
+    - ml-assisted-visibility-graph-construction
+    - intent-aware-lookahead-for-language-modeling
+    - expedia-learning-to-rank
+  disabled:
+    - cs6375-project4-part1
+    - cs6375-project3-part1
+    - cs6375-project1
+    # cs6375 = ML
+    # cs6320 = NLP
+    # cs6347 = SM of ML
+    - crypton
+    - cs6320-nlp-assignment1
+    - crypto-currency-trading-bot
+    - neural-networks-independent-study
+    - cs6375-project3-part2
+    - cs6375-project2
+    - cs6320-nlp-assignment2
+    - nn-web-demo-mlp
+    - nn-gan
+    - nn-rnn
+    - cs6347-hw2
+    - cs6347-hw3-gibbs
+    - cs6347-hw3-mle
+    - cs6347-hw4-em
+    - cs6347-hw4-em-colorem
+  elements:
+    - key: cs6375-project1
+      group: machine_learning
+    - key: cs6375-project4-part1
+      group: machine_learning
+    - key: cs6375-project3-part1
+      group: machine_learning
+    - key: cs6320-nlp-assignment1
+      group: machine_learning
+
+    - key: expedia-learning-to-rank
+      group: machine_learning
+      name: "Search Ranking & Retrieval Pipeline"
+      url: "https://github.com/matthewevans87/expedia-ltr"
+      description: "End-to-end learning-to-rank pipeline over ~1M real hotel-search logs: two-tower retrieval, a listwise neural ranker, and a LightGBM LambdaRank baseline, with full query-grouped evaluation (NDCG@k, MRR, Recall@k) across an 18-run sweep."
+      role: "Author"
+      start_date: "2026-06"
+      end_date: "2026-06"
+      render_style: minimal
+      technologies:
+        - "Python"
+        - "TensorFlow"
+        - "LightGBM"
+        - "Two-Tower Retrieval"
+        - "Learning-to-Rank"
+        - "NDCG / MRR / Recall@k"
+
+    - key: intent-aware-lookahead-for-language-modeling
+      group: machine_learning
+      name: "Intent-Aware Lookahead for Language Modeling"
+      url: "https://github.com/utd-fall-25-cs-6320-nlp/cs6320-nlp-project"
+      description: "Transformer LM research: built a 6-layer causal transformer (~45M params) with auxiliary future-token prediction, intent pooling, and FiLM/gated fusion; evaluated across 21 controlled variants with honest negative results and interference analysis."
+      role: "Author"
+      start_date: "2025-08"
+      end_date: "2025-12"
+      render_style: minimal
+      technologies:
+        - "Python"
+        - "PyTorch"
+        - "Transformers"
+        - "TensorBoard"
+        - NLP
+
+    - key: ml-assisted-visibility-graph-construction
+      render_style: minimal
+
+    - key: vision-based-sim-to-real-manipulation-pipeline
+      render_style: minimal
